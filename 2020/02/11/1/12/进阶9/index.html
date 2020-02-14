@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Pisces","version":"7.7.1","exturl":false,"sidebar":{"position":"left","display":"post","offset":12,"b2t":true,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="File   boolean canExecute()          测试应用程序是否可以执行此抽象路径名表示的文件。 boolean canRead()          测试应用程序是否可以读取此抽象路径名表示的文件。 boolean canWrite()          测试应用程序是否可以修改此抽象路径名表示的文件。 int compareTo(File pathname)">
+<meta property="og:type" content="article">
+<meta property="og:title" content="进阶9">
+<meta property="og:url" content="http://yoursite.com/2020/02/11/1/12/%E8%BF%9B%E9%98%B69/index.html">
+<meta property="og:site_name" content="思君の博客">
+<meta property="og:description" content="File   boolean canExecute()          测试应用程序是否可以执行此抽象路径名表示的文件。 boolean canRead()          测试应用程序是否可以读取此抽象路径名表示的文件。 boolean canWrite()          测试应用程序是否可以修改此抽象路径名表示的文件。 int compareTo(File pathname)">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-02-11T12:12:57.000Z">
+<meta property="article:modified_time" content="2020-02-12T07:42:04.457Z">
+<meta property="article:author" content="顾思君">
+<meta property="article:tag" content="java进阶">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/2020/02/11/1/12/%E8%BF%9B%E9%98%B69/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>进阶9 | 思君の博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="思君の博客" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">思君の博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">记录生活中的点点滴滴</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">6</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类<span class="badge">4</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">38</span></a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/11/1/12/%E8%BF%9B%E9%98%B69/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="顾思君">
+      <meta itemprop="description" content="直到这一刻微笑着说话为止，我至少留下了一公升眼泪">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="思君の博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          进阶9
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-02-11 20:12:57" itemprop="dateCreated datePublished" datetime="2020-02-11T20:12:57+08:00">2020-02-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-12 15:42:04" itemprop="dateModified" datetime="2020-02-12T15:42:04+08:00">2020-02-12</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>3.6k</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>File<br>   boolean canExecute()<br>          测试应用程序是否可以执行此抽象路径名表示的文件。<br> boolean canRead()<br>          测试应用程序是否可以读取此抽象路径名表示的文件。<br> boolean canWrite()<br>          测试应用程序是否可以修改此抽象路径名表示的文件。<br> int compareTo(File pathname)<br>          按字母顺序比较两个抽象路径名。<br> boolean createNewFile()<br>          当且仅当不存在具有此抽象路径名指定名称的文件时，不可分地创建一个新的空文件。<br>static File createTempFile(String prefix, String suffix)<br>          在默认临时文件目录中创建一个空文件，使用给定前缀和后缀生成其名称。<br>static File createTempFile(String prefix, String suffix, File directory)<br>           在指定目录中创建一个新的空文件，使用给定的前缀和后缀字符串生成其名称。<br> boolean delete()<br>          删除此抽象路径名表示的文件或目录。<br> void deleteOnExit()<br>          在虚拟机终止时，请求删除此抽象路径名表示的文件或目录。<br> boolean equals(Object obj)<br>          测试此抽象路径名与给定对象是否相等。<br> boolean exists()<br>          测试此抽象路径名表示的文件或目录是否存在。<br> File getAbsoluteFile()<br>          返回此抽象路径名的绝对路径名形式。<br> String getAbsolutePath()<br>          返回此抽象路径名的绝对路径名字符串。<br> File getCanonicalFile()<br>          返回此抽象路径名的规范形式。<br> String getCanonicalPath()<br>          返回此抽象路径名的规范路径名字符串。<br> long getFreeSpace()<br>          返回此抽象路径名指定的分区中未分配的字节数。<br> String getName()<br>          返回由此抽象路径名表示的文件或目录的名称。<br> String getParent()<br>          返回此抽象路径名父目录的路径名字符串；如果此路径名没有指定父目录，则返回 null。<br> File getParentFile()<br>          返回此抽象路径名父目录的抽象路径名；如果此路径名没有指定父目录，则返回 null。<br> String getPath()<br>          将此抽象路径名转换为一个路径名字符串。<br> long getTotalSpace()<br>          返回此抽象路径名指定的分区大小。<br> long getUsableSpace()<br>          返回此抽象路径名指定的分区上可用于此虚拟机的字节数。<br> int hashCode()<br>          计算此抽象路径名的哈希码。<br> boolean isAbsolute()<br>          测试此抽象路径名是否为绝对路径名。<br> boolean isDirectory()<br>          测试此抽象路径名表示的文件是否是一个目录。<br> boolean isFile()<br>          测试此抽象路径名表示的文件是否是一个标准文件。<br> boolean isHidden()<br>          测试此抽象路径名指定的文件是否是一个隐藏文件。<br> long lastModified()<br>          返回此抽象路径名表示的文件最后一次被修改的时间。<br> long length()<br>          返回由此抽象路径名表示的文件的长度。<br> String[] list()<br>          返回一个字符串数组，这些字符串指定此抽象路径名表示的目录中的文件和目录。<br> String[] list(FilenameFilter filter)<br>          返回一个字符串数组，这些字符串指定此抽象路径名表示的目录中满足指定过滤器的文件和目录。<br> File[] listFiles()<br>          返回一个抽象路径名数组，这些路径名表示此抽象路径名表示的目录中的文件。<br> File[] listFiles(FileFilter filter)<br>          返回抽象路径名数组，这些路径名表示此抽象路径名表示的目录中满足指定过滤器的文件和目录。<br> File[] listFiles(FilenameFilter filter)<br>          返回抽象路径名数组，这些路径名表示此抽象路径名表示的目录中满足指定过滤器的文件和目录。<br>static File[] listRoots()<br>          列出可用的文件系统根。<br> boolean mkdir()<br>          创建此抽象路径名指定的目录。<br> boolean mkdirs()<br>          创建此抽象路径名指定的目录，包括所有必需但不存在的父目录。<br> boolean renameTo(File dest)<br>          重新命名此抽象路径名表示的文件。<br> boolean setExecutable(boolean executable)<br>          设置此抽象路径名所有者执行权限的一个便捷方法。<br> boolean setExecutable(boolean executable, boolean ownerOnly)<br>          设置此抽象路径名的所有者或所有用户的执行权限。<br> boolean setLastModified(long time)<br>          设置此抽象路径名指定的文件或目录的最后一次修改时间。<br> boolean setReadable(boolean readable)<br>          设置此抽象路径名所有者读权限的一个便捷方法。<br> boolean setReadable(boolean readable, boolean ownerOnly)<br>          设置此抽象路径名的所有者或所有用户的读权限。<br> boolean setReadOnly()<br>          标记此抽象路径名指定的文件或目录，从而只能对其进行读操作。<br> boolean setWritable(boolean writable)<br>          设置此抽象路径名所有者写权限的一个便捷方法。<br> boolean setWritable(boolean writable, boolean ownerOnly)<br>          设置此抽象路径名的所有者或所有用户的写权限。<br> String toString()<br>          返回此抽象路径名的路径名字符串。<br> URI toURI()<br>          构造一个表示此抽象路径名的 file: URI。<br> URL toURL()<br>          已过时。 此方法不会自动转义 URL 中的非法字符。建议新的代码使用以下方式将抽象路径名转换为 URL：首先通过 toURI 方法将其转换为 URI，然后通过 URI.toURL 方法将 URI 装换为 URL。 </p>
+<p>多进程：提高CPU的使用率</p>
+<p>　进程和进程之间的内存是独立的<br>多线程：线程是进程中的一个执行场景</p>
+<p>　提高应用程序的使用率</p>
+<p>　线程和线程共享“堆内存和方法区内存”，栈内存是独立的，一个线程一个栈</p>
+<p>创建线程的2种方式<br>继承Thread<br>实现Runnable接口</p>
+<p>线程优先级高的获取的cpu的时间片相对多一些</p>
+<p>　优先级1-10</p>
+<p>　最低1</p>
+<p>　最高10</p>
+<p>　默认5</p>
+<p>setPriority()</p>
+<p>getPriority();</p>
+<p>MAX_PRIORITY  10<br>NORM_PRIORITY 5<br>MIN_PRIORITY  1</p>
+<p>Thread.sleep(毫秒);</p>
+<p>　2.sleep()方法是一个静态方法</p>
+<p>　3.该方法的作用:阻塞当前线程,腾出cpu,让给其他线程</p>
+<p>interrupt()  中断休眠,利用的是异常处理机制<br>join 线程合并</p>
+<p>异步线程模型</p>
+<p>　线程之间不必等待<br>同步线程模型</p>
+<p>　线程之间排队</p>
+<p>什么时候使用同步呢？为什么要引入线程同步呢？</p>
+<p>　1.为了数据的安全.尽管应用程序的使用率低,但是为了保证书是安全的,必须加入线程同步机制</p>
+<p>　  线程同步机制是程序变成了（等同）单线程</p>
+<p>　2.什么条件下使用线程同步？</p>
+<p>　   第一: 必须是多线程环境</p>
+<p>　   第二：多线程环境共享同一个数据</p>
+<p>　   第三：共享的数据涉及到修改操作</p>
+<p>synchronized(){} 同步代码块</p>
+<p> 守护线程</p>
+<p>　其他所有的用户线程结束,则守护线程退出</p>
+<p>　守护线程一般都是无限执行的</p>
+<p>　setDaemon</p>
+<p>关于定时器的应用</p>
+<p>　　作用:每隔一段固定的时间执行一段代码</p>
+<p>以下是sun提供的反射机制中的类<br>    java.lang.Class;<br>    java.lang.reflect.Constructor;<br>    java.lang.reflect.Field;<br>    java.lang.Method;<br>    java.lang.Modifier;</p>
+<p>​    private User{</p>
+<p>​    }</p>
+<p>反射机制的作用:</p>
+<p>　　1.反编译: .class -&gt; .java</p>
+<p>　　2.通过反射机制访问java类的属性,方法,构造方法等. </p>
+<p>第一种方式:</p>
+<p>　　将类加载到JVM中</p>
+<p>　　Class c1 = Class.forName(“User”);    // c1引用保存地址指向堆中的对象,该对象代表的是User整个类<br>第二种方式:</p>
+<p>　　Class c2 = User.class;<br>第三种方式：</p>
+<p>　　User u = new User();</p>
+<p>　　Class sc3 = u.getClass();</p>
+<p>newInstance相当于调用了无参构造器</p>
+<p>关于java中的可变长参数</p>
+<p>　如果有精确匹配的方法，则调用该方法，不会再去执行可变长形参的那个方法</p>
+<p>　可变长形参等同看做数组</p>
+<p>　可变长参数只能出现一次,并且只能出现在参数列表的最后一个位置上</p>
+<p>IO+Properties</p>
+<p>配置文件（属性文件）<br>java规范要求属性文件以“.properties”<br>配置文件的作用使程序更灵活<br>注意：一般程序中可变的东西不要写死，推荐写到配置文件中 运行同样的程序得到不同的结果</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/java%E8%BF%9B%E9%98%B6/" rel="tag"># java进阶</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/02/11/1/12/%E8%BF%9B%E9%98%B68/" rel="prev" title="进阶８">
+      <i class="fa fa-chevron-left"></i> 进阶８
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/02/11/1/12/%E8%BF%9B%E9%98%B66/" rel="next" title="进阶6">
+      进阶6 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="顾思君"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">顾思君</p>
+  <div class="site-description" itemprop="description">直到这一刻微笑着说话为止，我至少留下了一公升眼泪</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">38</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/gusijun" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;gusijun" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://blog.csdn.net/nightmare_dimple" title="CSDN → https:&#x2F;&#x2F;blog.csdn.net&#x2F;nightmare_dimple" rel="noopener" target="_blank"><i class="fa fa-fw fa-crosshairs"></i>CSDN</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-fw fa-rss"></i>RSS</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">古俊</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="站点总字数">72k</span>
+</div>
+
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"log":false});</script></body>
+</html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>

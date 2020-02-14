@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Pisces","version":"7.7.1","exturl":false,"sidebar":{"position":"left","display":"post","offset":12,"b2t":true,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="匿名对象：　　1.匿名对象:创建类的对象,但是并没有声明给一个对象引用 　　 2.匿名对象只能调用一次 　　3.应用，常常在调用方法时，将一个匿名对象作为参数传递过去 方法重载：（overload） loading…　1.定义：在同一个类中，相同的方法名，不同的参数列表的方法之间，彼此构成重载 　　举例：Arrays 中的sort（Xxx[] xxx） &#x2F; System.out.println(X">
+<meta property="og:type" content="article">
+<meta property="og:title" content="day9">
+<meta property="og:url" content="http://yoursite.com/2020/02/11/1/12/day9/index.html">
+<meta property="og:site_name" content="思君の博客">
+<meta property="og:description" content="匿名对象：　　1.匿名对象:创建类的对象,但是并没有声明给一个对象引用 　　 2.匿名对象只能调用一次 　　3.应用，常常在调用方法时，将一个匿名对象作为参数传递过去 方法重载：（overload） loading…　1.定义：在同一个类中，相同的方法名，不同的参数列表的方法之间，彼此构成重载 　　举例：Arrays 中的sort（Xxx[] xxx） &#x2F; System.out.println(X">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-02-11T12:12:57.000Z">
+<meta property="article:modified_time" content="2020-02-12T06:44:36.616Z">
+<meta property="article:author" content="顾思君">
+<meta property="article:tag" content="java基础">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/2020/02/11/1/12/day9/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>day9 | 思君の博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="思君の博客" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">思君の博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">记录生活中的点点滴滴</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">6</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类<span class="badge">4</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">38</span></a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/11/1/12/day9/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="顾思君">
+      <meta itemprop="description" content="直到这一刻微笑着说话为止，我至少留下了一公升眼泪">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="思君の博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          day9
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-02-11 20:12:57" itemprop="dateCreated datePublished" datetime="2020-02-11T20:12:57+08:00">2020-02-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-12 14:44:36" itemprop="dateModified" datetime="2020-02-12T14:44:36+08:00">2020-02-12</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.2k</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h5 id="匿名对象："><a href="#匿名对象：" class="headerlink" title="匿名对象："></a>匿名对象：</h5><p>　　1.匿名对象:创建类的对象,但是并没有声明给一个对象引用</p>
+<p>　　 2.匿名对象只能调用一次</p>
+<p>　　3.应用，常常在调用方法时，将一个匿名对象作为参数传递过去</p>
+<h5 id="方法重载：（overload）-loading…"><a href="#方法重载：（overload）-loading…" class="headerlink" title="方法重载：（overload） loading…"></a>方法重载：（overload） loading…</h5><p>　1.定义：在同一个类中，相同的方法名，不同的参数列表的方法之间，彼此构成重载</p>
+<p>　　举例：Arrays 中的sort（Xxx[] xxx） / System.out.println(Xxx xxx)</p>
+<p>　　总结：两同一不同，一不同：①参数个数不同   ②参数类型不同</p>
+<p>　2.方法的重载与方法的形参的变量名没有关系！ 与方法是否有返回值也没有关系</p>
+<p>　测试题：区分方法的重载（overload）和方法的重写（override / overwrite）           </p>
+<p>　3.如何确定调用的是哪一个类的方法？ 指明方法名——&gt;指明参数的类型</p>
+<p>可变个数形参方法的使用：jdk5.0新特性</p>
+<ul>
+<li>可变个数形参的格式：数据类型  … 变量名</li>
+<li>可变个数形参的方法在调用时，给可变个数的形参赋值时，可以赋值的个数为：0个，1个，……..</li>
+<li>可变个数形参的方法与同名方法之间彼此构成重载</li>
+<li>可变个数形参的方法与形参类型相同的数组方法不能同时出现在类中</li>
+<li>可变个数形参必须声明方法形参的最后一个参数</li>
+<li>在一个方法的形参位置，最多只能声明一个可变长度形参</li>
+</ul>
+<h5 id="变量的值传递机制："><a href="#变量的值传递机制：" class="headerlink" title="变量的值传递机制："></a>变量的值传递机制：</h5><p>　如果赋值的是基本数据的变量，则传递的是基本数据类型变量所保存的具体的数值</p>
+<p>　如果赋值的是引用数据类型变量，则传递的是引用数据类型变量所保存的地址值</p>
+<h5 id="方法的参数传递机制：值传递"><a href="#方法的参数传递机制：值传递" class="headerlink" title="方法的参数传递机制：值传递"></a>方法的参数传递机制：值传递</h5><p>1.形参：方法在声明时，指定的参数</p>
+<p>　实参：方法调用时，具体给形参赋的值，就是实参</p>
+<p>2.如果方法的形参是基本数据类型的变量，则方法调用时，传递的实参即为基本数据类型变量所保存的具体的值 </p>
+<p>   如果方法的形参是引用数据类型的变量，则方法调用时，传递的实参即为引用数据类型变量所保存的地址值</p>
+<p>​          </p>
+<p>面向对象的特性之一：封装与隐藏 3w : what ？ why ? how ?</p>
+<p>1.问题的引入？</p>
+<p>   我们在创建一个类的对象以后，通过“对象.属性”的方式，可以给对象的属性赋值，对此属性的赋值，是有限制的，比如：数据类型和数据类型储存范围的限制。</p>
+<p>但在实际问题中，还通过需要额外的限制。同时这些额外的限制，不可能在属性的声明中加上限制逻辑。</p>
+<p>那抹我们只能考虑通过方法，对属性的赋值进行额外的限制，同时，我们必须禁止再直接通过 “对象.属性” 的方法，对属性进行赋值</p>
+<p>2.封装性的体现(狭义上的体现)</p>
+<p>　　私有化(private)类的属性，同时，提供公共的(public)设置(setXxx())和获取(getXxx())的方法</p>
+<p>3.封装性的体现：（广义上的体现）</p>
+<p>　　java规定的4种权限修饰符：（从小到大） private 缺省  protected   public ＼</p>
+<p>　　java规定的4种权限可以用来修饰类及类的内部结构：属性，方法，构造器，内部类</p>
+<p>具体来讲：这4种权限都可以用来修饰类的内部结构：属性，方法，构造器，内部类，只能使用 缺省 或者 public 修饰类</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/java%E5%9F%BA%E7%A1%80/" rel="tag"># java基础</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/02/11/1/12/%E8%BF%9B%E9%98%B61/" rel="prev" title="进阶1">
+      <i class="fa fa-chevron-left"></i> 进阶1
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/02/11/1/12/druid/" rel="next" title="druid">
+      druid <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#匿名对象："><span class="nav-text">匿名对象：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#方法重载：（overload）-loading…"><span class="nav-text">方法重载：（overload） loading…</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#变量的值传递机制："><span class="nav-text">变量的值传递机制：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#方法的参数传递机制：值传递"><span class="nav-text">方法的参数传递机制：值传递</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="顾思君"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">顾思君</p>
+  <div class="site-description" itemprop="description">直到这一刻微笑着说话为止，我至少留下了一公升眼泪</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">38</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/gusijun" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;gusijun" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://blog.csdn.net/nightmare_dimple" title="CSDN → https:&#x2F;&#x2F;blog.csdn.net&#x2F;nightmare_dimple" rel="noopener" target="_blank"><i class="fa fa-fw fa-crosshairs"></i>CSDN</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-fw fa-rss"></i>RSS</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">古俊</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="站点总字数">72k</span>
+</div>
+
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"log":false});</script></body>
+</html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>

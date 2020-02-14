@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Pisces","version":"7.7.1","exturl":false,"sidebar":{"position":"left","display":"post","offset":12,"b2t":true,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="jdk 8 之前 日期+时间 API的使用 java.util.Date类 　　|—-java.sql.Date类 1.java.util.Date类： 　　如何实例化：两个构造器 　　常用方法：toString() &#x2F; getTime();  2.java.sql.Date类：与数据表中的Date类型的变量对应。     构造器一：获取系统当前时间对应的Date对象 Date date &#x3D; ne">
+<meta property="og:type" content="article">
+<meta property="og:title" content="day23">
+<meta property="og:url" content="http://yoursite.com/2020/02/11/1/12/day23/index.html">
+<meta property="og:site_name" content="思君の博客">
+<meta property="og:description" content="jdk 8 之前 日期+时间 API的使用 java.util.Date类 　　|—-java.sql.Date类 1.java.util.Date类： 　　如何实例化：两个构造器 　　常用方法：toString() &#x2F; getTime();  2.java.sql.Date类：与数据表中的Date类型的变量对应。     构造器一：获取系统当前时间对应的Date对象 Date date &#x3D; ne">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-02-11T12:12:57.000Z">
+<meta property="article:modified_time" content="2020-02-12T05:17:04.397Z">
+<meta property="article:author" content="顾思君">
+<meta property="article:tag" content="java基础">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/2020/02/11/1/12/day23/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>day23 | 思君の博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="思君の博客" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">思君の博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">记录生活中的点点滴滴</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">6</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类<span class="badge">4</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">38</span></a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/11/1/12/day23/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="顾思君">
+      <meta itemprop="description" content="直到这一刻微笑着说话为止，我至少留下了一公升眼泪">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="思君の博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          day23
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-02-11 20:12:57" itemprop="dateCreated datePublished" datetime="2020-02-11T20:12:57+08:00">2020-02-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-12 13:17:04" itemprop="dateModified" datetime="2020-02-12T13:17:04+08:00">2020-02-12</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>3.6k</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>jdk 8 之前 日期+时间 API的使用</p>
+<p>java.util.Date类</p>
+<p>　　|—-java.sql.Date类</p>
+<p>1.java.util.Date类：</p>
+<p>　　如何实例化：两个构造器</p>
+<p>　　常用方法：toString() / getTime();</p>
+<p> 2.java.sql.Date类：与数据表中的Date类型的变量对应。    </p>
+<p>构造器一：获取系统当前时间对应的Date对象</p>
+<p>Date date = new Date();</p>
+<p>getTime()：返回当前日期对应的毫秒数：当前时间与1970-1-1 00：00：00直接的毫秒数</p>
+<p>构造器二：获取毫秒数所对应的Date对象</p>
+<p>Date date1 = new Date(1502768492941L);</p>
+<p>SQl:</p>
+<p>java.sql.Date date2 = new java.sql.Date(1502768492941L);</p>
+<p>SimpleDateFormat</p>
+<p>使用默认构造器:SimpleDateFormat sdf = new SimpleDateFormat();</p>
+<p>格式化：String format(Date date):</p>
+<p>　Date date = new Date();</p>
+<p>　String dateStr = sdf.format(date);</p>
+<p>解析： Date parse(String dateStr)</p>
+<p>　Date date1 = sdf.parse(“17-8-15 下午2:18”);</p>
+<p>　System.out.println(date1);</p>
+<p>java.text.SimpleDateFormat类</p>
+<p>　1.SimpleDateFormat的作用：</p>
+<p>　　　格式化：日期—&gt;文本</p>
+<p>　　　解析：格式化的逆过程，文本 —&gt;日期</p>
+<p>　2.SimpleDateFormat实例化</p>
+<p>　　使用带参数的构造器</p>
+<p>　　　SimpleDateFormat sdf1 = new SimpleDateFormat(“EEE, d MMM yyyy HH:mm:ss Z”); 　　　</p>
+<p>　　　SimpleDateFormat sdf1 = new SimpleDateFormat(“yyyy-MM-dd hh:mm:ss”);</p>
+<p>　　格式化：</p>
+<p>　　　String dateStr1 = sdf1.format(date);</p>
+<p>　　　System.out.println(dateStr1);//2017-08-15 02:24:40</p>
+<p>　　解析：</p>
+<p>　　　Date date2 = sdf1.parse(“2017-08-15 02:24:40”);</p>
+<p>　　　System.out.println(date2);</p>
+<p>java.util.Calendar(日历)类的使用</p>
+<p>　　1.实例化Calendar calendar = Calendar.getInstance();</p>
+<p>　　2.get()</p>
+<p>​        　int day = calendar.get(Calendar.DAY_OF_MONTH);</p>
+<p>​        　System.out.println(day);</p>
+<p>　　3.set()</p>
+<p>　　　calendar.set(Calendar.DAY_OF_MONTH, 20);　</p>
+<p>　　　day =   calendar.get(Calendar.DAY_OF_MONTH);</p>
+<p>　　　System.out.println(day);</p>
+<p>　　4.add()</p>
+<p>　　　calendar.add(Calendar.DAY_OF_MONTH, -2);</p>
+<p>　　　day = calendar.get(Calendar.DAY_OF_MONTH);</p>
+<p>　　　System.out.println(day);</p>
+<p>日历 —&gt;日期</p>
+<p>　　Date date = calendar.getTime();</p>
+<p>　　System.out.println(date);</p>
+<p>使用指定的Date对象，来设置calendar</p>
+<p>　　Date date1 = new Date();</p>
+<p>　　calendar.setTime(date1);</p>
+<p>　　day = calendar.get(Calendar.DAY_OF_MONTH);</p>
+<p>　　System.out.println(day);</p>
+<p>LocalDate / LocalTime / LocalDateTime     —–重要//理解为对Calendar</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//实例化</span></span><br><span class="line"><span class="comment">//now()</span></span><br><span class="line">LocalDate localDate = LocalDate.now();</span><br><span class="line">LocalTime localTime = LocalTime.now();</span><br><span class="line">LocalDateTime localDateTime =   LocalDateTime.now();</span><br><span class="line"></span><br><span class="line">System.out.println(localDate);</span><br><span class="line">System.out.println(localTime);</span><br><span class="line">System.out.println(localDateTime);</span><br><span class="line"></span><br><span class="line"><span class="comment">//of()</span></span><br><span class="line">LocalDate localDate2 = LocalDate.of(<span class="number">2017</span>,<span class="number">8</span>,<span class="number">15</span>); </span><br><span class="line">System.out.println(localDate2);</span><br><span class="line">LocalDateTime localDateTime2 = LocalDateTime.of(<span class="number">2017</span>, <span class="number">8</span>, <span class="number">15</span>, <span class="number">11</span>, <span class="number">11</span>,<span class="number">23</span>); System.out.println(localDateTime2);</span><br><span class="line">System.out.println();</span><br><span class="line"><span class="comment">//getXxx():</span></span><br><span class="line">System.out.println(localDateTime.getDayOfYear());</span><br><span class="line">System.out.println(localDateTime.getDayOfMonth());</span><br><span class="line">System.out.println(localDateTime.getDayOfWeek());</span><br><span class="line">System.out.println(localDateTime.getMonth());</span><br><span class="line">System.out.println(localDateTime.getMonthValue());</span><br><span class="line">System.out.println(localDateTime.getHour());</span><br><span class="line">System.out.println(localDateTime.getMinute());</span><br><span class="line"><span class="comment">//withXxx():体现了不可变性</span></span><br><span class="line">LocalDateTime localDateTime3=localDateTime.withDayOfMonth(<span class="number">20</span>); System.out.println(localDateTime);</span><br><span class="line">System.out.println(localDateTime3);</span><br><span class="line">LocalDateTime localDateTime4=localDateTime.withHour(<span class="number">12</span>); System.out.println(localDateTime4);</span><br><span class="line"><span class="comment">//plus()//minus()</span></span><br><span class="line">LocalDateTime localDateTime5 =localDateTime.plusDays(<span class="number">3</span>); System.out.println(localDateTime5);</span><br><span class="line">LocalDateTime localDateTime6 =localDateTime.minusMinutes(<span class="number">20</span>); </span><br><span class="line">System.out.println(localDateTime6);</span><br><span class="line"><span class="keyword">boolean</span> isBefore =localDateTime.isBefore(localDateTime6); </span><br><span class="line"> System.out.println(isBefore);<span class="comment">//false</span></span><br><span class="line"><span class="keyword">boolean</span> isAfter =localDateTime.isAfter(localDateTime6); System.out.println(isAfter);<span class="comment">//true</span></span><br><span class="line"><span class="comment">//isLeapYear():</span></span><br><span class="line">System.out.println(localDate.isLeapYear());</span><br><span class="line">LocalDate localDate3 =localDate.minusYears(<span class="number">1</span>); </span><br><span class="line">System.out.println(localDate3.isLeapYear());</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p>Optional类使用的测试</p>
+<p>　Optional:是一个封装了具体类型数据的容器。</p>
+<p>　其中，具体的类型：通过Optional的泛型体现。</p>
+<p>　具体类型的数据：通过Optional内部的T value体现</p>
+<p>返回一个没有封装任何数据的Optional对象</p>
+<p>　　Optional<Object> op = Optional.empty();０</Object></p>
+<p>　　Optional<String> op1 = Optional.ofNullable(“beijing”);</String></p>
+<p>isPresent():判断内部的数据是否存在</p>
+<p>get():返回Optional对象内部封装的数据</p>
+<p>of(T t):当t为null时，报异常。建议不用此方法</p>
+<p>orElse(T t):如果调用对象包含值，返回该值，否则返回t</p>
+<p>Integer类作为int的包装类，能存储的最大整型值为2^31−1， </p>
+<p>BigInteger类的数值范围较Integer类、Long类的数值范围要大得多，可以支持任意精度的整数。</p>
+<p>在商业计算中，要求数字精度比较高，故用到java.math.BigDecimal类。</p>
+<p>BigDecimal类支持任何精度的定点数。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/java%E5%9F%BA%E7%A1%80/" rel="tag"># java基础</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/02/11/1/12/day3/" rel="prev" title="day3">
+      <i class="fa fa-chevron-left"></i> day3
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/02/11/1/12/day19/" rel="next" title="day19">
+      day19 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="顾思君"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">顾思君</p>
+  <div class="site-description" itemprop="description">直到这一刻微笑着说话为止，我至少留下了一公升眼泪</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">38</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/gusijun" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;gusijun" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://blog.csdn.net/nightmare_dimple" title="CSDN → https:&#x2F;&#x2F;blog.csdn.net&#x2F;nightmare_dimple" rel="noopener" target="_blank"><i class="fa fa-fw fa-crosshairs"></i>CSDN</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-fw fa-rss"></i>RSS</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">古俊</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="站点总字数">72k</span>
+</div>
+
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"log":false});</script></body>
+</html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>

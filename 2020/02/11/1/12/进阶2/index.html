@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Pisces","version":"7.7.1","exturl":false,"sidebar":{"position":"left","display":"post","offset":12,"b2t":true,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="关于java语言中的数据类型 　byte   1byte(8bit)  -128-127 　short  2byte 　int    4byte 　long   8byte整数有3中表现形式: 　十进制 　八进制　 以0开始 　十六进制 以0x开始 在java中基本类型可以相互转换,boolean类型比较特殊不可以转换成其他类型 转换分为自动类型提升和强制类型转换： 　自动类型提升:容量小的类型会">
+<meta property="og:type" content="article">
+<meta property="og:title" content="进阶2">
+<meta property="og:url" content="http://yoursite.com/2020/02/11/1/12/%E8%BF%9B%E9%98%B62/index.html">
+<meta property="og:site_name" content="思君の博客">
+<meta property="og:description" content="关于java语言中的数据类型 　byte   1byte(8bit)  -128-127 　short  2byte 　int    4byte 　long   8byte整数有3中表现形式: 　十进制 　八进制　 以0开始 　十六进制 以0x开始 在java中基本类型可以相互转换,boolean类型比较特殊不可以转换成其他类型 转换分为自动类型提升和强制类型转换： 　自动类型提升:容量小的类型会">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-02-11T12:12:57.000Z">
+<meta property="article:modified_time" content="2020-02-12T07:12:20.174Z">
+<meta property="article:author" content="顾思君">
+<meta property="article:tag" content="java进阶">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/2020/02/11/1/12/%E8%BF%9B%E9%98%B62/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>进阶2 | 思君の博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="思君の博客" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">思君の博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">记录生活中的点点滴滴</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">6</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类<span class="badge">4</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">38</span></a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/11/1/12/%E8%BF%9B%E9%98%B62/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="顾思君">
+      <meta itemprop="description" content="直到这一刻微笑着说话为止，我至少留下了一公升眼泪">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="思君の博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          进阶2
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-02-11 20:12:57" itemprop="dateCreated datePublished" datetime="2020-02-11T20:12:57+08:00">2020-02-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-12 15:12:20" itemprop="dateModified" datetime="2020-02-12T15:12:20+08:00">2020-02-12</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>2.2k</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>关于java语言中的数据类型</p>
+<p>　byte   1byte(8bit)  -128-127</p>
+<p>　short  2byte</p>
+<p>　int    4byte</p>
+<p>　long   8byte<br>整数有3中表现形式:</p>
+<p>　十进制</p>
+<p>　八进制　 以0开始</p>
+<p>　十六进制 以0x开始</p>
+<p>在java中基本类型可以相互转换,boolean类型比较特殊不可以转换成其他类型</p>
+<p>转换分为自动类型提升和强制类型转换：</p>
+<p>　自动类型提升:容量小的类型会默认转换为容量大的类型</p>
+<p>　byte -&gt; short -&gt; int -&gt; long -&gt; float -&gt; double</p>
+<p>　char</p>
+<p>byte,short,char之间计算不会相互转换,首先先转成int</p>
+<p>　强制类型转换：</p>
+<p>　　将容量大的类型转换成容量小的类型,需要进行强制转换</p>
+<p>　　注意：只要不超出范围可以将整型值直接赋值给byte,short,char</p>
+<p>在多种类型混合运算过程中,首先将所有数据转换成容量大的那种,再运算</p>
+<p>关于java中的布尔类型</p>
+<p>　1.boolean类型的数据只有两个值:true/false，没有1和0</p>
+<p>　2.boolean类型的数据主要用在逻辑运算和条件控制语句中<br>java程序分为编译期和运行期</p>
+<p>关系运算符</p>
+<p>＞<br>＞=    大等于<br>&lt;     小于<br>&lt;=    小等于<br>==    判断是否相等(基本数据类型)<br>!=    不等于<br>关系运算符的运算结果一定是boolean类型</p>
+<p>布尔运算符(逻辑运算符)</p>
+<p>　&amp;     逻辑与</p>
+<p>　|     逻辑或</p>
+<p>　!     逻辑非</p>
+<p>　^     逻辑异或</p>
+<p>　&amp;&amp;    短路与</p>
+<p>　||    短路或<br>短路：后边那个表达式不执行</p>
+<p>　什么时候发生短路与? 第一个算子结果是false的时候</p>
+<p>　什么时候发生短路或？第一个算子结果是true的时候<br>布尔运算符两边的(算子)必须是布尔类型,整个表达式的运算结果也是一个布尔类型</p>
+<p>关于赋值运算符</p>
+<p>　基本的赋值运算符</p>
+<p>　=</p>
+<p>　扩展的赋值运算符</p>
+<p>　+=    追加</p>
+<p>　-=</p>
+<p>　*=</p>
+<p>　/=</p>
+<p>　%=<br>基本运算符和扩展运算符的区别？　</p>
+<p>　扩展运算符不会改变变量本身的数据类型</p>
+<p>关于字符串连接运算符</p>
+<p>　＋运算符可以：</p>
+<p>　　1.做加法运算(+两边只要都是数字类型,一定是加法运算)</p>
+<p>　　2.字符串连接(+两边任意一端只要是字符串类型,则一定是字符串连接)</p>
+<p>条件运算符(三目运算符)</p>
+<p>　？：</p>
+<p>　语法：</p>
+<p>　　boolean表达式?表达式1:表达式2</p>
+<p>　　boolean表示式的结果是true，则整个表达式的结果就是表达式1的结果,相反则是表达式2的结果</p>
+<p>关于条件控制语句:流程控制语句if…else<br>    1.语法<br>    第一种结构：<br>        if(boolean表达式){<br>        java语句;<br>    }<br>    第二种结构:<br>    if(boolean表达式){<br>        java语句;<br>    }else{<br>        java语句;<br>    }<br>    第三种结构:<br>    if（boolean表达式）{<br>        java语句;<br>    }else if(boolean表达式){<br>        java语句；<br>    }else if(boolean表达式){<br>        java语句；<br>    }<br>    第四种结构:<br>    if（boolean表达式）{<br>        java语句;<br>    }else if(boolean表达式){<br>        java语句；<br>    }else if(boolean表达式){<br>        java语句；<br>    }else{<br>    }<br>注意：在if语句中只要有一个分支执行,则整个if语句结束</p>
+<p>　　上面的结构2.4可以保证一定会有一个分支语句执行,因为他们都有else语句。<br>！！ else 有隐藏条件</p>
+<p>关于switch语句:<br>    1.语法:<br>        switch(int类型){<br>            case int类型:<br>            java语句；<br>            java语句；<br>            break;</p>
+<p>​           case int类型:<br>           java语句；<br>​           java语句；<br>​           break;</p>
+<p>​           case int类型:<br>​           java语句；<br>​           java语句；<br>​           break;</p>
+<p>​            default:<br>​            java语句；<br>​    }</p>
+<p>注意：break；语句可以没有，default也可以没有<br>      break语句如果没有，则发生case穿透现象<br>      switch后面的括号可以填写byte/short/char类型,因为可以自动转换<br>      jdk7.0可以是String类型<br>      case可以合并        </p>
+<p>for 循环:<br>    语法：<br>    for(表达式1;表达式2;表达式3){<br>        java语句<br>    }<br>    表达式1是初始化表达式,最先执行,只执行一次<br>    表达式2必须是boolean类型的表达式</p>
+<p>for循环开始执行,先执行表达式1,并只执行一次,进而判断表达式2的结果,如果是true<br>则执行java语句,再执行表达式3,然后再判断表达式2的结果，知道表达式2的结果是false<br>则for循环结束。</p>
+<p>关于while循环<br>    语法<br>        while(boolean表达式）{<br>            java语句；<br>        }<br>该循环的执行次数:0-N</p>
+<p>关于do…while…<br>    语法：<br>        do{<br>            java语句；<br>        }while(boolean表达式)；</p>
+<p>该循环的执行次数:1-N</p>
+<p>break语句：</p>
+<ul>
+<li><p>可以用在switch语句中,结束分支语句</p>
+</li>
+<li><p>break；语句可以出现在循环当中,默认情况下结束离它最近的一个循环<br>continue语句:可以用来结束当前一次循环,直接进入下一次循环继续执行</p>
+<p>通过break可以指定结束某个循环(标签)</p>
+</li>
+</ul>
+<p>定义方法的语法：    </p>
+<p>　[方法的修饰列表] 方法的返回值类型 方法名(方法的形参列表){</p>
+<p>　　java语句；</p>
+<p>　}</p>
+<p>1.[方法的修饰列表]是可选项 。暂时携程public static<br>2.方法的返回值类型,可以是java语言中的任何一种数据类型(基本数据类型和引用数据类型)<br>3.如果该方法执行结束之后,并没有任何返回值,那抹定义方法的时候,返回值类型写:void<br>4.方法名只要是合法的标识符即可<br>5.方法的形参参数列表,可以有参数,也可以没有参数,如果有多个参数的话使用”逗号”分开<br>6.如果一个方法的返回值的类型不是void，那抹在方法体中必须使用return语句来返回数据</p>
+<p>方法的形式参数列表中起决定性作用的是参数的类型<br>参数的名字（局部变量的名字）是随意的只要是合法的标识符即可</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/java%E8%BF%9B%E9%98%B6/" rel="tag"># java进阶</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/02/11/1/12/%E8%BF%9B%E9%98%B63/" rel="prev" title="进阶3">
+      <i class="fa fa-chevron-left"></i> 进阶3
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/02/11/1/12/java8%E6%96%B0%E7%89%B9%E6%80%A71/" rel="next" title="java8新特性1">
+      java8新特性1 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="顾思君"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">顾思君</p>
+  <div class="site-description" itemprop="description">直到这一刻微笑着说话为止，我至少留下了一公升眼泪</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">38</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/gusijun" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;gusijun" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://blog.csdn.net/nightmare_dimple" title="CSDN → https:&#x2F;&#x2F;blog.csdn.net&#x2F;nightmare_dimple" rel="noopener" target="_blank"><i class="fa fa-fw fa-crosshairs"></i>CSDN</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-fw fa-rss"></i>RSS</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">古俊</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="站点总字数">72k</span>
+</div>
+
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"log":false});</script></body>
+</html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>

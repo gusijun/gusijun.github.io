@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Pisces","version":"7.7.1","exturl":false,"sidebar":{"position":"left","display":"post","offset":12,"b2t":true,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="一、流的分类 　1.流的流向：输入流、输出流 　2.流中数据单位：字节流、字符流 　3.流的角色不同：节点流、处理流   二、 抽象基类                          节点流(或文件流)                                       缓冲流(处理流的一种)：提高数据读写效率 ​          InputStream">
+<meta property="og:type" content="article">
+<meta property="og:title" content="day19">
+<meta property="og:url" content="http://yoursite.com/2020/02/11/1/12/day19/index.html">
+<meta property="og:site_name" content="思君の博客">
+<meta property="og:description" content="一、流的分类 　1.流的流向：输入流、输出流 　2.流中数据单位：字节流、字符流 　3.流的角色不同：节点流、处理流   二、 抽象基类                          节点流(或文件流)                                       缓冲流(处理流的一种)：提高数据读写效率 ​          InputStream">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-02-11T12:12:57.000Z">
+<meta property="article:modified_time" content="2020-02-12T05:30:28.025Z">
+<meta property="article:author" content="顾思君">
+<meta property="article:tag" content="java基础">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/2020/02/11/1/12/day19/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>day19 | 思君の博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="思君の博客" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">思君の博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">记录生活中的点点滴滴</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">6</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类<span class="badge">4</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">38</span></a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/11/1/12/day19/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="顾思君">
+      <meta itemprop="description" content="直到这一刻微笑着说话为止，我至少留下了一公升眼泪">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="思君の博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          day19
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-02-11 20:12:57" itemprop="dateCreated datePublished" datetime="2020-02-11T20:12:57+08:00">2020-02-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-12 13:30:28" itemprop="dateModified" datetime="2020-02-12T13:30:28+08:00">2020-02-12</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>2.2k</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>  一、流的分类</p>
+<p>　1.流的流向：输入流、输出流</p>
+<p>　2.流中数据单位：字节流、字符流</p>
+<p>　3.流的角色不同：节点流、处理流</p>
+<p>  二、 抽象基类                          节点流(或文件流)                                       缓冲流(处理流的一种)：提高数据读写效率</p>
+<p>​          InputStream                   FileInputStream(read(byte[]))                 BufferedInputStream(read(byte[])</p>
+<p>​          OutputStream               FileOutputStream(write(byte[],0,len))  BufferedOutputStream(write(byte[],0,len)</p>
+<p>​         Readed                            FileReader(read(char[]))                          BufferedReader(read(char[]) / readLine())</p>
+<p>​         Writer                              FileWriter(write(char[],0,len))                  BufferedWriter(write(char[],0,len)</p>
+<p>从指定文件中读取数据到控制台上</p>
+<p>　1.要去读的文件一定要存在的,否则报FileNotFoundException</p>
+<p>　2.因为需要保证流的资源关闭,所以异常的处理需要使用try-catch-finally</p>
+<p>字节流：</p>
+<p>　输入流:FileInputStream</p>
+<p>　1.创建一个文件,指明读取数据的来源</p>
+<p>　2.将file对象作为参数传递到流的构造器中,创建一个字节的输入流:FileInputStream</p>
+<p>　3.read():读取文件中的下一个字节。如果到达文件末尾的话,返回-1</p>
+<p>　4.关闭资源</p>
+<p> 输出流:FileOutputStream</p>
+<p>　1.造文件</p>
+<p>　2.造流:输出流</p>
+<p>　3.写出数据  getBytes()  字符串—&gt;字节数组</p>
+<p>　4.关闭资源</p>
+<p>　　* 如果输出的文件不存在,则在输出执行的过程中,自动创建此文件<br>　　* 如果输出的文件存在：如果使用构造器：FileOutputStream(file)是对已存在的文件的覆盖, </p>
+<p>​                                              如果使用构造器:FileOutputStream(file,true)是在已有文件内容的基础上,继续写入内容</p>
+<p>字符流</p>
+<p>　 FileReader 和 FileWriter的使用：只能用来处理文本文件的。</p>
+<p>　FileInputStream 和  FileOutputStream:适合用来处理非文本文件：.avi , .mp3, .jpg, .doc</p>
+<p>   1.造文件</p>
+<p>   2.造流：字符的输入流、字符的输出流</p>
+<p>   3.读取数据并写出</p>
+<p>   4.关闭资源</p>
+<p>缓冲流的使用。</p>
+<p>　1.缓冲流是处理流的一种</p>
+<p>　2.作用：提高数据的读写效率</p>
+<p>　3.类： 处理非文本文件：</p>
+<p>　　　BufferedInputStream</p>
+<p>　　　BufferedOutputStream</p>
+<p>　　　　处理文本文件：</p>
+<p>　　　BufferedReader</p>
+<p>　　　BufferedWriter  —&gt;readLine 读取一行</p>
+<p>　　　　　　　　　　　—&gt;newLine 开始新的一行</p>
+<p>理流之二：转换流</p>
+<p>　1.转化流的作用：能够实现字节流与字符流之间的转换</p>
+<p>　2.涉及到的流：</p>
+<p>　　　InputStreamReader:实现字节的输入流转换为字符的输入流</p>
+<p>　　　OutputStreamWriter:实现字符的输出流转换为字节的输出流</p>
+<p>　　编码的过程：字符串、字符数组—&gt;字节数组</p>
+<p>　　解码的过程：字节数组—-&gt;字符串、字符数组</p>
+<p> 3.常见的编码集：</p>
+<p>　ASCII：美国标准信息交换码，用一个字节的7位可以表示。</p>
+<p>　ISO8859-1：拉丁码表。欧洲码表.  用一个字节的8位表示。</p>
+<p>　GB2312：中国的中文编码表。</p>
+<p>　GBK：中国的中文编码表升级，融合了更多的中文文字符号。</p>
+<p>　Unicode：国际标准码，融合了多种文字。 所有文字都用两个字节来表示,Java语言使用的就是unicode</p>
+<p>　UTF-8：最多用三个字节来表示一个字符</p>
+<p>处理流之三：标准的输入、输出流 </p>
+<p>　System.in:标准的输入流，默认从键盘输入 </p>
+<p>　<em>System.out:标准的输出流，默认从显示屏输出</em> </p>
+<p>　 System.setIn():重新指定输入的位置 </p>
+<p>　System.setOut():重新指定输出的位置</p>
+<p>处理流之四：打印流 PrintStream 和 PrintWriter</p>
+<p>处理流之五：数据流 DataInputStream 和 DataOutpuStream</p>
+<p>处理流之六：对象流</p>
+<p>　1.作用：用于存储和读取基本数据类型数据或对象的处理流。它的强大之处就是可以把Java中的对象写入到数据源中， 也能把对象从数据源中还原回来。</p>
+<p>　2.涉及到的流：ObjectInputStream 和 ObjectOutputStream</p>
+<p>　3.对象序列化机制：允许把内存中的Java对象转换成平台无关的二进制流，从而允许把这种二进制流持久地保存在磁盘上，或通过网络将这种二进制流传输到另一个网络节点。当其它程序获取了这种二进制流，就可以恢复成原来的Java对象.</p>
+<p>提供一个自定义类，实现序列化机制。</p>
+<p>　要求：1.自定义类实现Serializable接口</p>
+<p>　　　　2.需要给当前的类声明全局的常量：serialVersionUID</p>
+<p>　　　　3.要求类的属性也是可序列化的。 (默认情况下：String、基本数据类型都是可序列化的)</p>
+<p>　　　　注意：不能序列化static和transient修饰的成员变量</p>
+<p>RandomAccessFile的使用：随机存取文件流</p>
+<p>　1.RandomAccessFile在java.io包下声明，直接继承于Object类</p>
+<p>　2.既可以作为输入流，又可以作为输出流。</p>
+<p>　3.如果输出到的文件不存在，则会在输出的过程中，自动创建此文件 。 如果输出到的文件存在，</p>
+<p>　　则不是对文件的覆盖，而是对文件内容的覆盖。（默认从头覆盖）</p>
+<p>　4.实现数据的“插入” </p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/java%E5%9F%BA%E7%A1%80/" rel="tag"># java基础</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/02/11/1/12/day23/" rel="prev" title="day23">
+      <i class="fa fa-chevron-left"></i> day23
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/02/11/1/12/day20/" rel="next" title="day20">
+      day20 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="顾思君"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">顾思君</p>
+  <div class="site-description" itemprop="description">直到这一刻微笑着说话为止，我至少留下了一公升眼泪</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">38</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/gusijun" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;gusijun" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://blog.csdn.net/nightmare_dimple" title="CSDN → https:&#x2F;&#x2F;blog.csdn.net&#x2F;nightmare_dimple" rel="noopener" target="_blank"><i class="fa fa-fw fa-crosshairs"></i>CSDN</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-fw fa-rss"></i>RSS</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">古俊</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="站点总字数">72k</span>
+</div>
+
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"log":false});</script></body>
+</html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>

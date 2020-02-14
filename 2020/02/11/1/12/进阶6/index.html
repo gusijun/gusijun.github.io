@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Pisces","version":"7.7.1","exturl":false,"sidebar":{"position":"left","display":"post","offset":12,"b2t":true,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="1.异常是什么？ 　第一，异常模拟的是现实世界中的不正常“事件” 　第二，java中采用“类”去模拟异常 　第三，类是可以创建对象的 　　NullPointerExeption e &#x3D; 0x1234; 　　e是引用类型,e中保存的内存地址指向堆中的“对象” 　　这个对象一定是NullPointerException类型 　　这个对象就表示真实存在的异常事件 　　NullPointerExcepti">
+<meta property="og:type" content="article">
+<meta property="og:title" content="进阶6">
+<meta property="og:url" content="http://yoursite.com/2020/02/11/1/12/%E8%BF%9B%E9%98%B66/index.html">
+<meta property="og:site_name" content="思君の博客">
+<meta property="og:description" content="1.异常是什么？ 　第一，异常模拟的是现实世界中的不正常“事件” 　第二，java中采用“类”去模拟异常 　第三，类是可以创建对象的 　　NullPointerExeption e &#x3D; 0x1234; 　　e是引用类型,e中保存的内存地址指向堆中的“对象” 　　这个对象一定是NullPointerException类型 　　这个对象就表示真实存在的异常事件 　　NullPointerExcepti">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-02-11T12:12:57.000Z">
+<meta property="article:modified_time" content="2020-02-12T07:34:05.303Z">
+<meta property="article:author" content="顾思君">
+<meta property="article:tag" content="java进阶">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/2020/02/11/1/12/%E8%BF%9B%E9%98%B66/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>进阶6 | 思君の博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="思君の博客" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">思君の博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">记录生活中的点点滴滴</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">6</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类<span class="badge">4</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">38</span></a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/11/1/12/%E8%BF%9B%E9%98%B66/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="顾思君">
+      <meta itemprop="description" content="直到这一刻微笑着说话为止，我至少留下了一公升眼泪">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="思君の博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          进阶6
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-02-11 20:12:57" itemprop="dateCreated datePublished" datetime="2020-02-11T20:12:57+08:00">2020-02-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-12 15:34:05" itemprop="dateModified" datetime="2020-02-12T15:34:05+08:00">2020-02-12</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>4k</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>1.异常是什么？</p>
+<p>　第一，异常模拟的是现实世界中的不正常“事件”</p>
+<p>　第二，java中采用“类”去模拟异常</p>
+<p>　第三，类是可以创建对象的</p>
+<p>　　NullPointerExeption e = 0x1234;</p>
+<p>　　e是引用类型,e中保存的内存地址指向堆中的“对象”</p>
+<p>　　这个对象一定是NullPointerException类型</p>
+<p>　　这个对象就表示真实存在的异常事件</p>
+<p>　　NullPointerException是一类异常</p>
+<p>​    “抢劫”就是一类异常<br>​    “张三被抢劫”就是一个异常事件</p>
+<p>2.异常机制的作用？</p>
+<p>　java语言为我们提供一种完善的异常处理机制，</p>
+<p>　作用是：程序发生异常事件之后，为我们输出详细的信息</p>
+<p>　程序员通过这个信息，可以对程序进行一些处理，使程序</p>
+<p>　更加健壮。</p>
+<p>本质：程序执行过程中发生了算术异常这个事件，JVM为我们创建了ArithmeticException类型的对象</p>
+<p>　　　并且这个对象中包含了异常的详细信息，并且JVM将这个对象中的信息输出到控制台。</p>
+<p>所有Exception的直接子类都是编译型异常（发生的概率比较高）</p>
+<p>​     所有编译时异常，要求程序员在编写程序阶段，必须对它进行处理，如果不处理的话</p>
+<p>　 编译不通过。处理异常有两种方式，捕捉和声明抛出。捕捉：try…catch…,声明抛出</p>
+<p>　 就是在方法声明的位置上使用throws关键字抛出异常。</p>
+<p>所有RuntimeException的子类都是运行时异常，运行时异常程序员在编写阶段（发生的概率比较低）</p>
+<p>不需要对它进行处理</p>
+<p>处理异常有两种方式：</p>
+<p>　1.声明抛出 throws</p>
+<p>　2.捕捉  try ..catch..</p>
+<p>数组： </p>
+<ul>
+<li>数组是一种引用类型</li>
+<li>数组是一种简单的数据结构，线性结构</li>
+<li>数组是一个容器，可以用来存储其他元素</li>
+<li>数组可以存储任意类型数据结构的元素</li>
+<li>数组分为:一维数组，二维数组,三维数组，多维数组</li>
+<li>数组中存储的元素类型是统一的</li>
+<li>数组长度不可变，数组一旦创建长度不可变的，固定的</li>
+</ul>
+<p>数组拿首元素的内存地址作为数组对象的内存地址<br>数组中存储元素的类型是统一的，每一个元素在内存中所占的空间大小是相同的，<br>知道数组的首元素内存地址，要查找的元素只要知道下标就可以快速的计算出偏移量<br>通过首元素内存地址+偏移量，快速计算出要查找元素的内存地址，通过内存地址快速<br>定位该元素，所以数组查找元素的效率较高<br>随机的对数组进行增删元素，当增加元素的时候，为了保证数组中元素在空间存储上是有序的，<br>所以被添加元素位置后面的所有元素都要向后移动。删除元素也是，后面所有的元素要向前移动<br>所以数组的增删元素的效率很低</p>
+<p>初始化一维数组</p>
+<p>　1.静态初始化</p>
+<p>　2.动态初始化</p>
+<p>　　动态初始化一维数组，会先在堆内存中分配这个数组，并且数组中每一个元素都采用默认值</p>
+<p>关于main方法中的参数俩表String[] args</p>
+<p>　1.String[] args是专门用来接收命令行参数的</p>
+<p>　2.列如：java ArrayTest abc def aaa</p>
+<p>　 JVM在调用ArrayTest 的main方法之前先将”abc def aaa”这个字符串以空格的方式分割，然后存储在</p>
+<p>　String数组中</p>
+<p>关于数组的拷贝</p>
+<p>　System.arraycopy</p>
+<p>二维数组的特点：</p>
+<p>　1.二维数组是一个特殊的一维数组</p>
+<p>　2.特殊的一维数组，特殊在一维数组的每一个元素都是“一维数组”</p>
+<p>二分法查找：</p>
+<p>　1.建立在已经排序的基础上的</p>
+<p>　　数组中没有重复元素</p>
+<p>java.lang.String</p>
+<p>　1.字符串一旦创建不可再改变。“abc”字符串一旦创建,不可变成“abcd”</p>
+<p>　2.提升字符串的访问效率，在程序中使用了“缓存”技术，所以在java中所有使用双引号括起来的字符串都会在”字符串常量池”中创建一份</p>
+<p>　　字符串常量池在方法区中</p>
+<p>　3.在程序执行过程中，如果程序用到某个字符串，例如“abc”，那抹程序会在字符串常量池中搜索字符串，如果没有找到则在字符串常量池中新建一个“abc”字符串，如果找到就直接拿过来用 [字符串常量池是个缓冲区，为了提高字符串的访问效率]</p>
+<p>使用String需要注意的问题：尽量不要做字符串频繁拼接的操作<br>因为字符串一旦创建不可改变，只要频繁拼接，就会在字符串常<br>量池中创建大量的字符串对象，给垃圾回收带来问题.</p>
+<p>关于字符串常用方法</p>
+<ul>
+<li>char charAt(int index)</li>
+<li>boolean endsWith(String endStr)</li>
+<li>boolean equalsIgnoreCase(String anotherString)  判断字符串是否相等，忽略大小写</li>
+<li>getBytes</li>
+<li>indexOf / indexOf(String str,int fromIndex)</li>
+<li>lastIndexOf(String str) / lastIndexOf(Sting fromIndex)  反向搜索</li>
+<li>length</li>
+<li>String replaceAll(String s1,String s2) </li>
+<li>split</li>
+<li>boolean startsWith(String s)</li>
+<li>String substring(int begin) / String substring(int beginIndex,int endIndex)</li>
+<li>char[] toCharArray</li>
+<li>toUpperCase</li>
+<li>toLowerCase</li>
+<li>trim</li>
+<li>String valueOf(Object obj)</li>
+</ul>
+<p>正则表达式</p>
+<p>　1.正则表达式是一门独立的学科</p>
+<p>　2.正则表达式是一种字符模型，专门做字符串格式匹配的</p>
+<p>　3.正则表达式是通用的</p>
+<p>java.lang.StringBuffer<br>java.lang.StringBuilder</p>
+<p>　1.StringBuffer和StringBuilder是什么？</p>
+<p>　　是一个字符串缓冲区</p>
+<p>　2.工作原理<br>　　预先在内存中申请一块空间，以容乃字符序列</p>
+<p>　　如果预留的空间不够用，则进行自动扩容，以容纳更</p>
+<p>　　多字符序列。<br>   3.StringBuffer，StringBuilder和String的最大区别？</p>
+<p>　　String是不可变字符序列，存储字符串常量池中</p>
+<p>　　StringBuffer底层是一个char数组,但是该char数组是可变的</p>
+<p>　　并且可以自动扩容<br>   4.StringBuffer和StringBuilder的默认初始化容量是16<br>   5.如何优化StringBuffer和StringBuilder</p>
+<p>　　最好在创建StringBuffer之前，预测StringBuffer的存储字符数量</p>
+<p>　　然后再创建StringBuffer的时候采用指定容量的方式创建StringBuffer</p>
+<p>　　为了减少底层数组的拷贝，提交效率<br>   6.StringBuffer线程安全</p>
+<p>　　StringBuilder线程不安全</p>
+<p>Java中八种数据类型对应的包装类型：<br>    基本数据类型                  包装类<br>    byte                          java.lang.Byte<br>    short                         java.lang.Short<br>    int                           Java.lang.Integer<br>    long                          java.lang.Long</p>
+<p>​    float                         java.lang.Float<br>​    double                        java.lang.Double</p>
+<p>​    boolean                       java.lang.Boolean<br>​    char                          java.lang.Charactor</p>
+<p>Integer中的常用方法：<br>    int –&gt; Integer  基本数据类型–&gt;引用数据类型</p>
+<p>　　Integer i1 = new Integer(10);<br>    Integer – &gt; int  引用数据类型 –&gt; 基本数据类型</p>
+<p>　　 int i2 = i1.intValue();<br>    String –&gt; int 字符串转数字</p>
+<p>　　 int i3 = Integer.parseInt(“25”);</p>
+<p>toBinaryString     十进制转成2进制<br>toHexString        十进制转成16进制<br>toOctalString      十进制转成8进制<br><strong>int –&gt; Integer</strong><br>Integer i4 = Integer.valueOf(10);<br><strong>String –&gt; Integer</strong><br>Integer i5 = Integer.valueOf(“10”);</p>
+<p>Integet<br>int<br>String<br>三种类型互相转换<br>1.int–&gt;Integer</p>
+<p>　Integer i1 =  Integer.valueOf(10);<br>2.Integer–&gt;int</p>
+<p>　int i2 = i1.intValue();<br>3.String–&gt;Integr</p>
+<p>　Integer i3 = Integer.valueOf(“10”);<br>4.Integer –&gt; String</p>
+<p>　String s1 = i3.toString();<br>5.string –&gt; int</p>
+<p>　int i4 = Integer.parseInt(“123”);<br>6.int –&gt; String</p>
+<p>　String s5 = 10 + “”;</p>
+<p>JDK5.0新特性：</p>
+<p>　以下的特性适合JDK1.5版本之后的。包括1.5</p>
+<p>　JDK1.4，包括1.4在内之前的所有版本不能使用以下特性</p>
+<p>　自动装箱（auto_boxing）和自动拆箱（auto_unboxing）</p>
+<p>深入自动装箱和自动拆箱</p>
+<p>　1.自动装箱和自动拆箱是程序编译阶段的一个概念</p>
+<p>　　和程序运行无关</p>
+<p>　2.自动装箱和自动拆箱主要目的是为方便程序员编码</p>
+<blockquote>
+<p>Integer重写了equals方法</p>
+<p>如果数据是在-128 <del>127之间，java中引入了一个“整型常量池”，在方法区中<br>该整型常量池只容乃-127</del>128的数据</p>
+</blockquote>
+<p>获取自1970/1/1 00/00/00/000到当前的毫秒数(时间戳)<br>System.currentTimeMillis();<br>获取系统当前时间对应的毫秒数<br>Date类<br>格式化日期<br>java.util.Date –&gt; String</p>
+<p>　sdf.format()<br>解析日期<br>String –&gt; java.util.Date</p>
+<p>　sdf.parse()<br>解析格式应该和字符串相同</p>
+<p>日期格式<br>  y   年<br>  M   月<br>  d   日<br>  H   小时<br>  m   分<br>  s   秒<br>  S   毫秒</p>
+<p>Date t1 = new Date(1000);</p>
+<p>　1000是自1970-1-1 00:00:00 000的毫秒数</p>
+<p>java.math.BigDecimal</p>
+<p>　该类型精确度极高，适合做财务软件</p>
+<p>　财务软件double类型精确度太低</p>
+<p>生成随机数</p>
+<p>　创建随机数生成器</p>
+<p>　Random random = new Random();</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/java%E8%BF%9B%E9%98%B6/" rel="tag"># java进阶</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/02/11/1/12/%E8%BF%9B%E9%98%B69/" rel="prev" title="进阶9">
+      <i class="fa fa-chevron-left"></i> 进阶9
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/02/11/1/12/%E8%BF%9B%E9%98%B65/" rel="next" title="进阶5">
+      进阶5 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="顾思君"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">顾思君</p>
+  <div class="site-description" itemprop="description">直到这一刻微笑着说话为止，我至少留下了一公升眼泪</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">38</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/gusijun" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;gusijun" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://blog.csdn.net/nightmare_dimple" title="CSDN → https:&#x2F;&#x2F;blog.csdn.net&#x2F;nightmare_dimple" rel="noopener" target="_blank"><i class="fa fa-fw fa-crosshairs"></i>CSDN</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-fw fa-rss"></i>RSS</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">古俊</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="站点总字数">72k</span>
+</div>
+
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"log":false});</script></body>
+</html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>

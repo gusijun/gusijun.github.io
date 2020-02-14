@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Pisces","version":"7.7.1","exturl":false,"sidebar":{"position":"left","display":"post","offset":12,"b2t":true,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="一、继承Thread的方式 　　1.提供一个继承于Thread类的子类 　　2.重写Thread类的run():将创建的线程要执行的操作，声明在run()中。 　　3.实例化Thread子类 　　4.调用子类对象的start()  Thread类的常用方法的测试  　　1.run():Thread的子类一定要重写的方法。将此分线程要执行的操作，声明在run()中 　 　2.start():要想启动">
+<meta property="og:type" content="article">
+<meta property="og:title" content="day22">
+<meta property="og:url" content="http://yoursite.com/2020/02/11/1/12/day22/index.html">
+<meta property="og:site_name" content="思君の博客">
+<meta property="og:description" content="一、继承Thread的方式 　　1.提供一个继承于Thread类的子类 　　2.重写Thread类的run():将创建的线程要执行的操作，声明在run()中。 　　3.实例化Thread子类 　　4.调用子类对象的start()  Thread类的常用方法的测试  　　1.run():Thread的子类一定要重写的方法。将此分线程要执行的操作，声明在run()中 　 　2.start():要想启动">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-02-11T12:12:57.000Z">
+<meta property="article:modified_time" content="2020-02-12T05:16:00.568Z">
+<meta property="article:author" content="顾思君">
+<meta property="article:tag" content="java基础">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/2020/02/11/1/12/day22/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>day22 | 思君の博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="思君の博客" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">思君の博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">记录生活中的点点滴滴</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">6</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类<span class="badge">4</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">38</span></a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/11/1/12/day22/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="顾思君">
+      <meta itemprop="description" content="直到这一刻微笑着说话为止，我至少留下了一公升眼泪">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="思君の博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          day22
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-02-11 20:12:57" itemprop="dateCreated datePublished" datetime="2020-02-11T20:12:57+08:00">2020-02-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-12 13:16:00" itemprop="dateModified" datetime="2020-02-12T13:16:00+08:00">2020-02-12</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>5.8k</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>一、继承Thread的方式</p>
+<p>　　1.提供一个继承于Thread类的子类</p>
+<p>　　2.重写Thread类的run():将创建的线程要执行的操作，声明在run()中。</p>
+<p>　　3.实例化Thread子类</p>
+<p>　　4.调用子类对象的start() </p>
+<p>Thread类的常用方法的测试</p>
+<p> 　　1.run():Thread的子类一定要重写的方法。将此分线程要执行的操作，声明在run()中</p>
+<p>　 　2.start():要想启动一个分线程，就需要调用start():①启动线程②调用线程的run()</p>
+<p>　 　3.currentThread():静态方法，获取当前的线程</p>
+<p>　 　4.getName():获取当前线程的名字</p>
+<p>　 　5.setName(String name)：设置当前线程的名字</p>
+<p>　 　6.yield():当前线程调用此方法，释放CPU的执行权</p>
+<p>　 　7.join():在线程a中调用线程b的join()方法:只用当线程b执行结束以后，线程a结束阻塞状态，继续执行。</p>
+<p>　　 8.sleep(long millitimes):让当前的线程睡眠millitimes毫秒</p>
+<p>　 　9.isAlive():判断当前线程是否存活 </p>
+<p>　　10.线程的优先级：</p>
+<p>　　　　 MAX_PRIORITY：10 </p>
+<p>　　　　NORM_PRIORITY：5 —默认优先级</p>
+<p>　　　　MIN_PRIORITY：1</p>
+<p>​    　 设置优先级：setPriority(int priority); </p>
+<p>​    　 获取优先级：getPriority()；</p>
+<blockquote>
+<p>设置优先级以后，对高优先级，使用优先调度的抢占式策略，抢占低优先级的执行。但是并不意味着高优    先级的线程一定先于低优先级的线程执行，而是从概率上来讲，概率更大而已。</p>
+</blockquote>
+<p> 线程通信：wait() / notify() / notifyAll()  —-&gt;java.lang.Object类中定义的方法</p>
+<h4 id="一：继承Thread的方式"><a href="#一：继承Thread的方式" class="headerlink" title="一：继承Thread的方式"></a>一：继承Thread的方式</h4><p>　　　1.提供一个继承Thread类的子类 </p>
+<p>　　　2.重写Thread类run():将创建的线程要执行的操作,声明在run()中 </p>
+<p>　　　3.实例化Thread子类</p>
+<p>　　　4.调用子类对象的start()方法</p>
+<h4 id="创建多线程的方式二"><a href="#创建多线程的方式二" class="headerlink" title="创建多线程的方式二:"></a>创建多线程的方式二:</h4><p>　　　1.创建一个实现Runnable接口的类</p>
+<p>　　　2.实现Runnable的run()</p>
+<p>　　　3.创建当前实现类的对象</p>
+<p>　　　4.将此对象作为参数传递到Thread类的构造器中,创建Thread类的对象</p>
+<p>　　　5.通过Thread类的对象调用其start()</p>
+<p>对比继承Thread类和实现Runnable接口的方式</p>
+<p>　　　1.联系:public class Thread implements Runnable</p>
+<p>　　　2.相同点:启动线程,使用的是同一个start()方法</p>
+<p>　　　3.对比:实现Runnable接口要好一些. </p>
+<p>　原因：①不影响类的继承,因为类是单继承的   </p>
+<p>　　　　②针对于有共享数据的操作,更适合使用Runnable的方式 ,换句话说,实现Runnable接口的方式,实现了代                    码和数据的分离</p>
+<p>　　　4.面试题:创建多线程有几种方法?     继承Thread类,实现Runnable接口,实现Callable接口,使用线程池</p>
+<p>模仿车站买票程序。开启3个窗口卖票。总票数为100张。—–使用实现的方式</p>
+<p>　　1.问题：出现了重票和错票</p>
+<p>　　2.问题出现的原因：一个窗口在没有售完票的情况下，其他的窗口参与进来，操作ticket，导致ticket输出的错            误。</p>
+<p>　　3.解决的方案：当某一个窗口完全操作完ticket以后，其他窗口应该才被允许进来，继续操作ticket。</p>
+<p>　　4.java如何实现的？同步机制：①同步代码块    ②同步方法 </p>
+<p>　　　4.1 同步代码块：</p>
+<p>​                 synchronized(同步监视器){</p>
+<p>​                       //需要被同步的代码</p>
+<p>​               }</p>
+<p>　　　说明：需要被同步的代码：即为操作共享数据的代码</p>
+<p>　　　　　　共享数据：多个线程共同操作的数据。比如：ticket</p>
+<p>　　　　　　同步监视器：俗称：锁。 可以由任何一个类的对象充当。 要求：保证多个线程共用同一把锁！</p>
+<p>　　　4.2 同步方法：将操作共享数据的方法，声明为同步的。此方法即为同步方法。</p>
+<p>　　　　　使用同步方法解决实现方式的线程安全问题。</p>
+<p>　　　　　1.默认的同步方法（非静态的）的锁是：当前对象，也就是this.</p>
+<p>　　　　　2.默认的同步方法（静态的）的锁是：当前类本身.</p>
+<p>　　　　　　使用同步方法解决继承方式的线程安全问题：</p>
+<p>　　　　　注意：继承的方式中，要慎用同步方法。</p>
+<p>​        5.好处：线程的同步机制，解决了线程的安全问题。</p>
+<p>​        6.劣势：在操作共享数据过程中，是单线程的。</p>
+<p>模仿车站买票程序。开启3个窗口卖票。总票数为100张     —–使用实现的方式</p>
+<p>　　解决线程安全问题的方式三：ReentrantLock</p>
+<p>　　存在线程的安全问题，使用Lock的方式解决线程安全问题。</p>
+<p>面试题：同步的方式和Lock的方式，解决线程安全方面的异同？</p>
+<p>　　同：解决了线程安全问题</p>
+<p>　　异：同步的方式：同步监视器在线程执行完操作共享数据的代码以后，自动释放</p>
+<blockquote>
+<p> Lock的方式：需要显式的调用unlock()方法之后，才能保证其他线程操作共享数据。 </p>
+</blockquote>
+<p>死锁：不同的线程分别占用对方需要的同步资源不放弃，都在等待对方放弃自己需要的同步资源，就形成了线程的死锁，是我们开发中需要规避的！</p>
+<p>线程的通信：</p>
+<ul>
+<li><p>wait():一个线程在执行过程中，一旦调用此方法，则此线程进入阻塞状态，等待其他线程来唤醒自己。    </p>
+</li>
+<li><p>notify():一个线程在执行过程中，一旦调用此方法，则会唤醒被wait()的一个线程。高优先级的要优先被唤醒。</p>
+</li>
+<li><p>notifyAll():一个线程在执行过程中，一旦调用此方法，则会唤醒所有被wait()的线程。</p>
+</li>
+</ul>
+<p>　　　例题：使用两个线程打印 1-100. 线程1, 线程2 交替打印</p>
+<p>注意点：1.此三个方法必须使用在同步中。</p>
+<p>　　　　2.此三个方法的调用者是同步监视器！否则，如果三个方法的调用者不是同步监视器，报异常。</p>
+<p>　　　　3.此三个方法定义在Object类</p>
+<p>面试题：sleep() 和  wait() 的异同？</p>
+<p>　　1.方法声明在哪？ Thread:sleep()   Object:wait()</p>
+<p>　　2.共同点：使得当前线程进入阻塞状态</p>
+<p>　　3.使用的范围要求：sleep()使用没有情境的要求；wait()必须使用在同步代码块或同步方法中</p>
+<p>　　4.都使用在同步当中的话：wait()需要唤醒：notify()/notifyAll();  sleep():不会释放锁；wait()会释放锁 </p>
+<p> String:字符串</p>
+<p>　　　1.字符串声明的数据，会存储在字符串常量池中。第一次声明时，需要创建相应的字符串。之后，如果声明的变量，其值与之前存在的字符串内容相同，则直接引用现成的字符串。</p>
+<p>　　　2.面试题：String s3 = new String(“javaEE”);创建的对象，在内存中生成了几个对象？</p>
+<p><strong>String:代表着不可变的字符序列。</strong></p>
+<p>　　　1.String类的声明public final class String implements java.io.Serializable, Comparable<String>, 　　　　CharSequence</String></p>
+<p>　　　　　①String声明为final，不可被继承。</p>
+<p>　　　　　②实现Serializable：表明String可序列化。浏览器/客户端&lt;—&gt;服务器端     进程1&lt;—-&gt;进程2    　　　　　　“{name=Tom,age=12}”    JSON:本质就是String</p>
+<p>　　　　　③String重写了hashCode()/equals():常常将Map的key声明为String型。</p>
+<p>　　　　　④实现Comparable接口：String可以比较大小。</p>
+<p>　　　　　⑤实现CharSequence接口：String的底层声明了char[] value数组。</p>
+<p>　　　2.如何理解String的不可变性：</p>
+<p>　　　　　①向现有的字符串后添加新的字符串，必须声明新的字符串空间</p>
+<p>　　　　　②将现有的字符串替换为新的字符串，必须声明新的字符串空</p>
+<p>　　　　　③只替换现有字符串中的指定某个字符，也必须声明新的字符串空间</p>
+<p>String类与其它结构的转换：</p>
+<p>　　　1.String 与包装类、基本数据类型变量间的转换    </p>
+<p>　　　　String–&gt;包装类、基本数据类型:调用包装类Xxx的parseXxx(String s)方法</p>
+<p>　　　　包装类、基本数据类型 –&gt;String:调用String的valueOf(xxx xxx); </p>
+<p>　　　2.String 与 字节数组间的转换   </p>
+<p>　　　　String –&gt; 字节数组:调用String类的getBytes()</p>
+<p>　　　　字节数组–&gt;String:new String(byte[] buffer,startIndex,length)</p>
+<p>　　　3.String 与 字符数组间的转换</p>
+<p>　　　　String –&gt; 字符数组：调用String类的toCharArray()</p>
+<p>　　　　字符数组 –&gt;String:new String(char[] cbuf,startIndex,length)    </p>
+<p>​         </p>
+<ul>
+<li><p>public String substring(int startpoint):返回当前字符串中从startPoint位置开始，到末尾的子字符串。  </p>
+</li>
+<li><p>public String substring(int start,int end):返回当前字符串中从startPoint位置开始，到end结束的左闭右开区间的子字符串。</p>
+</li>
+<li><p>pubic String replace(char oldChar,char newChar):将字符串中指定的所有oldChar替换为newChar.</p>
+</li>
+<li><p>public String replaceAll(String old,String new):将字符串中指定的所有old替换为new.</p>
+</li>
+<li><p>public String trim():去除字符串首尾的空格</p>
+</li>
+<li><p>public String concat(String str):连接两个字符串</p>
+</li>
+<li><p>public boolean contains(CharSequence s)：判断当前字符串中是否包含s.</p>
+</li>
+<li><p>public String[] split(String regex)根据给定正则表达式的匹配拆分此字符串。</p>
+</li>
+</ul>
+<ul>
+<li><p>public int length():返回当前字符串的长度</p>
+</li>
+<li><p>public char charAt(int index)：获取指定索引位置的字符</p>
+</li>
+<li><p>public boolean equals(Object anObject)：比较两个字符串内容是否相等。</p>
+</li>
+<li><p>public int compareTo(String anotherString):比较两个字符串的大小</p>
+</li>
+<li><p>public int indexOf(String s):返回s在当前字符串中首次出现的位置。如果不存在，返回-1.</p>
+</li>
+<li><p>public int indexOf(String s ,int startpoint):</p>
+</li>
+<li><p>public int lastIndexOf(String s):返回s在当前字符串中末次出现的位置。如果不存在，返回-1.</p>
+</li>
+<li><p>public int lastIndexOf(String s ,int startpoint):</p>
+</li>
+<li><p>public boolean startsWith(String prefix)：判断当前的字符串是否以指定的prefix字符串开始的</p>
+</li>
+<li><p>public boolean endsWith(String suffix)：判断当前的字符串是否以指定的suffix字符串结束的</p>
+</li>
+<li><p>public boolean regionMatches(int firstStart,String other,int otherStart ,int length)   ？</p>
+</li>
+</ul>
+<p>面试题：</p>
+<p>　　String:不可变的字符序列；底层使用char[]存储</p>
+<p>　　StringBuffer:可变的字符序列；线程安全的，效率低；底层使用char[]存储  </p>
+<p>　　StringBuilder:可变的字符序列；线程不安全的，效率高，(jdk 5.0新增)；底层使用char[]存储</p>
+<p>类比：String —&gt;数组； StringBuffer —&gt;Vector   StringBuilder —&gt;ArrayList</p>
+<p>　　　ArrayList list = new ArrayList();</p>
+<p>　　　list.add(123);//new Object[10];</p>
+<p>　　　….</p>
+<p>　　　扩容:1.5倍的方式扩容。</p>
+<p>　　　这里：</p>
+<p>　　　　String str = new String();//new char[0];</p>
+<p>　　　　str.length();</p>
+<p>　　　　String str1 = new String(“abc”);//new char[]{‘a’,’b’,’c’};</p>
+<p>　　　对比：</p>
+<p>　　　　StringBuffer s1 = new StringBuffer();//char[] value = new char[16]</p>
+<p>　　　　StringBuffer s2 = new StringBuffer(10);//char[] value = new char[10]</p>
+<p>　　　　s1.append(“abc”);//value[0] = ‘a’,value[1] = ‘b’,value[2] = ‘c’;</p>
+<p>　　　　　… </p>
+<p>　　　　　　  每次添加时，都需要判断底层的char[]是否能够盛装下新要添加的字符串。</p>
+<p>　　　　　　 如果不能盛装下，需要扩容。默认扩容为原来的2倍 + 2.   </p>
+<p>　　　 启示：StringBuffer s1 = new StringBuffer(int capacity);开发中建议使用此构造器。</p>
+<p>StringBuffer中的方法：</p>
+<ul>
+<li><p>StringBuffer append(String s),</p>
+</li>
+<li><p>StringBuffer append(int n) ,</p>
+</li>
+<li><p>StringBuffer append(Object o) ,</p>
+</li>
+<li><p>StringBuffer append(char n)，</p>
+</li>
+<li><p>StringBuffer append(long n),</p>
+</li>
+<li><p>StringBuffer append(boolean n),</p>
+</li>
+<li><p>StringBuffer insert(int index, String str)</p>
+</li>
+<li><p>public StringBuffer reverse()</p>
+</li>
+<li><p>StringBuffer delete(int startIndex, int endIndex):删除当前可变字符串中从startIndex到endIndex结束的左闭右开区间的数据。</p>
+</li>
+<li><p>public char charAt(int n )</p>
+</li>
+<li><p>public void setCharAt(int n ,char ch)</p>
+</li>
+<li><p>StringBuffer replace( int startIndex ,int endIndex, String str)</p>
+</li>
+<li><p>public int indexOf(String str)</p>
+</li>
+<li><p>public String substring(int start,int end)</p>
+</li>
+<li><p>public int length()</p>
+</li>
+</ul>
+<h3 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h3><p>　　增：append(Xxx xxx)</p>
+<p>　　删：delete(int startIndex, int endIndex</p>
+<p>　　改：setCharAt(int n ,char ch) / replace( int startIndex ,int endIndex, String str)</p>
+<p>　　查：charAt(int n)</p>
+<p>　　插：insert(int index, String str)</p>
+<p>　　长度：length()</p>
+<p>　　遍历：使用for + charAt()</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/java%E5%9F%BA%E7%A1%80/" rel="tag"># java基础</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/02/11/1/12/day21/" rel="prev" title="day21">
+      <i class="fa fa-chevron-left"></i> day21
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/02/11/1/12/day3/" rel="next" title="day3">
+      day3 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#一：继承Thread的方式"><span class="nav-text">一：继承Thread的方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建多线程的方式二"><span class="nav-text">创建多线程的方式二:</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结："><span class="nav-text">总结：</span></a></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="顾思君"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">顾思君</p>
+  <div class="site-description" itemprop="description">直到这一刻微笑着说话为止，我至少留下了一公升眼泪</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">38</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/gusijun" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;gusijun" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://blog.csdn.net/nightmare_dimple" title="CSDN → https:&#x2F;&#x2F;blog.csdn.net&#x2F;nightmare_dimple" rel="noopener" target="_blank"><i class="fa fa-fw fa-crosshairs"></i>CSDN</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-fw fa-rss"></i>RSS</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">古俊</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="站点总字数">72k</span>
+</div>
+
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"log":false});</script></body>
+</html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>

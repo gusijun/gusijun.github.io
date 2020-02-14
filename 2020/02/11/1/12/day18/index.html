@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Pisces","version":"7.7.1","exturl":false,"sidebar":{"position":"left","display":"post","offset":12,"b2t":true,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="泛型的应用: 　1.JDK 5.0 新增的特性 　2.主要内容： 　　2.1 在集合中使用泛型 　　2.2 如何自定义泛型类,泛型接口,泛型方法(理解) 　　2.3 泛型在继承上的体现(掌握) 　　2.4 通配符的使用（掌握） 在集合中使用泛型的情况 在集合中使用泛型 　1.在Java的集合中,声明的接口或者类已经声明泛型 　2.我们在实例化接口时,可以指明泛型的类型 　3.不能使用基本数据类型,">
+<meta property="og:type" content="article">
+<meta property="og:title" content="day18">
+<meta property="og:url" content="http://yoursite.com/2020/02/11/1/12/day18/index.html">
+<meta property="og:site_name" content="思君の博客">
+<meta property="og:description" content="泛型的应用: 　1.JDK 5.0 新增的特性 　2.主要内容： 　　2.1 在集合中使用泛型 　　2.2 如何自定义泛型类,泛型接口,泛型方法(理解) 　　2.3 泛型在继承上的体现(掌握) 　　2.4 通配符的使用（掌握） 在集合中使用泛型的情况 在集合中使用泛型 　1.在Java的集合中,声明的接口或者类已经声明泛型 　2.我们在实例化接口时,可以指明泛型的类型 　3.不能使用基本数据类型,">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-02-11T12:12:57.000Z">
+<meta property="article:modified_time" content="2020-02-12T05:33:44.363Z">
+<meta property="article:author" content="顾思君">
+<meta property="article:tag" content="java基础">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/2020/02/11/1/12/day18/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>day18 | 思君の博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="思君の博客" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">思君の博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">记录生活中的点点滴滴</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">6</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类<span class="badge">4</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">38</span></a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/11/1/12/day18/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="顾思君">
+      <meta itemprop="description" content="直到这一刻微笑着说话为止，我至少留下了一公升眼泪">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="思君の博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          day18
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-02-11 20:12:57" itemprop="dateCreated datePublished" datetime="2020-02-11T20:12:57+08:00">2020-02-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-12 13:33:44" itemprop="dateModified" datetime="2020-02-12T13:33:44+08:00">2020-02-12</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.7k</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>泛型的应用:</p>
+<p>　1.JDK 5.0 新增的特性</p>
+<p>　2.主要内容：</p>
+<p>　　2.1 在集合中使用泛型</p>
+<p>　　2.2 如何自定义泛型类,泛型接口,泛型方法(理解)</p>
+<p>　　2.3 泛型在继承上的体现(掌握)</p>
+<p>　　2.4 通配符的使用（掌握）</p>
+<p>在集合中使用泛型的情况</p>
+<p>在集合中使用泛型</p>
+<p>　1.在Java的集合中,声明的接口或者类已经声明泛型</p>
+<p>　2.我们在实例化接口时,可以指明泛型的类型</p>
+<p>　3.不能使用基本数据类型,需要使用对应的包装类替换</p>
+<p>　4.一旦创建对象时,使用了泛型,则通过对象调用方法,属性时,如果方法或属性使用了类的泛型,   则此时泛型类型就是对象实例化时候的类型</p>
+<p>　5.如果实例化时候,不指明泛型参数,则默认是Object类型</p>
+<p>自定义泛型类:</p>
+<p>　仿照List去创建</p>
+<p>　1.在类的声明后面,指明泛型参数,参数通常使用:T E K V</p>
+<p>　2.在类的属性,方法,构造器中,可以使用类的泛型参数</p>
+<ul>
+<li>使用了类的泛型参数的方法,不能声明为static的</li>
+<li>不能在try-catch中使用泛型参数表示异常类型</li>
+</ul>
+<p>关于自定义泛型类,泛型接口,泛型方法的使用</p>
+<p>　自定义泛型类的使用:</p>
+<p>　　1.在实例化泛型类时,可以指明泛型的参数类型</p>
+<p>　　2.提供泛型类的子类时,可以指明泛型的参数类型.比如:SubOrder1类</p>
+<p>泛型在继承上的体现</p>
+<p>　　1.如果A类是B类的父类,则List<A>与List<B>是没有子父类的关系的  </B></A></p>
+<p>　　　扩展：则G<A> 和 G<B>没有子父类关系！</B></A></p>
+<p>　　2.如果A类是B类的父类,则A<G> 是 B<G>的父类</G></G></p>
+<p>通配符: ? 的使用：</p>
+<p>　　A类是B的父类,则G<A> 和 G<B> 的公共父类为G&lt;?&gt;</B></A></p>
+<p>　关于数据的读写问题</p>
+<p>　写入数据:不允许向使用通匹配符的集合中写入数据，除非可以写入null</p>
+<p>　读取数据：可以从使用了通配符的集合中读取数据。读取的数据的类型默认是Object</p>
+<p>有限制条件的通配符的使用? </p>
+<p>？  extends A:举例:List&lt;? extends A&gt; 可以作为List<B>或者List<A>的父类,其中B类是A类的子类?</A></B></p>
+<p>？   super A: 举例:List&lt;? super A&gt; 可以作为List<B>或List<A>的父类,其中B类是A类的父类</A></B></p>
+<p>File类：</p>
+<p>　 1.java.io包下定义的</p>
+<p>　 2.一个File类的对象，既可以表示一个文件(.txt,.mp3,.avi,mp4,.doc)，也可以表示一个文件目录。</p>
+<p>　 3.File类中只涉及到文件或文件目录的新建、删除、长度、修改时间、重命名等操作。没有涉及到对文件内容的修改。如果需要对文件内容进行修改的话，需要使用流。</p>
+<p>　 4.File类的对象常常作为流的构造器的参数出现。</p>
+<p>　 5.File类的对象代表着流资源读取或写入到的文件。</p>
+<p>  File类的实例化 </p>
+<p>  　 绝对路径：包含盘符在内的文件或文件目录的完整路径 </p>
+<p>  　 相对路径：相较于某一层文件路径来讲。比如：在Eclipse中的相对路径是相较于当前工程的。 </p>
+<p>   两个构造器： </p>
+<p>　　File(String pathname) </p>
+<p>　　File(String parent,String pathname)</p>
+<p>获取文件名:</p>
+<p>getName()</p>
+<p>getPath()</p>
+<p>getAbsoluteFile()</p>
+<p>getAbsolutePath()</p>
+<p>getParent()</p>
+<p>toPath()</p>
+<p>renameTo(File newName)</p>
+<p>   file1.renameTo(File file2):file1重命名为file2是否成功</p>
+<p>   如果希望返回值为true.则必须：file1对应的物理磁盘上的文件需要存在，且file2对应的物理磁盘上的文件不存在。</p>
+<p>文件检测:</p>
+<p>   exists()</p>
+<p>   canWrite()</p>
+<p>   canRead()</p>
+<p>   isFile()</p>
+<p>   isDirectory()</p>
+<p>获取文件常规信息:</p>
+<p>   lastModified()</p>
+<p>   length()</p>
+<p>  操作文件相关的：</p>
+<p>​    createNewFile()：在物理磁盘上创建指定路径的文件</p>
+<p>​    delete():删除物理磁盘上指定路径的文件</p>
+<p>  操作文件目录相关的：</p>
+<p>​    mkdir()/mkdirs():如果要创建的文件目录的上层目录存在，则二者没有区别。</p>
+<p>​    如果要创建的文件目录的上层目录不存在，mkdir()创建不成功，mkdirs()创建成功。</p>
+<p>   delete()：删除物理磁盘上指定路径的文件目录list()listFiles()</p>
+<p>list() / listFiles()</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/java%E5%9F%BA%E7%A1%80/" rel="tag"># java基础</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/02/11/1/12/day17/" rel="prev" title="day17">
+      <i class="fa fa-chevron-left"></i> day17
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/02/11/1/12/day16/" rel="next" title="day16">
+      day16 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="顾思君"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">顾思君</p>
+  <div class="site-description" itemprop="description">直到这一刻微笑着说话为止，我至少留下了一公升眼泪</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">38</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/gusijun" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;gusijun" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://blog.csdn.net/nightmare_dimple" title="CSDN → https:&#x2F;&#x2F;blog.csdn.net&#x2F;nightmare_dimple" rel="noopener" target="_blank"><i class="fa fa-fw fa-crosshairs"></i>CSDN</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-fw fa-rss"></i>RSS</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">古俊</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="站点总字数">72k</span>
+</div>
+
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"log":false});</script></body>
+</html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
