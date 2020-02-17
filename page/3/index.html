@@ -158,268 +158,6 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/11/1/12/day2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="顾思君">
-      <meta itemprop="description" content="直到这一刻微笑着说话为止，我至少留下了一公升眼泪">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="思君の博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/02/11/1/12/day2/" class="post-title-link" itemprop="url">day2</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-02-11 20:12:57" itemprop="dateCreated datePublished" datetime="2020-02-11T20:12:57+08:00">2020-02-11</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-12 15:01:06" itemprop="dateModified" datetime="2020-02-12T15:01:06+08:00">2020-02-12</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java/" itemprop="url" rel="index">
-                    <span itemprop="name">java</span>
-                  </a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>1.2k</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>赋值运算符 = </p>
-<p>支持链式赋值 a  = b = 99</p>
-<p>复合赋值运算符 (+=  , -=  , /= , *=)</p>
-<p>short a = 10;</p>
-<p>a += 2  与 a = a +2 相似，有区别的</p>
-<p>a += 2     相当于a自增,不会改变本身变量数据类型</p>
-<p>a = a +2  因为整型常量默认是int，所以a+2，自动提升数据类型为int,会报错</p>
-<p>真正开发中，如果希望变量自增1：</p>
-<p> 方式1： i = i + 1</p>
-<p> 方式2： i += 1</p>
-<p> 方式3： i++   (推荐)</p>
-<p>真正开发中，如果希望变量自增2：</p>
-<p> 方式1： i = i + 2</p>
-<p> 方式2： i += 2  (推荐)</p>
-<p>比较运算符： ==    !=    &gt;  &lt;   &gt;=  &lt;=  instanceof</p>
-<p>比较运算符的结果都是布尔类型（boolean）</p>
-<p>逻辑运算符：运算符操作的是boolean型变量，运算结果也是boolean类型</p>
-<p>&amp;逻辑与运算符     &amp;&amp; 短路与</p>
-<p>|逻辑或运算符      ||   短路或    </p>
-<p>！逻辑非运算符     ^    逻辑异或</p>
-<p>&amp;和&amp;&amp;运算结果相同，如果符号左边是true,两个运算符都要执行右边的运算</p>
-<p>​                                       如果符号左边是false,&amp;仍然要执行右边的，&amp;&amp;不在执                            </p>
-<p>​                                        行符号右边的</p>
-<p>|和||运算结果相同，  如果符号左边是true,   |仍然要执行右边的，||不在执                            </p>
-<p>​                                        行符号右边的</p>
-<p>​                                        如果符号左边是false,两个运算符都要执行右边的运算</p>
-<p>​                                         </p>
-<p>位运算符：操作的都是数值型变量</p>
-<p>&lt;&lt;   &gt;&gt;   &gt;&gt;&gt;(无符号右移)  &amp;  |  ^  ~</p>
-<p>&lt;&lt; 规律：在一定范围内，每左移一位，相当于数值*2，过犹不及(截断是让数值变的更小)</p>
-<p>。&gt;&gt; 规律：在一定范围内，每右移一位，相当于数值/2，过犹不及。</p>
-<p>。&gt;&gt;&gt;:右移以后最高位拿0补</p>
-<p>三元运算符：（条件表达式）？表达式1：表达式2</p>
-<p>​                           表达式1和表达式2的数据类型要一致（满足自动类型提升也可以）</p>
-<p>三元运算符一定可以转换为if else,反之不成立</p>
-<p>顺序结构：</p>
-<p>前向引用</p>
-<p>分支结构：</p>
-<p>if(条件表达式){</p>
-<p>​    执行代码块</p>
-<p>}</p>
-<p>if(条件表达式){</p>
-<p>​    执行代码块1</p>
-<p>}</p>
-<p>else{</p>
-<p>​     执行代码块2</p>
-<p>}</p>
-<p>if(条件表达式1){</p>
-<p>​    执行代码块1</p>
-<p>}</p>
-<p>else if(条件表达式2){</p>
-<p>​     执行代码块2</p>
-<p>}</p>
-<p>else{</p>
-<p>​         执行代码快n</p>
-<p>}</p>
-<p>1.else：结构可选的</p>
-<p>2.如果两个条件表达式没有公共的交集，此时两个else if结构，可以交换结构</p>
-<p>   .如果两个条件表达式有公共的交集，要求范围小的条件表达式放在条件表达式的上面，</p>
-<p>​    此时两个条件表达式才有可能都被执行到</p>
-<blockquote>
-<p> 从键盘获取数据</p>
-</blockquote>
-<ul>
-<li><p>导包</p>
-<p>import java.util.Scanner;</p>
-</li>
-<li><p>实例化Scanner</p>
-</li>
-<li><p>调用相关方法，获取不同类型的变量</p>
-<p>next 字符串</p>
-<p>nextInt 整数</p>
-<p>nextDouble  double</p>
-<p>nextFloat       float  </p>
-<p>nextBoolean  布尔类型</p>
-<p>Scanner类中没有从键盘获取char的方法</p>
-<p>用户输入的变量类型与调用的方法类型需要一致，否则，报inputMismatchException</p>
-</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/11/1/12/day24/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="顾思君">
-      <meta itemprop="description" content="直到这一刻微笑着说话为止，我至少留下了一公升眼泪">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="思君の博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/02/11/1/12/day24/" class="post-title-link" itemprop="url">day24</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-02-11 20:12:57" itemprop="dateCreated datePublished" datetime="2020-02-11T20:12:57+08:00">2020-02-11</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-12 13:16:58" itemprop="dateModified" datetime="2020-02-12T13:16:58+08:00">2020-02-12</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java/" itemprop="url" rel="index">
-                    <span itemprop="name">java</span>
-                  </a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>497</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>一、要想实现网络通信，需要解决两个问题：</p>
-<p>　　1.如何准确的定位互联网上的一台或多台主机 </p>
-<p>　　2.如何实现可靠而高效的数据传输</p>
-<p> 二、网络通信的两个要素：</p>
-<p>　　1.使用IP地址，定位网络中的主机</p>
-<p>　　2.遵循相关的网络通信协议</p>
-<p> 三、针对要素一：</p>
-<p>　　1.IP：一个ip地址，对应着网络中的一台主机。 “192.168.20.16”   “127.0.0.1”–本地回路地址</p>
-<p>　　　　使用InetAddress类来代表IP，一个InetAddress类的对象，就代表着一个具体的ip地址。</p>
-<p>　　２.如何实例化InetAddress:</p>
-<p>　　　　①getByName(String hostName)</p>
-<p>　　　　②getLocalHost()</p>
-<p>　　3.域名： <a href="http://www.baidu.com" target="_blank" rel="noopener">www.baidu.com</a>   <a href="http://www.jd.com" target="_blank" rel="noopener">www.jd.com</a>   <a href="http://www.mi.com" target="_blank" rel="noopener">www.mi.com</a>  <a href="http://www.vip.com" target="_blank" rel="noopener">www.vip.com</a></p>
-<p>　　　　　　 <a href="http://www.facebook.com" target="_blank" rel="noopener">www.facebook.com</a></p>
-<p>​         localhost对应着127.0.0.1</p>
-<p>　　4.InetAddress类的常用方法：getHostName() / getHostAddress()</p>
-<p>　　5.端口号标识正在计算机上运行的进程（程序）</p>
-<p>　　　　注意：不同的进程有不同的端口号</p>
-<p>　　　　常见的端口号： http:80   tomcat : 8080   mysql：3306  oracle:1521等</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/11/1/12/day4/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -525,7 +263,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/11/1/12/day7/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/11/1/12/day23/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -539,7 +277,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2020/02/11/1/12/day7/" class="post-title-link" itemprop="url">day7</a>
+            <a href="/2020/02/11/1/12/day23/" class="post-title-link" itemprop="url">day23</a>
         </h1>
 
         <div class="post-meta">
@@ -556,7 +294,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-12 14:53:31" itemprop="dateModified" datetime="2020-02-12T14:53:31+08:00">2020-02-12</time>
+                <time title="修改时间：2020-02-12 13:17:04" itemprop="dateModified" datetime="2020-02-12T13:17:04+08:00">2020-02-12</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -576,7 +314,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>512</span>
+              <span>3.6k</span>
             </span>
 
         </div>
@@ -588,197 +326,85 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h5 id="一：面型对象的三条主线"><a href="#一：面型对象的三条主线" class="headerlink" title="一：面型对象的三条主线"></a>一：面型对象的三条主线</h5><p>　　1.j a v a类及类的成员：属性、方法、构造器；代码块、内部快</p>
-<p>　　2.面型对象的三个特性：封装、继承、多态、（抽象性)</p>
-<p>　　3.其他关键字的使用：this、super、abstract 、interface 、import 、package、static 、final等</p>
-<h5 id="二：面向过程与面向对象的理解"><a href="#二：面向过程与面向对象的理解" class="headerlink" title="二：面向过程与面向对象的理解"></a>二：面向过程与面向对象的理解</h5><p>例子1：人打开门</p>
-<p>面向过程：</p>
-<p>人打开了门</p>
-<p>面向对象：</p>
-<p>人{</p>
-<p>​     打开（门）{</p>
-<p>​     门.开开（）；</p>
-<p>  }</p>
-<p>}</p>
-<p> 门{</p>
-<p>​      开开.( ){</p>
-<p>   }</p>
-<p>}</p>
-<p>例子2：人把大象<img src="file:///C:%5CUsers%5C%E5%87%89%E7%94%9F%5CAppData%5CLocal%5CTemp%5CSGPicFaceTpBq%5C5220%5C04745AB9.png" alt="img">装进冰箱</p>
-<p>面向过程：人打开冰箱，抬起大象，加进冰箱，关闭冰箱门</p>
-<p>面向过程：</p>
-<p>人{</p>
-<p>​     打开（冰箱）{</p>
-<p>​          冰箱.开开（）；</p>
-<p> }</p>
-<p>​    抬起（大象）{</p>
-<p>​        大象.进入(冰箱)；</p>
-<p>  }</p>
-<p>   关闭（冰箱）{</p>
-<p>​     冰箱.闭合（）；</p>
-<p>​    }  </p>
-<p>}</p>
-<p>大象{</p>
-<p>​      进入（冰箱）{}</p>
-<p>}</p>
-<p>冰箱{</p>
-<p>​      开开（）{}</p>
-<p>​       闭合（）{}     </p>
-<p>}</p>
-<h5 id="三：面向对象当中的两个核心概念：类与对象"><a href="#三：面向对象当中的两个核心概念：类与对象" class="headerlink" title="三：面向对象当中的两个核心概念：类与对象"></a>三：面向对象当中的两个核心概念：类与对象</h5><p>　　类：一类事物的描述，抽象的，概念上的定义。</p>
-<p>　　对象：类的具体的体现，实实在在存在的个体</p>
-<p>　</p>
-<p>　　Scanner 类</p>
-<p>　　Scanner s = new Scanner(S y s t e m .i n);   s:对象 s. n e x t();</p>
-<p>　　面向对象程序设计重点是类的设计</p>
-<h5 id="四：类的主要成员：属性，方法"><a href="#四：类的主要成员：属性，方法" class="headerlink" title="四：类的主要成员：属性，方法"></a>四：类的主要成员：属性，方法</h5><p>　　 属性 = 成员变量 = filed = 域　</p>
-<p>　　方法 = 成员方法  = 成员函数 = method</p>
+          <p>jdk 8 之前 日期+时间 API的使用</p>
+<p>java.util.Date类</p>
+<p>　　|—-java.sql.Date类</p>
+<p>1.java.util.Date类：</p>
+<p>　　如何实例化：两个构造器</p>
+<p>　　常用方法：toString() / getTime();</p>
+<p> 2.java.sql.Date类：与数据表中的Date类型的变量对应。    </p>
+<p>构造器一：获取系统当前时间对应的Date对象</p>
+<p>Date date = new Date();</p>
+<p>getTime()：返回当前日期对应的毫秒数：当前时间与1970-1-1 00：00：00直接的毫秒数</p>
+<p>构造器二：获取毫秒数所对应的Date对象</p>
+<p>Date date1 = new Date(1502768492941L);</p>
+<p>SQl:</p>
+<p>java.sql.Date date2 = new java.sql.Date(1502768492941L);</p>
+<p>SimpleDateFormat</p>
+<p>使用默认构造器:SimpleDateFormat sdf = new SimpleDateFormat();</p>
+<p>格式化：String format(Date date):</p>
+<p>　Date date = new Date();</p>
+<p>　String dateStr = sdf.format(date);</p>
+<p>解析： Date parse(String dateStr)</p>
+<p>　Date date1 = sdf.parse(“17-8-15 下午2:18”);</p>
+<p>　System.out.println(date1);</p>
+<p>java.text.SimpleDateFormat类</p>
+<p>　1.SimpleDateFormat的作用：</p>
+<p>　　　格式化：日期—&gt;文本</p>
+<p>　　　解析：格式化的逆过程，文本 —&gt;日期</p>
+<p>　2.SimpleDateFormat实例化</p>
+<p>　　使用带参数的构造器</p>
+<p>　　　SimpleDateFormat sdf1 = new SimpleDateFormat(“EEE, d MMM yyyy HH:mm:ss Z”); 　　　</p>
+<p>　　　SimpleDateFormat sdf1 = new SimpleDateFormat(“yyyy-MM-dd hh:mm:ss”);</p>
+<p>　　格式化：</p>
+<p>　　　String dateStr1 = sdf1.format(date);</p>
+<p>　　　System.out.println(dateStr1);//2017-08-15 02:24:40</p>
+<p>　　解析：</p>
+<p>　　　Date date2 = sdf1.parse(“2017-08-15 02:24:40”);</p>
+<p>　　　System.out.println(date2);</p>
+<p>java.util.Calendar(日历)类的使用</p>
+<p>　　1.实例化Calendar calendar = Calendar.getInstance();</p>
+<p>　　2.get()</p>
+<p>​        　int day = calendar.get(Calendar.DAY_OF_MONTH);</p>
+<p>​        　System.out.println(day);</p>
+<p>　　3.set()</p>
+<p>　　　calendar.set(Calendar.DAY_OF_MONTH, 20);　</p>
+<p>　　　day =   calendar.get(Calendar.DAY_OF_MONTH);</p>
+<p>　　　System.out.println(day);</p>
+<p>　　4.add()</p>
+<p>　　　calendar.add(Calendar.DAY_OF_MONTH, -2);</p>
+<p>　　　day = calendar.get(Calendar.DAY_OF_MONTH);</p>
+<p>　　　System.out.println(day);</p>
+<p>日历 —&gt;日期</p>
+<p>　　Date date = calendar.getTime();</p>
+<p>　　System.out.println(date);</p>
+<p>使用指定的Date对象，来设置calendar</p>
+<p>　　Date date1 = new Date();</p>
+<p>　　calendar.setTime(date1);</p>
+<p>　　day = calendar.get(Calendar.DAY_OF_MONTH);</p>
+<p>　　System.out.println(day);</p>
+<p>LocalDate / LocalTime / LocalDateTime     —–重要//理解为对Calendar</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//实例化</span></span><br><span class="line"><span class="comment">//now()</span></span><br><span class="line">LocalDate localDate = LocalDate.now();</span><br><span class="line">LocalTime localTime = LocalTime.now();</span><br><span class="line">LocalDateTime localDateTime =   LocalDateTime.now();</span><br><span class="line"></span><br><span class="line">System.out.println(localDate);</span><br><span class="line">System.out.println(localTime);</span><br><span class="line">System.out.println(localDateTime);</span><br><span class="line"></span><br><span class="line"><span class="comment">//of()</span></span><br><span class="line">LocalDate localDate2 = LocalDate.of(<span class="number">2017</span>,<span class="number">8</span>,<span class="number">15</span>); </span><br><span class="line">System.out.println(localDate2);</span><br><span class="line">LocalDateTime localDateTime2 = LocalDateTime.of(<span class="number">2017</span>, <span class="number">8</span>, <span class="number">15</span>, <span class="number">11</span>, <span class="number">11</span>,<span class="number">23</span>); System.out.println(localDateTime2);</span><br><span class="line">System.out.println();</span><br><span class="line"><span class="comment">//getXxx():</span></span><br><span class="line">System.out.println(localDateTime.getDayOfYear());</span><br><span class="line">System.out.println(localDateTime.getDayOfMonth());</span><br><span class="line">System.out.println(localDateTime.getDayOfWeek());</span><br><span class="line">System.out.println(localDateTime.getMonth());</span><br><span class="line">System.out.println(localDateTime.getMonthValue());</span><br><span class="line">System.out.println(localDateTime.getHour());</span><br><span class="line">System.out.println(localDateTime.getMinute());</span><br><span class="line"><span class="comment">//withXxx():体现了不可变性</span></span><br><span class="line">LocalDateTime localDateTime3=localDateTime.withDayOfMonth(<span class="number">20</span>); System.out.println(localDateTime);</span><br><span class="line">System.out.println(localDateTime3);</span><br><span class="line">LocalDateTime localDateTime4=localDateTime.withHour(<span class="number">12</span>); System.out.println(localDateTime4);</span><br><span class="line"><span class="comment">//plus()//minus()</span></span><br><span class="line">LocalDateTime localDateTime5 =localDateTime.plusDays(<span class="number">3</span>); System.out.println(localDateTime5);</span><br><span class="line">LocalDateTime localDateTime6 =localDateTime.minusMinutes(<span class="number">20</span>); </span><br><span class="line">System.out.println(localDateTime6);</span><br><span class="line"><span class="keyword">boolean</span> isBefore =localDateTime.isBefore(localDateTime6); </span><br><span class="line"> System.out.println(isBefore);<span class="comment">//false</span></span><br><span class="line"><span class="keyword">boolean</span> isAfter =localDateTime.isAfter(localDateTime6); System.out.println(isAfter);<span class="comment">//true</span></span><br><span class="line"><span class="comment">//isLeapYear():</span></span><br><span class="line">System.out.println(localDate.isLeapYear());</span><br><span class="line">LocalDate localDate3 =localDate.minusYears(<span class="number">1</span>); </span><br><span class="line">System.out.println(localDate3.isLeapYear());</span><br></pre></td></tr></table></figure>
 
-      
-    </div>
 
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/11/1/12/day8/">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="顾思君">
-      <meta itemprop="description" content="直到这一刻微笑着说话为止，我至少留下了一公升眼泪">
-    </span>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="思君の博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/02/11/1/12/day8/" class="post-title-link" itemprop="url">day8</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-02-11 20:12:57" itemprop="dateCreated datePublished" datetime="2020-02-11T20:12:57+08:00">2020-02-11</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-12 14:51:29" itemprop="dateModified" datetime="2020-02-12T14:51:29+08:00">2020-02-12</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java/" itemprop="url" rel="index">
-                    <span itemprop="name">java</span>
-                  </a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>1.5k</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>万事万物皆对象</p>
-<p>类的属性默认值和数组元素默认值一样</p>
-<h5 id="面向对象思想的体现一：类和对象的创建"><a href="#面向对象思想的体现一：类和对象的创建" class="headerlink" title="面向对象思想的体现一：类和对象的创建"></a>面向对象思想的体现一：类和对象的创建</h5><p>　1.创建类，即为提供类的内部结构：属性和方法</p>
-<p>　2.创建类的对象（类的实例化，实例化类）</p>
-<p>　3.可以通过“对象.属性”或“对象.方法”调用相关功能</p>
-<p>　特例：Math.sqrt(..)  / Math.random()</p>
-<p>如果创建了一个类的多个对象，那抹多个对象之间是彼此独立的。即每个对象，都拥有一套自己的属性</p>
-<p>当通过其中一个对象修改其属性值时，不会影响其他对象相同属性值</p>
-<p>堆：new 出来的结构，数组，对象</p>
-<p>栈：局部变量</p>
-<p>变量的分类：按照数据类型的分类：基本数据类型（8个） vs  引用数据类型（3个：数组、类、接口）</p>
-<p>　　　　　　 按照变量在类中声明的位置不同：成员变量（或属性） vs  局部变量</p>
-<p>类中属性的使用</p>
-<p>　　成员变量（或属性） vs  局部变量</p>
-<p>1.相同点：①声明的格式是相同的：数据类型 变量名 = 初始化值</p>
-<p>　　　　　②先声明后使</p>
-<p>　　　　　③变量都有作用域</p>
-<p>2.不同点：①类中声明的位置不同</p>
-<p>　　　　　 成员变量：在类的一对{}内直接声明的变量</p>
-<p>　　　　　局部变量：方法内声明的，方法的形参位置声明的，构造器内声明的，代码块内声明的都是局部变量</p>
-<p>　　　　　②成员变量可以在数据类型前声明权限修饰符，而局部变量是不可以声明权限修饰符的</p>
-<p>　　　　　 补充：权限修饰符有哪些？public 、private、protected、缺省</p>
-<p>　　　　　③成员变量：声明时，有默认初始化值。也就是说，我们在定义成员变量时，可以不显示的赋值</p>
-<p>　　　　　整形：byte,short,int,long : 0</p>
-<p>　　　　　浮点型：float，double : 0.0</p>
-<p>　　　　　字符型：char :0 (或表示为‘\u0000’)</p>
-<p>　　　　　布尔类型： boolean : flase</p>
-<p>　　　　　引用数据类型：null</p>
-<p>　　　　　 局部变量：没有默认初始化值。必须要在调用前，显示的赋值</p>
-<p>　　　　特别的：方法的形参。此局部变量在方法内调用前，不需要赋值。他的赋值，是在方法调用时。</p>
-<p>　　　　　④二者在内存中存放的位置，是不同的</p>
-<p>　　　　　　成员变量：存放在堆空间中</p>
-<p>　　　　　　局部变量：存放在栈空间中</p>
-<p>属性是依托于对象存在的</p>
-<p>类中方法的使用：</p>
-<p>​    方法：类中声明的一个结构，能够实现具体功能。Arrays.sort(int[] arr)   / Arrays.binarySearch(int[] arr,int value)</p>
-<p>   1.public void eat(String food){}</p>
-<p>​       public void show(){}</p>
-<p>​       public int returnAge(){}</p>
-<p>​       public String info(String nation){}        </p>
-<p>   2.方法声明的格式：</p>
-<p>​        权限修饰符 返回值类型 方法名（形参列表）{</p>
-<p>​           方法体</p>
-<p>   }</p>
-<p>​     3.具体说明：</p>
-<p>　　　①权限修饰符:可以理解为所被修饰的结构能被调用的范围的大小                   </p>
-<p>　　　　有如下的权限修饰：public,protected,缺省，private</p>
-<p>　　　②关于返回值类型：没有返回值：void</p>
-<p>　　　　　　　　　　　　有返回值：指明具体的返回值类型</p>
-<p>如果方法声明时，有返回值，那抹我们就需要在方法执行中，返回具体的满足相应类型的变量或者常量。比如return 1  或者 return index </p>
-<p>　　　说明：如果方法有返回值，方法中一定有return !</p>
-<p>　　　③方法名：属于标识符。需要命名时，满足标识符的命名规则和规范，“见名知意”</p>
-<p>　　　④.形参列表：可以声明0个，1个或者多个变量，如果声明了多个变量，中间用“ ，”分开</p>
-<p>　　　⑤.方法体:我们调用方法时，要执行的逻辑。</p>
-<p>　　　　方法的功能主要体现在方法体上。</p>
-<ol start="4">
-<li><p>①方法中调用当前类的属性或方法。(如果方法A中调用方法A:递归方法)</p>
-<p>②在方法体中，可以使用关键字：return ,reutrn的意思：返回，跳出</p>
-<p>③ 在方法内，不能再定义方法  </p>
-</li>
-</ol>
-<p>同一个包下，不允许定义两个同名的类</p>
-<p>在static方法中，调用非static的方法，需要使用对象调用</p>
-<p>​                 </p>
+<p>Optional类使用的测试</p>
+<p>　Optional:是一个封装了具体类型数据的容器。</p>
+<p>　其中，具体的类型：通过Optional的泛型体现。</p>
+<p>　具体类型的数据：通过Optional内部的T value体现</p>
+<p>返回一个没有封装任何数据的Optional对象</p>
+<p>　　Optional<Object> op = Optional.empty();０</Object></p>
+<p>　　Optional<String> op1 = Optional.ofNullable(“beijing”);</String></p>
+<p>isPresent():判断内部的数据是否存在</p>
+<p>get():返回Optional对象内部封装的数据</p>
+<p>of(T t):当t为null时，报异常。建议不用此方法</p>
+<p>orElse(T t):如果调用对象包含值，返回该值，否则返回t</p>
+<p>Integer类作为int的包装类，能存储的最大整型值为2^31−1， </p>
+<p>BigInteger类的数值范围较Integer类、Long类的数值范围要大得多，可以支持任意精度的整数。</p>
+<p>在商业计算中，要求数字精度比较高，故用到java.math.BigDecimal类。</p>
+<p>BigDecimal类支持任何精度的定点数。</p>
 
       
     </div>
@@ -949,7 +575,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/11/1/12/druid/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/11/1/12/day7/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -963,7 +589,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2020/02/11/1/12/druid/" class="post-title-link" itemprop="url">druid</a>
+            <a href="/2020/02/11/1/12/day7/" class="post-title-link" itemprop="url">day7</a>
         </h1>
 
         <div class="post-meta">
@@ -972,18 +598,24 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-02-11 20:12:57 / 修改时间：21:10:18" itemprop="dateCreated datePublished" datetime="2020-02-11T20:12:57+08:00">2020-02-11</time>
+              <time title="创建时间：2020-02-11 20:12:57" itemprop="dateCreated datePublished" datetime="2020-02-11T20:12:57+08:00">2020-02-11</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-12 14:53:31" itemprop="dateModified" datetime="2020-02-12T14:53:31+08:00">2020-02-12</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/datasource/" itemprop="url" rel="index">
-                    <span itemprop="name">datasource</span>
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
                   </a>
                 </span>
             </span>
@@ -994,7 +626,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>5.3k</span>
+              <span>512</span>
             </span>
 
         </div>
@@ -1006,15 +638,52 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="DRUID介绍"><a href="#DRUID介绍" class="headerlink" title="DRUID介绍"></a>DRUID介绍</h3><p>　　　DRUID是阿里巴巴开源平台上一个数据库连接池实现，它结合了C3P0、DBCP、PROXOOL等DB池的优点，同时加入了日志监控，可以很好的监控DB池连接和SQL的执行情况，可以说是针对监控而生的DB连接池(据说是目前最好的连接池,不知道速度有没有BoneCP快)。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/02/11/1/12/druid/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
+          <h5 id="一：面型对象的三条主线"><a href="#一：面型对象的三条主线" class="headerlink" title="一：面型对象的三条主线"></a>一：面型对象的三条主线</h5><p>　　1.j a v a类及类的成员：属性、方法、构造器；代码块、内部快</p>
+<p>　　2.面型对象的三个特性：封装、继承、多态、（抽象性)</p>
+<p>　　3.其他关键字的使用：this、super、abstract 、interface 、import 、package、static 、final等</p>
+<h5 id="二：面向过程与面向对象的理解"><a href="#二：面向过程与面向对象的理解" class="headerlink" title="二：面向过程与面向对象的理解"></a>二：面向过程与面向对象的理解</h5><p>例子1：人打开门</p>
+<p>面向过程：</p>
+<p>人打开了门</p>
+<p>面向对象：</p>
+<p>人{</p>
+<p>​     打开（门）{</p>
+<p>​     门.开开（）；</p>
+<p>  }</p>
+<p>}</p>
+<p> 门{</p>
+<p>​      开开.( ){</p>
+<p>   }</p>
+<p>}</p>
+<p>例子2：人把大象<img src="file:///C:%5CUsers%5C%E5%87%89%E7%94%9F%5CAppData%5CLocal%5CTemp%5CSGPicFaceTpBq%5C5220%5C04745AB9.png" alt="img">装进冰箱</p>
+<p>面向过程：人打开冰箱，抬起大象，加进冰箱，关闭冰箱门</p>
+<p>面向过程：</p>
+<p>人{</p>
+<p>​     打开（冰箱）{</p>
+<p>​          冰箱.开开（）；</p>
+<p> }</p>
+<p>​    抬起（大象）{</p>
+<p>​        大象.进入(冰箱)；</p>
+<p>  }</p>
+<p>   关闭（冰箱）{</p>
+<p>​     冰箱.闭合（）；</p>
+<p>​    }  </p>
+<p>}</p>
+<p>大象{</p>
+<p>​      进入（冰箱）{}</p>
+<p>}</p>
+<p>冰箱{</p>
+<p>​      开开（）{}</p>
+<p>​       闭合（）{}     </p>
+<p>}</p>
+<h5 id="三：面向对象当中的两个核心概念：类与对象"><a href="#三：面向对象当中的两个核心概念：类与对象" class="headerlink" title="三：面向对象当中的两个核心概念：类与对象"></a>三：面向对象当中的两个核心概念：类与对象</h5><p>　　类：一类事物的描述，抽象的，概念上的定义。</p>
+<p>　　对象：类的具体的体现，实实在在存在的个体</p>
+<p>　</p>
+<p>　　Scanner 类</p>
+<p>　　Scanner s = new Scanner(S y s t e m .i n);   s:对象 s. n e x t();</p>
+<p>　　面向对象程序设计重点是类的设计</p>
+<h5 id="四：类的主要成员：属性，方法"><a href="#四：类的主要成员：属性，方法" class="headerlink" title="四：类的主要成员：属性，方法"></a>四：类的主要成员：属性，方法</h5><p>　　 属性 = 成员变量 = filed = 域　</p>
+<p>　　方法 = 成员方法  = 成员函数 = method</p>
+
       
     </div>
 
@@ -1033,7 +702,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/11/1/12/day9/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/11/1/12/Java8%E6%96%B0%E7%89%B9%E6%80%A7/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -1047,7 +716,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2020/02/11/1/12/day9/" class="post-title-link" itemprop="url">day9</a>
+            <a href="/2020/02/11/1/12/Java8%E6%96%B0%E7%89%B9%E6%80%A7/" class="post-title-link" itemprop="url">java8新特性</a>
         </h1>
 
         <div class="post-meta">
@@ -1064,7 +733,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-12 14:44:36" itemprop="dateModified" datetime="2020-02-12T14:44:36+08:00">2020-02-12</time>
+                <time title="修改时间：2020-02-12 13:17:16" itemprop="dateModified" datetime="2020-02-12T13:17:16+08:00">2020-02-12</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1096,42 +765,38 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h5 id="匿名对象："><a href="#匿名对象：" class="headerlink" title="匿名对象："></a>匿名对象：</h5><p>　　1.匿名对象:创建类的对象,但是并没有声明给一个对象引用</p>
-<p>　　 2.匿名对象只能调用一次</p>
-<p>　　3.应用，常常在调用方法时，将一个匿名对象作为参数传递过去</p>
-<h5 id="方法重载：（overload）-loading…"><a href="#方法重载：（overload）-loading…" class="headerlink" title="方法重载：（overload） loading…"></a>方法重载：（overload） loading…</h5><p>　1.定义：在同一个类中，相同的方法名，不同的参数列表的方法之间，彼此构成重载</p>
-<p>　　举例：Arrays 中的sort（Xxx[] xxx） / System.out.println(Xxx xxx)</p>
-<p>　　总结：两同一不同，一不同：①参数个数不同   ②参数类型不同</p>
-<p>　2.方法的重载与方法的形参的变量名没有关系！ 与方法是否有返回值也没有关系</p>
-<p>　测试题：区分方法的重载（overload）和方法的重写（override / overwrite）           </p>
-<p>　3.如何确定调用的是哪一个类的方法？ 指明方法名——&gt;指明参数的类型</p>
-<p>可变个数形参方法的使用：jdk5.0新特性</p>
+          <h3 id="一、Lambda-表达式的基础语法-java8中引入了新的操作符“-gt-”-该操作符称为箭头操作符或Lambda操作符"><a href="#一、Lambda-表达式的基础语法-java8中引入了新的操作符“-gt-”-该操作符称为箭头操作符或Lambda操作符" class="headerlink" title="一、Lambda 表达式的基础语法 :java8中引入了新的操作符“-&gt;” 该操作符称为箭头操作符或Lambda操作符"></a>一、Lambda 表达式的基础语法 :java8中引入了新的操作符“-&gt;” 该操作符称为箭头操作符或Lambda操作符</h3><p>​       <strong>箭头操作符 Lambda 表达式拆分为两部分:</strong><br>           左侧：Lambda 表达式的参数列表<br>           右侧：Lambda 表达式所需执行的功能,即 Lambda 体</p>
 <ul>
-<li>可变个数形参的格式：数据类型  … 变量名</li>
-<li>可变个数形参的方法在调用时，给可变个数的形参赋值时，可以赋值的个数为：0个，1个，……..</li>
-<li>可变个数形参的方法与同名方法之间彼此构成重载</li>
-<li>可变个数形参的方法与形参类型相同的数组方法不能同时出现在类中</li>
-<li>可变个数形参必须声明方法形参的最后一个参数</li>
-<li>在一个方法的形参位置，最多只能声明一个可变长度形参</li>
+<li>语法格式一:无参数,无返回值<pre><code>() -&gt; System.out.println(&quot;Hello Lambda&quot;);</code></pre></li>
+<li>语法格式二:有一个参数,并且无返回值<pre><code>(x) -&gt; System.out.println(x);</code></pre></li>
+<li>语法格式三:若只有一个参数,小括号可以省略不写<pre><code>x -&gt; System.out.println(x);</code></pre></li>
+<li>语法格式四:有两个以上的参数,有返回值,并且Lambda体中有多条语句<pre><code>Comparator&lt;Integer&gt; com = (x,y) -&gt; {
+    System.out.println(&quot;函数式接口&quot;);
+    return Integer.compare(x,y);
+  };</code></pre></li>
+<li>语法格式五:若Lambda体中只有一条语句,return和大括号都可以省略不写</li>
+<li>语法格式六:Lambda表达式的参数列表的数据类型可以省略不写,因为JVM编译器通过上下文推断出,数据类型,即“类型推断”<pre><code>(Integer x,Integer y) -&gt; Integer.compare(x,y)；</code></pre></li>
 </ul>
-<h5 id="变量的值传递机制："><a href="#变量的值传递机制：" class="headerlink" title="变量的值传递机制："></a>变量的值传递机制：</h5><p>　如果赋值的是基本数据的变量，则传递的是基本数据类型变量所保存的具体的数值</p>
-<p>　如果赋值的是引用数据类型变量，则传递的是引用数据类型变量所保存的地址值</p>
-<h5 id="方法的参数传递机制：值传递"><a href="#方法的参数传递机制：值传递" class="headerlink" title="方法的参数传递机制：值传递"></a>方法的参数传递机制：值传递</h5><p>1.形参：方法在声明时，指定的参数</p>
-<p>　实参：方法调用时，具体给形参赋的值，就是实参</p>
-<p>2.如果方法的形参是基本数据类型的变量，则方法调用时，传递的实参即为基本数据类型变量所保存的具体的值 </p>
-<p>   如果方法的形参是引用数据类型的变量，则方法调用时，传递的实参即为引用数据类型变量所保存的地址值</p>
-<p>​          </p>
-<p>面向对象的特性之一：封装与隐藏 3w : what ？ why ? how ?</p>
-<p>1.问题的引入？</p>
-<p>   我们在创建一个类的对象以后，通过“对象.属性”的方式，可以给对象的属性赋值，对此属性的赋值，是有限制的，比如：数据类型和数据类型储存范围的限制。</p>
-<p>但在实际问题中，还通过需要额外的限制。同时这些额外的限制，不可能在属性的声明中加上限制逻辑。</p>
-<p>那抹我们只能考虑通过方法，对属性的赋值进行额外的限制，同时，我们必须禁止再直接通过 “对象.属性” 的方法，对属性进行赋值</p>
-<p>2.封装性的体现(狭义上的体现)</p>
-<p>　　私有化(private)类的属性，同时，提供公共的(public)设置(setXxx())和获取(getXxx())的方法</p>
-<p>3.封装性的体现：（广义上的体现）</p>
-<p>　　java规定的4种权限修饰符：（从小到大） private 缺省  protected   public ＼</p>
-<p>　　java规定的4种权限可以用来修饰类及类的内部结构：属性，方法，构造器，内部类</p>
-<p>具体来讲：这4种权限都可以用来修饰类的内部结构：属性，方法，构造器，内部类，只能使用 缺省 或者 public 修饰类</p>
+<p>上联:左右遇一括号略<br>下联:左侧推断类型省<br>横批:能省则省</p>
+<h3 id="二-Lambda-表达式需要“函数式接口”的支持"><a href="#二-Lambda-表达式需要“函数式接口”的支持" class="headerlink" title="二: Lambda 表达式需要“函数式接口”的支持"></a>二: Lambda 表达式需要“函数式接口”的支持</h3><p>​         <strong>函数式接口:接口中只有一个抽象方法的接口,称为函数式接口。可以使用@FunctionalInterface 修饰<br>​                         可以检查是否是函数接口</strong></p>
+<p>​         <strong>Java8内置的四大核心函数式接口</strong></p>
+<p>​        Consumer<T> : 消费型接口<br>​                   void accept(T t);</T></p>
+<pre><code>Supplier&lt;T&gt; : 供给型接口
+           T get();    
+
+Function&lt;T,R&gt; : 函数型接口
+           R apply(T t);
+
+Predicate&lt;T&gt; : 断言型接口
+           boolean test(T t);</code></pre><p><strong>一.方法引用:若Lambda体中的内容有方法已经实现了,我们可以使用”方法引用”<br>           (可以理解为方法引用是Lambda表达式的另一种体现)</strong></p>
+<p>   主要有三种语法格式:</p>
+<p>   对象::实例方法名</p>
+<p>   类::静态方法名</p>
+<p>   类::实例方法名</p>
+<p>   注意:<br>       1).Lambda体中调用方法的参数列表与返回值类型,要与函数式接口中的抽象方法的函数列表和返回值类型保持一致！<br>       2).②若Lambda 的参数列表的第一个参数，是实例方法的调用者，第二个参数(或无参)是实例方法的参数  时，格式： ClassName::MethodName                       </p>
+<p><strong>二.构造器引用</strong><br>       格式:<br>       ClassName::New</p>
+<p>   注意:需要调用的构造器的参数列表要与函数式接口中抽象方法的参数列表保持一致！(个数)</p>
+<p><strong>三:数组引用:</strong><br>       Type::new</p>
 
       
     </div>
@@ -1257,6 +922,402 @@
 <p>　boolean                 false</p>
 <p>　char                    ‘\u0000’(表现形式上是一个空格)</p>
 
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/11/1/12/day8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="顾思君">
+      <meta itemprop="description" content="直到这一刻微笑着说话为止，我至少留下了一公升眼泪">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="思君の博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/02/11/1/12/day8/" class="post-title-link" itemprop="url">day8</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-02-11 20:12:57" itemprop="dateCreated datePublished" datetime="2020-02-11T20:12:57+08:00">2020-02-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-12 14:51:29" itemprop="dateModified" datetime="2020-02-12T14:51:29+08:00">2020-02-12</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.5k</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>万事万物皆对象</p>
+<p>类的属性默认值和数组元素默认值一样</p>
+<h5 id="面向对象思想的体现一：类和对象的创建"><a href="#面向对象思想的体现一：类和对象的创建" class="headerlink" title="面向对象思想的体现一：类和对象的创建"></a>面向对象思想的体现一：类和对象的创建</h5><p>　1.创建类，即为提供类的内部结构：属性和方法</p>
+<p>　2.创建类的对象（类的实例化，实例化类）</p>
+<p>　3.可以通过“对象.属性”或“对象.方法”调用相关功能</p>
+<p>　特例：Math.sqrt(..)  / Math.random()</p>
+<p>如果创建了一个类的多个对象，那抹多个对象之间是彼此独立的。即每个对象，都拥有一套自己的属性</p>
+<p>当通过其中一个对象修改其属性值时，不会影响其他对象相同属性值</p>
+<p>堆：new 出来的结构，数组，对象</p>
+<p>栈：局部变量</p>
+<p>变量的分类：按照数据类型的分类：基本数据类型（8个） vs  引用数据类型（3个：数组、类、接口）</p>
+<p>　　　　　　 按照变量在类中声明的位置不同：成员变量（或属性） vs  局部变量</p>
+<p>类中属性的使用</p>
+<p>　　成员变量（或属性） vs  局部变量</p>
+<p>1.相同点：①声明的格式是相同的：数据类型 变量名 = 初始化值</p>
+<p>　　　　　②先声明后使</p>
+<p>　　　　　③变量都有作用域</p>
+<p>2.不同点：①类中声明的位置不同</p>
+<p>　　　　　 成员变量：在类的一对{}内直接声明的变量</p>
+<p>　　　　　局部变量：方法内声明的，方法的形参位置声明的，构造器内声明的，代码块内声明的都是局部变量</p>
+<p>　　　　　②成员变量可以在数据类型前声明权限修饰符，而局部变量是不可以声明权限修饰符的</p>
+<p>　　　　　 补充：权限修饰符有哪些？public 、private、protected、缺省</p>
+<p>　　　　　③成员变量：声明时，有默认初始化值。也就是说，我们在定义成员变量时，可以不显示的赋值</p>
+<p>　　　　　整形：byte,short,int,long : 0</p>
+<p>　　　　　浮点型：float，double : 0.0</p>
+<p>　　　　　字符型：char :0 (或表示为‘\u0000’)</p>
+<p>　　　　　布尔类型： boolean : flase</p>
+<p>　　　　　引用数据类型：null</p>
+<p>　　　　　 局部变量：没有默认初始化值。必须要在调用前，显示的赋值</p>
+<p>　　　　特别的：方法的形参。此局部变量在方法内调用前，不需要赋值。他的赋值，是在方法调用时。</p>
+<p>　　　　　④二者在内存中存放的位置，是不同的</p>
+<p>　　　　　　成员变量：存放在堆空间中</p>
+<p>　　　　　　局部变量：存放在栈空间中</p>
+<p>属性是依托于对象存在的</p>
+<p>类中方法的使用：</p>
+<p>​    方法：类中声明的一个结构，能够实现具体功能。Arrays.sort(int[] arr)   / Arrays.binarySearch(int[] arr,int value)</p>
+<p>   1.public void eat(String food){}</p>
+<p>​       public void show(){}</p>
+<p>​       public int returnAge(){}</p>
+<p>​       public String info(String nation){}        </p>
+<p>   2.方法声明的格式：</p>
+<p>​        权限修饰符 返回值类型 方法名（形参列表）{</p>
+<p>​           方法体</p>
+<p>   }</p>
+<p>​     3.具体说明：</p>
+<p>　　　①权限修饰符:可以理解为所被修饰的结构能被调用的范围的大小                   </p>
+<p>　　　　有如下的权限修饰：public,protected,缺省，private</p>
+<p>　　　②关于返回值类型：没有返回值：void</p>
+<p>　　　　　　　　　　　　有返回值：指明具体的返回值类型</p>
+<p>如果方法声明时，有返回值，那抹我们就需要在方法执行中，返回具体的满足相应类型的变量或者常量。比如return 1  或者 return index </p>
+<p>　　　说明：如果方法有返回值，方法中一定有return !</p>
+<p>　　　③方法名：属于标识符。需要命名时，满足标识符的命名规则和规范，“见名知意”</p>
+<p>　　　④.形参列表：可以声明0个，1个或者多个变量，如果声明了多个变量，中间用“ ，”分开</p>
+<p>　　　⑤.方法体:我们调用方法时，要执行的逻辑。</p>
+<p>　　　　方法的功能主要体现在方法体上。</p>
+<ol start="4">
+<li><p>①方法中调用当前类的属性或方法。(如果方法A中调用方法A:递归方法)</p>
+<p>②在方法体中，可以使用关键字：return ,reutrn的意思：返回，跳出</p>
+<p>③ 在方法内，不能再定义方法  </p>
+</li>
+</ol>
+<p>同一个包下，不允许定义两个同名的类</p>
+<p>在static方法中，调用非static的方法，需要使用对象调用</p>
+<p>​                 </p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/11/1/12/%E8%BF%9B%E9%98%B63/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="顾思君">
+      <meta itemprop="description" content="直到这一刻微笑着说话为止，我至少留下了一公升眼泪">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="思君の博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/02/11/1/12/%E8%BF%9B%E9%98%B63/" class="post-title-link" itemprop="url">进阶3</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-02-11 20:12:57" itemprop="dateCreated datePublished" datetime="2020-02-11T20:12:57+08:00">2020-02-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-12 15:15:43" itemprop="dateModified" datetime="2020-02-12T15:15:43+08:00">2020-02-12</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.6k</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>关于方法的重载(overload)<br>优点：</p>
+<p>　1.程序员只需要记忆很少的方法名,方便调用</p>
+<p>　2.代码更加关注<br>什么时候发生方法的重载：</p>
+<p>　1.发生在同一个类中</p>
+<p>　2.方法名不同</p>
+<p>　3.参数列表不同(类型,个数,顺序)</p>
+<p>方法的重载和方法的返回值以及形参名无关</p>
+<p>方法的执行原理:</p>
+<p>　方法在调用的时候,才会给该方法在内存中分配空间</p>
+<p>　如果这个方法只是定义没有调用,则不会在内存中分配空间</p>
+<p>方法调用的时候在“栈”中分配空间,(JVM)内存中有一块内存是栈结构<br>方法调用其实就是“压栈”<br>方法结束其实就是“弹栈”</p>
+<p>关于方法的递归调用</p>
+<p>　1.方法的递归调用就是方法自身调用自身</p>
+<p>类：一类具有相同特征的事物构成的集合</p>
+<p>　把现实世界中的抽象化<br>实例：类的具体化</p>
+<p>OOA   面向对象的分析<br>OOD   面向对象的设计<br>OOP   面向对象的编程</p>
+<p>JVM中所有new出来的数据统一被储存在堆区中，程序员是无法对堆区数据直接操作，<br>只能通过内存地址间接访问</p>
+<p>访问成员变量或者成员方法必须使用“引用.”(成员变量属于对象级的)</p>
+<p>面向对象的封装性指的是：</p>
+<p>　1.属性私有化</p>
+<p>　2.对外部提供公开的setter,getter</p>
+<p>　 set和get方法的方法名应该遵循规范</p>
+<p>关于java类的构造函数</p>
+<p>　1.构造方法语法</p>
+<p>　[修饰符列表] 构造方法名[形式参数表]{</p>
+<p>　　方法体</p>
+<p>　}</p>
+<p>　2.构造方法的方法名必须要类名一致</p>
+<p>　3.构造方法的作用是什莫？</p>
+<p>　　第一:创建对象</p>
+<p>　　第二：初始化对象的属性</p>
+<p>　4.构造方法应该如何调用？</p>
+<p>　　new 构造方法名(实参)； 在堆中开辟空间储存对象</p>
+<p>　5.如果一个类没有提供任何构造方法，系统会默认提供无参构造方法</p>
+<p>　　如果一个类已经手动提供了构造方法，那抹系统不再提供任何构造方法</p>
+<p>　6.成员变量到底什么时候赋值？</p>
+<p>　　只有在调用构造方法的时候，才会给成员变量赋值</p>
+<p>GC垃圾回收机制主要针对堆中的数据，当没有更多的引用指向时，则会被垃圾回收机制<br>如果使用空的引用去访问，则会出现空指针异常</p>
+<p>参数传递的问题：</p>
+<p>　1.传递的数据是基本数据类型 （值）</p>
+<p>　2.传递的数据是引用数据类型 （地址）</p>
+<p>this关键字：</p>
+<p>　1.this是什么？</p>
+<p>　 this是一个引用类型</p>
+<p>　在堆中java的每个对象中都有一个this，保存地址指向当前对象</p>
+<p>　2.this能用在哪些地方？</p>
+<p>　　构造方法，实例方法</p>
+<p>this可以用来区分成员变量和局部变量</p>
+<p>　this不能出现在静态方法中：</p>
+<p>　 静态方法的执行根本不需要java对象的存在,直接使用 类名.方式的访问</p>
+<p>　 而this代表的是当前对象,所以静态方法中根本没有this</p>
+<p>static关键字：</p>
+<p>　1.static修饰的变量叫做”静态变量”</p>
+<p>　2.static修饰的方法叫做”静态方法”</p>
+<p>　3.static还可以定义静态语句块</p>
+<p>　static定义的静态语句块在类加载阶段执行,并且只执行一次，并且是自上而下的顺序执行</p>
+<p>　关于实例语句块：</p>
+<p>　每一次调用构造方法之前会执行一次</p>
+<p>　实例语句块执行顺序也是自上而下</p>
+<p>　static修饰的方法叫做静态方法</p>
+<p>　静态方法正规方式访问：”类名.”方式调用</p>
+<p>　一般情况下工具类中的大部分方法都是静态方法</p>
+<p>　静态方法不用创建对象也能直接访问该方法</p>
+<p>　静态方法中不能直接访问非静态数据　</p>
+<p>　静态方法中不能使用this</p>
+<p>　　！！静态方法也能使用“引用.”访问,在编译阶段检查出类型,运行的时候仍然使用”类.调用”</p>
+<p>　static修饰的变量叫做“静态变量”</p>
+<p>　方法区</p>
+<p>　什么时候变量声明为静态变量？</p>
+<p>　如果这个属性所有的对象都有,并且这个属性的值是相同的，则该属性声明成静态的属性</p>
+<p>　静态变量储存在方法区，所有的java对象共享这一份</p>
+<p>　所以静态变量是类级别的，使用“类名.”的方式访问</p>
+<p>单例设计模式：</p>
+<p>　1.构造方法私有化</p>
+<p>　2.对外提供一个公开的静态的获取当前类型对象的方法</p>
+<p>　3.提供一个当前类型的静态变量</p>
+<p>单例设计模式分为两种：</p>
+<p>　懒汉式</p>
+<p>　饿汉式</p>
+<p>继承：</p>
+<p>　引入类继承基本的作用：代码复用</p>
+<p>　语法：</p>
+<p>　　[修饰符列表] class 子类名 extends 父类名 {</p>
+<p>　　　类体<br>    　}<br>java语言单继承<br>java语言中子类继承父类,会将父类中所有的数据全部继承,包括私有的也能全部继承过来<br>但是在子类中无法直接方法父类中的私有数据，但是可以间接的访问。<br>注意：构造方法无法被子类继承</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/11/1/12/druid/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="顾思君">
+      <meta itemprop="description" content="直到这一刻微笑着说话为止，我至少留下了一公升眼泪">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="思君の博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/02/11/1/12/druid/" class="post-title-link" itemprop="url">druid</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-02-11 20:12:57 / 修改时间：21:10:18" itemprop="dateCreated datePublished" datetime="2020-02-11T20:12:57+08:00">2020-02-11</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/datasource/" itemprop="url" rel="index">
+                    <span itemprop="name">datasource</span>
+                  </a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>5.3k</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="DRUID介绍"><a href="#DRUID介绍" class="headerlink" title="DRUID介绍"></a>DRUID介绍</h3><p>　　　DRUID是阿里巴巴开源平台上一个数据库连接池实现，它结合了C3P0、DBCP、PROXOOL等DB池的优点，同时加入了日志监控，可以很好的监控DB池连接和SQL的执行情况，可以说是针对监控而生的DB连接池(据说是目前最好的连接池,不知道速度有没有BoneCP快)。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/02/11/1/12/druid/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 

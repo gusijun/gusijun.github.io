@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-02-14T09:01:44.899Z</updated>
+  <updated>2020-02-17T03:04:35.743Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://yoursite.com/2020/02/14/1/14/mysql/"/>
     <id>http://yoursite.com/2020/02/14/1/14/mysql/</id>
     <published>2020-02-14T08:56:14.000Z</published>
-    <updated>2020-02-14T09:01:44.899Z</updated>
+    <updated>2020-02-17T03:04:35.743Z</updated>
     
     <content type="html"><![CDATA[<p>mysql数据库创建后。默认的时区比东八区少了八个小时。</p><p>如果sql语句中使用到mysql的时间的话就会比正常时间少了八个小时。</p><p>所以需要修改mysql的系统时区。</p><p>使用mysql连接工具或者命令好工具都可以。</p><p>我用workbench输入命令行：</p><p>select now(); 查看mysql系统时间。和当前时间做对比</p><p>set global time_zone = ‘+8:00’;设置时区更改为东八区</p><p>flush privileges; 刷新权限</p><p>然后退出后重新登录就可以了，显示当前时间和我现在的时间一致了。</p>]]></content>
     
@@ -42,7 +42,7 @@
       <category term="mysql" scheme="http://yoursite.com/categories/mysql/"/>
     
     
-      <category term="mysql要点" scheme="http://yoursite.com/tags/mysql%E8%A6%81%E7%82%B9/"/>
+      <category term="mysql时区问题" scheme="http://yoursite.com/tags/mysql%E6%97%B6%E5%8C%BA%E9%97%AE%E9%A2%98/"/>
     
   </entry>
   
@@ -96,56 +96,24 @@
   </entry>
   
   <entry>
-    <title>day1</title>
-    <link href="http://yoursite.com/2020/02/11/1/12/day1/"/>
-    <id>http://yoursite.com/2020/02/11/1/12/day1/</id>
+    <title>day11</title>
+    <link href="http://yoursite.com/2020/02/11/1/12/day11/"/>
+    <id>http://yoursite.com/2020/02/11/1/12/day11/</id>
     <published>2020-02-11T12:12:57.000Z</published>
-    <updated>2020-02-12T07:04:54.442Z</updated>
+    <updated>2020-02-12T06:35:39.398Z</updated>
     
-    <content type="html"><![CDATA[<p>注释：</p><p>单行注释</p><p>//</p><p>多行注释(不可以嵌套)</p><p>/**/ </p><p>文档注释（java特有）</p><p>println 换行</p><p>print 不换行</p><p>在一个源文件种不允许定义两个相同的类</p><p>关键字：具有特殊意义的字符串</p><p>特点：关键字都小写</p><p>保留字：现在不是关键字，以后可能作为关键字使用</p><p>标识符：程序员定义的变量名，函数名</p><p>标识符的命名规则：</p><ul><li>由26个英文字母大小写组成，0~9，_或$组成</li><li>数字不可以开头</li><li>不可以使用关键字或者保留字，但能包含关键字和保留字</li><li>严格区分大小写，长度无限制</li><li>不能包含空格</li></ul><p>标识符的命名规范：</p><p>　包名：多单词组成时所有字母都小写</p><p>　类名，接口名：多单词组成时所有单词首字母大写（大驼峰）</p><p>　变量名，方法名：多单词组成时，第一个单词首字母小写，第二个单词开始每个</p><p>　　　　　单词首字母大写（小驼峰）</p><p>　常量名：所有字母都大写，多单词组成时每个单词之间用下划线链接</p><p>变量分类：</p><p>角度1：按数据类型来分</p><p>　　　　基本数据类型：整型 ：byte（1）/ short（2字节）/ int（4字节）/ long（8字节） </p><p>　　　　　　　　　　　通常我们定义整形变量定义int</p><p>　　　　　　　　　　　如果定义long型变量后缀必须加l/L</p><p>　　　　　　　　　　　long ll = 1234 可以的，可以理解为自动类型提升</p><p>　　　　　　　　　　　浮点型：float （4字节） / double（8字节）</p><p>　　　　　　　　　　　通常我们定义浮点型变量定义double</p><p>　　　　　　　　　　　从存储数据的表数范围上讲，float的范围比long还要大</p><p>　　　　　　　　　　　如果定义float型变量后缀必须加f/F</p><p>　　　　　　　　　　　字符型：char（2字节）</p><p>　　　　　　　　　　　 ‘   ’声明</p><p>　　　　　　　　　　　char 不同的表示方式：　</p><p>　　　　　　　　　　　　　1.声明一个普通字符</p><p>　　　　　　　　　　　　　2.声明一个转义字符</p><p>　　　　　　　　　　　　　3.使用Unicode 码(\u16进制）</p><p>　　　　　　　　　　　布尔类型：boolean</p><p>　　　　　　　　　　　　　　true/ false</p><p>　　　　　　　　　　　常在流程控制中使用</p><p>　　　　引用数据类型： 类 /  接口 / 数组</p><p>　　　  注意String属于引用数据类型</p><p>角度2：按在类种声明的位置不同来分</p><p>　　　　成员变量  vs  局部变量</p><p>整型常量默认是int</p><p>浮点型默认是double</p><p>适用范围：除了boolean之外，对其他（7种）数据类型都适用</p><p>运算规则：byte 、char、short –&gt;int–&gt; long –&gt;float –&gt;double</p><p>特别的：byte  short char三者之间做运算时，结果是int型(防止溢出)</p><p>自动类型提升：</p><p>容量小的数据类型和容量大的数据类型变量做运算，运算结果为容量大的数据类型 （容量指存储范围的大小，而非储存空间大小）</p><p>强制数据类型转换：自动类型提升的逆过程</p><p>容量大的数据类型变量如果想转换为容量小的数据类型变量，就需要强制类型</p><p>转换符进行转换</p><p>强制类型转换符（）</p><p>String类与基本数据类型（8种）变量之间的运算</p><p>String 类属于引用数据类型的变量</p><p>String类型的变量值使用一对“  ”括起来表示</p><p>String类与基本数据类型（8种）变量之间只能做链接运算：+</p><p>String类与基本数据类型（8种）变量做运算的结果就是String</p><p>算术运算符：</p><p>　　-   */  %  (前)++ （后)++ (前)–  (后)–<br>　　-   取余：% ：余数的符号与被模数的符号相同</p>]]></content>
+    <content type="html"><![CDATA[<p>面向对象的特性之二: 继承性 what ?  why ? how ? </p><p>　　1.继承性的好处:</p><p>　　　①减少了代码的冗余，提高了代码的复用性  </p><p>　　　②更好的扩展性   </p><p>　　　③为多态的使用提供了前提 </p><p>　　2.格式:class A extends B  extends:继承,(延展,扩展)      子类(SubClass):A      父类(SuperClass,超类,基类):B  </p><p>　　3.说明:子类A继承父类B以后,就获取了父类中声明的结构:属性，方法 </p><p>　　　　3.1 不管父类中的属性或方法或权限如何，子类都可以获取到  </p><p>　　　　3.2 但是由于封装性的影响,可能在子类中不能直接调用父类中的权限较小的属性或方法</p><p>　　4.子类可以可以在继承父类的基础之上,提供自己特有的属性和方法    </p><p>　　　区别于:集合与子集   </p><p>　　5.子类和父类是相对的概念      </p><p>　　　子类通过继承，可以获取直接父类以及所有的间接父类中声明的所有属性或方法    </p><p>　　　一个父类可以被多个子类所继承 </p><p>　　　子类只能声明一个父类—-&gt;java类的单继承类</p><p>　　6.</p><p>　　　6.1 如果一个类没显示的继承一个类的话，则其父类为：java.lang.Object类 </p><p>　　　6.2 任何一个类(java.lang.Object 类)都能直接或者间接的继承于java.lang.Object类 </p><p>　　　6.3 任何一个类在继承java.lang.Object 之后，就获取了Object类中声明的属性和方法</p><p>　方法的重写(override / overwrite)   </p><p>　　　1.定义:子类在继承了父类以后，可以对父类中的同名同参数的方法进行“覆盖”或“覆写”</p><p>　　　2.重写以后，如果我们创建子类的对象，通过子类的对象调用子父类中同名的方法，执行的的是子类重写</p><p>　　　　类的方法  </p><p>　　　3.子类重写的方法，父类被重写的方法      </p><p>　　　　方法的声明:权限修饰符 返回值类型 方法名(形参列表) throws 异常的类型{ } </p><p>　　　　子类重写的方法与父类被重写方法的方法名和形参列表相同  </p><p>　　　　​子类重写的方法的权限修饰符不小于父类被重写的方法的权限修饰符     </p><p>　　　　特别的，子类不能重写父类中声明private的方法(因为子类中看不到)       </p><p>　　　　子类重写方法的返回值类型 不大于父类被重写方法的返回值类型 </p><p>　　举例: 1.父类方法的返回值类型是void，子类想重写，一定也是void  </p><p>　　　　2.父类方法的返回值类型是A，子类重写父类方法，返回值是类型A或类型A的子类，不能是类型A的父类       </p><p>　　　　　子类重写的方法抛出的异常类型不大于 父类被或重写方法抛出的异常类型  </p><hr><p>​         规则: 子类与父类中同名同参数的方法，必须同时声明为static(不是重写)或非static（即为重写）</p><p>super 关键字的使用:   </p><p>　　1.super 理解为:父类的    </p><p>　　2.super 可以用来调用属性,方法,构造器    </p><p>　　3.super属性,方法</p><p>　　　3.1 有了继承以后我们可以在子类的方法或者构造器中，可以通过“super.属性”或者“super.方法”的方法,显示的调用父类中声明的属性或者方法。但是很多情况下，我们都可以省略“super.” </p><p>　　　3.2 如果子类和父类中出现了同名的属性，那抹我们在子类中调用父类同名的属性的的话，必须使用“super.”的方法 </p><p>　　　说明:子类的属性不会覆盖父类中同名的属性。在堆空间中，两个属性都会存在  </p><p>　　　3.3 如果子类重写了父类的方法，那抹我们在子类中调用父类被重写的方法，必须用“super.”的方法</p><p>　　4.super 调用构造器: super(形参列表)  </p><p>　　　4.1 在子类的构造器的首行，显示的使用“super(形参列表)”的方式,调用父类指定的构造器  </p><p>　　　4.2 针对于子类的某一个构造器而言，最多只能声明一个“super(形参列表)”  </p><p>　　　4.3 在子类的构造器的首行，要抹使用“this(形参列表)”,要抹使用“super(形参列表)”,不能同时出现    </p><p>　　　4.4 在子类构造器的首行，既没有显示的使用”this(形参列表)”，也没有显示的使用“super(形参列表)”，那抹默认提供的是：“super()”       </p><p>　　　4.5 在子类的多个构造器中，至少有一个构造器的首行使用了“super(形参列表)”</p><p>子类对象实例化的全过程： </p><p>　　1.结果上:(继承性)      子类在继承父类以后，就获取了所有的父类中声明的属性和方法  </p><p>　　2.过程上:  我们在实力化子类对象的过程中，一定会直接或间接调用父类的构造器，以及父类的父类的构造 器….      直到调用到java.lang.Object的空参构造器，正因为加载了这些父类的结构，所以,在子类对象的内存中才有所有父类中声明的属性或方法  </p><p>说明:在子类对象整个实例化过程中，只创建了唯一的一个对象，即为当前的子类对象</p><p>​    </p><p>面向对象的特征三:多态性的使用 </p><ul><li><p>多态性:可以理解为一个事物的多种形态   </p></li><li><p>广义上多态性的体现:  </p><p>①方法的重写和重载      ②子类对象的多态性   </p></li><li><p>狭义上多态性的体现: 子类对象的多态性  </p></li><li><p>子类对象的多态性:父类的引用指向子类的对象(子类的对象赋给父类的引用)   </p></li><li><p>多态的应用场景      </p><p>　虚拟方法调用:编译时,认为调用的方法是父类的,但是当运行时，实际上执行的是子类重写父类的方法   </p><p>　总结:多态中方法的调用:编译看左边，运行看右边。</p></li><li><p>多态性,只适用于方法 !</p></li><li><p>多态性使用的前提:①类的继承关系 ②要有方法的重写</p></li></ul><p>​     </p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;注释：&lt;/p&gt;
-&lt;p&gt;单行注释&lt;/p&gt;
-&lt;p&gt;//&lt;/p&gt;
-&lt;p&gt;多行注释(不可以嵌套)&lt;/p&gt;
-&lt;p&gt;/**/ &lt;/p&gt;
-&lt;p&gt;文档注释（java特有）&lt;/p&gt;
-&lt;p&gt;println 换行&lt;/p&gt;
-&lt;p&gt;print 不换行&lt;/p&gt;
-&lt;p&gt;在一个源文件种不允许定义两个相同的
-      
-    
-    </summary>
-    
-    
-      <category term="java" scheme="http://yoursite.com/categories/java/"/>
-    
-    
-      <category term="java基础" scheme="http://yoursite.com/tags/java%E5%9F%BA%E7%A1%80/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>day10</title>
-    <link href="http://yoursite.com/2020/02/11/1/12/day10/"/>
-    <id>http://yoursite.com/2020/02/11/1/12/day10/</id>
-    <published>2020-02-11T12:12:57.000Z</published>
-    <updated>2020-02-12T06:42:12.072Z</updated>
-    
-    <content type="html"><![CDATA[<p>类的成员之3：构造器(constructor,构造方法) construct:建造，建设</p><p>　1.构造器的作用：①创建类的对象 ②初始化对象的属性</p><p>　2.说明： </p><p>　　①如果在定义一个类时，没有显示的声明构造器，那抹系统会显示的提供的一个无参的构造器 </p><p>　　②如何去声明一个类的构造器：格式：权限修饰符 类名（形参列表）{}</p><p>　　③如果我们在类中一旦定义构造器，那抹系统不再提供默认的无参构造器了</p><p>　　④类的多个构造器之间，彼此构成重载</p><p>　　⑤总结:类中，一定有会构造器！</p><p>　3.关于类中属性赋值的先后顺序：</p><p>　　①默认初始化 - ②显示初始化 - ③构造器中初始化 || ④通过“对象.属性”或“对象.方法”，给属性赋值</p><p>　　①默认初始化</p><p>　　②显示初始化 </p><p>　　③构造器中初始化</p><p>　　④通过“对象.属性”或“对象.方法”，给属性赋值</p><p>javaBean 如下标准java类</p><ul><li>类是公共的</li><li>有一个无参的公共的的构造器</li><li>有属性，且有对应的get，set方法</li></ul><p><em>this 关键字的使用  :</em>  </p><p>　1.this  : 可以理解为:当前对象或正在创建的对象</p><p>　2.this 可以用来调用:属性,方法,构造器</p><p>　3.this 调用属性,方法</p><p>在方法中，通过this.属性 或者 this.方法 的方式，表示调用当前正在创建的对象的指定属性或方法。</p><p>但是通常的情况下，我们都省略了“this.”。但是如果方法的形参和当前正在创建的对象的属性名相同 </p><p>的情况下，我们必须显示的使用this.变量 的方式，表明此变量是属性而非形参     </p><p>在构造器中，通过this.属性 或者 this.方法 的方式，表示调用当前正在创建的对象的指定属性或方法。 </p><p>但是通常的情况下，我们都省略了“this.”。但是如果构造器的形参和当前正在创建的对象的属性名相同的情况下，我们必须显示的使用this.变量 的方式，表明此变量是属性而非形参 </p><p>　4.this 调用构造器  </p><p>　　　可以在类的构造器中this (形参列表) 的方式，调用本类中重载其他的构造器</p><blockquote><p>明确:构造器中不能通过this(形参列表)的方式，调用自身构造器 　　</p></blockquote><p>　　　 如果一个类中声明了N个构造器，则最多有N-1个构造器使用了this(形参列表) </p><p>　　　this(形参列表) 必须声明在构造器的首行 </p><p>　　　在类的构造器中，最多只能声明一个this(形参列表) </p><p>一：package 关键字的使用 </p><p>　　package：包   </p><p>　　1.为了方便的对项目中的类,进行统一的管理,提供了包的概念    </p><p>　　2.声明在源文件的首行   </p><p>　　3.遵循标识符的命名规则和规范:xxxxyyyzzz</p><p>　　4.命名时每“.”一次,代表着一层文件目录    </p><p>二：import 关键字的使用        import:导入 </p><p>　 　1.可以在源文件中使用import来导入执定包下的类或接口  </p><p>　　2.声明在类的结构和包的声明之间  </p><p>　　3.如果需要在源文件中导入多个类或接口，则并列声明处即可   </p><p>　　4.比如：import java.util.* ,表示可以导入util下的所有类和接口   </p><p>　　5.如果使用的类或接口是java.lang下定义的，则可以省略import 语句     </p><p>　　6.如果使用的类或者是当前包定义的，则可以省略import语句 </p><p>　　7.如果一个类中使用了不同包下的同名类，则必须通过全类名（完整的路径）的方法进行区分调用   </p><p>　　8.import static 可以导入指定类的静态属性或者方法        </p><p>　　9.如果已经声明导入A包下的结构（如:import   java.a*）,但是如果导入A包下的子包下的类或接口，仍需要导入声明       </p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;类的成员之3：构造器(constructor,构造方法) construct:建造，建设&lt;/p&gt;
-&lt;p&gt;　1.构造器的作用：①创建类的对象 ②初始化对象的属性&lt;/p&gt;
-&lt;p&gt;　2.说明： &lt;/p&gt;
-&lt;p&gt;　　①如果在定义一个类时，没有显示的声明构造器，那抹系统会显示的提供的
+        &lt;p&gt;面向对象的特性之二: 继承性 what ?  why ? how ? &lt;/p&gt;
+&lt;p&gt;　　1.继承性的好处:&lt;/p&gt;
+&lt;p&gt;　　　①减少了代码的冗余，提高了代码的复用性  &lt;/p&gt;
+&lt;p&gt;　　　②更好的扩展性   &lt;/p&gt;
+&lt;p&gt;　　　③为多态的使用提供了前提 &lt;/p&gt;
+&lt;
       
     
     </summary>
@@ -191,19 +159,22 @@
   </entry>
   
   <entry>
-    <title>java8新特性</title>
-    <link href="http://yoursite.com/2020/02/11/1/12/Java8%E6%96%B0%E7%89%B9%E6%80%A7/"/>
-    <id>http://yoursite.com/2020/02/11/1/12/Java8%E6%96%B0%E7%89%B9%E6%80%A7/</id>
+    <title>day10</title>
+    <link href="http://yoursite.com/2020/02/11/1/12/day10/"/>
+    <id>http://yoursite.com/2020/02/11/1/12/day10/</id>
     <published>2020-02-11T12:12:57.000Z</published>
-    <updated>2020-02-12T05:17:16.648Z</updated>
+    <updated>2020-02-12T06:42:12.072Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="一、Lambda-表达式的基础语法-java8中引入了新的操作符“-gt-”-该操作符称为箭头操作符或Lambda操作符"><a href="#一、Lambda-表达式的基础语法-java8中引入了新的操作符“-gt-”-该操作符称为箭头操作符或Lambda操作符" class="headerlink" title="一、Lambda 表达式的基础语法 :java8中引入了新的操作符“-&gt;” 该操作符称为箭头操作符或Lambda操作符"></a>一、Lambda 表达式的基础语法 :java8中引入了新的操作符“-&gt;” 该操作符称为箭头操作符或Lambda操作符</h3><p>​       <strong>箭头操作符 Lambda 表达式拆分为两部分:</strong><br>           左侧：Lambda 表达式的参数列表<br>           右侧：Lambda 表达式所需执行的功能,即 Lambda 体</p><ul><li>语法格式一:无参数,无返回值<pre><code>() -&gt; System.out.println(&quot;Hello Lambda&quot;);</code></pre></li><li>语法格式二:有一个参数,并且无返回值<pre><code>(x) -&gt; System.out.println(x);</code></pre></li><li>语法格式三:若只有一个参数,小括号可以省略不写<pre><code>x -&gt; System.out.println(x);</code></pre></li><li>语法格式四:有两个以上的参数,有返回值,并且Lambda体中有多条语句<pre><code>Comparator&lt;Integer&gt; com = (x,y) -&gt; {    System.out.println(&quot;函数式接口&quot;);    return Integer.compare(x,y);  };</code></pre></li><li>语法格式五:若Lambda体中只有一条语句,return和大括号都可以省略不写</li><li>语法格式六:Lambda表达式的参数列表的数据类型可以省略不写,因为JVM编译器通过上下文推断出,数据类型,即“类型推断”<pre><code>(Integer x,Integer y) -&gt; Integer.compare(x,y)；</code></pre></li></ul><p>上联:左右遇一括号略<br>下联:左侧推断类型省<br>横批:能省则省</p><h3 id="二-Lambda-表达式需要“函数式接口”的支持"><a href="#二-Lambda-表达式需要“函数式接口”的支持" class="headerlink" title="二: Lambda 表达式需要“函数式接口”的支持"></a>二: Lambda 表达式需要“函数式接口”的支持</h3><p>​         <strong>函数式接口:接口中只有一个抽象方法的接口,称为函数式接口。可以使用@FunctionalInterface 修饰<br>​                         可以检查是否是函数接口</strong></p><p>​         <strong>Java8内置的四大核心函数式接口</strong></p><p>​        Consumer<T> : 消费型接口<br>​                   void accept(T t);</T></p><pre><code>Supplier&lt;T&gt; : 供给型接口           T get();    Function&lt;T,R&gt; : 函数型接口           R apply(T t);Predicate&lt;T&gt; : 断言型接口           boolean test(T t);</code></pre><p><strong>一.方法引用:若Lambda体中的内容有方法已经实现了,我们可以使用”方法引用”<br>           (可以理解为方法引用是Lambda表达式的另一种体现)</strong></p><p>   主要有三种语法格式:</p><p>   对象::实例方法名</p><p>   类::静态方法名</p><p>   类::实例方法名</p><p>   注意:<br>       1).Lambda体中调用方法的参数列表与返回值类型,要与函数式接口中的抽象方法的函数列表和返回值类型保持一致！<br>       2).②若Lambda 的参数列表的第一个参数，是实例方法的调用者，第二个参数(或无参)是实例方法的参数  时，格式： ClassName::MethodName                       </p><p><strong>二.构造器引用</strong><br>       格式:<br>       ClassName::New</p><p>   注意:需要调用的构造器的参数列表要与函数式接口中抽象方法的参数列表保持一致！(个数)</p><p><strong>三:数组引用:</strong><br>       Type::new</p>]]></content>
+    <content type="html"><![CDATA[<p>类的成员之3：构造器(constructor,构造方法) construct:建造，建设</p><p>　1.构造器的作用：①创建类的对象 ②初始化对象的属性</p><p>　2.说明： </p><p>　　①如果在定义一个类时，没有显示的声明构造器，那抹系统会显示的提供的一个无参的构造器 </p><p>　　②如何去声明一个类的构造器：格式：权限修饰符 类名（形参列表）{}</p><p>　　③如果我们在类中一旦定义构造器，那抹系统不再提供默认的无参构造器了</p><p>　　④类的多个构造器之间，彼此构成重载</p><p>　　⑤总结:类中，一定有会构造器！</p><p>　3.关于类中属性赋值的先后顺序：</p><p>　　①默认初始化 - ②显示初始化 - ③构造器中初始化 || ④通过“对象.属性”或“对象.方法”，给属性赋值</p><p>　　①默认初始化</p><p>　　②显示初始化 </p><p>　　③构造器中初始化</p><p>　　④通过“对象.属性”或“对象.方法”，给属性赋值</p><p>javaBean 如下标准java类</p><ul><li>类是公共的</li><li>有一个无参的公共的的构造器</li><li>有属性，且有对应的get，set方法</li></ul><p><em>this 关键字的使用  :</em>  </p><p>　1.this  : 可以理解为:当前对象或正在创建的对象</p><p>　2.this 可以用来调用:属性,方法,构造器</p><p>　3.this 调用属性,方法</p><p>在方法中，通过this.属性 或者 this.方法 的方式，表示调用当前正在创建的对象的指定属性或方法。</p><p>但是通常的情况下，我们都省略了“this.”。但是如果方法的形参和当前正在创建的对象的属性名相同 </p><p>的情况下，我们必须显示的使用this.变量 的方式，表明此变量是属性而非形参     </p><p>在构造器中，通过this.属性 或者 this.方法 的方式，表示调用当前正在创建的对象的指定属性或方法。 </p><p>但是通常的情况下，我们都省略了“this.”。但是如果构造器的形参和当前正在创建的对象的属性名相同的情况下，我们必须显示的使用this.变量 的方式，表明此变量是属性而非形参 </p><p>　4.this 调用构造器  </p><p>　　　可以在类的构造器中this (形参列表) 的方式，调用本类中重载其他的构造器</p><blockquote><p>明确:构造器中不能通过this(形参列表)的方式，调用自身构造器 　　</p></blockquote><p>　　　 如果一个类中声明了N个构造器，则最多有N-1个构造器使用了this(形参列表) </p><p>　　　this(形参列表) 必须声明在构造器的首行 </p><p>　　　在类的构造器中，最多只能声明一个this(形参列表) </p><p>一：package 关键字的使用 </p><p>　　package：包   </p><p>　　1.为了方便的对项目中的类,进行统一的管理,提供了包的概念    </p><p>　　2.声明在源文件的首行   </p><p>　　3.遵循标识符的命名规则和规范:xxxxyyyzzz</p><p>　　4.命名时每“.”一次,代表着一层文件目录    </p><p>二：import 关键字的使用        import:导入 </p><p>　 　1.可以在源文件中使用import来导入执定包下的类或接口  </p><p>　　2.声明在类的结构和包的声明之间  </p><p>　　3.如果需要在源文件中导入多个类或接口，则并列声明处即可   </p><p>　　4.比如：import java.util.* ,表示可以导入util下的所有类和接口   </p><p>　　5.如果使用的类或接口是java.lang下定义的，则可以省略import 语句     </p><p>　　6.如果使用的类或者是当前包定义的，则可以省略import语句 </p><p>　　7.如果一个类中使用了不同包下的同名类，则必须通过全类名（完整的路径）的方法进行区分调用   </p><p>　　8.import static 可以导入指定类的静态属性或者方法        </p><p>　　9.如果已经声明导入A包下的结构（如:import   java.a*）,但是如果导入A包下的子包下的类或接口，仍需要导入声明       </p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h3 id=&quot;一、Lambda-表达式的基础语法-java8中引入了新的操作符“-gt-”-该操作符称为箭头操作符或Lambda操作符&quot;&gt;&lt;a href=&quot;#一、Lambda-表达式的基础语法-java8中引入了新的操作符“-gt-”-该操作符称为箭头操作符或Lambda操作符
+        &lt;p&gt;类的成员之3：构造器(constructor,构造方法) construct:建造，建设&lt;/p&gt;
+&lt;p&gt;　1.构造器的作用：①创建类的对象 ②初始化对象的属性&lt;/p&gt;
+&lt;p&gt;　2.说明： &lt;/p&gt;
+&lt;p&gt;　　①如果在定义一个类时，没有显示的声明构造器，那抹系统会显示的提供的
       
     
     </summary>
@@ -212,7 +183,41 @@
       <category term="java" scheme="http://yoursite.com/categories/java/"/>
     
     
-      <category term="java8" scheme="http://yoursite.com/tags/java8/"/>
+      <category term="java基础" scheme="http://yoursite.com/tags/java%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>day1</title>
+    <link href="http://yoursite.com/2020/02/11/1/12/day1/"/>
+    <id>http://yoursite.com/2020/02/11/1/12/day1/</id>
+    <published>2020-02-11T12:12:57.000Z</published>
+    <updated>2020-02-12T07:04:54.442Z</updated>
+    
+    <content type="html"><![CDATA[<p>注释：</p><p>单行注释</p><p>//</p><p>多行注释(不可以嵌套)</p><p>/**/ </p><p>文档注释（java特有）</p><p>println 换行</p><p>print 不换行</p><p>在一个源文件种不允许定义两个相同的类</p><p>关键字：具有特殊意义的字符串</p><p>特点：关键字都小写</p><p>保留字：现在不是关键字，以后可能作为关键字使用</p><p>标识符：程序员定义的变量名，函数名</p><p>标识符的命名规则：</p><ul><li>由26个英文字母大小写组成，0~9，_或$组成</li><li>数字不可以开头</li><li>不可以使用关键字或者保留字，但能包含关键字和保留字</li><li>严格区分大小写，长度无限制</li><li>不能包含空格</li></ul><p>标识符的命名规范：</p><p>　包名：多单词组成时所有字母都小写</p><p>　类名，接口名：多单词组成时所有单词首字母大写（大驼峰）</p><p>　变量名，方法名：多单词组成时，第一个单词首字母小写，第二个单词开始每个</p><p>　　　　　单词首字母大写（小驼峰）</p><p>　常量名：所有字母都大写，多单词组成时每个单词之间用下划线链接</p><p>变量分类：</p><p>角度1：按数据类型来分</p><p>　　　　基本数据类型：整型 ：byte（1）/ short（2字节）/ int（4字节）/ long（8字节） </p><p>　　　　　　　　　　　通常我们定义整形变量定义int</p><p>　　　　　　　　　　　如果定义long型变量后缀必须加l/L</p><p>　　　　　　　　　　　long ll = 1234 可以的，可以理解为自动类型提升</p><p>　　　　　　　　　　　浮点型：float （4字节） / double（8字节）</p><p>　　　　　　　　　　　通常我们定义浮点型变量定义double</p><p>　　　　　　　　　　　从存储数据的表数范围上讲，float的范围比long还要大</p><p>　　　　　　　　　　　如果定义float型变量后缀必须加f/F</p><p>　　　　　　　　　　　字符型：char（2字节）</p><p>　　　　　　　　　　　 ‘   ’声明</p><p>　　　　　　　　　　　char 不同的表示方式：　</p><p>　　　　　　　　　　　　　1.声明一个普通字符</p><p>　　　　　　　　　　　　　2.声明一个转义字符</p><p>　　　　　　　　　　　　　3.使用Unicode 码(\u16进制）</p><p>　　　　　　　　　　　布尔类型：boolean</p><p>　　　　　　　　　　　　　　true/ false</p><p>　　　　　　　　　　　常在流程控制中使用</p><p>　　　　引用数据类型： 类 /  接口 / 数组</p><p>　　　  注意String属于引用数据类型</p><p>角度2：按在类种声明的位置不同来分</p><p>　　　　成员变量  vs  局部变量</p><p>整型常量默认是int</p><p>浮点型默认是double</p><p>适用范围：除了boolean之外，对其他（7种）数据类型都适用</p><p>运算规则：byte 、char、short –&gt;int–&gt; long –&gt;float –&gt;double</p><p>特别的：byte  short char三者之间做运算时，结果是int型(防止溢出)</p><p>自动类型提升：</p><p>容量小的数据类型和容量大的数据类型变量做运算，运算结果为容量大的数据类型 （容量指存储范围的大小，而非储存空间大小）</p><p>强制数据类型转换：自动类型提升的逆过程</p><p>容量大的数据类型变量如果想转换为容量小的数据类型变量，就需要强制类型</p><p>转换符进行转换</p><p>强制类型转换符（）</p><p>String类与基本数据类型（8种）变量之间的运算</p><p>String 类属于引用数据类型的变量</p><p>String类型的变量值使用一对“  ”括起来表示</p><p>String类与基本数据类型（8种）变量之间只能做链接运算：+</p><p>String类与基本数据类型（8种）变量做运算的结果就是String</p><p>算术运算符：</p><p>　　-   */  %  (前)++ （后)++ (前)–  (后)–<br>　　-   取余：% ：余数的符号与被模数的符号相同</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;注释：&lt;/p&gt;
+&lt;p&gt;单行注释&lt;/p&gt;
+&lt;p&gt;//&lt;/p&gt;
+&lt;p&gt;多行注释(不可以嵌套)&lt;/p&gt;
+&lt;p&gt;/**/ &lt;/p&gt;
+&lt;p&gt;文档注释（java特有）&lt;/p&gt;
+&lt;p&gt;println 换行&lt;/p&gt;
+&lt;p&gt;print 不换行&lt;/p&gt;
+&lt;p&gt;在一个源文件种不允许定义两个相同的
+      
+    
+    </summary>
+    
+    
+      <category term="java" scheme="http://yoursite.com/categories/java/"/>
+    
+    
+      <category term="java基础" scheme="http://yoursite.com/tags/java%E5%9F%BA%E7%A1%80/"/>
     
   </entry>
   
@@ -310,37 +315,6 @@
   </entry>
   
   <entry>
-    <title>day11</title>
-    <link href="http://yoursite.com/2020/02/11/1/12/day11/"/>
-    <id>http://yoursite.com/2020/02/11/1/12/day11/</id>
-    <published>2020-02-11T12:12:57.000Z</published>
-    <updated>2020-02-12T06:35:39.398Z</updated>
-    
-    <content type="html"><![CDATA[<p>面向对象的特性之二: 继承性 what ?  why ? how ? </p><p>　　1.继承性的好处:</p><p>　　　①减少了代码的冗余，提高了代码的复用性  </p><p>　　　②更好的扩展性   </p><p>　　　③为多态的使用提供了前提 </p><p>　　2.格式:class A extends B  extends:继承,(延展,扩展)      子类(SubClass):A      父类(SuperClass,超类,基类):B  </p><p>　　3.说明:子类A继承父类B以后,就获取了父类中声明的结构:属性，方法 </p><p>　　　　3.1 不管父类中的属性或方法或权限如何，子类都可以获取到  </p><p>　　　　3.2 但是由于封装性的影响,可能在子类中不能直接调用父类中的权限较小的属性或方法</p><p>　　4.子类可以可以在继承父类的基础之上,提供自己特有的属性和方法    </p><p>　　　区别于:集合与子集   </p><p>　　5.子类和父类是相对的概念      </p><p>　　　子类通过继承，可以获取直接父类以及所有的间接父类中声明的所有属性或方法    </p><p>　　　一个父类可以被多个子类所继承 </p><p>　　　子类只能声明一个父类—-&gt;java类的单继承类</p><p>　　6.</p><p>　　　6.1 如果一个类没显示的继承一个类的话，则其父类为：java.lang.Object类 </p><p>　　　6.2 任何一个类(java.lang.Object 类)都能直接或者间接的继承于java.lang.Object类 </p><p>　　　6.3 任何一个类在继承java.lang.Object 之后，就获取了Object类中声明的属性和方法</p><p>　方法的重写(override / overwrite)   </p><p>　　　1.定义:子类在继承了父类以后，可以对父类中的同名同参数的方法进行“覆盖”或“覆写”</p><p>　　　2.重写以后，如果我们创建子类的对象，通过子类的对象调用子父类中同名的方法，执行的的是子类重写</p><p>　　　　类的方法  </p><p>　　　3.子类重写的方法，父类被重写的方法      </p><p>　　　　方法的声明:权限修饰符 返回值类型 方法名(形参列表) throws 异常的类型{ } </p><p>　　　　子类重写的方法与父类被重写方法的方法名和形参列表相同  </p><p>　　　　​子类重写的方法的权限修饰符不小于父类被重写的方法的权限修饰符     </p><p>　　　　特别的，子类不能重写父类中声明private的方法(因为子类中看不到)       </p><p>　　　　子类重写方法的返回值类型 不大于父类被重写方法的返回值类型 </p><p>　　举例: 1.父类方法的返回值类型是void，子类想重写，一定也是void  </p><p>　　　　2.父类方法的返回值类型是A，子类重写父类方法，返回值是类型A或类型A的子类，不能是类型A的父类       </p><p>　　　　　子类重写的方法抛出的异常类型不大于 父类被或重写方法抛出的异常类型  </p><hr><p>​         规则: 子类与父类中同名同参数的方法，必须同时声明为static(不是重写)或非static（即为重写）</p><p>super 关键字的使用:   </p><p>　　1.super 理解为:父类的    </p><p>　　2.super 可以用来调用属性,方法,构造器    </p><p>　　3.super属性,方法</p><p>　　　3.1 有了继承以后我们可以在子类的方法或者构造器中，可以通过“super.属性”或者“super.方法”的方法,显示的调用父类中声明的属性或者方法。但是很多情况下，我们都可以省略“super.” </p><p>　　　3.2 如果子类和父类中出现了同名的属性，那抹我们在子类中调用父类同名的属性的的话，必须使用“super.”的方法 </p><p>　　　说明:子类的属性不会覆盖父类中同名的属性。在堆空间中，两个属性都会存在  </p><p>　　　3.3 如果子类重写了父类的方法，那抹我们在子类中调用父类被重写的方法，必须用“super.”的方法</p><p>　　4.super 调用构造器: super(形参列表)  </p><p>　　　4.1 在子类的构造器的首行，显示的使用“super(形参列表)”的方式,调用父类指定的构造器  </p><p>　　　4.2 针对于子类的某一个构造器而言，最多只能声明一个“super(形参列表)”  </p><p>　　　4.3 在子类的构造器的首行，要抹使用“this(形参列表)”,要抹使用“super(形参列表)”,不能同时出现    </p><p>　　　4.4 在子类构造器的首行，既没有显示的使用”this(形参列表)”，也没有显示的使用“super(形参列表)”，那抹默认提供的是：“super()”       </p><p>　　　4.5 在子类的多个构造器中，至少有一个构造器的首行使用了“super(形参列表)”</p><p>子类对象实例化的全过程： </p><p>　　1.结果上:(继承性)      子类在继承父类以后，就获取了所有的父类中声明的属性和方法  </p><p>　　2.过程上:  我们在实力化子类对象的过程中，一定会直接或间接调用父类的构造器，以及父类的父类的构造 器….      直到调用到java.lang.Object的空参构造器，正因为加载了这些父类的结构，所以,在子类对象的内存中才有所有父类中声明的属性或方法  </p><p>说明:在子类对象整个实例化过程中，只创建了唯一的一个对象，即为当前的子类对象</p><p>​    </p><p>面向对象的特征三:多态性的使用 </p><ul><li><p>多态性:可以理解为一个事物的多种形态   </p></li><li><p>广义上多态性的体现:  </p><p>①方法的重写和重载      ②子类对象的多态性   </p></li><li><p>狭义上多态性的体现: 子类对象的多态性  </p></li><li><p>子类对象的多态性:父类的引用指向子类的对象(子类的对象赋给父类的引用)   </p></li><li><p>多态的应用场景      </p><p>　虚拟方法调用:编译时,认为调用的方法是父类的,但是当运行时，实际上执行的是子类重写父类的方法   </p><p>　总结:多态中方法的调用:编译看左边，运行看右边。</p></li><li><p>多态性,只适用于方法 !</p></li><li><p>多态性使用的前提:①类的继承关系 ②要有方法的重写</p></li></ul><p>​     </p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;面向对象的特性之二: 继承性 what ?  why ? how ? &lt;/p&gt;
-&lt;p&gt;　　1.继承性的好处:&lt;/p&gt;
-&lt;p&gt;　　　①减少了代码的冗余，提高了代码的复用性  &lt;/p&gt;
-&lt;p&gt;　　　②更好的扩展性   &lt;/p&gt;
-&lt;p&gt;　　　③为多态的使用提供了前提 &lt;/p&gt;
-&lt;
-      
-    
-    </summary>
-    
-    
-      <category term="java" scheme="http://yoursite.com/categories/java/"/>
-    
-    
-      <category term="java基础" scheme="http://yoursite.com/tags/java%E5%9F%BA%E7%A1%80/"/>
-    
-  </entry>
-  
-  <entry>
     <title>day16</title>
     <link href="http://yoursite.com/2020/02/11/1/12/day16/"/>
     <id>http://yoursite.com/2020/02/11/1/12/day16/</id>
@@ -357,6 +331,35 @@
 &lt;p&gt;​    扩展:数据的持久化:文件(.jpg;mp3); xml ; 数据库&lt;/p&gt;
 &lt;p&gt;2.数组在内存存储方面的特点:&lt;/p&gt;
 &lt;p&gt;　　①数组初始化以后,长度就确定了  
+      
+    
+    </summary>
+    
+    
+      <category term="java" scheme="http://yoursite.com/categories/java/"/>
+    
+    
+      <category term="java基础" scheme="http://yoursite.com/tags/java%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>day20</title>
+    <link href="http://yoursite.com/2020/02/11/1/12/day20/"/>
+    <id>http://yoursite.com/2020/02/11/1/12/day20/</id>
+    <published>2020-02-11T12:12:57.000Z</published>
+    <updated>2020-02-12T06:19:01.949Z</updated>
+    
+    <content type="html"><![CDATA[<p>jdk 7.0 时，引入了 Path、Paths、Files三个类。</p><p>　1.此三个类声明在：java.nio.file包下。</p><p>　2.Path可以看做是java.io.File类的升级版本。也可以表示文件或文件目录，与平台无关</p><p>　3.如何实例化Path:使用Paths. </p><p>　　static Path get(String first, String … more) : 用于将多个字符串串连成路径</p><p>　　static Path get(URI uri): 返回指定uri对应的Path路径 </p><h2 id="Path"><a href="#Path" class="headerlink" title="Path:"></a>Path:</h2><p>   String toString() ： 返回调用 Path 对象的字符串表示形式</p><p>   boolean startsWith(String path) : 判断是否以 path 路径开始</p><p>   boolean endsWith(String path) : 判断是否以 path 路径结束</p><p>   boolean isAbsolute() : 判断是否是绝对路径</p><p>   Path getParent() ：返回Path对象包含整个路径，不包含 Path 对象指定的文件路径</p><p>   Path getRoot() ：返回调用 Path 对象的根路径</p><p>​       Path getFileName() : 返回与调用 Path 对象关联的文件名</p><p>​       int getNameCount() : 返回Path 根目录后面元素的数量(层数)</p><p>​       Path getName(int idx) : 返回指定索引位置 idx 的路径名称</p><p>​       Path toAbsolutePath() : 作为绝对路径返回调用 Path 对象</p><p>​       File toFile(): 将Path转化为File类的对象</p><h2 id="Files"><a href="#Files" class="headerlink" title="Files"></a>Files</h2><p>Path copy(Path src, Path dest, CopyOption … how) : 文件的复制      </p><p>​    &gt;要想复制成功，要求path1对应的物理上的文件存在。path1对应的文件没有要求。</p><p>​      Files.copy(path1, path2, StandardCopyOption.REPLACE_EXISTING); 当已存在时做覆盖</p><p>Path createDirectory(Path path, FileAttribute&lt;?&gt; … attr) : 创建一个目录      </p><p>​      要想执行成功，要求path对应的物理上的文件目录不存在。一旦存在，抛出异常。</p><p>Path createFile(Path path, FileAttribute&lt;?&gt; … arr) : 创建一个文件      </p><p>​      要想执行成功，要求path对应的物理上的文件不存在。一旦存在，抛出异常。</p><p>void delete(Path path) : 删除一个文件/目录，如果不存在，执行报错</p><p>void deleteIfExists(Path path) : Path对应的文件/目录如果存在，执行删除.如果不存在，正常执行结束</p><p>Path move(Path src, Path dest, CopyOption…how) : 将 src 移动到 dest 位置      </p><p>   要想执行成功，src对应的物理上的文件需要存在，dest对应的文件没有要求。</p><p>   Files.move(path1, path2, StandardCopyOption.ATOMIC_MOVE);</p><p>long size(Path path) : 返回 path 指定文件的大小</p><p>boolean exists(Path path, LinkOption … opts) : 判断文件是否存在</p><p>boolean isDirectory(Path path, LinkOption … opts) : 判断是否是目录</p><p>boolean isRegularFile(Path path, LinkOption … opts) : 判断是否是文件</p><p>boolean isHidden(Path path) : 判断是否是隐藏文件</p><p>​    &gt;要求此path对应的物理上的文件需要存在。才可判断是否隐藏。否则，抛异常</p><p>boolean isReadable(Path path) : 判断文件是否可读</p><p>boolean isWritable(Path path) : 判断文件是否可写</p><p>boolean notExists(Path path, LinkOption … opts) : 判断文件是否不存在</p><p>StandardOpenOption.READ:表示对应的Channel是可读的。 </p><p>StandardOpenOption.WRITE：表示对应的Channel是可写的。</p><p>StandardOpenOption.CREATE：如果要写出的文件不存在，则创建。如果存在，忽略 StandardOpenOption.CREATE_NEW：如果要写出的文件不存在，则创建。如果存在，抛异常</p><p>SeekableByteChannel newByteChannel(Path path, OpenOption…how) : 获取与指定文件的连接，how 指定打开方式。</p><p>DirectoryStream<Path>  newDirectoryStream(Path path) : 打开 path 指定的目录</Path></p><p>InputStream newInputStream(Path path, OpenOption…how):获取 InputStream 对象</p><p>OutputStream newOutputStream(Path path, OpenOption…how) : 获取 OutputStream 对象</p><p>jdk 7 提供基于try-catch的自动资源管理</p><p>　能够实现资源的自动关闭，需要满足：</p><p>　　1.可以在一条 try 语句中管理多个资源，每个资源以“;” 隔开即可。</p><p>　　2.需要关闭的资源，必须实现了 AutoCloseable 接口或其子接口 Closeable目的：不需要再使用finally，显式的关闭资源了。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;jdk 7.0 时，引入了 Path、Paths、Files三个类。&lt;/p&gt;
+&lt;p&gt;　1.此三个类声明在：java.nio.file包下。&lt;/p&gt;
+&lt;p&gt;　2.Path可以看做是java.io.File类的升级版本。也可以表示文件或文件目录，与平台无关&lt;/p&gt;
+&lt;p&gt;　3.
       
     
     </summary>
@@ -432,35 +435,6 @@
   </entry>
   
   <entry>
-    <title>day20</title>
-    <link href="http://yoursite.com/2020/02/11/1/12/day20/"/>
-    <id>http://yoursite.com/2020/02/11/1/12/day20/</id>
-    <published>2020-02-11T12:12:57.000Z</published>
-    <updated>2020-02-12T06:19:01.949Z</updated>
-    
-    <content type="html"><![CDATA[<p>jdk 7.0 时，引入了 Path、Paths、Files三个类。</p><p>　1.此三个类声明在：java.nio.file包下。</p><p>　2.Path可以看做是java.io.File类的升级版本。也可以表示文件或文件目录，与平台无关</p><p>　3.如何实例化Path:使用Paths. </p><p>　　static Path get(String first, String … more) : 用于将多个字符串串连成路径</p><p>　　static Path get(URI uri): 返回指定uri对应的Path路径 </p><h2 id="Path"><a href="#Path" class="headerlink" title="Path:"></a>Path:</h2><p>   String toString() ： 返回调用 Path 对象的字符串表示形式</p><p>   boolean startsWith(String path) : 判断是否以 path 路径开始</p><p>   boolean endsWith(String path) : 判断是否以 path 路径结束</p><p>   boolean isAbsolute() : 判断是否是绝对路径</p><p>   Path getParent() ：返回Path对象包含整个路径，不包含 Path 对象指定的文件路径</p><p>   Path getRoot() ：返回调用 Path 对象的根路径</p><p>​       Path getFileName() : 返回与调用 Path 对象关联的文件名</p><p>​       int getNameCount() : 返回Path 根目录后面元素的数量(层数)</p><p>​       Path getName(int idx) : 返回指定索引位置 idx 的路径名称</p><p>​       Path toAbsolutePath() : 作为绝对路径返回调用 Path 对象</p><p>​       File toFile(): 将Path转化为File类的对象</p><h2 id="Files"><a href="#Files" class="headerlink" title="Files"></a>Files</h2><p>Path copy(Path src, Path dest, CopyOption … how) : 文件的复制      </p><p>​    &gt;要想复制成功，要求path1对应的物理上的文件存在。path1对应的文件没有要求。</p><p>​      Files.copy(path1, path2, StandardCopyOption.REPLACE_EXISTING); 当已存在时做覆盖</p><p>Path createDirectory(Path path, FileAttribute&lt;?&gt; … attr) : 创建一个目录      </p><p>​      要想执行成功，要求path对应的物理上的文件目录不存在。一旦存在，抛出异常。</p><p>Path createFile(Path path, FileAttribute&lt;?&gt; … arr) : 创建一个文件      </p><p>​      要想执行成功，要求path对应的物理上的文件不存在。一旦存在，抛出异常。</p><p>void delete(Path path) : 删除一个文件/目录，如果不存在，执行报错</p><p>void deleteIfExists(Path path) : Path对应的文件/目录如果存在，执行删除.如果不存在，正常执行结束</p><p>Path move(Path src, Path dest, CopyOption…how) : 将 src 移动到 dest 位置      </p><p>   要想执行成功，src对应的物理上的文件需要存在，dest对应的文件没有要求。</p><p>   Files.move(path1, path2, StandardCopyOption.ATOMIC_MOVE);</p><p>long size(Path path) : 返回 path 指定文件的大小</p><p>boolean exists(Path path, LinkOption … opts) : 判断文件是否存在</p><p>boolean isDirectory(Path path, LinkOption … opts) : 判断是否是目录</p><p>boolean isRegularFile(Path path, LinkOption … opts) : 判断是否是文件</p><p>boolean isHidden(Path path) : 判断是否是隐藏文件</p><p>​    &gt;要求此path对应的物理上的文件需要存在。才可判断是否隐藏。否则，抛异常</p><p>boolean isReadable(Path path) : 判断文件是否可读</p><p>boolean isWritable(Path path) : 判断文件是否可写</p><p>boolean notExists(Path path, LinkOption … opts) : 判断文件是否不存在</p><p>StandardOpenOption.READ:表示对应的Channel是可读的。 </p><p>StandardOpenOption.WRITE：表示对应的Channel是可写的。</p><p>StandardOpenOption.CREATE：如果要写出的文件不存在，则创建。如果存在，忽略 StandardOpenOption.CREATE_NEW：如果要写出的文件不存在，则创建。如果存在，抛异常</p><p>SeekableByteChannel newByteChannel(Path path, OpenOption…how) : 获取与指定文件的连接，how 指定打开方式。</p><p>DirectoryStream<Path>  newDirectoryStream(Path path) : 打开 path 指定的目录</Path></p><p>InputStream newInputStream(Path path, OpenOption…how):获取 InputStream 对象</p><p>OutputStream newOutputStream(Path path, OpenOption…how) : 获取 OutputStream 对象</p><p>jdk 7 提供基于try-catch的自动资源管理</p><p>　能够实现资源的自动关闭，需要满足：</p><p>　　1.可以在一条 try 语句中管理多个资源，每个资源以“;” 隔开即可。</p><p>　　2.需要关闭的资源，必须实现了 AutoCloseable 接口或其子接口 Closeable目的：不需要再使用finally，显式的关闭资源了。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;jdk 7.0 时，引入了 Path、Paths、Files三个类。&lt;/p&gt;
-&lt;p&gt;　1.此三个类声明在：java.nio.file包下。&lt;/p&gt;
-&lt;p&gt;　2.Path可以看做是java.io.File类的升级版本。也可以表示文件或文件目录，与平台无关&lt;/p&gt;
-&lt;p&gt;　3.
-      
-    
-    </summary>
-    
-    
-      <category term="java" scheme="http://yoursite.com/categories/java/"/>
-    
-    
-      <category term="java基础" scheme="http://yoursite.com/tags/java%E5%9F%BA%E7%A1%80/"/>
-    
-  </entry>
-  
-  <entry>
     <title>day19</title>
     <link href="http://yoursite.com/2020/02/11/1/12/day19/"/>
     <id>http://yoursite.com/2020/02/11/1/12/day19/</id>
@@ -491,24 +465,24 @@
   </entry>
   
   <entry>
-    <title>day23</title>
-    <link href="http://yoursite.com/2020/02/11/1/12/day23/"/>
-    <id>http://yoursite.com/2020/02/11/1/12/day23/</id>
+    <title>day2</title>
+    <link href="http://yoursite.com/2020/02/11/1/12/day2/"/>
+    <id>http://yoursite.com/2020/02/11/1/12/day2/</id>
     <published>2020-02-11T12:12:57.000Z</published>
-    <updated>2020-02-12T05:17:04.397Z</updated>
+    <updated>2020-02-12T07:01:06.464Z</updated>
     
-    <content type="html"><![CDATA[<p>jdk 8 之前 日期+时间 API的使用</p><p>java.util.Date类</p><p>　　|—-java.sql.Date类</p><p>1.java.util.Date类：</p><p>　　如何实例化：两个构造器</p><p>　　常用方法：toString() / getTime();</p><p> 2.java.sql.Date类：与数据表中的Date类型的变量对应。    </p><p>构造器一：获取系统当前时间对应的Date对象</p><p>Date date = new Date();</p><p>getTime()：返回当前日期对应的毫秒数：当前时间与1970-1-1 00：00：00直接的毫秒数</p><p>构造器二：获取毫秒数所对应的Date对象</p><p>Date date1 = new Date(1502768492941L);</p><p>SQl:</p><p>java.sql.Date date2 = new java.sql.Date(1502768492941L);</p><p>SimpleDateFormat</p><p>使用默认构造器:SimpleDateFormat sdf = new SimpleDateFormat();</p><p>格式化：String format(Date date):</p><p>　Date date = new Date();</p><p>　String dateStr = sdf.format(date);</p><p>解析： Date parse(String dateStr)</p><p>　Date date1 = sdf.parse(“17-8-15 下午2:18”);</p><p>　System.out.println(date1);</p><p>java.text.SimpleDateFormat类</p><p>　1.SimpleDateFormat的作用：</p><p>　　　格式化：日期—&gt;文本</p><p>　　　解析：格式化的逆过程，文本 —&gt;日期</p><p>　2.SimpleDateFormat实例化</p><p>　　使用带参数的构造器</p><p>　　　SimpleDateFormat sdf1 = new SimpleDateFormat(“EEE, d MMM yyyy HH:mm:ss Z”); 　　　</p><p>　　　SimpleDateFormat sdf1 = new SimpleDateFormat(“yyyy-MM-dd hh:mm:ss”);</p><p>　　格式化：</p><p>　　　String dateStr1 = sdf1.format(date);</p><p>　　　System.out.println(dateStr1);//2017-08-15 02:24:40</p><p>　　解析：</p><p>　　　Date date2 = sdf1.parse(“2017-08-15 02:24:40”);</p><p>　　　System.out.println(date2);</p><p>java.util.Calendar(日历)类的使用</p><p>　　1.实例化Calendar calendar = Calendar.getInstance();</p><p>　　2.get()</p><p>​        　int day = calendar.get(Calendar.DAY_OF_MONTH);</p><p>​        　System.out.println(day);</p><p>　　3.set()</p><p>　　　calendar.set(Calendar.DAY_OF_MONTH, 20);　</p><p>　　　day =   calendar.get(Calendar.DAY_OF_MONTH);</p><p>　　　System.out.println(day);</p><p>　　4.add()</p><p>　　　calendar.add(Calendar.DAY_OF_MONTH, -2);</p><p>　　　day = calendar.get(Calendar.DAY_OF_MONTH);</p><p>　　　System.out.println(day);</p><p>日历 —&gt;日期</p><p>　　Date date = calendar.getTime();</p><p>　　System.out.println(date);</p><p>使用指定的Date对象，来设置calendar</p><p>　　Date date1 = new Date();</p><p>　　calendar.setTime(date1);</p><p>　　day = calendar.get(Calendar.DAY_OF_MONTH);</p><p>　　System.out.println(day);</p><p>LocalDate / LocalTime / LocalDateTime     —–重要//理解为对Calendar</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//实例化</span></span><br><span class="line"><span class="comment">//now()</span></span><br><span class="line">LocalDate localDate = LocalDate.now();</span><br><span class="line">LocalTime localTime = LocalTime.now();</span><br><span class="line">LocalDateTime localDateTime =   LocalDateTime.now();</span><br><span class="line"></span><br><span class="line">System.out.println(localDate);</span><br><span class="line">System.out.println(localTime);</span><br><span class="line">System.out.println(localDateTime);</span><br><span class="line"></span><br><span class="line"><span class="comment">//of()</span></span><br><span class="line">LocalDate localDate2 = LocalDate.of(<span class="number">2017</span>,<span class="number">8</span>,<span class="number">15</span>); </span><br><span class="line">System.out.println(localDate2);</span><br><span class="line">LocalDateTime localDateTime2 = LocalDateTime.of(<span class="number">2017</span>, <span class="number">8</span>, <span class="number">15</span>, <span class="number">11</span>, <span class="number">11</span>,<span class="number">23</span>); System.out.println(localDateTime2);</span><br><span class="line">System.out.println();</span><br><span class="line"><span class="comment">//getXxx():</span></span><br><span class="line">System.out.println(localDateTime.getDayOfYear());</span><br><span class="line">System.out.println(localDateTime.getDayOfMonth());</span><br><span class="line">System.out.println(localDateTime.getDayOfWeek());</span><br><span class="line">System.out.println(localDateTime.getMonth());</span><br><span class="line">System.out.println(localDateTime.getMonthValue());</span><br><span class="line">System.out.println(localDateTime.getHour());</span><br><span class="line">System.out.println(localDateTime.getMinute());</span><br><span class="line"><span class="comment">//withXxx():体现了不可变性</span></span><br><span class="line">LocalDateTime localDateTime3=localDateTime.withDayOfMonth(<span class="number">20</span>); System.out.println(localDateTime);</span><br><span class="line">System.out.println(localDateTime3);</span><br><span class="line">LocalDateTime localDateTime4=localDateTime.withHour(<span class="number">12</span>); System.out.println(localDateTime4);</span><br><span class="line"><span class="comment">//plus()//minus()</span></span><br><span class="line">LocalDateTime localDateTime5 =localDateTime.plusDays(<span class="number">3</span>); System.out.println(localDateTime5);</span><br><span class="line">LocalDateTime localDateTime6 =localDateTime.minusMinutes(<span class="number">20</span>); </span><br><span class="line">System.out.println(localDateTime6);</span><br><span class="line"><span class="keyword">boolean</span> isBefore =localDateTime.isBefore(localDateTime6); </span><br><span class="line"> System.out.println(isBefore);<span class="comment">//false</span></span><br><span class="line"><span class="keyword">boolean</span> isAfter =localDateTime.isAfter(localDateTime6); System.out.println(isAfter);<span class="comment">//true</span></span><br><span class="line"><span class="comment">//isLeapYear():</span></span><br><span class="line">System.out.println(localDate.isLeapYear());</span><br><span class="line">LocalDate localDate3 =localDate.minusYears(<span class="number">1</span>); </span><br><span class="line">System.out.println(localDate3.isLeapYear());</span><br></pre></td></tr></table></figure><p>Optional类使用的测试</p><p>　Optional:是一个封装了具体类型数据的容器。</p><p>　其中，具体的类型：通过Optional的泛型体现。</p><p>　具体类型的数据：通过Optional内部的T value体现</p><p>返回一个没有封装任何数据的Optional对象</p><p>　　Optional<Object> op = Optional.empty();０</Object></p><p>　　Optional<String> op1 = Optional.ofNullable(“beijing”);</String></p><p>isPresent():判断内部的数据是否存在</p><p>get():返回Optional对象内部封装的数据</p><p>of(T t):当t为null时，报异常。建议不用此方法</p><p>orElse(T t):如果调用对象包含值，返回该值，否则返回t</p><p>Integer类作为int的包装类，能存储的最大整型值为2^31−1， </p><p>BigInteger类的数值范围较Integer类、Long类的数值范围要大得多，可以支持任意精度的整数。</p><p>在商业计算中，要求数字精度比较高，故用到java.math.BigDecimal类。</p><p>BigDecimal类支持任何精度的定点数。</p>]]></content>
+    <content type="html"><![CDATA[<p>赋值运算符 = </p><p>支持链式赋值 a  = b = 99</p><p>复合赋值运算符 (+=  , -=  , /= , *=)</p><p>short a = 10;</p><p>a += 2  与 a = a +2 相似，有区别的</p><p>a += 2     相当于a自增,不会改变本身变量数据类型</p><p>a = a +2  因为整型常量默认是int，所以a+2，自动提升数据类型为int,会报错</p><p>真正开发中，如果希望变量自增1：</p><p> 方式1： i = i + 1</p><p> 方式2： i += 1</p><p> 方式3： i++   (推荐)</p><p>真正开发中，如果希望变量自增2：</p><p> 方式1： i = i + 2</p><p> 方式2： i += 2  (推荐)</p><p>比较运算符： ==    !=    &gt;  &lt;   &gt;=  &lt;=  instanceof</p><p>比较运算符的结果都是布尔类型（boolean）</p><p>逻辑运算符：运算符操作的是boolean型变量，运算结果也是boolean类型</p><p>&amp;逻辑与运算符     &amp;&amp; 短路与</p><p>|逻辑或运算符      ||   短路或    </p><p>！逻辑非运算符     ^    逻辑异或</p><p>&amp;和&amp;&amp;运算结果相同，如果符号左边是true,两个运算符都要执行右边的运算</p><p>​                                       如果符号左边是false,&amp;仍然要执行右边的，&amp;&amp;不在执                            </p><p>​                                        行符号右边的</p><p>|和||运算结果相同，  如果符号左边是true,   |仍然要执行右边的，||不在执                            </p><p>​                                        行符号右边的</p><p>​                                        如果符号左边是false,两个运算符都要执行右边的运算</p><p>​                                         </p><p>位运算符：操作的都是数值型变量</p><p>&lt;&lt;   &gt;&gt;   &gt;&gt;&gt;(无符号右移)  &amp;  |  ^  ~</p><p>&lt;&lt; 规律：在一定范围内，每左移一位，相当于数值*2，过犹不及(截断是让数值变的更小)</p><p>。&gt;&gt; 规律：在一定范围内，每右移一位，相当于数值/2，过犹不及。</p><p>。&gt;&gt;&gt;:右移以后最高位拿0补</p><p>三元运算符：（条件表达式）？表达式1：表达式2</p><p>​                           表达式1和表达式2的数据类型要一致（满足自动类型提升也可以）</p><p>三元运算符一定可以转换为if else,反之不成立</p><p>顺序结构：</p><p>前向引用</p><p>分支结构：</p><p>if(条件表达式){</p><p>​    执行代码块</p><p>}</p><p>if(条件表达式){</p><p>​    执行代码块1</p><p>}</p><p>else{</p><p>​     执行代码块2</p><p>}</p><p>if(条件表达式1){</p><p>​    执行代码块1</p><p>}</p><p>else if(条件表达式2){</p><p>​     执行代码块2</p><p>}</p><p>else{</p><p>​         执行代码快n</p><p>}</p><p>1.else：结构可选的</p><p>2.如果两个条件表达式没有公共的交集，此时两个else if结构，可以交换结构</p><p>   .如果两个条件表达式有公共的交集，要求范围小的条件表达式放在条件表达式的上面，</p><p>​    此时两个条件表达式才有可能都被执行到</p><blockquote><p> 从键盘获取数据</p></blockquote><ul><li><p>导包</p><p>import java.util.Scanner;</p></li><li><p>实例化Scanner</p></li><li><p>调用相关方法，获取不同类型的变量</p><p>next 字符串</p><p>nextInt 整数</p><p>nextDouble  double</p><p>nextFloat       float  </p><p>nextBoolean  布尔类型</p><p>Scanner类中没有从键盘获取char的方法</p><p>用户输入的变量类型与调用的方法类型需要一致，否则，报inputMismatchException</p></li></ul>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;jdk 8 之前 日期+时间 API的使用&lt;/p&gt;
-&lt;p&gt;java.util.Date类&lt;/p&gt;
-&lt;p&gt;　　|—-java.sql.Date类&lt;/p&gt;
-&lt;p&gt;1.java.util.Date类：&lt;/p&gt;
-&lt;p&gt;　　如何实例化：两个构造器&lt;/p&gt;
-&lt;p&gt;　　常用方法：toSt
+        &lt;p&gt;赋值运算符 = &lt;/p&gt;
+&lt;p&gt;支持链式赋值 a  = b = 99&lt;/p&gt;
+&lt;p&gt;复合赋值运算符 (+=  , -=  , /= , *=)&lt;/p&gt;
+&lt;p&gt;short a = 10;&lt;/p&gt;
+&lt;p&gt;a += 2  与 a = a +2 相似，有区别的&lt;/p&gt;
+&lt;p&gt;a +
       
     
     </summary>
@@ -522,23 +496,53 @@
   </entry>
   
   <entry>
-    <title>day3</title>
-    <link href="http://yoursite.com/2020/02/11/1/12/day3/"/>
-    <id>http://yoursite.com/2020/02/11/1/12/day3/</id>
+    <title>day21</title>
+    <link href="http://yoursite.com/2020/02/11/1/12/day21/"/>
+    <id>http://yoursite.com/2020/02/11/1/12/day21/</id>
     <published>2020-02-11T12:12:57.000Z</published>
-    <updated>2020-02-12T06:58:45.621Z</updated>
+    <updated>2020-02-12T05:21:40.343Z</updated>
     
-    <content type="html"><![CDATA[<p>equals   判断字符串内容</p><p>Math.random  [0, 1)</p><p>想获取【a,b】的数 ( int )(Math.random()*(b-a+1)+a)</p><p>分支结构2：switch-case</p><p>switch 语句的结束标志： } ，break</p><p>default 可选，位置比较灵活</p><p>switch中的表达式所代表的数据类型6种，只能是如下byte,short,char,int,枚举，String(jdk7.0新增)</p><p>case 后只能是常量或者是常量表达式</p><p>多个case可以共用一组语句，在最后一个case上写要执行的语句就好了，这里的最后一个case并不是}附近的一个，而是你要停止的一个</p><p>凡是swith-case实现的结构，都可以转成if-else实现，反之不成立</p><p>字符串方法：</p><p>获取字符：charAt()</p><p>循环结构4要素：</p><p>初始化条件</p><p>循环条件  —&gt;布尔类型</p><p>循环体</p><p>迭代条件</p><p>当循环条件返回false,结束循环</p><p>for和while 可以相互转换</p><p>循环结构的结束方式：</p><p> 1.循环条件返回false时</p><p> 2.在循环体中，判断某个条件满足时，执行break (不确定循环次数时)</p><p>​     while(true)   / for(;;)</p><p>嵌套循环：</p><p>一个循环结构a,作为另一个循环结构b的循环体实现</p><p> 内层循环：循环结构a</p><p> 外层循环：循环结构b</p><p>技巧：</p><p>1.外层循环控制行数</p><p>   内层循环控制列数</p><p>2.</p><p>内层循环循环次数为m次，外层循环循环次数为n次，则一共循环m*n次</p>]]></content>
+    <content type="html"><![CDATA[<p>一、NIO的使用中两个重要的要素：</p><p>　缓冲区(Buffer)、通道(Channel)</p><p>　缓冲区(Buffer):存储数据的。   —-&gt;byte[] buffer = new byte[1024]</p><p>　通道(Channel)：代表着数据源与目标节点之间的连接，负责缓冲区的传输。 —&gt;IO流</p><p>　二者的交互：Java NIO 中的 Buffer 主要用于与 NIO 通道(Channel)进行交互， 数据是从通道读入缓冲  区，　从缓冲区写入通道中的。</p><p>二、缓冲区（Buffer）的结构 (除boolean之外) </p><p>　java.nio.Buffer抽象类</p><p>　　|—-ByteBuffer</p><p>　　|—-CharBuffer</p><p>　　|—-ShortBuffer</p><p>　　|—-IntBuffer</p><p>　　|—-LongBuffer</p><p>　　|—-FloatBuffer</p><p>　　|—-DoubleBuffer</p><p> XxxBuffer底层使用xxx[]进行存储。</p><p> 三、如何实例化缓冲区？调用缓冲区类XxxBuffer的静态方法：allocate(int capacity)   </p><p>　　举例：ByteBuffer byteBuffer = ByteBuffer.allocate(10);byte[] hb = new byte[10];</p><p>　　类似：ArrayList list = new ArrayList(10);//Object[] eleData = new Object[10];</p><p>　说明：方法的形参，决定了底层创建的数组的长度</p><p>四、Buffer中的常用属性：</p><p>　　capacity:容量，决定了底层数组的长度，表明了最大存储数据的容量</p><p>　　limit:限制，默认情况下，limit等于capacity.在读数据模式下，limit&lt;=capacity.表明最大可以读取数据的量position:位置，表明了当前读取或写入数据的位置</p><p>　　mark:标记。默认值为-1.</p><p>　　关系式：mark &lt;= position &lt;= limit &lt;= capacity</p><p>　　类比：项目三中TeamService类中的属性：</p><p>　　　private final int MAX_MEMBER = 5;//相当于capacity  </p><p>　　　private Programmer[] team = new Programmer[MAX_MEMBER];//Buffer底层封装的数组  </p><p>　　　private int total;//相当于limit</p><p>　　　index:读取、写入数组指定为的索引：position</p><p>五、Buffer中的常用方法：</p><p>　　1）最基本的两个方法：put(Xxx xxx) / get()</p><p>　　2）其他方法：见ppt中的表格即可。</p><p> 六、针对于ByteBuffer来讲，可以创建非直接缓冲区：allocate(int capacity)</p><p>​         直接缓冲区：allocateDirect(int capacity) / FileChannel 的 map()</p><blockquote><p>了解非直接缓冲区 与 直接缓冲区的区别</p></blockquote><p>byteBuffer.put(“hello”.getBytes());//写入长度为5的字节数.每put一个字节，position就+1</p><p>byteBuffer.flip();//切换为读数据模式。将limit设置为position，position归零</p><p>byteBuffer.rewind();//重置position</p><p>byteBuffer.clear();//清空.将position归零，limit设置为capacity.数据并未删除。</p><p>byteBuffer.get(dst,0,2);//从数组角标0开始，写入两个字节的数组</p><p>if(byteBuffer.hasRemaining()){</p><p>//判断是否还有元素没有读取到。   </p><p>​        System.out.println(byteBuffer.remaining());//还有几个没有读取到。</p><p>   }System.out.println();</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;equals   判断字符串内容&lt;/p&gt;
-&lt;p&gt;Math.random  [0, 1)&lt;/p&gt;
-&lt;p&gt;想获取【a,b】的数 ( int )(Math.random()*(b-a+1)+a)&lt;/p&gt;
-&lt;p&gt;分支结构2：switch-case&lt;/p&gt;
-&lt;p&gt;switch 语句的
+        &lt;p&gt;一、NIO的使用中两个重要的要素：&lt;/p&gt;
+&lt;p&gt;　缓冲区(Buffer)、通道(Channel)&lt;/p&gt;
+&lt;p&gt;　缓冲区(Buffer):存储数据的。   —-&amp;gt;byte[] buffer = new byte[1024]&lt;/p&gt;
+&lt;p&gt;　通道(Channel)：代
+      
+    
+    </summary>
+    
+    
+      <category term="java" scheme="http://yoursite.com/categories/java/"/>
+    
+    
+      <category term="java基础" scheme="http://yoursite.com/tags/java%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>day24</title>
+    <link href="http://yoursite.com/2020/02/11/1/12/day24/"/>
+    <id>http://yoursite.com/2020/02/11/1/12/day24/</id>
+    <published>2020-02-11T12:12:57.000Z</published>
+    <updated>2020-02-12T05:16:58.332Z</updated>
+    
+    <content type="html"><![CDATA[<p>一、要想实现网络通信，需要解决两个问题：</p><p>　　1.如何准确的定位互联网上的一台或多台主机 </p><p>　　2.如何实现可靠而高效的数据传输</p><p> 二、网络通信的两个要素：</p><p>　　1.使用IP地址，定位网络中的主机</p><p>　　2.遵循相关的网络通信协议</p><p> 三、针对要素一：</p><p>　　1.IP：一个ip地址，对应着网络中的一台主机。 “192.168.20.16”   “127.0.0.1”–本地回路地址</p><p>　　　　使用InetAddress类来代表IP，一个InetAddress类的对象，就代表着一个具体的ip地址。</p><p>　　２.如何实例化InetAddress:</p><p>　　　　①getByName(String hostName)</p><p>　　　　②getLocalHost()</p><p>　　3.域名： <a href="http://www.baidu.com" target="_blank" rel="noopener">www.baidu.com</a>   <a href="http://www.jd.com" target="_blank" rel="noopener">www.jd.com</a>   <a href="http://www.mi.com" target="_blank" rel="noopener">www.mi.com</a>  <a href="http://www.vip.com" target="_blank" rel="noopener">www.vip.com</a></p><p>　　　　　　 <a href="http://www.facebook.com" target="_blank" rel="noopener">www.facebook.com</a></p><p>​         localhost对应着127.0.0.1</p><p>　　4.InetAddress类的常用方法：getHostName() / getHostAddress()</p><p>　　5.端口号标识正在计算机上运行的进程（程序）</p><p>　　　　注意：不同的进程有不同的端口号</p><p>　　　　常见的端口号： http:80   tomcat : 8080   mysql：3306  oracle:1521等</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;一、要想实现网络通信，需要解决两个问题：&lt;/p&gt;
+&lt;p&gt;　　1.如何准确的定位互联网上的一台或多台主机 &lt;/p&gt;
+&lt;p&gt;　　2.如何实现可靠而高效的数据传输&lt;/p&gt;
+&lt;p&gt; 二、网络通信的两个要素：&lt;/p&gt;
+&lt;p&gt;　　1.使用IP地址，定位网络中的主机&lt;/p&gt;
+&lt;p&gt;　　2
       
     
     </summary>
@@ -582,22 +586,23 @@
   </entry>
   
   <entry>
-    <title>day21</title>
-    <link href="http://yoursite.com/2020/02/11/1/12/day21/"/>
-    <id>http://yoursite.com/2020/02/11/1/12/day21/</id>
+    <title>day3</title>
+    <link href="http://yoursite.com/2020/02/11/1/12/day3/"/>
+    <id>http://yoursite.com/2020/02/11/1/12/day3/</id>
     <published>2020-02-11T12:12:57.000Z</published>
-    <updated>2020-02-12T05:21:40.343Z</updated>
+    <updated>2020-02-12T06:58:45.621Z</updated>
     
-    <content type="html"><![CDATA[<p>一、NIO的使用中两个重要的要素：</p><p>　缓冲区(Buffer)、通道(Channel)</p><p>　缓冲区(Buffer):存储数据的。   —-&gt;byte[] buffer = new byte[1024]</p><p>　通道(Channel)：代表着数据源与目标节点之间的连接，负责缓冲区的传输。 —&gt;IO流</p><p>　二者的交互：Java NIO 中的 Buffer 主要用于与 NIO 通道(Channel)进行交互， 数据是从通道读入缓冲  区，　从缓冲区写入通道中的。</p><p>二、缓冲区（Buffer）的结构 (除boolean之外) </p><p>　java.nio.Buffer抽象类</p><p>　　|—-ByteBuffer</p><p>　　|—-CharBuffer</p><p>　　|—-ShortBuffer</p><p>　　|—-IntBuffer</p><p>　　|—-LongBuffer</p><p>　　|—-FloatBuffer</p><p>　　|—-DoubleBuffer</p><p> XxxBuffer底层使用xxx[]进行存储。</p><p> 三、如何实例化缓冲区？调用缓冲区类XxxBuffer的静态方法：allocate(int capacity)   </p><p>　　举例：ByteBuffer byteBuffer = ByteBuffer.allocate(10);byte[] hb = new byte[10];</p><p>　　类似：ArrayList list = new ArrayList(10);//Object[] eleData = new Object[10];</p><p>　说明：方法的形参，决定了底层创建的数组的长度</p><p>四、Buffer中的常用属性：</p><p>　　capacity:容量，决定了底层数组的长度，表明了最大存储数据的容量</p><p>　　limit:限制，默认情况下，limit等于capacity.在读数据模式下，limit&lt;=capacity.表明最大可以读取数据的量position:位置，表明了当前读取或写入数据的位置</p><p>　　mark:标记。默认值为-1.</p><p>　　关系式：mark &lt;= position &lt;= limit &lt;= capacity</p><p>　　类比：项目三中TeamService类中的属性：</p><p>　　　private final int MAX_MEMBER = 5;//相当于capacity  </p><p>　　　private Programmer[] team = new Programmer[MAX_MEMBER];//Buffer底层封装的数组  </p><p>　　　private int total;//相当于limit</p><p>　　　index:读取、写入数组指定为的索引：position</p><p>五、Buffer中的常用方法：</p><p>　　1）最基本的两个方法：put(Xxx xxx) / get()</p><p>　　2）其他方法：见ppt中的表格即可。</p><p> 六、针对于ByteBuffer来讲，可以创建非直接缓冲区：allocate(int capacity)</p><p>​         直接缓冲区：allocateDirect(int capacity) / FileChannel 的 map()</p><blockquote><p>了解非直接缓冲区 与 直接缓冲区的区别</p></blockquote><p>byteBuffer.put(“hello”.getBytes());//写入长度为5的字节数.每put一个字节，position就+1</p><p>byteBuffer.flip();//切换为读数据模式。将limit设置为position，position归零</p><p>byteBuffer.rewind();//重置position</p><p>byteBuffer.clear();//清空.将position归零，limit设置为capacity.数据并未删除。</p><p>byteBuffer.get(dst,0,2);//从数组角标0开始，写入两个字节的数组</p><p>if(byteBuffer.hasRemaining()){</p><p>//判断是否还有元素没有读取到。   </p><p>​        System.out.println(byteBuffer.remaining());//还有几个没有读取到。</p><p>   }System.out.println();</p>]]></content>
+    <content type="html"><![CDATA[<p>equals   判断字符串内容</p><p>Math.random  [0, 1)</p><p>想获取【a,b】的数 ( int )(Math.random()*(b-a+1)+a)</p><p>分支结构2：switch-case</p><p>switch 语句的结束标志： } ，break</p><p>default 可选，位置比较灵活</p><p>switch中的表达式所代表的数据类型6种，只能是如下byte,short,char,int,枚举，String(jdk7.0新增)</p><p>case 后只能是常量或者是常量表达式</p><p>多个case可以共用一组语句，在最后一个case上写要执行的语句就好了，这里的最后一个case并不是}附近的一个，而是你要停止的一个</p><p>凡是swith-case实现的结构，都可以转成if-else实现，反之不成立</p><p>字符串方法：</p><p>获取字符：charAt()</p><p>循环结构4要素：</p><p>初始化条件</p><p>循环条件  —&gt;布尔类型</p><p>循环体</p><p>迭代条件</p><p>当循环条件返回false,结束循环</p><p>for和while 可以相互转换</p><p>循环结构的结束方式：</p><p> 1.循环条件返回false时</p><p> 2.在循环体中，判断某个条件满足时，执行break (不确定循环次数时)</p><p>​     while(true)   / for(;;)</p><p>嵌套循环：</p><p>一个循环结构a,作为另一个循环结构b的循环体实现</p><p> 内层循环：循环结构a</p><p> 外层循环：循环结构b</p><p>技巧：</p><p>1.外层循环控制行数</p><p>   内层循环控制列数</p><p>2.</p><p>内层循环循环次数为m次，外层循环循环次数为n次，则一共循环m*n次</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;一、NIO的使用中两个重要的要素：&lt;/p&gt;
-&lt;p&gt;　缓冲区(Buffer)、通道(Channel)&lt;/p&gt;
-&lt;p&gt;　缓冲区(Buffer):存储数据的。   —-&amp;gt;byte[] buffer = new byte[1024]&lt;/p&gt;
-&lt;p&gt;　通道(Channel)：代
+        &lt;p&gt;equals   判断字符串内容&lt;/p&gt;
+&lt;p&gt;Math.random  [0, 1)&lt;/p&gt;
+&lt;p&gt;想获取【a,b】的数 ( int )(Math.random()*(b-a+1)+a)&lt;/p&gt;
+&lt;p&gt;分支结构2：switch-case&lt;/p&gt;
+&lt;p&gt;switch 语句的
       
     
     </summary>
