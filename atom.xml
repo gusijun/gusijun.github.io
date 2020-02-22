@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-02-17T03:04:35.743Z</updated>
+  <updated>2020-02-17T08:32:21.056Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,11 +17,35 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>mysql</title>
-    <link href="http://yoursite.com/2020/02/14/1/14/mysql/"/>
-    <id>http://yoursite.com/2020/02/14/1/14/mysql/</id>
+    <title>Spring常用jar包及其作用</title>
+    <link href="http://yoursite.com/2020/02/17/1/17/Spring%E5%B8%B8%E7%94%A8jar%E5%8C%85/"/>
+    <id>http://yoursite.com/2020/02/17/1/17/Spring%E5%B8%B8%E7%94%A8jar%E5%8C%85/</id>
+    <published>2020-02-17T08:21:33.000Z</published>
+    <updated>2020-02-17T08:32:21.056Z</updated>
+    
+    <content type="html"><![CDATA[<p>Spring的jar及其作用</p><p><img src="/2020/02/17/1/17/Spring%E5%B8%B8%E7%94%A8jar%E5%8C%85/G:%5Cblogconfig%5CAAAA%5Csource_posts%5CSpring%E5%B8%B8%E7%94%A8jar%E5%8C%85%5Cs.png" alt></p><a id="more"></a><p>1.spring-aop-3.2.2.jar<br>包含在应用中使用spring的aop特性时所需的类。</p><p>2.spring-aspects-3.2.2.jar<br>提供对aspectj的支持，以便可以方便的将面向方面的功能集成进ide中</p><p>3.spring-beans-3.2.2.jar<br>springioc（依赖注入）的基础实现，所有应用都要用到的，它包含访问配置文件、创建和管理bean以及进行inversion of control / dependency injection（ioc/di）操作相关的所有类。但是这个是个基础实现，一般我们在实际的<a href="http://www.makaidong.com/search.jspx?q=%E5%BC%80%E5%8F%91%E8%BF%87%E7%A8%8B" target="_blank" rel="noopener">开发过程</a>中很少直接用到，它是对起到支撑作用的。</p><p>4.spring-context-3.2.2.jar<br>为spring核心提供了大量扩展。可以找到使用spring applicationcontext特性时所需的全部类，jdni所需的全部类，ui方面的用来与模板(templating)引擎如 velocity、freemarker、<a href="http://www.makaidong.com/search.jspx?q=jasperreport" target="_blank" rel="noopener">jasperreport</a>s集成的类，以及校验validation方面的相关类，还有ejb,cache,format,jms等等。</p><p>5.spring-context-support-3.2.2.jar<br>spring-context 的扩展支持，用于 mvc 方面</p><p>6.spring-core-3.2.2.jar<br>spring的核心包，包含spring框架基本的核心工具类，spring其它组件要都要使用到这个包里的类，是其它<br>组件的基本核心。包括asm，cglib以及相关的工具类</p><p>7.spring-expression-3.2.2.jar<br>spring表达式语言。</p><p>8.spring-instrument-3.2.2.jar<br>spring对服务器的代理接口。</p><p>9.spring-instrument-tomcat-3.2.2.jar<br>spring对tomcat连接池的集成。</p><p>10.spring-jdbc-3.2.2.jar<br>spring对jdbc的简单封装</p><p>11.spring-jms-3.2.2.jar<br>spring对jms(java message service)的封装，为了简化对jms api的使用</p><p>12.spring-orm-3.2.2.jar<br>包含spring对dao特性集进行了扩展，使其支持 ibatis、jdo、ojb、toplink，因为hibernate已经独立成包了，现在不包含在这个包里了。这个jar文件里大部分的类都要依赖spring-dao.jar里的类，用这个包时你需要同时包含spring-dao.jar包。spring 整合第三方的 orm 映射支持，如 hibernate 、ibatis、jdo 以及spring的jpa的支持。</p><p>13.spring-oxm-3.2.2.jar<br>spring 对object/xmi 的映射的支持，可以让java与xml之间来回切换。</p><p>14.spring-struts-3.2.2.jar<br>struts框架支持，可以更方便更容易的集成struts框架。</p><p>15.spring-test-3.2.2.jar<br>spring对junit框架的简单封装。</p><p>16.spring-tx.3.2.2.jar<br>spring提供对事务的支持，事务的相关处理以及实现类就在这个jar包中</p><p>17.spring-web-3.2.2.jar<br>包含web应用开发时，用到spring框架时所需的核心类，包括自动载入webapplicationcontext特性的类、struts与jsf集成类、文件上传的支持类、filter类和大量工具辅助类。</p><p>18.spring-webmvc-3.2.2.jar<br>spring mvc相关，实现springmvc的操作。</p><p>19.spring-webmvc-portlet-3.2.2.jar<br>spring mvc的增强扩展。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Spring的jar及其作用&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/2020/02/17/1/17/Spring%E5%B8%B8%E7%94%A8jar%E5%8C%85/G:%5Cblogconfig%5CAAAA%5Csource_posts%5CSpring%E5%B8%B8%E7%94%A8jar%E5%8C%85%5Cs.png&quot; alt&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Spring" scheme="http://yoursite.com/categories/Spring/"/>
+    
+    
+      <category term="Spring常用包及其作用" scheme="http://yoursite.com/tags/Spring%E5%B8%B8%E7%94%A8%E5%8C%85%E5%8F%8A%E5%85%B6%E4%BD%9C%E7%94%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>mysql设置时区</title>
+    <link href="http://yoursite.com/2020/02/14/1/14/mysql%E8%AE%BE%E7%BD%AE%E6%97%B6%E5%8C%BA/"/>
+    <id>http://yoursite.com/2020/02/14/1/14/mysql%E8%AE%BE%E7%BD%AE%E6%97%B6%E5%8C%BA/</id>
     <published>2020-02-14T08:56:14.000Z</published>
-    <updated>2020-02-17T03:04:35.743Z</updated>
+    <updated>2020-02-17T03:42:06.247Z</updated>
     
     <content type="html"><![CDATA[<p>mysql数据库创建后。默认的时区比东八区少了八个小时。</p><p>如果sql语句中使用到mysql的时间的话就会比正常时间少了八个小时。</p><p>所以需要修改mysql的系统时区。</p><p>使用mysql连接工具或者命令好工具都可以。</p><p>我用workbench输入命令行：</p><p>select now(); 查看mysql系统时间。和当前时间做对比</p><p>set global time_zone = ‘+8:00’;设置时区更改为东八区</p><p>flush privileges; 刷新权限</p><p>然后退出后重新登录就可以了，显示当前时间和我现在的时间一致了。</p>]]></content>
     
@@ -77,9 +101,9 @@
     <link href="http://yoursite.com/2020/02/12/1/12/UUID/"/>
     <id>http://yoursite.com/2020/02/12/1/12/UUID/</id>
     <published>2020-02-12T07:46:49.000Z</published>
-    <updated>2020-02-13T00:05:27.901Z</updated>
+    <updated>2020-02-22T10:59:11.015Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>UUID 是 通用唯一识别码（Universally Unique Identifier）的缩写，是一种软件建构的标准，亦为开放软件基金会组织在分布式计算环境领域的一部分。其目的，是让分布式系统中的所有元素，都能有唯一的辨识信息，而不需要通过中央控制端来做辨识信息的指定。如此一来，每个人都可以创建不与其它人冲突的UUID。在这样的情况下，就不需考虑数据库创建时的名称重复问题。目前最广泛应用的UUID，是微软公司的全局唯一标识符（GUID），而其他重要的应用，则有Linux ext2/ext3文件系统、LUKS加密分区、GNOME、KDE、Mac OS X等等。另外我们也可以在e2fsprogs包中的UUID库找到实现。</p><a id="more"></a><h4 id="知识点1-定义"><a href="#知识点1-定义" class="headerlink" title="知识点1:定义"></a>知识点1:定义</h4><p>​    UUID是由一组32位数的16进制数字所构成，是故UUID理论上的总数为16^32=2^128，约等于3.4 x 10^38。也就是说若每纳秒产生1兆个UUID，要花100亿年才会将所有UUID用完。</p><h4 id="知识点2-重复机率"><a href="#知识点2-重复机率" class="headerlink" title="知识点2:重复机率"></a>知识点2:重复机率</h4><p>　随机产生的UUID（例如说由java.util.UUID类别产生的）的128个比特中，有122个比特是随机产　生，4个比特在此版本（’Randomly generated UUID’）被使用，还有2个在其变体（’Leach-Salz’）中被使用。利用生日悖论，可计算出两笔UUID拥有相同值的机率约为：</p><p><img src="/2020/02/12/1/12/UUID/....%5CUUID%5Caa.PNG" alt></p><p>以下是以x=2^122计算出n笔GUID后产生碰撞的机率：</p><table><thead><tr><th>n</th><th>几率</th></tr></thead><tbody><tr><td>68,719,476,736 = 2^36</td><td>0.0000000000000004 (4 x 10^-16)</td></tr><tr><td>2,199,023,255,552 = 2^41</td><td>0.0000000000004 (4 x 10^-13)</td></tr><tr><td>70,368,744,177,664 = 2^46</td><td>0.0000000004 (4 x 10^-10)</td></tr></tbody></table><p>与被陨石击中的机率比较的话，已知一个人每年被陨石击中的机率估计为170亿分之1，也就是说机率大约是0.00000000006 (6 x 10^-11)，等同于在一年内置立数十兆笔GUID并发生一次重复。换句话说，每秒产生10亿笔UUID，100年后只产生一次重复的机率是50%。如果地球上每个人都各有6亿笔GUID，发生一次重复的机率是50%。</p><p>产生重复GUID并造成错误的情况非常低，是故大可不必考虑此问题。<br>机率也与随机数产生器的质量有关。若要避免重复机率提高，必须要使用基于密码学上的假随机数产生器来生成值才行</p><h4 id="知识点3UUID有什么作用？"><a href="#知识点3UUID有什么作用？" class="headerlink" title="知识点3UUID有什么作用？"></a>知识点3UUID有什么作用？</h4><p>　　UUID 的目的是让分布式系统中的所有元素，都能有唯一的辨识资讯，而不需要透过中央控制端来做辨识资讯的指定。如此一来，每个人都可以建立不与其它人冲突的 UUID。在这样的情况下，就不需考虑数据库建立时的名称重复问题。目前最广泛应用的 UUID，即是微软的 Microsoft’s Globally Unique Identifiers (GUIDs)，而其他重要的应用，则有 Linux ext2/ext3 档案系统、LUKS 加密分割区、GNOME、KDE、Mac OS X 等等。</p><h4 id="知识点4UUID的组成"><a href="#知识点4UUID的组成" class="headerlink" title="知识点4UUID的组成"></a>知识点4UUID的组成</h4><p>UUID是指在一台机器上生成的数字，它保证对在同一时空中的所有机器都是唯一的。通常平台会提供生成的API。<br>按照开放软件基金会(OSF)制定的标准计算，用到了以太网卡地址、纳秒级时间、芯片ID码和许多可能的数字</p><p>UUID由以下几部分的组合：</p><p>（1）当前日期和时间，UUID的第一个部分与时间有关，如果你在生成一个UUID之后，过几秒又生成一个UUID，则第一个部分不同，其余相同。</p><p>（2）时钟序列。</p><p>（3）全局唯一的IEEE机器识别号，如果有网卡，从网卡MAC地址获得，没有网卡以其他方式获得。<br>UUID的唯一缺陷在于生成的结果串会比较长。关于UUID这个标准使用最普遍的是微软的GUID(Globals Unique Identifiers)。<br>在ColdFusion中可以用CreateUUID()函数很简单地生成UUID，其格式为：xxxxxxxx-xxxx- xxxx-xxxxxxxxxxxxxxxx(8-4-4-16)，<br>其中每个 x 是 0-9 或 a-f 范围内的一个十六进制的数字。而标准的UUID格式为：<br>xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx (8-4-4-4-12)，可以从cflib 下载CreateGUID() UDF进行转换。</p><blockquote><p>使用UUID的好处在分布式的软件系统中（比如：DCE/RPC, COM+,CORBA）就能体现出来，<br>它能保证每个节点所生成的标识都不会重复，并且随着WEB服务等整合技术的发展，UUID的优势将更加明显。根据使用的特定机制，UUID不仅需要保证是彼此不相同的，或者最少也是<br>与公元3400年之前其他任何生成的通用唯一标识符有非常大的区别。UUID最少在3000+年内不会重复。<br>这也是通用唯一标识符的一种类型，可用来指向组建对象模块对象和其他的软件组件。第一个通用唯一标<br>识符是在网络计算机系统（NCS）中创建，并且随后成为开放软件基金会（OSF）的分布式计算环境（DCE）的组件。</p></blockquote><h4 id="知识点5-UUID的生成"><a href="#知识点5-UUID的生成" class="headerlink" title="知识点5:UUID的生成"></a>知识点5:UUID的生成</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//得到32位的uuid</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">getUUID32</span><span class="params">()</span></span>&#123;</span><br><span class="line"><span class="keyword">return</span> UUID.randomUUID().toString().replace(<span class="string">"-"</span>, <span class="string">""</span>).toLowerCase();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>UUID 是 通用唯一识别码（Universally Unique Identifier）的缩写，是一种软件建构的标准，亦为开放软件基金会组织在分布式计算环境领域的一部分。其目的，是让分布式系统中的所有元素，都能有唯一的辨识信息，而不需要通过中央控制端来做辨识信息的指定。如此一来，每个人都可以创建不与其它人冲突的UUID。在这样的情况下，就不需考虑数据库创建时的名称重复问题。目前最广泛应用的UUID，是微软公司的全局唯一标识符（GUID），而其他重要的应用，则有Linux ext2/ext3文件系统、LUKS加密分区、GNOME、KDE、Mac OS X等等。另外我们也可以在e2fsprogs包中的UUID库找到实现。</p><a id="more"></a><h4 id="知识点1-定义"><a href="#知识点1-定义" class="headerlink" title="知识点1:定义"></a>知识点1:定义</h4><p>​    UUID是由一组32位数的16进制数字所构成，是故UUID理论上的总数为16^32=2^128，约等于3.4 x 10^38。也就是说若每纳秒产生1兆个UUID，要花100亿年才会将所有UUID用完。</p><h4 id="知识点2-重复机率"><a href="#知识点2-重复机率" class="headerlink" title="知识点2:重复机率"></a>知识点2:重复机率</h4><p>　随机产生的UUID（例如说由java.util.UUID类别产生的）的128个比特中，有122个比特是随机产　生，4个比特在此版本（’Randomly generated UUID’）被使用，还有2个在其变体（’Leach-Salz’）中被使用。利用生日悖论，可计算出两笔UUID拥有相同值的机率约为：</p><p><img src="/2020/02/12/1/12/UUID/UUID.png" alt></p><p>以下是以x=2^122计算出n笔GUID后产生碰撞的机率：</p><table><thead><tr><th>n</th><th>几率</th></tr></thead><tbody><tr><td>68,719,476,736 = 2^36</td><td>0.0000000000000004 (4 x 10^-16)</td></tr><tr><td>2,199,023,255,552 = 2^41</td><td>0.0000000000004 (4 x 10^-13)</td></tr><tr><td>70,368,744,177,664 = 2^46</td><td>0.0000000004 (4 x 10^-10)</td></tr></tbody></table><p>与被陨石击中的机率比较的话，已知一个人每年被陨石击中的机率估计为170亿分之1，也就是说机率大约是0.00000000006 (6 x 10^-11)，等同于在一年内置立数十兆笔GUID并发生一次重复。换句话说，每秒产生10亿笔UUID，100年后只产生一次重复的机率是50%。如果地球上每个人都各有6亿笔GUID，发生一次重复的机率是50%。</p><p>产生重复GUID并造成错误的情况非常低，是故大可不必考虑此问题。<br>机率也与随机数产生器的质量有关。若要避免重复机率提高，必须要使用基于密码学上的假随机数产生器来生成值才行</p><h4 id="知识点3UUID有什么作用？"><a href="#知识点3UUID有什么作用？" class="headerlink" title="知识点3UUID有什么作用？"></a>知识点3UUID有什么作用？</h4><p>　　UUID 的目的是让分布式系统中的所有元素，都能有唯一的辨识资讯，而不需要透过中央控制端来做辨识资讯的指定。如此一来，每个人都可以建立不与其它人冲突的 UUID。在这样的情况下，就不需考虑数据库建立时的名称重复问题。目前最广泛应用的 UUID，即是微软的 Microsoft’s Globally Unique Identifiers (GUIDs)，而其他重要的应用，则有 Linux ext2/ext3 档案系统、LUKS 加密分割区、GNOME、KDE、Mac OS X 等等。</p><h4 id="知识点4UUID的组成"><a href="#知识点4UUID的组成" class="headerlink" title="知识点4UUID的组成"></a>知识点4UUID的组成</h4><p>UUID是指在一台机器上生成的数字，它保证对在同一时空中的所有机器都是唯一的。通常平台会提供生成的API。<br>按照开放软件基金会(OSF)制定的标准计算，用到了以太网卡地址、纳秒级时间、芯片ID码和许多可能的数字</p><p>UUID由以下几部分的组合：</p><p>（1）当前日期和时间，UUID的第一个部分与时间有关，如果你在生成一个UUID之后，过几秒又生成一个UUID，则第一个部分不同，其余相同。</p><p>（2）时钟序列。</p><p>（3）全局唯一的IEEE机器识别号，如果有网卡，从网卡MAC地址获得，没有网卡以其他方式获得。<br>UUID的唯一缺陷在于生成的结果串会比较长。关于UUID这个标准使用最普遍的是微软的GUID(Globals Unique Identifiers)。<br>在ColdFusion中可以用CreateUUID()函数很简单地生成UUID，其格式为：xxxxxxxx-xxxx- xxxx-xxxxxxxxxxxxxxxx(8-4-4-16)，<br>其中每个 x 是 0-9 或 a-f 范围内的一个十六进制的数字。而标准的UUID格式为：<br>xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx (8-4-4-4-12)，可以从cflib 下载CreateGUID() UDF进行转换。</p><blockquote><p>使用UUID的好处在分布式的软件系统中（比如：DCE/RPC, COM+,CORBA）就能体现出来，<br>它能保证每个节点所生成的标识都不会重复，并且随着WEB服务等整合技术的发展，UUID的优势将更加明显。根据使用的特定机制，UUID不仅需要保证是彼此不相同的，或者最少也是<br>与公元3400年之前其他任何生成的通用唯一标识符有非常大的区别。UUID最少在3000+年内不会重复。<br>这也是通用唯一标识符的一种类型，可用来指向组建对象模块对象和其他的软件组件。第一个通用唯一标<br>识符是在网络计算机系统（NCS）中创建，并且随后成为开放软件基金会（OSF）的分布式计算环境（DCE）的组件。</p></blockquote><h4 id="知识点5-UUID的生成"><a href="#知识点5-UUID的生成" class="headerlink" title="知识点5:UUID的生成"></a>知识点5:UUID的生成</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//得到32位的uuid</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">getUUID32</span><span class="params">()</span></span>&#123;</span><br><span class="line"><span class="keyword">return</span> UUID.randomUUID().toString().replace(<span class="string">"-"</span>, <span class="string">""</span>).toLowerCase();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
@@ -92,6 +116,61 @@
     
     
       <category term="UUID" scheme="http://yoursite.com/tags/UUID/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>java8新特性</title>
+    <link href="http://yoursite.com/2020/02/11/1/12/Java8%E6%96%B0%E7%89%B9%E6%80%A7/"/>
+    <id>http://yoursite.com/2020/02/11/1/12/Java8%E6%96%B0%E7%89%B9%E6%80%A7/</id>
+    <published>2020-02-11T12:12:57.000Z</published>
+    <updated>2020-02-12T05:17:16.648Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="一、Lambda-表达式的基础语法-java8中引入了新的操作符“-gt-”-该操作符称为箭头操作符或Lambda操作符"><a href="#一、Lambda-表达式的基础语法-java8中引入了新的操作符“-gt-”-该操作符称为箭头操作符或Lambda操作符" class="headerlink" title="一、Lambda 表达式的基础语法 :java8中引入了新的操作符“-&gt;” 该操作符称为箭头操作符或Lambda操作符"></a>一、Lambda 表达式的基础语法 :java8中引入了新的操作符“-&gt;” 该操作符称为箭头操作符或Lambda操作符</h3><p>​       <strong>箭头操作符 Lambda 表达式拆分为两部分:</strong><br>           左侧：Lambda 表达式的参数列表<br>           右侧：Lambda 表达式所需执行的功能,即 Lambda 体</p><ul><li>语法格式一:无参数,无返回值<pre><code>() -&gt; System.out.println(&quot;Hello Lambda&quot;);</code></pre></li><li>语法格式二:有一个参数,并且无返回值<pre><code>(x) -&gt; System.out.println(x);</code></pre></li><li>语法格式三:若只有一个参数,小括号可以省略不写<pre><code>x -&gt; System.out.println(x);</code></pre></li><li>语法格式四:有两个以上的参数,有返回值,并且Lambda体中有多条语句<pre><code>Comparator&lt;Integer&gt; com = (x,y) -&gt; {    System.out.println(&quot;函数式接口&quot;);    return Integer.compare(x,y);  };</code></pre></li><li>语法格式五:若Lambda体中只有一条语句,return和大括号都可以省略不写</li><li>语法格式六:Lambda表达式的参数列表的数据类型可以省略不写,因为JVM编译器通过上下文推断出,数据类型,即“类型推断”<pre><code>(Integer x,Integer y) -&gt; Integer.compare(x,y)；</code></pre></li></ul><p>上联:左右遇一括号略<br>下联:左侧推断类型省<br>横批:能省则省</p><h3 id="二-Lambda-表达式需要“函数式接口”的支持"><a href="#二-Lambda-表达式需要“函数式接口”的支持" class="headerlink" title="二: Lambda 表达式需要“函数式接口”的支持"></a>二: Lambda 表达式需要“函数式接口”的支持</h3><p>​         <strong>函数式接口:接口中只有一个抽象方法的接口,称为函数式接口。可以使用@FunctionalInterface 修饰<br>​                         可以检查是否是函数接口</strong></p><p>​         <strong>Java8内置的四大核心函数式接口</strong></p><p>​        Consumer<T> : 消费型接口<br>​                   void accept(T t);</T></p><pre><code>Supplier&lt;T&gt; : 供给型接口           T get();    Function&lt;T,R&gt; : 函数型接口           R apply(T t);Predicate&lt;T&gt; : 断言型接口           boolean test(T t);</code></pre><p><strong>一.方法引用:若Lambda体中的内容有方法已经实现了,我们可以使用”方法引用”<br>           (可以理解为方法引用是Lambda表达式的另一种体现)</strong></p><p>   主要有三种语法格式:</p><p>   对象::实例方法名</p><p>   类::静态方法名</p><p>   类::实例方法名</p><p>   注意:<br>       1).Lambda体中调用方法的参数列表与返回值类型,要与函数式接口中的抽象方法的函数列表和返回值类型保持一致！<br>       2).②若Lambda 的参数列表的第一个参数，是实例方法的调用者，第二个参数(或无参)是实例方法的参数  时，格式： ClassName::MethodName                       </p><p><strong>二.构造器引用</strong><br>       格式:<br>       ClassName::New</p><p>   注意:需要调用的构造器的参数列表要与函数式接口中抽象方法的参数列表保持一致！(个数)</p><p><strong>三:数组引用:</strong><br>       Type::new</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;一、Lambda-表达式的基础语法-java8中引入了新的操作符“-gt-”-该操作符称为箭头操作符或Lambda操作符&quot;&gt;&lt;a href=&quot;#一、Lambda-表达式的基础语法-java8中引入了新的操作符“-gt-”-该操作符称为箭头操作符或Lambda操作符
+      
+    
+    </summary>
+    
+    
+      <category term="java" scheme="http://yoursite.com/categories/java/"/>
+    
+    
+      <category term="java8" scheme="http://yoursite.com/tags/java8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>day10</title>
+    <link href="http://yoursite.com/2020/02/11/1/12/day10/"/>
+    <id>http://yoursite.com/2020/02/11/1/12/day10/</id>
+    <published>2020-02-11T12:12:57.000Z</published>
+    <updated>2020-02-12T06:42:12.072Z</updated>
+    
+    <content type="html"><![CDATA[<p>类的成员之3：构造器(constructor,构造方法) construct:建造，建设</p><p>　1.构造器的作用：①创建类的对象 ②初始化对象的属性</p><p>　2.说明： </p><p>　　①如果在定义一个类时，没有显示的声明构造器，那抹系统会显示的提供的一个无参的构造器 </p><p>　　②如何去声明一个类的构造器：格式：权限修饰符 类名（形参列表）{}</p><p>　　③如果我们在类中一旦定义构造器，那抹系统不再提供默认的无参构造器了</p><p>　　④类的多个构造器之间，彼此构成重载</p><p>　　⑤总结:类中，一定有会构造器！</p><p>　3.关于类中属性赋值的先后顺序：</p><p>　　①默认初始化 - ②显示初始化 - ③构造器中初始化 || ④通过“对象.属性”或“对象.方法”，给属性赋值</p><p>　　①默认初始化</p><p>　　②显示初始化 </p><p>　　③构造器中初始化</p><p>　　④通过“对象.属性”或“对象.方法”，给属性赋值</p><p>javaBean 如下标准java类</p><ul><li>类是公共的</li><li>有一个无参的公共的的构造器</li><li>有属性，且有对应的get，set方法</li></ul><p><em>this 关键字的使用  :</em>  </p><p>　1.this  : 可以理解为:当前对象或正在创建的对象</p><p>　2.this 可以用来调用:属性,方法,构造器</p><p>　3.this 调用属性,方法</p><p>在方法中，通过this.属性 或者 this.方法 的方式，表示调用当前正在创建的对象的指定属性或方法。</p><p>但是通常的情况下，我们都省略了“this.”。但是如果方法的形参和当前正在创建的对象的属性名相同 </p><p>的情况下，我们必须显示的使用this.变量 的方式，表明此变量是属性而非形参     </p><p>在构造器中，通过this.属性 或者 this.方法 的方式，表示调用当前正在创建的对象的指定属性或方法。 </p><p>但是通常的情况下，我们都省略了“this.”。但是如果构造器的形参和当前正在创建的对象的属性名相同的情况下，我们必须显示的使用this.变量 的方式，表明此变量是属性而非形参 </p><p>　4.this 调用构造器  </p><p>　　　可以在类的构造器中this (形参列表) 的方式，调用本类中重载其他的构造器</p><blockquote><p>明确:构造器中不能通过this(形参列表)的方式，调用自身构造器 　　</p></blockquote><p>　　　 如果一个类中声明了N个构造器，则最多有N-1个构造器使用了this(形参列表) </p><p>　　　this(形参列表) 必须声明在构造器的首行 </p><p>　　　在类的构造器中，最多只能声明一个this(形参列表) </p><p>一：package 关键字的使用 </p><p>　　package：包   </p><p>　　1.为了方便的对项目中的类,进行统一的管理,提供了包的概念    </p><p>　　2.声明在源文件的首行   </p><p>　　3.遵循标识符的命名规则和规范:xxxxyyyzzz</p><p>　　4.命名时每“.”一次,代表着一层文件目录    </p><p>二：import 关键字的使用        import:导入 </p><p>　 　1.可以在源文件中使用import来导入执定包下的类或接口  </p><p>　　2.声明在类的结构和包的声明之间  </p><p>　　3.如果需要在源文件中导入多个类或接口，则并列声明处即可   </p><p>　　4.比如：import java.util.* ,表示可以导入util下的所有类和接口   </p><p>　　5.如果使用的类或接口是java.lang下定义的，则可以省略import 语句     </p><p>　　6.如果使用的类或者是当前包定义的，则可以省略import语句 </p><p>　　7.如果一个类中使用了不同包下的同名类，则必须通过全类名（完整的路径）的方法进行区分调用   </p><p>　　8.import static 可以导入指定类的静态属性或者方法        </p><p>　　9.如果已经声明导入A包下的结构（如:import   java.a*）,但是如果导入A包下的子包下的类或接口，仍需要导入声明       </p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;类的成员之3：构造器(constructor,构造方法) construct:建造，建设&lt;/p&gt;
+&lt;p&gt;　1.构造器的作用：①创建类的对象 ②初始化对象的属性&lt;/p&gt;
+&lt;p&gt;　2.说明： &lt;/p&gt;
+&lt;p&gt;　　①如果在定义一个类时，没有显示的声明构造器，那抹系统会显示的提供的
+      
+    
+    </summary>
+    
+    
+      <category term="java" scheme="http://yoursite.com/categories/java/"/>
+    
+    
+      <category term="java基础" scheme="http://yoursite.com/tags/java%E5%9F%BA%E7%A1%80/"/>
     
   </entry>
   
@@ -127,6 +206,69 @@
   </entry>
   
   <entry>
+    <title>day1</title>
+    <link href="http://yoursite.com/2020/02/11/1/12/day1/"/>
+    <id>http://yoursite.com/2020/02/11/1/12/day1/</id>
+    <published>2020-02-11T12:12:57.000Z</published>
+    <updated>2020-02-20T03:19:12.273Z</updated>
+    
+    <content type="html"><![CDATA[<p>注释：</p><p>单行注释</p><p>//</p><p>多行注释(不可以嵌套)</p><p>/**/ </p><p>文档注释（java特有）</p><p>println 换行</p><p>print 不换行</p><p>在一个源文件种不允许定义两个相同的类</p><p>关键字：具有特殊意义的字符串</p><p>特点：关键字都小写</p><p>保留字：现在不是关键字，以后可能作为关键字使用</p><p>标识符：程序员定义的变量名，函数名</p><p>标识符的命名规则：</p><ul><li>由26个英文字母大小写组成，0~9，_或$组成</li><li>数字不可以开头</li><li>不可以使用关键字或者保留字，但能包含关键字和保留字</li><li>严格区分大小写，长度无限制</li><li>不能包含空格</li></ul><p>标识符的命名规范：</p><p>　包名：多单词组成时所有字母都小写</p><p>　类名，接口名：多单词组成时所有单词首字母大写（大驼峰）</p><p>　变量名，方法名：多单词组成时，第一个单词首字母小写，第二个单词开始每个</p><p>　　　　　单词首字母大写（小驼峰）</p><p>　常量名：所有字母都大写，多单词组成时每个单词之间用下划线链接</p><p>变量分类：</p><p>角度1：按数据类型来分</p><p>　　　　基本数据类型：整型 ：byte（1）/ short（2字节）/ int（4字节）/ long（8字节） </p><p>　　　　　　　　　　　通常我们定义整形变量定义int</p><p>　　　　　　　　　　　如果定义long型变量后缀必须加l/L</p><p>　　　　　　　　　　　long ll = 1234 可以的，可以理解为自动类型提升</p><p>　　　　　　　　　　　浮点型：float （4字节） / double（8字节）</p><p>　　　　　　　　　　　通常我们定义浮点型变量定义double</p><p>　　　　　　　　　　　从存储数据的表数范围上讲，float的范围比long还要大</p><p>　　　　　　　　　　　如果定义float型变量后缀必须加f/F</p><p>　　　　　　　　　　　字符型：char（2字节）</p><p>　　　　　　　　　　　 ‘   ’声明</p><p>　　　　　　　　　　　char 不同的表示方式：　</p><p>　　　　　　　　　　　　　1.声明一个普通字符</p><p>　　　　　　　　　　　　　2.声明一个转义字符</p><p>　　　　　　　　　　　　　3.使用Unicode 码(\u16进制）</p><p>　　　　　　　　　　　布尔类型：boolean</p><p>　　　　　　　　　　　　　　true/ false</p><p>　　　　　　　　　　　常在流程控制中使用</p><p>　　　　引用数据类型： 类 /  接口 / 数组</p><p>　　　  注意String属于引用数据类型</p><p>角度2：按在类种声明的位置不同来分</p><p>　　　　成员变量  vs  局部变量</p><p>整型常量默认是int</p><p>浮点型默认是double</p><p>适用范围：除了boolean之外，对其他（7种）数据类型都适用</p><p>运算规则：byte 、char、short –&gt;int–&gt; long –&gt;float –&gt;double</p><p>特别的：byte  short char三者之间做运算时，结果是int型(防止溢出)</p><p>自动类型提升：</p><p>容量小的数据类型和容量大的数据类型变量做运算，运算结果为容量大的数据类型 （容量指存储范围的大小，而非储存空间大小）</p><p>强制数据类型转换：自动类型提升的逆过程</p><p>容量大的数据类型变量如果想转换为容量小的数据类型变量，就需要强制类型</p><p>转换符进行转换</p><p>强制类型转换符（）</p><p>String类与基本数据类型（8种）变量之间的运算</p><p>String 类属于引用数据类型的变量</p><p>String类型的变量值使用一对“  ”括起来表示</p><p>String类与基本数据类型（8种）变量之间只能做链接运算：+</p><p>String类与基本数据类型（8种）变量做运算的结果就是String</p><p>算术运算符：</p><p>　　-   */  %  (前)++ （后)++ (前)–  (后)–<br>　　-   取余：% ：余数的符号与被模数的符号相同</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;注释：&lt;/p&gt;
+&lt;p&gt;单行注释&lt;/p&gt;
+&lt;p&gt;//&lt;/p&gt;
+&lt;p&gt;多行注释(不可以嵌套)&lt;/p&gt;
+&lt;p&gt;/**/ &lt;/p&gt;
+&lt;p&gt;文档注释（java特有）&lt;/p&gt;
+&lt;p&gt;println 换行&lt;/p&gt;
+&lt;p&gt;print 不换行&lt;/p&gt;
+&lt;p&gt;在一个源文件种不允许定义两个相同的
+      
+    
+    </summary>
+    
+    
+      <category term="java" scheme="http://yoursite.com/categories/java/"/>
+    
+    
+      <category term="java基础" scheme="http://yoursite.com/tags/java%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>day12</title>
+    <link href="http://yoursite.com/2020/02/11/1/12/day12/"/>
+    <id>http://yoursite.com/2020/02/11/1/12/day12/</id>
+    <published>2020-02-11T12:12:57.000Z</published>
+    <updated>2020-02-12T06:27:11.067Z</updated>
+    
+    <content type="html"><![CDATA[<p>equals 方法的使用</p><p>​     1.java.lang.Object 类中的equals()方法的定义:</p><p>​               public boolean equals(Object obj){  </p><p>​                           return(this == obj);</p><p>​             }  </p><p>​       说明:Object 类中equals()比较两个对象的引用地址是否相同，（或:比较两个引用是否指向同一个对象实体）</p><p>  2.像String,Date,File,包装类重写了Object类的方法，比较两个对象中的实体内容是否相等</p><p>  3.对于自定义类来讲,如果没有重写Object类中equals（）方法，仍然比较两个对象的引用地址是否相同</p><p>  4.一般情况下，在开发中一旦调用了自定义了的equals()，通常是重写以后的equals()方法</p><p>  5.重写equals()方法的规则:比较两个对象的属性是否都相等</p><p> 面试题: == 和 equals() 区别 ?</p><p>　　　　== :使用范围:可以操作基本数据类型 和 引用数据类型</p><p>　　　　　　如果操作的是基本数据类型:比较两个基本数据类型变量的值是否相等</p><p>　　　　　　如果操作的是引用数据类型:比较两个引用的地址是否相同</p><p>　　　　equals:使用范围:只适用于引用数据类型</p><p>　　　　具体的使用:见上面的1-5</p><p>toString()的使用:</p><p>​        1.java.lang.Object 类中toString()定义如下: </p><p>​             public String toString(){  </p><p>​                     return getClass().getName()+”@”+Integer.toHexString(hashCode());  </p><p>​             }</p><p>​       2.当我们打印一个对象的引用时，实际上就是调用了toString方法 </p><p>​       3.像String,Date,File,包装类等重写了Object类中的toString方法，返回其代表的具体内容</p><p>​       4.对于自定义类而言，如果我们没有重写object类中toString方法，则返回的仍然是地址值</p><p>​           如果重写了的话，重写规则:返回当前对象的属性信息</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;equals 方法的使用&lt;/p&gt;
+&lt;p&gt;​     1.java.lang.Object 类中的equals()方法的定义:&lt;/p&gt;
+&lt;p&gt;​               public boolean equals(Object obj){  &lt;/p&gt;
+&lt;p&gt;​      
+      
+    
+    </summary>
+    
+    
+      <category term="java" scheme="http://yoursite.com/categories/java/"/>
+    
+    
+      <category term="java基础" scheme="http://yoursite.com/tags/java%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
+  
+  <entry>
     <title>day13</title>
     <link href="http://yoursite.com/2020/02/11/1/12/day13/"/>
     <id>http://yoursite.com/2020/02/11/1/12/day13/</id>
@@ -146,69 +288,6 @@
 &lt;p&gt;栈：局部变量&lt;/p&gt;
 &lt;p&gt;堆：new出来的结构，数组&lt;/p&gt;
 &lt;p&gt;方法区：类的加
-      
-    
-    </summary>
-    
-    
-      <category term="java" scheme="http://yoursite.com/categories/java/"/>
-    
-    
-      <category term="java基础" scheme="http://yoursite.com/tags/java%E5%9F%BA%E7%A1%80/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>day10</title>
-    <link href="http://yoursite.com/2020/02/11/1/12/day10/"/>
-    <id>http://yoursite.com/2020/02/11/1/12/day10/</id>
-    <published>2020-02-11T12:12:57.000Z</published>
-    <updated>2020-02-12T06:42:12.072Z</updated>
-    
-    <content type="html"><![CDATA[<p>类的成员之3：构造器(constructor,构造方法) construct:建造，建设</p><p>　1.构造器的作用：①创建类的对象 ②初始化对象的属性</p><p>　2.说明： </p><p>　　①如果在定义一个类时，没有显示的声明构造器，那抹系统会显示的提供的一个无参的构造器 </p><p>　　②如何去声明一个类的构造器：格式：权限修饰符 类名（形参列表）{}</p><p>　　③如果我们在类中一旦定义构造器，那抹系统不再提供默认的无参构造器了</p><p>　　④类的多个构造器之间，彼此构成重载</p><p>　　⑤总结:类中，一定有会构造器！</p><p>　3.关于类中属性赋值的先后顺序：</p><p>　　①默认初始化 - ②显示初始化 - ③构造器中初始化 || ④通过“对象.属性”或“对象.方法”，给属性赋值</p><p>　　①默认初始化</p><p>　　②显示初始化 </p><p>　　③构造器中初始化</p><p>　　④通过“对象.属性”或“对象.方法”，给属性赋值</p><p>javaBean 如下标准java类</p><ul><li>类是公共的</li><li>有一个无参的公共的的构造器</li><li>有属性，且有对应的get，set方法</li></ul><p><em>this 关键字的使用  :</em>  </p><p>　1.this  : 可以理解为:当前对象或正在创建的对象</p><p>　2.this 可以用来调用:属性,方法,构造器</p><p>　3.this 调用属性,方法</p><p>在方法中，通过this.属性 或者 this.方法 的方式，表示调用当前正在创建的对象的指定属性或方法。</p><p>但是通常的情况下，我们都省略了“this.”。但是如果方法的形参和当前正在创建的对象的属性名相同 </p><p>的情况下，我们必须显示的使用this.变量 的方式，表明此变量是属性而非形参     </p><p>在构造器中，通过this.属性 或者 this.方法 的方式，表示调用当前正在创建的对象的指定属性或方法。 </p><p>但是通常的情况下，我们都省略了“this.”。但是如果构造器的形参和当前正在创建的对象的属性名相同的情况下，我们必须显示的使用this.变量 的方式，表明此变量是属性而非形参 </p><p>　4.this 调用构造器  </p><p>　　　可以在类的构造器中this (形参列表) 的方式，调用本类中重载其他的构造器</p><blockquote><p>明确:构造器中不能通过this(形参列表)的方式，调用自身构造器 　　</p></blockquote><p>　　　 如果一个类中声明了N个构造器，则最多有N-1个构造器使用了this(形参列表) </p><p>　　　this(形参列表) 必须声明在构造器的首行 </p><p>　　　在类的构造器中，最多只能声明一个this(形参列表) </p><p>一：package 关键字的使用 </p><p>　　package：包   </p><p>　　1.为了方便的对项目中的类,进行统一的管理,提供了包的概念    </p><p>　　2.声明在源文件的首行   </p><p>　　3.遵循标识符的命名规则和规范:xxxxyyyzzz</p><p>　　4.命名时每“.”一次,代表着一层文件目录    </p><p>二：import 关键字的使用        import:导入 </p><p>　 　1.可以在源文件中使用import来导入执定包下的类或接口  </p><p>　　2.声明在类的结构和包的声明之间  </p><p>　　3.如果需要在源文件中导入多个类或接口，则并列声明处即可   </p><p>　　4.比如：import java.util.* ,表示可以导入util下的所有类和接口   </p><p>　　5.如果使用的类或接口是java.lang下定义的，则可以省略import 语句     </p><p>　　6.如果使用的类或者是当前包定义的，则可以省略import语句 </p><p>　　7.如果一个类中使用了不同包下的同名类，则必须通过全类名（完整的路径）的方法进行区分调用   </p><p>　　8.import static 可以导入指定类的静态属性或者方法        </p><p>　　9.如果已经声明导入A包下的结构（如:import   java.a*）,但是如果导入A包下的子包下的类或接口，仍需要导入声明       </p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;类的成员之3：构造器(constructor,构造方法) construct:建造，建设&lt;/p&gt;
-&lt;p&gt;　1.构造器的作用：①创建类的对象 ②初始化对象的属性&lt;/p&gt;
-&lt;p&gt;　2.说明： &lt;/p&gt;
-&lt;p&gt;　　①如果在定义一个类时，没有显示的声明构造器，那抹系统会显示的提供的
-      
-    
-    </summary>
-    
-    
-      <category term="java" scheme="http://yoursite.com/categories/java/"/>
-    
-    
-      <category term="java基础" scheme="http://yoursite.com/tags/java%E5%9F%BA%E7%A1%80/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>day1</title>
-    <link href="http://yoursite.com/2020/02/11/1/12/day1/"/>
-    <id>http://yoursite.com/2020/02/11/1/12/day1/</id>
-    <published>2020-02-11T12:12:57.000Z</published>
-    <updated>2020-02-12T07:04:54.442Z</updated>
-    
-    <content type="html"><![CDATA[<p>注释：</p><p>单行注释</p><p>//</p><p>多行注释(不可以嵌套)</p><p>/**/ </p><p>文档注释（java特有）</p><p>println 换行</p><p>print 不换行</p><p>在一个源文件种不允许定义两个相同的类</p><p>关键字：具有特殊意义的字符串</p><p>特点：关键字都小写</p><p>保留字：现在不是关键字，以后可能作为关键字使用</p><p>标识符：程序员定义的变量名，函数名</p><p>标识符的命名规则：</p><ul><li>由26个英文字母大小写组成，0~9，_或$组成</li><li>数字不可以开头</li><li>不可以使用关键字或者保留字，但能包含关键字和保留字</li><li>严格区分大小写，长度无限制</li><li>不能包含空格</li></ul><p>标识符的命名规范：</p><p>　包名：多单词组成时所有字母都小写</p><p>　类名，接口名：多单词组成时所有单词首字母大写（大驼峰）</p><p>　变量名，方法名：多单词组成时，第一个单词首字母小写，第二个单词开始每个</p><p>　　　　　单词首字母大写（小驼峰）</p><p>　常量名：所有字母都大写，多单词组成时每个单词之间用下划线链接</p><p>变量分类：</p><p>角度1：按数据类型来分</p><p>　　　　基本数据类型：整型 ：byte（1）/ short（2字节）/ int（4字节）/ long（8字节） </p><p>　　　　　　　　　　　通常我们定义整形变量定义int</p><p>　　　　　　　　　　　如果定义long型变量后缀必须加l/L</p><p>　　　　　　　　　　　long ll = 1234 可以的，可以理解为自动类型提升</p><p>　　　　　　　　　　　浮点型：float （4字节） / double（8字节）</p><p>　　　　　　　　　　　通常我们定义浮点型变量定义double</p><p>　　　　　　　　　　　从存储数据的表数范围上讲，float的范围比long还要大</p><p>　　　　　　　　　　　如果定义float型变量后缀必须加f/F</p><p>　　　　　　　　　　　字符型：char（2字节）</p><p>　　　　　　　　　　　 ‘   ’声明</p><p>　　　　　　　　　　　char 不同的表示方式：　</p><p>　　　　　　　　　　　　　1.声明一个普通字符</p><p>　　　　　　　　　　　　　2.声明一个转义字符</p><p>　　　　　　　　　　　　　3.使用Unicode 码(\u16进制）</p><p>　　　　　　　　　　　布尔类型：boolean</p><p>　　　　　　　　　　　　　　true/ false</p><p>　　　　　　　　　　　常在流程控制中使用</p><p>　　　　引用数据类型： 类 /  接口 / 数组</p><p>　　　  注意String属于引用数据类型</p><p>角度2：按在类种声明的位置不同来分</p><p>　　　　成员变量  vs  局部变量</p><p>整型常量默认是int</p><p>浮点型默认是double</p><p>适用范围：除了boolean之外，对其他（7种）数据类型都适用</p><p>运算规则：byte 、char、short –&gt;int–&gt; long –&gt;float –&gt;double</p><p>特别的：byte  short char三者之间做运算时，结果是int型(防止溢出)</p><p>自动类型提升：</p><p>容量小的数据类型和容量大的数据类型变量做运算，运算结果为容量大的数据类型 （容量指存储范围的大小，而非储存空间大小）</p><p>强制数据类型转换：自动类型提升的逆过程</p><p>容量大的数据类型变量如果想转换为容量小的数据类型变量，就需要强制类型</p><p>转换符进行转换</p><p>强制类型转换符（）</p><p>String类与基本数据类型（8种）变量之间的运算</p><p>String 类属于引用数据类型的变量</p><p>String类型的变量值使用一对“  ”括起来表示</p><p>String类与基本数据类型（8种）变量之间只能做链接运算：+</p><p>String类与基本数据类型（8种）变量做运算的结果就是String</p><p>算术运算符：</p><p>　　-   */  %  (前)++ （后)++ (前)–  (后)–<br>　　-   取余：% ：余数的符号与被模数的符号相同</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;注释：&lt;/p&gt;
-&lt;p&gt;单行注释&lt;/p&gt;
-&lt;p&gt;//&lt;/p&gt;
-&lt;p&gt;多行注释(不可以嵌套)&lt;/p&gt;
-&lt;p&gt;/**/ &lt;/p&gt;
-&lt;p&gt;文档注释（java特有）&lt;/p&gt;
-&lt;p&gt;println 换行&lt;/p&gt;
-&lt;p&gt;print 不换行&lt;/p&gt;
-&lt;p&gt;在一个源文件种不允许定义两个相同的
       
     
     </summary>
@@ -255,35 +334,6 @@
   </entry>
   
   <entry>
-    <title>day12</title>
-    <link href="http://yoursite.com/2020/02/11/1/12/day12/"/>
-    <id>http://yoursite.com/2020/02/11/1/12/day12/</id>
-    <published>2020-02-11T12:12:57.000Z</published>
-    <updated>2020-02-12T06:27:11.067Z</updated>
-    
-    <content type="html"><![CDATA[<p>equals 方法的使用</p><p>​     1.java.lang.Object 类中的equals()方法的定义:</p><p>​               public boolean equals(Object obj){  </p><p>​                           return(this == obj);</p><p>​             }  </p><p>​       说明:Object 类中equals()比较两个对象的引用地址是否相同，（或:比较两个引用是否指向同一个对象实体）</p><p>  2.像String,Date,File,包装类重写了Object类的方法，比较两个对象中的实体内容是否相等</p><p>  3.对于自定义类来讲,如果没有重写Object类中equals（）方法，仍然比较两个对象的引用地址是否相同</p><p>  4.一般情况下，在开发中一旦调用了自定义了的equals()，通常是重写以后的equals()方法</p><p>  5.重写equals()方法的规则:比较两个对象的属性是否都相等</p><p> 面试题: == 和 equals() 区别 ?</p><p>　　　　== :使用范围:可以操作基本数据类型 和 引用数据类型</p><p>　　　　　　如果操作的是基本数据类型:比较两个基本数据类型变量的值是否相等</p><p>　　　　　　如果操作的是引用数据类型:比较两个引用的地址是否相同</p><p>　　　　equals:使用范围:只适用于引用数据类型</p><p>　　　　具体的使用:见上面的1-5</p><p>toString()的使用:</p><p>​        1.java.lang.Object 类中toString()定义如下: </p><p>​             public String toString(){  </p><p>​                     return getClass().getName()+”@”+Integer.toHexString(hashCode());  </p><p>​             }</p><p>​       2.当我们打印一个对象的引用时，实际上就是调用了toString方法 </p><p>​       3.像String,Date,File,包装类等重写了Object类中的toString方法，返回其代表的具体内容</p><p>​       4.对于自定义类而言，如果我们没有重写object类中toString方法，则返回的仍然是地址值</p><p>​           如果重写了的话，重写规则:返回当前对象的属性信息</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;equals 方法的使用&lt;/p&gt;
-&lt;p&gt;​     1.java.lang.Object 类中的equals()方法的定义:&lt;/p&gt;
-&lt;p&gt;​               public boolean equals(Object obj){  &lt;/p&gt;
-&lt;p&gt;​      
-      
-    
-    </summary>
-    
-    
-      <category term="java" scheme="http://yoursite.com/categories/java/"/>
-    
-    
-      <category term="java基础" scheme="http://yoursite.com/tags/java%E5%9F%BA%E7%A1%80/"/>
-    
-  </entry>
-  
-  <entry>
     <title>day15</title>
     <link href="http://yoursite.com/2020/02/11/1/12/day15/"/>
     <id>http://yoursite.com/2020/02/11/1/12/day15/</id>
@@ -302,64 +352,6 @@
 &lt;p&gt;　　　—–StackOverflowError&lt;/p&gt;
 &lt;p&gt;　　　—–OOM   &lt;/p&gt;
 
-      
-    
-    </summary>
-    
-    
-      <category term="java" scheme="http://yoursite.com/categories/java/"/>
-    
-    
-      <category term="java基础" scheme="http://yoursite.com/tags/java%E5%9F%BA%E7%A1%80/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>day16</title>
-    <link href="http://yoursite.com/2020/02/11/1/12/day16/"/>
-    <id>http://yoursite.com/2020/02/11/1/12/day16/</id>
-    <published>2020-02-11T12:12:57.000Z</published>
-    <updated>2020-02-12T05:57:16.272Z</updated>
-    
-    <content type="html"><![CDATA[<p>1.java中的容器–在内存层面,对数据进行统一的存储和管理:数组 ；java集合</p><p>​    扩展:数据的持久化:文件(.jpg;mp3); xml ; 数据库</p><p>2.数组在内存存储方面的特点:</p><p>　　①数组初始化以后,长度就确定了                </p><p>　　②数组类型声明后，就决定了进行元素初始化的类型   </p><p>弊端:数组初始化以后,长度就不可变了</p><p>　　数组中提供的属性和方法很少,不便于进行添加,删除,插入等操作            </p><p>　　数组存储的数据是有序的,可以重复的—–&gt;存储数据的特点单一    </p><p>　　String[] arr = new String[10]      </p><p>　　Object[]  </p><p>3.集合框架     </p><p>　java.util.Collection:单列数据</p><p>　|——-List子接口:存储有序的,可重复的数据—-&gt;“动态”数组</p><p>　　　|—–ArrayList:作为List的主要实现类,线程不安全的,效率高；底层使用数组</p><p>　　　|—–LinkedList:对于频繁的插入,删除操作，我们建议使用此类,效率高；底层使用双向链表实现       </p><p>　　　|—–Vector:List的古老实现类,线程安全的,效率低；底层使用数组实现</p><p>​     [面试题] ArrayList,LinkList,Vector区别?</p><p>　　　　共同点:ArrayList,LinkList,Vector都是List接口的实现类,存储的数据都是有序的,可重复的</p><p>　　　　　　　区别:如上</p><p>　　　　　　　List list = new ArrayList();</p><p>　　　　　　　list.add(..);</p><p>　　　　　　　…</p><p>　　　　　　　一旦添加元素超出底层数组的长度,就需要扩容,默认扩容需要为原来的1.5倍，同时              </p><p>　　　　　　　需要将原有数组中的元素复制到新的数组中。</p><p>实际情况:需要存储80个数据到ArrayList中,建议:List list = new ArrayList(85);            </p><p>　　　|——-Set子接口:存储无序的,不可重复的数据—-&gt;高中讲的“集合”</p><p>　　　　　　|—- HashSet 主要实现类,底层实现:HashSet底层使用了HashMap</p><p>　　　　　　|—- LinkedHashSet 是HashSet的子类,可以按照添加的顺序实现遍历     </p><p>　　　　　　　　(原因:在HashSet底层存储上的基础上,额外使用了一对指针,能够记录此Node元素的</p><p>　　　　　　　　 上一个元素和下一个元素) —&gt; 对于频繁的遍历，效率高</p><p>　　　　　　|—- TreeSet : 可以按照添加元素的指定属性的大小实现遍历。底层实现：红黑树</p><p>　　　　　　 TreeSet的使用</p><p>　　　　　　　　　1.向TreeSet中添加的元素必须是同一个类创建的对象</p><p>　　　　　　　　　2.TreeSet排序的方式:①自然排序 ②定制排序</p><p>　　　　　　　　　3.自然排序: </p><p>　　　　　　　　　　　①要求添加的元素所在的类实现Compare接口 </p><p>　　　　　　　　　　　②重写接口中的CompareTo(Object obj)—&gt;指明排序的规则</p><p>　　　　　　　　　　　　如果此方法返回值0，则要新添加的元素添加不成功</p><p>　　　　　　　　　　　③向TreeSet添加此实现类的对象即可</p><p>　　　　　　　　　定制排序：</p><p>　　　　　　　　　　　TreeSet的定制排序:     </p><p>　　　　　　　　　　　　1.提供Comparator接口匿名实现类的对象 </p><p>　　　　　　　　　　　　2.重写其中的compare(Object o1,Object o2),指明排序的规则 </p><p>　　　　　　　　　　　　3.将此实现类的对象作为参数传递到TreeSet的构造器中   </p><p>　　　　　　　　　　　　4.向TreeSet的对象中添加compare()方法中判断类的对象</p><blockquote><p>　总结:   元素是否能add成功,是否能remove,是否contains…..</p><p>　　　　都依赖于compareTo或者compare方法   与元素所在类的hasCode/equals无关</p></blockquote><p>set作为Collection的子接口,没有定义额外的方法set:存储无序的,不可重复的元素  </p><ol><li><p>无序性！= 随机性.添加的元素,需要计算哈希值,此哈希值决定了在底层储存的位置,从存储位置上看,  是无序的</p></li><li><p>不可重复性:保证set集合中不同对象使用对象所属类的equals()方法判断的话,一定返回false。</p></li><li><p>如何向Set中添加一个元素?哈希算法   </p></li></ol><p>　　　向Set中添加元素a,首先通过hasCode()，计算元素的哈希值,此哈希值就决定了此元素在Set底层</p><p>　　　存储的位置，如果此存储位置上没有元素,则此元素a添加成功 ，如果此存储的位置上有元素b,则</p><p>　　　调用元素a所在类的equals（）方法.将元素b作为参数传递过去,如果返回值为true，则表示元素</p><p>　　　a和元素b相同，添加不成功，如果返回值为false,则认为元素a和元素b不相同,此时元素b可以添</p><p>　　　加成功的.元素a和元素b使用链表存储（jdk7.0:a指向b；JDK8.0:b指向a）  </p><p>　4.向Set中添加的元素,要求其所在的类要重写两个方法:  equals() 和 hashCode() </p><p>　5.必须要求添加的元素所在的类中重写equals() 和 hashCode（）保持一致</p><p>Map:存储的是双列数据：key-value </p><p>　1.所有的key构成的是集合是set:无序的,不可重复的 </p><p>　2.所有value构成的是集合Collection:无序的,可以重复的 </p><p>　3.一个key-value构成一个Entry</p><p>　4.所有的Entry构成的集合是Set:无序的,不可重复的</p><p>　HashSet的底层使用HashMap存储的</p><p>　HashMap的所有key构成的集合是HashSet</p><p>|—-HashMap:Map的主要实现类,线程不安全,效率高；可以存储null的key和value</p><p>　　 (存储结构：Jdk7.0数组+链表,Jdk8.0数组+红黑树) </p><p>　　|—-LinkedHashMap:HashMap的子类,可以按照添加的顺序遍历,对于频繁的遍历效率</p><p>　　(在HashMap存储的基础上,使用了一对指针,来记录添加元素的顺序)</p><p>|—-TreeMap：可以按照key的指定的属性进行排序,遍历,底层实现:红黑树</p><p>|—-Hashtable：Map的古老实现类:线程安全,效率低;不可以存储null的key和value </p><p>　　　|—-Properties:Hashtable的子类，常常用来处理属性文件，其key和value都是String类型的</p><p>Map常用方法：</p><p>　添加:put(Object key,Object value)</p><p>　修改:put(Object key,Object value)</p><p>　删除:Object remove(Object obj)</p><p>　长度:size()</p><p>　清空数据:clear()</p><p>　是否为空isEmpty()</p><p>1.遍历所有的key</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">  Set keySet = map.keySet();</span><br><span class="line"></span><br><span class="line">  Iterator iterator = keySet.iterator();</span><br><span class="line"></span><br><span class="line">  <span class="keyword">while</span>(iterator.hasNext())&#123; </span><br><span class="line"></span><br><span class="line">         System.out.println(iterator.next());</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>​     2.遍历所有的value</p><p>​       </p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Collection coll = map.values();</span><br><span class="line"></span><br><span class="line">       <span class="keyword">for</span>(Object obj:coll)&#123;  </span><br><span class="line"></span><br><span class="line">            System.out.println(obj);</span><br><span class="line"></span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure><p>​    3.遍历所有的key-value</p><p>​          1.方式一：</p><p>​         </p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Set keySet1 = map.keySet();</span><br><span class="line"></span><br><span class="line">         <span class="keyword">for</span>(Object key:keySet1)&#123;</span><br><span class="line"></span><br><span class="line">                System.out.println(key+<span class="string">"----&gt;"</span>+map.get(key));</span><br><span class="line"></span><br><span class="line">       &#125;</span><br></pre></td></tr></table></figure><p>​         2.方式二：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Set entrySet = map.entrySet();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(Object o:entrySet)&#123; </span><br><span class="line"></span><br><span class="line">              Map.Entry entry = (Map.Entry)o;</span><br><span class="line"></span><br><span class="line">              System.out.println(entry.getKey()+<span class="string">"********"</span>+entry.getValue());</span><br><span class="line"></span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure><p>Map常用方法：</p><ul><li>添加:put(Object key,Object value)</li><li>修改:put(Object key,Object value)</li><li>删除:Object remove(Object obj)</li><li>长度:size()</li><li>清空数据:clear()</li><li>是否为空isEmpty()</li></ul><p> 总结:</p><p>　　增：put(Object key,Object value)</p><p>　　删：Object remove(Object obj)</p><p>　　改：put(Object key,Object value)</p><p>　　查：get(Object key)</p><p>　　长度:size()</p><p>　　遍历:keySet() / values() / entrySet()List (index—&gt;数据)/ Set（很少用）/ Map（key –&gt; 数据）</p><p>   说明：1.向List中添加自定义类的对象的话,要求此定义类要重写equals()方法</p><p>　　　　2.补充:数据结构解决两个问题:</p><p>　　　　　　　1.数据之间逻辑关系：一对一，一对多，多对多…</p><p>　　　　　　　2.数据的存储结构:①顺序存储:一维数组 ②链式存储</p><p> 4.测试Collection中的常用方法</p><p>​       ①size（）返回集合中存储的元素的个数</p><p>​       ②add(Object obj) 将obj添加到当前的集合中</p><p>​       ③addAll(Collection coll) 将coll1集合中的所有元素添加到当前集合中</p><p>​       ④isEmpty() 判断当前集合是否为空</p><p>​       ⑤clear 清除当前集合</p><p>​       ⑥contains(Object obj) 判断当前集合中是否包含obj：调用了obj所在类的equals（）方法</p><p>​       ⑦containsAll(collection coll)    当前集合是否包含coll中的所有元素</p><p>​       ⑧remove(Object obj):从当前集合中移除obj元素.仍然需要obj所在类的equals的方法</p><p>​       ⑨removeAll(Collection coll):差集:从当前集合中移除coll集合中的元素</p><p>​       ⑩retainAll(Collection coll)：交集：获取当前集合和coll共有的元素</p><p>​       ⑪equals(Object obj):比较当前对象和obj是否相等。</p><p>​       ⑫hashCode():获取当前对象的哈希值</p><p>​       ⑬toArray()：将集合转换成数组:Object[]</p><p>​       ⑭toArrays(T[] arr):略</p><p>​       ⑮Iterator():集合元素的遍历。迭代器</p><p>​          hasNext():判断是否还有下一个元素</p><p>​          next():①指针下移 ②将指针下移以后集合位置上的元素返回</p><p>5.规定：如果集合中存储自定义类的对象，要求自定义重写equals方法</p><p>6.集合：很常用。</p><p>　　掌握点：层次一：选择合适的集合类实现数据的保存,调用其内部的相关方法</p><p>　　　　　　层次二:不同的集合类底层的数据结构为何？如何实现数据的操作的：增删改查等。</p><p> 集合的遍历:</p><p>　方式一：使用Iterator实现</p><p>　方式二：增强for循环(foreach循环)</p><p>　　　　　for(集合元素的类型 局部变量 : 集合引用)</p><p>List:</p><p>在Collection的基础上，新增的方法：</p><ul><li>void add(int index, Object ele):在index位置插入ele元素</li><li>boolean addAll(int index, Collection eles):从index位置开始将eles中的所有元素添加进来 </li><li>Object get(int index):获取指定index位置的元素</li><li>int indexOf(Object obj):返回obj在集合中首次出现的位置.如果不存在，返回-1.</li><li>int lastIndexOf(Object obj):返回obj在当前集合中末次出现的位置.如果不存在，返回-1.</li><li>Object remove(int index):移除指定index位置的元素，并返回此元素</li><li>Object set(int index, Object ele):设置指定index位置的元素为eleList</li><li>subList(int fromIndex, int toIndex):返回从fromIndex到toIndex位置的左闭右开区间的子集合    </li><li>substring(int from ,int to) /  read(int from,int length)  </li></ul><p>​      总结：List中的常用方法：</p><p>　　　增：add(Object obj)</p><p>　　　删：remove(Object obj) / remove(int index)  </p><p>　　　改：set(int index, Object ele)</p><p>　　　查：get(int index)</p><p>　　　插：add(int index, Object ele)</p><p>　　　遍历：iterator();增强for;for   </p><p>　　　长度：size()</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;1.java中的容器–在内存层面,对数据进行统一的存储和管理:数组 ；java集合&lt;/p&gt;
-&lt;p&gt;​    扩展:数据的持久化:文件(.jpg;mp3); xml ; 数据库&lt;/p&gt;
-&lt;p&gt;2.数组在内存存储方面的特点:&lt;/p&gt;
-&lt;p&gt;　　①数组初始化以后,长度就确定了  
-      
-    
-    </summary>
-    
-    
-      <category term="java" scheme="http://yoursite.com/categories/java/"/>
-    
-    
-      <category term="java基础" scheme="http://yoursite.com/tags/java%E5%9F%BA%E7%A1%80/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>day20</title>
-    <link href="http://yoursite.com/2020/02/11/1/12/day20/"/>
-    <id>http://yoursite.com/2020/02/11/1/12/day20/</id>
-    <published>2020-02-11T12:12:57.000Z</published>
-    <updated>2020-02-12T06:19:01.949Z</updated>
-    
-    <content type="html"><![CDATA[<p>jdk 7.0 时，引入了 Path、Paths、Files三个类。</p><p>　1.此三个类声明在：java.nio.file包下。</p><p>　2.Path可以看做是java.io.File类的升级版本。也可以表示文件或文件目录，与平台无关</p><p>　3.如何实例化Path:使用Paths. </p><p>　　static Path get(String first, String … more) : 用于将多个字符串串连成路径</p><p>　　static Path get(URI uri): 返回指定uri对应的Path路径 </p><h2 id="Path"><a href="#Path" class="headerlink" title="Path:"></a>Path:</h2><p>   String toString() ： 返回调用 Path 对象的字符串表示形式</p><p>   boolean startsWith(String path) : 判断是否以 path 路径开始</p><p>   boolean endsWith(String path) : 判断是否以 path 路径结束</p><p>   boolean isAbsolute() : 判断是否是绝对路径</p><p>   Path getParent() ：返回Path对象包含整个路径，不包含 Path 对象指定的文件路径</p><p>   Path getRoot() ：返回调用 Path 对象的根路径</p><p>​       Path getFileName() : 返回与调用 Path 对象关联的文件名</p><p>​       int getNameCount() : 返回Path 根目录后面元素的数量(层数)</p><p>​       Path getName(int idx) : 返回指定索引位置 idx 的路径名称</p><p>​       Path toAbsolutePath() : 作为绝对路径返回调用 Path 对象</p><p>​       File toFile(): 将Path转化为File类的对象</p><h2 id="Files"><a href="#Files" class="headerlink" title="Files"></a>Files</h2><p>Path copy(Path src, Path dest, CopyOption … how) : 文件的复制      </p><p>​    &gt;要想复制成功，要求path1对应的物理上的文件存在。path1对应的文件没有要求。</p><p>​      Files.copy(path1, path2, StandardCopyOption.REPLACE_EXISTING); 当已存在时做覆盖</p><p>Path createDirectory(Path path, FileAttribute&lt;?&gt; … attr) : 创建一个目录      </p><p>​      要想执行成功，要求path对应的物理上的文件目录不存在。一旦存在，抛出异常。</p><p>Path createFile(Path path, FileAttribute&lt;?&gt; … arr) : 创建一个文件      </p><p>​      要想执行成功，要求path对应的物理上的文件不存在。一旦存在，抛出异常。</p><p>void delete(Path path) : 删除一个文件/目录，如果不存在，执行报错</p><p>void deleteIfExists(Path path) : Path对应的文件/目录如果存在，执行删除.如果不存在，正常执行结束</p><p>Path move(Path src, Path dest, CopyOption…how) : 将 src 移动到 dest 位置      </p><p>   要想执行成功，src对应的物理上的文件需要存在，dest对应的文件没有要求。</p><p>   Files.move(path1, path2, StandardCopyOption.ATOMIC_MOVE);</p><p>long size(Path path) : 返回 path 指定文件的大小</p><p>boolean exists(Path path, LinkOption … opts) : 判断文件是否存在</p><p>boolean isDirectory(Path path, LinkOption … opts) : 判断是否是目录</p><p>boolean isRegularFile(Path path, LinkOption … opts) : 判断是否是文件</p><p>boolean isHidden(Path path) : 判断是否是隐藏文件</p><p>​    &gt;要求此path对应的物理上的文件需要存在。才可判断是否隐藏。否则，抛异常</p><p>boolean isReadable(Path path) : 判断文件是否可读</p><p>boolean isWritable(Path path) : 判断文件是否可写</p><p>boolean notExists(Path path, LinkOption … opts) : 判断文件是否不存在</p><p>StandardOpenOption.READ:表示对应的Channel是可读的。 </p><p>StandardOpenOption.WRITE：表示对应的Channel是可写的。</p><p>StandardOpenOption.CREATE：如果要写出的文件不存在，则创建。如果存在，忽略 StandardOpenOption.CREATE_NEW：如果要写出的文件不存在，则创建。如果存在，抛异常</p><p>SeekableByteChannel newByteChannel(Path path, OpenOption…how) : 获取与指定文件的连接，how 指定打开方式。</p><p>DirectoryStream<Path>  newDirectoryStream(Path path) : 打开 path 指定的目录</Path></p><p>InputStream newInputStream(Path path, OpenOption…how):获取 InputStream 对象</p><p>OutputStream newOutputStream(Path path, OpenOption…how) : 获取 OutputStream 对象</p><p>jdk 7 提供基于try-catch的自动资源管理</p><p>　能够实现资源的自动关闭，需要满足：</p><p>　　1.可以在一条 try 语句中管理多个资源，每个资源以“;” 隔开即可。</p><p>　　2.需要关闭的资源，必须实现了 AutoCloseable 接口或其子接口 Closeable目的：不需要再使用finally，显式的关闭资源了。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;jdk 7.0 时，引入了 Path、Paths、Files三个类。&lt;/p&gt;
-&lt;p&gt;　1.此三个类声明在：java.nio.file包下。&lt;/p&gt;
-&lt;p&gt;　2.Path可以看做是java.io.File类的升级版本。也可以表示文件或文件目录，与平台无关&lt;/p&gt;
-&lt;p&gt;　3.
       
     
     </summary>
@@ -405,23 +397,22 @@
   </entry>
   
   <entry>
-    <title>day17</title>
-    <link href="http://yoursite.com/2020/02/11/1/12/day17/"/>
-    <id>http://yoursite.com/2020/02/11/1/12/day17/</id>
+    <title>day16</title>
+    <link href="http://yoursite.com/2020/02/11/1/12/day16/"/>
+    <id>http://yoursite.com/2020/02/11/1/12/day16/</id>
     <published>2020-02-11T12:12:57.000Z</published>
-    <updated>2020-02-12T05:36:35.086Z</updated>
+    <updated>2020-02-20T03:20:56.477Z</updated>
     
-    <content type="html"><![CDATA[<p>Collections:用来操作集合框架(Collection / Map)的工具类</p><ul><li>reverse(List)：反转 List 中元素的顺序</li><li>shuffle(List)：对 List 集合元素进行随机排序</li><li>sort(List)：根据元素的自然顺序对指定 List 集合元素按升序排序</li><li>sort(List，Comparator)：根据指定的 Comparator 产生的顺序对 List 集合元素进行排序</li><li>swap(List，int， int)：将指定 list 集合中的 i 处元素和 j 处元素进行交换</li><li>Object max(Collection)：根据元素的自然顺序，返回给定集合中的最大元素\</li><li>Object max(Collection，Comparator)：根据 Comparator 指定的顺序，返回给定集合中的最大元素 Object  </li><li>object min(Collection)</li><li>Object min(Collection，Comparator)</li><li>int frequency(Collection，Object)：返回指定集合中指定元素的出现次数</li></ul><ul><li>void copy(List dest,List src)：将src中的内容复制到dest中</li></ul><p>　　List dest = Arrays.asList(new Object[list.size()]);</p><p>　　Collections.copy(dest, list);</p><p>　　System.out.println(dest);</p><ul><li>boolean replaceAll(List list，Object oldVal，Object newVal)：使用新值替换 List 对象的所有旧值</li></ul><p>  list:线程不安全的。</p><p>  List newList = Collections.synchronizedList(list);</p><p>  newList:线程安全的。</p>]]></content>
+    <content type="html"><![CDATA[<p>1.java中的容器–在内存层面,对数据进行统一的存储和管理:数组 ；java集合</p><p>​    扩展:数据的持久化:文件(.jpg;mp3); xml ; 数据库</p><p>2.数组在内存存储方面的特点:</p><p>　　①数组初始化以后,长度就确定了                </p><p>　　②数组类型声明后，就决定了进行元素初始化的类型   </p><p>弊端:数组初始化以后,长度就不可变了</p><p>　　数组中提供的属性和方法很少,不便于进行添加,删除,插入等操作            </p><p>　　数组存储的数据是有序的,可以重复的—–&gt;存储数据的特点单一    </p><p>　　String[] arr = new String[10]      </p><p>　　Object[]  </p><p>3.集合框架     </p><p>　java.util.Collection:单列数据</p><p>　|——-List子接口:存储有序的,可重复的数据—-&gt;“动态”数组</p><p>　　　|—–ArrayList:作为List的主要实现类,线程不安全的,效率高；底层使用数组</p><p>　　　|—–LinkedList:对于频繁的插入,删除操作，我们建议使用此类,效率高；底层使用双向链表实现       </p><p>　　　|—–Vector:List的古老实现类,线程安全的,效率低；底层使用数组实现</p><p>​     [面试题] ArrayList,LinkList,Vector区别?</p><p>　　　　共同点:ArrayList,LinkList,Vector都是List接口的实现类,存储的数据都是有序的,可重复的</p><p>　　　　　　　区别:如上</p><p>　　　　　　　List list = new ArrayList();</p><p>　　　　　　　list.add(..);</p><p>　　　　　　　…</p><p>　　　　　　　一旦添加元素超出底层数组的长度,就需要扩容,默认扩容需要为原来的1.5倍，同时              </p><p>　　　　　　　需要将原有数组中的元素复制到新的数组中。</p><p>实际情况:需要存储80个数据到ArrayList中,建议:List list = new ArrayList(85);            </p><p>　　　|——-Set子接口:存储无序的,不可重复的数据—-&gt;高中讲的“集合”</p><p>　　　　　　|—- HashSet 主要实现类,底层实现:HashSet底层使用了HashMap</p><p>　　　　　　|—- LinkedHashSet 是HashSet的子类,可以按照添加的顺序实现遍历     </p><p>　　　　　　　　(原因:在HashSet底层存储上的基础上,额外使用了一对指针,能够记录此Node元素的</p><p>　　　　　　　　 上一个元素和下一个元素) —&gt; 对于频繁的遍历，效率高</p><p>　　　　　　|—- TreeSet : 可以按照添加元素的指定属性的大小实现遍历。底层实现：红黑树</p><p>　　　　　　 TreeSet的使用</p><p>　　　　　　　　　1.向TreeSet中添加的元素必须是同一个类创建的对象</p><p>　　　　　　　　　2.TreeSet排序的方式:①自然排序 ②定制排序</p><p>　　　　　　　　　3.自然排序: </p><p>　　　　　　　　　　　①要求添加的元素所在的类实现Compare接口 </p><p>　　　　　　　　　　　②重写接口中的CompareTo(Object obj)—&gt;指明排序的规则</p><p>　　　　　　　　　　　　如果此方法返回值0，则要新添加的元素添加不成功</p><p>　　　　　　　　　　　③向TreeSet添加此实现类的对象即可</p><p>　　　　　　　　　定制排序：</p><p>　　　　　　　　　　　TreeSet的定制排序:     </p><p>　　　　　　　　　　　　1.提供Comparator接口匿名实现类的对象 </p><p>　　　　　　　　　　　　2.重写其中的compare(Object o1,Object o2),指明排序的规则 </p><p>　　　　　　　　　　　　3.将此实现类的对象作为参数传递到TreeSet的构造器中   </p><p>　　　　　　　　　　　　4.向TreeSet的对象中添加compare()方法中判断类的对象</p><blockquote><p>　总结:   元素是否能add成功,是否能remove,是否contains…..</p><p>　　　　都依赖于compareTo或者compare方法   与元素所在类的hasCode/equals无关</p></blockquote><p>set作为Collection的子接口,没有定义额外的方法set:存储无序的,不可重复的元素  </p><ol><li><p>无序性！= 随机性.添加的元素,需要计算哈希值,此哈希值决定了在底层储存的位置,从存储位置上看,  是无序的</p></li><li><p>不可重复性:保证set集合中不同对象使用对象所属类的equals()方法判断的话,一定返回false。</p></li><li><p>如何向Set中添加一个元素?哈希算法   </p></li></ol><p>　　　向Set中添加元素a,首先通过hasCode()，计算元素的哈希值,此哈希值就决定了此元素在Set底层</p><p>　　　存储的位置，如果此存储位置上没有元素,则此元素a添加成功 ，如果此存储的位置上有元素b,则</p><p>　　　调用元素a所在类的equals（）方法.将元素b作为参数传递过去,如果返回值为true，则表示元素</p><p>　　　a和元素b相同，添加不成功，如果返回值为false,则认为元素a和元素b不相同,此时元素b可以添</p><p>　　　加成功的.元素a和元素b使用链表存储（jdk7.0:a指向b；JDK8.0:b指向a）  </p><p>　4.向Set中添加的元素,要求其所在的类要重写两个方法:  equals() 和 hashCode() </p><p>　5.必须要求添加的元素所在的类中重写equals() 和 hashCode（）保持一致</p><p>Map:存储的是双列数据：key-value </p><p>　1.所有的key构成的是集合是set:无序的,不可重复的 </p><p>　2.所有value构成的是集合Collection:无序的,可以重复的 </p><p>　3.一个key-value构成一个Entry</p><p>　4.所有的Entry构成的集合是Set:无序的,不可重复的</p><p>　HashSet的底层使用HashMap存储的</p><p>　HashMap的所有key构成的集合是HashSet</p><p>|—-HashMap:Map的主要实现类,线程不安全,效率高；可以存储null的key和value</p><p>　　 (存储结构：Jdk7.0数组+链表,Jdk8.0数组+红黑树) </p><p>　　|—-LinkedHashMap:HashMap的子类,可以按照添加的顺序遍历,对于频繁的遍历效率</p><p>　　(在HashMap存储的基础上,使用了一对指针,来记录添加元素的顺序)</p><p>|—-TreeMap：可以按照key的指定的属性进行排序,遍历,底层实现:红黑树</p><p>|—-Hashtable：Map的古老实现类:线程安全,效率低;不可以存储null的key和value </p><p>　　　|—-Properties:Hashtable的子类，常常用来处理属性文件，其key和value都是String类型的</p><p>Map常用方法：</p><p>　添加:put(Object key,Object value)</p><p>　修改:put(Object key,Object value)</p><p>　删除:Object remove(Object obj)</p><p>　长度:size()</p><p>　清空数据:clear()</p><p>　是否为空isEmpty()</p><p>1.遍历所有的key</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">  Set keySet = map.keySet();</span><br><span class="line"></span><br><span class="line">  Iterator iterator = keySet.iterator();</span><br><span class="line"></span><br><span class="line">  <span class="keyword">while</span>(iterator.hasNext())&#123; </span><br><span class="line"></span><br><span class="line">         System.out.println(iterator.next());</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>​     2.遍历所有的value</p><p>​       </p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Collection coll = map.values();</span><br><span class="line"></span><br><span class="line">       <span class="keyword">for</span>(Object obj:coll)&#123;  </span><br><span class="line"></span><br><span class="line">            System.out.println(obj);</span><br><span class="line"></span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure><p>​    3.遍历所有的key-value</p><p>​          1.方式一：</p><p>​         </p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Set keySet1 = map.keySet();</span><br><span class="line"></span><br><span class="line">         <span class="keyword">for</span>(Object key:keySet1)&#123;</span><br><span class="line"></span><br><span class="line">                System.out.println(key+<span class="string">"----&gt;"</span>+map.get(key));</span><br><span class="line"></span><br><span class="line">       &#125;</span><br></pre></td></tr></table></figure><p>​         2.方式二：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Set entrySet = map.entrySet();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(Object o:entrySet)&#123; </span><br><span class="line"></span><br><span class="line">              Map.Entry entry = (Map.Entry)o;</span><br><span class="line"></span><br><span class="line">              System.out.println(entry.getKey()+<span class="string">"********"</span>+entry.getValue());</span><br><span class="line"></span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure><p>Map常用方法：</p><ul><li>添加:put(Object key,Object value)</li><li>修改:put(Object key,Object value)</li><li>删除:Object remove(Object obj)</li><li>长度:size()</li><li>清空数据:clear()</li><li>是否为空isEmpty()</li></ul><p> 总结:</p><p>　　增：put(Object key,Object value)</p><p>　　删：Object remove(Object obj)</p><p>　　改：put(Object key,Object value)</p><p>　　查：get(Object key)</p><p>　　长度:size()</p><p>　　遍历:keySet() / values() / entrySet()List (index—&gt;数据)/ Set（很少用）/ Map（key –&gt; 数据）</p><p>   说明：1.向List中添加自定义类的对象的话,要求此定义类要重写equals()方法</p><p>　　　　2.补充:数据结构解决两个问题:</p><p>　　　　　　　1.数据之间逻辑关系：一对一，一对多，多对多…</p><p>　　　　　　　2.数据的存储结构:①顺序存储:一维数组 ②链式存储</p><p> 4.测试Collection中的常用方法</p><p>​       ①size（）返回集合中存储的元素的个数</p><p>​       ②add(Object obj) 将obj添加到当前的集合中</p><p>​       ③addAll(Collection coll) 将coll1集合中的所有元素添加到当前集合中</p><p>​       ④isEmpty() 判断当前集合是否为空</p><p>​       ⑤clear 清除当前集合</p><p>​       ⑥contains(Object obj) 判断当前集合中是否包含obj：调用了obj所在类的equals（）方法</p><p>​       ⑦containsAll(collection coll)    当前集合是否包含coll中的所有元素</p><p>​       ⑧remove(Object obj):从当前集合中移除obj元素.仍然需要obj所在类的equals的方法</p><p>​       ⑨removeAll(Collection coll):差集:从当前集合中移除coll集合中的元素</p><p>​       ⑩retainAll(Collection coll)：交集：获取当前集合和coll共有的元素</p><p>​       ⑪equals(Object obj):比较当前对象和obj是否相等。</p><p>​       ⑫hashCode():获取当前对象的哈希值</p><p>​       ⑬toArray()：将集合转换成数组:Object[]</p><p>​       ⑭toArrays(T[] arr):略</p><p>​       ⑮Iterator():集合元素的遍历。迭代器</p><p>​          hasNext():判断是否还有下一个元素</p><p>​          next():①指针下移 ②将指针下移以后集合位置上的元素返回</p><p>5.规定：如果集合中存储自定义类的对象，要求自定义重写equals方法</p><p>6.集合：很常用。</p><p>　　掌握点：层次一：选择合适的集合类实现数据的保存,调用其内部的相关方法</p><p>　　　　　　层次二:不同的集合类底层的数据结构为何？如何实现数据的操作的：增删改查等。</p><p> 集合的遍历:</p><p>　方式一：使用Iterator实现</p><p>　方式二：增强for循环(foreach循环)</p><p>　　　　　for(集合元素的类型 局部变量 : 集合引用)</p><p>List:</p><p>在Collection的基础上，新增的方法：</p><ul><li>void add(int index, Object ele):在index位置插入ele元素</li><li>boolean addAll(int index, Collection eles):从index位置开始将eles中的所有元素添加进来 </li><li>Object get(int index):获取指定index位置的元素</li><li>int indexOf(Object obj):返回obj在集合中首次出现的位置.如果不存在，返回-1.</li><li>int lastIndexOf(Object obj):返回obj在当前集合中末次出现的位置.如果不存在，返回-1.</li><li>Object remove(int index):移除指定index位置的元素，并返回此元素</li><li>Object set(int index, Object ele):设置指定index位置的元素为eleList</li><li>subList(int fromIndex, int toIndex):返回从fromIndex到toIndex位置的左闭右开区间的子集合    </li><li>substring(int from ,int to) /  read(int from,int length)  </li></ul><p>​      总结：List中的常用方法：</p><p>　　　增：add(Object obj)</p><p>　　　删：remove(Object obj) / remove(int index)  </p><p>　　　改：set(int index, Object ele)</p><p>　　　查：get(int index)</p><p>　　　插：add(int index, Object ele)</p><p>　　　遍历：iterator();增强for;for   </p><p>　　　长度：size()</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;Collections:用来操作集合框架(Collection / Map)的工具类&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;reverse(List)：反转 List 中元素的顺序&lt;/li&gt;
-&lt;li&gt;shuffle(List)：对 List 集合元素进行随机排序&lt;/li&gt;
-&lt;li&gt;so
+        &lt;p&gt;1.java中的容器–在内存层面,对数据进行统一的存储和管理:数组 ；java集合&lt;/p&gt;
+&lt;p&gt;​    扩展:数据的持久化:文件(.jpg;mp3); xml ; 数据库&lt;/p&gt;
+&lt;p&gt;2.数组在内存存储方面的特点:&lt;/p&gt;
+&lt;p&gt;　　①数组初始化以后,长度就确定了  
       
     
     </summary>
@@ -439,7 +430,7 @@
     <link href="http://yoursite.com/2020/02/11/1/12/day19/"/>
     <id>http://yoursite.com/2020/02/11/1/12/day19/</id>
     <published>2020-02-11T12:12:57.000Z</published>
-    <updated>2020-02-12T05:30:28.025Z</updated>
+    <updated>2020-02-20T03:33:56.636Z</updated>
     
     <content type="html"><![CDATA[<p>  一、流的分类</p><p>　1.流的流向：输入流、输出流</p><p>　2.流中数据单位：字节流、字符流</p><p>　3.流的角色不同：节点流、处理流</p><p>  二、 抽象基类                          节点流(或文件流)                                       缓冲流(处理流的一种)：提高数据读写效率</p><p>​          InputStream                   FileInputStream(read(byte[]))                 BufferedInputStream(read(byte[])</p><p>​          OutputStream               FileOutputStream(write(byte[],0,len))  BufferedOutputStream(write(byte[],0,len)</p><p>​         Readed                            FileReader(read(char[]))                          BufferedReader(read(char[]) / readLine())</p><p>​         Writer                              FileWriter(write(char[],0,len))                  BufferedWriter(write(char[],0,len)</p><p>从指定文件中读取数据到控制台上</p><p>　1.要去读的文件一定要存在的,否则报FileNotFoundException</p><p>　2.因为需要保证流的资源关闭,所以异常的处理需要使用try-catch-finally</p><p>字节流：</p><p>　输入流:FileInputStream</p><p>　1.创建一个文件,指明读取数据的来源</p><p>　2.将file对象作为参数传递到流的构造器中,创建一个字节的输入流:FileInputStream</p><p>　3.read():读取文件中的下一个字节。如果到达文件末尾的话,返回-1</p><p>　4.关闭资源</p><p> 输出流:FileOutputStream</p><p>　1.造文件</p><p>　2.造流:输出流</p><p>　3.写出数据  getBytes()  字符串—&gt;字节数组</p><p>　4.关闭资源</p><p>　　* 如果输出的文件不存在,则在输出执行的过程中,自动创建此文件<br>　　* 如果输出的文件存在：如果使用构造器：FileOutputStream(file)是对已存在的文件的覆盖, </p><p>​                                              如果使用构造器:FileOutputStream(file,true)是在已有文件内容的基础上,继续写入内容</p><p>字符流</p><p>　 FileReader 和 FileWriter的使用：只能用来处理文本文件的。</p><p>　FileInputStream 和  FileOutputStream:适合用来处理非文本文件：.avi , .mp3, .jpg, .doc</p><p>   1.造文件</p><p>   2.造流：字符的输入流、字符的输出流</p><p>   3.读取数据并写出</p><p>   4.关闭资源</p><p>缓冲流的使用。</p><p>　1.缓冲流是处理流的一种</p><p>　2.作用：提高数据的读写效率</p><p>　3.类： 处理非文本文件：</p><p>　　　BufferedInputStream</p><p>　　　BufferedOutputStream</p><p>　　　　处理文本文件：</p><p>　　　BufferedReader</p><p>　　　BufferedWriter  —&gt;readLine 读取一行</p><p>　　　　　　　　　　　—&gt;newLine 开始新的一行</p><p>理流之二：转换流</p><p>　1.转化流的作用：能够实现字节流与字符流之间的转换</p><p>　2.涉及到的流：</p><p>　　　InputStreamReader:实现字节的输入流转换为字符的输入流</p><p>　　　OutputStreamWriter:实现字符的输出流转换为字节的输出流</p><p>　　编码的过程：字符串、字符数组—&gt;字节数组</p><p>　　解码的过程：字节数组—-&gt;字符串、字符数组</p><p> 3.常见的编码集：</p><p>　ASCII：美国标准信息交换码，用一个字节的7位可以表示。</p><p>　ISO8859-1：拉丁码表。欧洲码表.  用一个字节的8位表示。</p><p>　GB2312：中国的中文编码表。</p><p>　GBK：中国的中文编码表升级，融合了更多的中文文字符号。</p><p>　Unicode：国际标准码，融合了多种文字。 所有文字都用两个字节来表示,Java语言使用的就是unicode</p><p>　UTF-8：最多用三个字节来表示一个字符</p><p>处理流之三：标准的输入、输出流 </p><p>　System.in:标准的输入流，默认从键盘输入 </p><p>　<em>System.out:标准的输出流，默认从显示屏输出</em> </p><p>　 System.setIn():重新指定输入的位置 </p><p>　System.setOut():重新指定输出的位置</p><p>处理流之四：打印流 PrintStream 和 PrintWriter</p><p>处理流之五：数据流 DataInputStream 和 DataOutpuStream</p><p>处理流之六：对象流</p><p>　1.作用：用于存储和读取基本数据类型数据或对象的处理流。它的强大之处就是可以把Java中的对象写入到数据源中， 也能把对象从数据源中还原回来。</p><p>　2.涉及到的流：ObjectInputStream 和 ObjectOutputStream</p><p>　3.对象序列化机制：允许把内存中的Java对象转换成平台无关的二进制流，从而允许把这种二进制流持久地保存在磁盘上，或通过网络将这种二进制流传输到另一个网络节点。当其它程序获取了这种二进制流，就可以恢复成原来的Java对象.</p><p>提供一个自定义类，实现序列化机制。</p><p>　要求：1.自定义类实现Serializable接口</p><p>　　　　2.需要给当前的类声明全局的常量：serialVersionUID</p><p>　　　　3.要求类的属性也是可序列化的。 (默认情况下：String、基本数据类型都是可序列化的)</p><p>　　　　注意：不能序列化static和transient修饰的成员变量</p><p>RandomAccessFile的使用：随机存取文件流</p><p>　1.RandomAccessFile在java.io包下声明，直接继承于Object类</p><p>　2.既可以作为输入流，又可以作为输出流。</p><p>　3.如果输出到的文件不存在，则会在输出的过程中，自动创建此文件 。 如果输出到的文件存在，</p><p>　　则不是对文件的覆盖，而是对文件内容的覆盖。（默认从头覆盖）</p><p>　4.实现数据的“插入” </p>]]></content>
     
@@ -452,6 +443,36 @@
 &lt;p&gt;　2.流中数据单位：字节流、字符流&lt;/p&gt;
 &lt;p&gt;　3.流的角色不同：节点流、处理流&lt;/p&gt;
 &lt;p&gt;  二、 抽象基类                          节点流(或文件流)    
+      
+    
+    </summary>
+    
+    
+      <category term="java" scheme="http://yoursite.com/categories/java/"/>
+    
+    
+      <category term="java基础" scheme="http://yoursite.com/tags/java%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>day17</title>
+    <link href="http://yoursite.com/2020/02/11/1/12/day17/"/>
+    <id>http://yoursite.com/2020/02/11/1/12/day17/</id>
+    <published>2020-02-11T12:12:57.000Z</published>
+    <updated>2020-02-20T03:33:11.623Z</updated>
+    
+    <content type="html"><![CDATA[<p>Collections:用来操作集合框架(Collection / Map)的工具类</p><ul><li>reverse(List)：反转 List 中元素的顺序</li><li>shuffle(List)：对 List 集合元素进行随机排序</li><li>sort(List)：根据元素的自然顺序对指定 List 集合元素按升序排序</li><li>sort(List，Comparator)：根据指定的 Comparator 产生的顺序对 List 集合元素进行排序</li><li>swap(List，int， int)：将指定 list 集合中的 i 处元素和 j 处元素进行交换</li><li>Object max(Collection)：根据元素的自然顺序，返回给定集合中的最大元素\</li><li>Object max(Collection，Comparator)：根据 Comparator 指定的顺序，返回给定集合中的最大元素 Object  </li><li>object min(Collection)</li><li>Object min(Collection，Comparator)</li><li>int frequency(Collection，Object)：返回指定集合中指定元素的出现次数</li></ul><ul><li>void copy(List dest,List src)：将src中的内容复制到dest中</li></ul><p>　　List dest = Arrays.asList(new Object[list.size()]);</p><p>　　Collections.copy(dest, list);</p><p>　　System.out.println(dest);</p><ul><li>boolean replaceAll(List list，Object oldVal，Object newVal)：使用新值替换 List 对象的所有旧值</li></ul><p>  list:线程不安全的。</p><p>  List newList = Collections.synchronizedList(list);</p><p>  newList:线程安全的。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Collections:用来操作集合框架(Collection / Map)的工具类&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;reverse(List)：反转 List 中元素的顺序&lt;/li&gt;
+&lt;li&gt;shuffle(List)：对 List 集合元素进行随机排序&lt;/li&gt;
+&lt;li&gt;so
       
     
     </summary>
@@ -496,6 +517,35 @@
   </entry>
   
   <entry>
+    <title>day20</title>
+    <link href="http://yoursite.com/2020/02/11/1/12/day20/"/>
+    <id>http://yoursite.com/2020/02/11/1/12/day20/</id>
+    <published>2020-02-11T12:12:57.000Z</published>
+    <updated>2020-02-12T06:19:01.949Z</updated>
+    
+    <content type="html"><![CDATA[<p>jdk 7.0 时，引入了 Path、Paths、Files三个类。</p><p>　1.此三个类声明在：java.nio.file包下。</p><p>　2.Path可以看做是java.io.File类的升级版本。也可以表示文件或文件目录，与平台无关</p><p>　3.如何实例化Path:使用Paths. </p><p>　　static Path get(String first, String … more) : 用于将多个字符串串连成路径</p><p>　　static Path get(URI uri): 返回指定uri对应的Path路径 </p><h2 id="Path"><a href="#Path" class="headerlink" title="Path:"></a>Path:</h2><p>   String toString() ： 返回调用 Path 对象的字符串表示形式</p><p>   boolean startsWith(String path) : 判断是否以 path 路径开始</p><p>   boolean endsWith(String path) : 判断是否以 path 路径结束</p><p>   boolean isAbsolute() : 判断是否是绝对路径</p><p>   Path getParent() ：返回Path对象包含整个路径，不包含 Path 对象指定的文件路径</p><p>   Path getRoot() ：返回调用 Path 对象的根路径</p><p>​       Path getFileName() : 返回与调用 Path 对象关联的文件名</p><p>​       int getNameCount() : 返回Path 根目录后面元素的数量(层数)</p><p>​       Path getName(int idx) : 返回指定索引位置 idx 的路径名称</p><p>​       Path toAbsolutePath() : 作为绝对路径返回调用 Path 对象</p><p>​       File toFile(): 将Path转化为File类的对象</p><h2 id="Files"><a href="#Files" class="headerlink" title="Files"></a>Files</h2><p>Path copy(Path src, Path dest, CopyOption … how) : 文件的复制      </p><p>​    &gt;要想复制成功，要求path1对应的物理上的文件存在。path1对应的文件没有要求。</p><p>​      Files.copy(path1, path2, StandardCopyOption.REPLACE_EXISTING); 当已存在时做覆盖</p><p>Path createDirectory(Path path, FileAttribute&lt;?&gt; … attr) : 创建一个目录      </p><p>​      要想执行成功，要求path对应的物理上的文件目录不存在。一旦存在，抛出异常。</p><p>Path createFile(Path path, FileAttribute&lt;?&gt; … arr) : 创建一个文件      </p><p>​      要想执行成功，要求path对应的物理上的文件不存在。一旦存在，抛出异常。</p><p>void delete(Path path) : 删除一个文件/目录，如果不存在，执行报错</p><p>void deleteIfExists(Path path) : Path对应的文件/目录如果存在，执行删除.如果不存在，正常执行结束</p><p>Path move(Path src, Path dest, CopyOption…how) : 将 src 移动到 dest 位置      </p><p>   要想执行成功，src对应的物理上的文件需要存在，dest对应的文件没有要求。</p><p>   Files.move(path1, path2, StandardCopyOption.ATOMIC_MOVE);</p><p>long size(Path path) : 返回 path 指定文件的大小</p><p>boolean exists(Path path, LinkOption … opts) : 判断文件是否存在</p><p>boolean isDirectory(Path path, LinkOption … opts) : 判断是否是目录</p><p>boolean isRegularFile(Path path, LinkOption … opts) : 判断是否是文件</p><p>boolean isHidden(Path path) : 判断是否是隐藏文件</p><p>​    &gt;要求此path对应的物理上的文件需要存在。才可判断是否隐藏。否则，抛异常</p><p>boolean isReadable(Path path) : 判断文件是否可读</p><p>boolean isWritable(Path path) : 判断文件是否可写</p><p>boolean notExists(Path path, LinkOption … opts) : 判断文件是否不存在</p><p>StandardOpenOption.READ:表示对应的Channel是可读的。 </p><p>StandardOpenOption.WRITE：表示对应的Channel是可写的。</p><p>StandardOpenOption.CREATE：如果要写出的文件不存在，则创建。如果存在，忽略 StandardOpenOption.CREATE_NEW：如果要写出的文件不存在，则创建。如果存在，抛异常</p><p>SeekableByteChannel newByteChannel(Path path, OpenOption…how) : 获取与指定文件的连接，how 指定打开方式。</p><p>DirectoryStream<Path>  newDirectoryStream(Path path) : 打开 path 指定的目录</Path></p><p>InputStream newInputStream(Path path, OpenOption…how):获取 InputStream 对象</p><p>OutputStream newOutputStream(Path path, OpenOption…how) : 获取 OutputStream 对象</p><p>jdk 7 提供基于try-catch的自动资源管理</p><p>　能够实现资源的自动关闭，需要满足：</p><p>　　1.可以在一条 try 语句中管理多个资源，每个资源以“;” 隔开即可。</p><p>　　2.需要关闭的资源，必须实现了 AutoCloseable 接口或其子接口 Closeable目的：不需要再使用finally，显式的关闭资源了。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;jdk 7.0 时，引入了 Path、Paths、Files三个类。&lt;/p&gt;
+&lt;p&gt;　1.此三个类声明在：java.nio.file包下。&lt;/p&gt;
+&lt;p&gt;　2.Path可以看做是java.io.File类的升级版本。也可以表示文件或文件目录，与平台无关&lt;/p&gt;
+&lt;p&gt;　3.
+      
+    
+    </summary>
+    
+    
+      <category term="java" scheme="http://yoursite.com/categories/java/"/>
+    
+    
+      <category term="java基础" scheme="http://yoursite.com/tags/java%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
+  
+  <entry>
     <title>day21</title>
     <link href="http://yoursite.com/2020/02/11/1/12/day21/"/>
     <id>http://yoursite.com/2020/02/11/1/12/day21/</id>
@@ -525,42 +575,11 @@
   </entry>
   
   <entry>
-    <title>day24</title>
-    <link href="http://yoursite.com/2020/02/11/1/12/day24/"/>
-    <id>http://yoursite.com/2020/02/11/1/12/day24/</id>
-    <published>2020-02-11T12:12:57.000Z</published>
-    <updated>2020-02-12T05:16:58.332Z</updated>
-    
-    <content type="html"><![CDATA[<p>一、要想实现网络通信，需要解决两个问题：</p><p>　　1.如何准确的定位互联网上的一台或多台主机 </p><p>　　2.如何实现可靠而高效的数据传输</p><p> 二、网络通信的两个要素：</p><p>　　1.使用IP地址，定位网络中的主机</p><p>　　2.遵循相关的网络通信协议</p><p> 三、针对要素一：</p><p>　　1.IP：一个ip地址，对应着网络中的一台主机。 “192.168.20.16”   “127.0.0.1”–本地回路地址</p><p>　　　　使用InetAddress类来代表IP，一个InetAddress类的对象，就代表着一个具体的ip地址。</p><p>　　２.如何实例化InetAddress:</p><p>　　　　①getByName(String hostName)</p><p>　　　　②getLocalHost()</p><p>　　3.域名： <a href="http://www.baidu.com" target="_blank" rel="noopener">www.baidu.com</a>   <a href="http://www.jd.com" target="_blank" rel="noopener">www.jd.com</a>   <a href="http://www.mi.com" target="_blank" rel="noopener">www.mi.com</a>  <a href="http://www.vip.com" target="_blank" rel="noopener">www.vip.com</a></p><p>　　　　　　 <a href="http://www.facebook.com" target="_blank" rel="noopener">www.facebook.com</a></p><p>​         localhost对应着127.0.0.1</p><p>　　4.InetAddress类的常用方法：getHostName() / getHostAddress()</p><p>　　5.端口号标识正在计算机上运行的进程（程序）</p><p>　　　　注意：不同的进程有不同的端口号</p><p>　　　　常见的端口号： http:80   tomcat : 8080   mysql：3306  oracle:1521等</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;一、要想实现网络通信，需要解决两个问题：&lt;/p&gt;
-&lt;p&gt;　　1.如何准确的定位互联网上的一台或多台主机 &lt;/p&gt;
-&lt;p&gt;　　2.如何实现可靠而高效的数据传输&lt;/p&gt;
-&lt;p&gt; 二、网络通信的两个要素：&lt;/p&gt;
-&lt;p&gt;　　1.使用IP地址，定位网络中的主机&lt;/p&gt;
-&lt;p&gt;　　2
-      
-    
-    </summary>
-    
-    
-      <category term="java" scheme="http://yoursite.com/categories/java/"/>
-    
-    
-      <category term="java基础" scheme="http://yoursite.com/tags/java%E5%9F%BA%E7%A1%80/"/>
-    
-  </entry>
-  
-  <entry>
     <title>day22</title>
     <link href="http://yoursite.com/2020/02/11/1/12/day22/"/>
     <id>http://yoursite.com/2020/02/11/1/12/day22/</id>
     <published>2020-02-11T12:12:57.000Z</published>
-    <updated>2020-02-12T05:16:00.568Z</updated>
+    <updated>2020-02-20T03:35:08.786Z</updated>
     
     <content type="html"><![CDATA[<p>一、继承Thread的方式</p><p>　　1.提供一个继承于Thread类的子类</p><p>　　2.重写Thread类的run():将创建的线程要执行的操作，声明在run()中。</p><p>　　3.实例化Thread子类</p><p>　　4.调用子类对象的start() </p><p>Thread类的常用方法的测试</p><p> 　　1.run():Thread的子类一定要重写的方法。将此分线程要执行的操作，声明在run()中</p><p>　 　2.start():要想启动一个分线程，就需要调用start():①启动线程②调用线程的run()</p><p>　 　3.currentThread():静态方法，获取当前的线程</p><p>　 　4.getName():获取当前线程的名字</p><p>　 　5.setName(String name)：设置当前线程的名字</p><p>　 　6.yield():当前线程调用此方法，释放CPU的执行权</p><p>　 　7.join():在线程a中调用线程b的join()方法:只用当线程b执行结束以后，线程a结束阻塞状态，继续执行。</p><p>　　 8.sleep(long millitimes):让当前的线程睡眠millitimes毫秒</p><p>　 　9.isAlive():判断当前线程是否存活 </p><p>　　10.线程的优先级：</p><p>　　　　 MAX_PRIORITY：10 </p><p>　　　　NORM_PRIORITY：5 —默认优先级</p><p>　　　　MIN_PRIORITY：1</p><p>​    　 设置优先级：setPriority(int priority); </p><p>​    　 获取优先级：getPriority()；</p><blockquote><p>设置优先级以后，对高优先级，使用优先调度的抢占式策略，抢占低优先级的执行。但是并不意味着高优    先级的线程一定先于低优先级的线程执行，而是从概率上来讲，概率更大而已。</p></blockquote><p> 线程通信：wait() / notify() / notifyAll()  —-&gt;java.lang.Object类中定义的方法</p><h4 id="一：继承Thread的方式"><a href="#一：继承Thread的方式" class="headerlink" title="一：继承Thread的方式"></a>一：继承Thread的方式</h4><p>　　　1.提供一个继承Thread类的子类 </p><p>　　　2.重写Thread类run():将创建的线程要执行的操作,声明在run()中 </p><p>　　　3.实例化Thread子类</p><p>　　　4.调用子类对象的start()方法</p><h4 id="创建多线程的方式二"><a href="#创建多线程的方式二" class="headerlink" title="创建多线程的方式二:"></a>创建多线程的方式二:</h4><p>　　　1.创建一个实现Runnable接口的类</p><p>　　　2.实现Runnable的run()</p><p>　　　3.创建当前实现类的对象</p><p>　　　4.将此对象作为参数传递到Thread类的构造器中,创建Thread类的对象</p><p>　　　5.通过Thread类的对象调用其start()</p><p>对比继承Thread类和实现Runnable接口的方式</p><p>　　　1.联系:public class Thread implements Runnable</p><p>　　　2.相同点:启动线程,使用的是同一个start()方法</p><p>　　　3.对比:实现Runnable接口要好一些. </p><p>　原因：①不影响类的继承,因为类是单继承的   </p><p>　　　　②针对于有共享数据的操作,更适合使用Runnable的方式 ,换句话说,实现Runnable接口的方式,实现了代                    码和数据的分离</p><p>　　　4.面试题:创建多线程有几种方法?     继承Thread类,实现Runnable接口,实现Callable接口,使用线程池</p><p>模仿车站买票程序。开启3个窗口卖票。总票数为100张。—–使用实现的方式</p><p>　　1.问题：出现了重票和错票</p><p>　　2.问题出现的原因：一个窗口在没有售完票的情况下，其他的窗口参与进来，操作ticket，导致ticket输出的错            误。</p><p>　　3.解决的方案：当某一个窗口完全操作完ticket以后，其他窗口应该才被允许进来，继续操作ticket。</p><p>　　4.java如何实现的？同步机制：①同步代码块    ②同步方法 </p><p>　　　4.1 同步代码块：</p><p>​                 synchronized(同步监视器){</p><p>​                       //需要被同步的代码</p><p>​               }</p><p>　　　说明：需要被同步的代码：即为操作共享数据的代码</p><p>　　　　　　共享数据：多个线程共同操作的数据。比如：ticket</p><p>　　　　　　同步监视器：俗称：锁。 可以由任何一个类的对象充当。 要求：保证多个线程共用同一把锁！</p><p>　　　4.2 同步方法：将操作共享数据的方法，声明为同步的。此方法即为同步方法。</p><p>　　　　　使用同步方法解决实现方式的线程安全问题。</p><p>　　　　　1.默认的同步方法（非静态的）的锁是：当前对象，也就是this.</p><p>　　　　　2.默认的同步方法（静态的）的锁是：当前类本身.</p><p>　　　　　　使用同步方法解决继承方式的线程安全问题：</p><p>　　　　　注意：继承的方式中，要慎用同步方法。</p><p>​        5.好处：线程的同步机制，解决了线程的安全问题。</p><p>​        6.劣势：在操作共享数据过程中，是单线程的。</p><p>模仿车站买票程序。开启3个窗口卖票。总票数为100张     —–使用实现的方式</p><p>　　解决线程安全问题的方式三：ReentrantLock</p><p>　　存在线程的安全问题，使用Lock的方式解决线程安全问题。</p><p>面试题：同步的方式和Lock的方式，解决线程安全方面的异同？</p><p>　　同：解决了线程安全问题</p><p>　　异：同步的方式：同步监视器在线程执行完操作共享数据的代码以后，自动释放</p><blockquote><p> Lock的方式：需要显式的调用unlock()方法之后，才能保证其他线程操作共享数据。 </p></blockquote><p>死锁：不同的线程分别占用对方需要的同步资源不放弃，都在等待对方放弃自己需要的同步资源，就形成了线程的死锁，是我们开发中需要规避的！</p><p>线程的通信：</p><ul><li><p>wait():一个线程在执行过程中，一旦调用此方法，则此线程进入阻塞状态，等待其他线程来唤醒自己。    </p></li><li><p>notify():一个线程在执行过程中，一旦调用此方法，则会唤醒被wait()的一个线程。高优先级的要优先被唤醒。</p></li><li><p>notifyAll():一个线程在执行过程中，一旦调用此方法，则会唤醒所有被wait()的线程。</p></li></ul><p>　　　例题：使用两个线程打印 1-100. 线程1, 线程2 交替打印</p><p>注意点：1.此三个方法必须使用在同步中。</p><p>　　　　2.此三个方法的调用者是同步监视器！否则，如果三个方法的调用者不是同步监视器，报异常。</p><p>　　　　3.此三个方法定义在Object类</p><p>面试题：sleep() 和  wait() 的异同？</p><p>　　1.方法声明在哪？ Thread:sleep()   Object:wait()</p><p>　　2.共同点：使得当前线程进入阻塞状态</p><p>　　3.使用的范围要求：sleep()使用没有情境的要求；wait()必须使用在同步代码块或同步方法中</p><p>　　4.都使用在同步当中的话：wait()需要唤醒：notify()/notifyAll();  sleep():不会释放锁；wait()会释放锁 </p><p> String:字符串</p><p>　　　1.字符串声明的数据，会存储在字符串常量池中。第一次声明时，需要创建相应的字符串。之后，如果声明的变量，其值与之前存在的字符串内容相同，则直接引用现成的字符串。</p><p>　　　2.面试题：String s3 = new String(“javaEE”);创建的对象，在内存中生成了几个对象？</p><p><strong>String:代表着不可变的字符序列。</strong></p><p>　　　1.String类的声明public final class String implements java.io.Serializable, Comparable<String>, 　　　　CharSequence</String></p><p>　　　　　①String声明为final，不可被继承。</p><p>　　　　　②实现Serializable：表明String可序列化。浏览器/客户端&lt;—&gt;服务器端     进程1&lt;—-&gt;进程2    　　　　　　“{name=Tom,age=12}”    JSON:本质就是String</p><p>　　　　　③String重写了hashCode()/equals():常常将Map的key声明为String型。</p><p>　　　　　④实现Comparable接口：String可以比较大小。</p><p>　　　　　⑤实现CharSequence接口：String的底层声明了char[] value数组。</p><p>　　　2.如何理解String的不可变性：</p><p>　　　　　①向现有的字符串后添加新的字符串，必须声明新的字符串空间</p><p>　　　　　②将现有的字符串替换为新的字符串，必须声明新的字符串空</p><p>　　　　　③只替换现有字符串中的指定某个字符，也必须声明新的字符串空间</p><p>String类与其它结构的转换：</p><p>　　　1.String 与包装类、基本数据类型变量间的转换    </p><p>　　　　String–&gt;包装类、基本数据类型:调用包装类Xxx的parseXxx(String s)方法</p><p>　　　　包装类、基本数据类型 –&gt;String:调用String的valueOf(xxx xxx); </p><p>　　　2.String 与 字节数组间的转换   </p><p>　　　　String –&gt; 字节数组:调用String类的getBytes()</p><p>　　　　字节数组–&gt;String:new String(byte[] buffer,startIndex,length)</p><p>　　　3.String 与 字符数组间的转换</p><p>　　　　String –&gt; 字符数组：调用String类的toCharArray()</p><p>　　　　字符数组 –&gt;String:new String(char[] cbuf,startIndex,length)    </p><p>​         </p><ul><li><p>public String substring(int startpoint):返回当前字符串中从startPoint位置开始，到末尾的子字符串。  </p></li><li><p>public String substring(int start,int end):返回当前字符串中从startPoint位置开始，到end结束的左闭右开区间的子字符串。</p></li><li><p>pubic String replace(char oldChar,char newChar):将字符串中指定的所有oldChar替换为newChar.</p></li><li><p>public String replaceAll(String old,String new):将字符串中指定的所有old替换为new.</p></li><li><p>public String trim():去除字符串首尾的空格</p></li><li><p>public String concat(String str):连接两个字符串</p></li><li><p>public boolean contains(CharSequence s)：判断当前字符串中是否包含s.</p></li><li><p>public String[] split(String regex)根据给定正则表达式的匹配拆分此字符串。</p></li></ul><ul><li><p>public int length():返回当前字符串的长度</p></li><li><p>public char charAt(int index)：获取指定索引位置的字符</p></li><li><p>public boolean equals(Object anObject)：比较两个字符串内容是否相等。</p></li><li><p>public int compareTo(String anotherString):比较两个字符串的大小</p></li><li><p>public int indexOf(String s):返回s在当前字符串中首次出现的位置。如果不存在，返回-1.</p></li><li><p>public int indexOf(String s ,int startpoint):</p></li><li><p>public int lastIndexOf(String s):返回s在当前字符串中末次出现的位置。如果不存在，返回-1.</p></li><li><p>public int lastIndexOf(String s ,int startpoint):</p></li><li><p>public boolean startsWith(String prefix)：判断当前的字符串是否以指定的prefix字符串开始的</p></li><li><p>public boolean endsWith(String suffix)：判断当前的字符串是否以指定的suffix字符串结束的</p></li><li><p>public boolean regionMatches(int firstStart,String other,int otherStart ,int length)   ？</p></li></ul><p>面试题：</p><p>　　String:不可变的字符序列；底层使用char[]存储</p><p>　　StringBuffer:可变的字符序列；线程安全的，效率低；底层使用char[]存储  </p><p>　　StringBuilder:可变的字符序列；线程不安全的，效率高，(jdk 5.0新增)；底层使用char[]存储</p><p>类比：String —&gt;数组； StringBuffer —&gt;Vector   StringBuilder —&gt;ArrayList</p><p>　　　ArrayList list = new ArrayList();</p><p>　　　list.add(123);//new Object[10];</p><p>　　　….</p><p>　　　扩容:1.5倍的方式扩容。</p><p>　　　这里：</p><p>　　　　String str = new String();//new char[0];</p><p>　　　　str.length();</p><p>　　　　String str1 = new String(“abc”);//new char[]{‘a’,’b’,’c’};</p><p>　　　对比：</p><p>　　　　StringBuffer s1 = new StringBuffer();//char[] value = new char[16]</p><p>　　　　StringBuffer s2 = new StringBuffer(10);//char[] value = new char[10]</p><p>　　　　s1.append(“abc”);//value[0] = ‘a’,value[1] = ‘b’,value[2] = ‘c’;</p><p>　　　　　… </p><p>　　　　　　  每次添加时，都需要判断底层的char[]是否能够盛装下新要添加的字符串。</p><p>　　　　　　 如果不能盛装下，需要扩容。默认扩容为原来的2倍 + 2.   </p><p>　　　 启示：StringBuffer s1 = new StringBuffer(int capacity);开发中建议使用此构造器。</p><p>StringBuffer中的方法：</p><ul><li><p>StringBuffer append(String s),</p></li><li><p>StringBuffer append(int n) ,</p></li><li><p>StringBuffer append(Object o) ,</p></li><li><p>StringBuffer append(char n)，</p></li><li><p>StringBuffer append(long n),</p></li><li><p>StringBuffer append(boolean n),</p></li><li><p>StringBuffer insert(int index, String str)</p></li><li><p>public StringBuffer reverse()</p></li><li><p>StringBuffer delete(int startIndex, int endIndex):删除当前可变字符串中从startIndex到endIndex结束的左闭右开区间的数据。</p></li><li><p>public char charAt(int n )</p></li><li><p>public void setCharAt(int n ,char ch)</p></li><li><p>StringBuffer replace( int startIndex ,int endIndex, String str)</p></li><li><p>public int indexOf(String str)</p></li><li><p>public String substring(int start,int end)</p></li><li><p>public int length()</p></li></ul><h3 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h3><p>　　增：append(Xxx xxx)</p><p>　　删：delete(int startIndex, int endIndex</p><p>　　改：setCharAt(int n ,char ch) / replace( int startIndex ,int endIndex, String str)</p><p>　　查：charAt(int n)</p><p>　　插：insert(int index, String str)</p><p>　　长度：length()</p><p>　　遍历：使用for + charAt()</p>]]></content>
     
@@ -573,36 +592,6 @@
 &lt;p&gt;　　2.重写Thread类的run():将创建的线程要执行的操作，声明在run()中。&lt;/p&gt;
 &lt;p&gt;　　3.实例化Thread子类&lt;/p&gt;
 &lt;p&gt;　　4.调用子类对象的st
-      
-    
-    </summary>
-    
-    
-      <category term="java" scheme="http://yoursite.com/categories/java/"/>
-    
-    
-      <category term="java基础" scheme="http://yoursite.com/tags/java%E5%9F%BA%E7%A1%80/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>day3</title>
-    <link href="http://yoursite.com/2020/02/11/1/12/day3/"/>
-    <id>http://yoursite.com/2020/02/11/1/12/day3/</id>
-    <published>2020-02-11T12:12:57.000Z</published>
-    <updated>2020-02-12T06:58:45.621Z</updated>
-    
-    <content type="html"><![CDATA[<p>equals   判断字符串内容</p><p>Math.random  [0, 1)</p><p>想获取【a,b】的数 ( int )(Math.random()*(b-a+1)+a)</p><p>分支结构2：switch-case</p><p>switch 语句的结束标志： } ，break</p><p>default 可选，位置比较灵活</p><p>switch中的表达式所代表的数据类型6种，只能是如下byte,short,char,int,枚举，String(jdk7.0新增)</p><p>case 后只能是常量或者是常量表达式</p><p>多个case可以共用一组语句，在最后一个case上写要执行的语句就好了，这里的最后一个case并不是}附近的一个，而是你要停止的一个</p><p>凡是swith-case实现的结构，都可以转成if-else实现，反之不成立</p><p>字符串方法：</p><p>获取字符：charAt()</p><p>循环结构4要素：</p><p>初始化条件</p><p>循环条件  —&gt;布尔类型</p><p>循环体</p><p>迭代条件</p><p>当循环条件返回false,结束循环</p><p>for和while 可以相互转换</p><p>循环结构的结束方式：</p><p> 1.循环条件返回false时</p><p> 2.在循环体中，判断某个条件满足时，执行break (不确定循环次数时)</p><p>​     while(true)   / for(;;)</p><p>嵌套循环：</p><p>一个循环结构a,作为另一个循环结构b的循环体实现</p><p> 内层循环：循环结构a</p><p> 外层循环：循环结构b</p><p>技巧：</p><p>1.外层循环控制行数</p><p>   内层循环控制列数</p><p>2.</p><p>内层循环循环次数为m次，外层循环循环次数为n次，则一共循环m*n次</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;equals   判断字符串内容&lt;/p&gt;
-&lt;p&gt;Math.random  [0, 1)&lt;/p&gt;
-&lt;p&gt;想获取【a,b】的数 ( int )(Math.random()*(b-a+1)+a)&lt;/p&gt;
-&lt;p&gt;分支结构2：switch-case&lt;/p&gt;
-&lt;p&gt;switch 语句的
       
     
     </summary>

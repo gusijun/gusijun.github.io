@@ -119,17 +119,17 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">6</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">7</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类<span class="badge">4</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类<span class="badge">5</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">38</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">39</span></a>
 
   </li>
   </ul>
@@ -154,6 +154,529 @@
             
 
   <div class="posts-expand">
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/11/1/12/day14/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="顾思君">
+      <meta itemprop="description" content="直到这一刻微笑着说话为止，我至少留下了一公升眼泪">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="思君の博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/02/11/1/12/day14/" class="post-title-link" itemprop="url">day14</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-02-11 20:12:57" itemprop="dateCreated datePublished" datetime="2020-02-11T20:12:57+08:00">2020-02-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-12 14:19:16" itemprop="dateModified" datetime="2020-02-12T14:19:16+08:00">2020-02-12</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>2k</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>单例设计模式:</p>
+<p>　饿汉式</p>
+<p>　懒汉式</p>
+<p>类的成员之四:代码块(或初始化块)    </p>
+<ol>
+<li><p>代码块的使用:用来初始化类,对象的信息     </p>
+</li>
+<li><p>代码块的分类:静态代码块 vs 非静态代码块    </p>
+</li>
+<li><p>静态代码块: </p>
+<p>①可以提供输出语句 </p>
+<p>②随着类的加载而执行,且只被加载一次  </p>
+<p>③使用:初始化类的加载信息        </p>
+<p>④内部只能调用当前类中静态的属性,方法。不能调用非静态的属性,方法</p>
+<p>⑤如果定义了多个静态代码块，按照定义的先后顺序执行        </p>
+<p>⑥静态代码块执行的顺序要早于非静态代码块    </p>
+<p>非静态代码块:         </p>
+</li>
+</ol>
+<p>　　　随着对象的创建而执行         </p>
+<p>　　　每创建对象，都会执行一次               </p>
+<p>　　　使用:初始化对象的属性</p>
+<p>　　　内部可以调用静态的:属性,方法。也调用非静态的属性,方法</p>
+<p>　　　如果定义了多个非静态代码块，按照定义的先后顺序执行</p>
+<p>　　　非静态代码块执行的顺序要晚于静态代码块    </p>
+<p>  4.给属性赋值的位置的先后顺序:        </p>
+<p>　　①默认初始化     </p>
+<p>　　②显示初始化 / 在代码块中初始化     </p>
+<p>　　③构造器中初始化</p>
+<p>　　④有了对象以后,通过“对象.属性”或“对象.方法”的方法,赋值</p>
+<p>final关键字的使用: </p>
+<ul>
+<li><p>final:最终的  </p>
+</li>
+<li><p>final可以来修饰:变量,方法,类  </p>
+</li>
+<li><p>final修饰类:此类不可以被继承,比如String / StringBuffer类   </p>
+</li>
+<li><p>final修饰方法:此方法不能被重写，比如Object类的getClass </p>
+</li>
+<li><p>final修饰变量:此变量就是一个常量。比如:Math类中的PI  </p>
+<p>使用final修饰属性,可以考虑的位置有：</p>
+<p>　①显示初始化</p>
+<p>　②代码块中</p>
+<p>　③构造器中使用final修饰形参,在方法调用时,在方法调用时,传递实参,给变量赋值，一旦复制,方法内不可以  修饰常量的值      </p>
+</li>
+</ul>
+<p>　　static final:所修饰的属性,称为全局常量</p>
+<p>abstract关键字的使用: </p>
+<ul>
+<li><p>abstract :抽象的  </p>
+</li>
+<li><p>可用来修饰的结构:类,方法  </p>
+</li>
+<li><p>abstract修饰类:抽象类    </p>
+<p>不可实例化</p>
+<p>仍然存在构造器。构造器的作用:便于子类实例化时进行调用 </p>
+<p>通常情况下,我们会提供抽象类的子类,让子类实例化,调用父类的结构。    　</p>
+<p>抽象类中不一定有抽象方法;抽象方法所在的类，一定是抽象类</p>
+</li>
+<li><p>abstract修饰方法:抽象方法(没有方法体)    </p>
+<p>如果子类重写了父类的所有抽象方法，则此子类可以实例化    </p>
+<p>如果子类没有重写父类的所有抽象方法，则子类仍为抽象类  </p>
+</li>
+<li><p>前提:抽象性使用的前提是类的继承性</p>
+</li>
+</ul>
+<blockquote>
+<p>模板方法的设计模式</p>
+</blockquote>
+<p>接口的使用:</p>
+<p>　　1.接口(interface) 是与类(class)并列的结构 </p>
+<p>　　2.如何定义一个接口,使用interface关键字</p>
+<p>　　3.接口中只能定义常量和抽象方法—–&gt;JDK7.0及以前版本(JDK8.0接口中引入默认方法,静态方法)</p>
+<p>　　　常量的定义:public static final修饰</p>
+<p>　　　抽象方法的定义: public abstract修饰 </p>
+<p>　　4.接口中不能声明构造器！接口不可以直接实例化的 </p>
+<p>　　5.类与接口之间的关系:实现(implements)关系,实现接口以后，就获取了接口中声明的结构:常量,抽象方法。</p>
+<p>　　　格式:class SubClass extends SuperClass implements InterfaceA </p>
+<p>　　6.类实现接口以后,要抹实现接口中的所有抽象方法,方可实例化          </p>
+<p>　　　要抹当前类声明为抽象类(因为内部包含从接口中获取的抽象方法)</p>
+<p>　　7.java规定:类可以实现多个接口—–&gt;一定程度上,解决了java类的单继承的局限性 </p>
+<p>　　 8.java规定:接口与接口之间是继承关系,而且是可以多继承！</p>
+<p>接口的使用:</p>
+<p>　1.接口与具体的实现类之间存在多态性 </p>
+<p>　2.如何提供接口的匿名实现类,如何去创建匿名对象</p>
+<p>　3.接口,实际上可以理解为定义了一套相应的功能的规范,标椎</p>
+<p>接口的应用:</p>
+<ul>
+<li>工厂模式</li>
+<li>代理模式</li>
+</ul>
+<p>java8规范:  接口可以定义静态方法,默认方法</p>
+<p>　　①知识点1:接口中定义的静态方法,只能通过接口进行调用</p>
+<p>　　②知识点2:通过实现类的对象,调用接口中的默认方法</p>
+<p>　　③知识点3:如果类实现的接口和父类中,定义了同名同参数的方法,那抹子类在没有重写此方法的情况下</p>
+<p>　　　默认调用的是父类中声明的方法。—–“类优先”原则</p>
+<p>　　④知识点4:如果实现类实现了多个接口,接口中定义了同名同参数的方法，那抹此时对于实现类来讲,会出现接口冲突问题。</p>
+<p>　　解决方法:要求实现类必须重写接口中的方法。</p>
+<p>　　⑤知识点5:如何在实现类的方法中调用接口中的默认方法</p>
+<p>　　接口.super.方法()</p>
+<p>类的成员之五:内部类(InnerClass)  </p>
+<p> 1.定义:java语言在一个类A的内部再定义了一个类B。   </p>
+<p>　　　将类B:称作内部类；类A:外部类  </p>
+<p> 2.内部类,作为一个类:              </p>
+<p>　　内部可以定义属性,方法,构造器等            </p>
+<p>　　可以被final修饰            </p>
+<p>　　可以被abstract修饰       </p>
+<p>　　　　作为外部类的一个成员:          </p>
+<p>　　可以被4种不同的权限修饰            </p>
+<p>　　 可以被static修饰              </p>
+<p>　　可以调用外部类的结构:属性,方法等   </p>
+<p>  3.内部类的分类:成员内部类（静态的;非静态的）  vs 局部内部类  </p>
+<p>  4.需要掌握的知识点:  </p>
+<p>　　4.1 如何创建成员内部类的对象？  </p>
+<p>　　4.2 如何调用外部类的结构？ </p>
+<p>　　4.3 关于局部内部类在开发中的体现</p>
+<p>部内部类的方法中调用局部内部类所在方法中定义的局部变量，要求此局部变量声明为final的。</p>
+<p>在java7及以前的版本中，需要显示的声明为final。</p>
+<p>在java中可以省略final的声明</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/11/1/12/day15/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="顾思君">
+      <meta itemprop="description" content="直到这一刻微笑着说话为止，我至少留下了一公升眼泪">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="思君の博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/02/11/1/12/day15/" class="post-title-link" itemprop="url">day15</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-02-11 20:12:57" itemprop="dateCreated datePublished" datetime="2020-02-11T20:12:57+08:00">2020-02-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-12 14:08:03" itemprop="dateModified" datetime="2020-02-12T14:08:03+08:00">2020-02-12</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.8k</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>异常的体系结构:    </p>
+<p>　　java.lang.Throwable        </p>
+<p>　　—-Error:错误。不编写针对代码进行处理 </p>
+<p>　　　—–StackOverflowError</p>
+<p>　　　—–OOM   </p>
+<p>　　—-Exception:异常:可以编写针对性的代码进行处理      </p>
+<p>　　　—–编译时异常:编译时就不通过的异常,报出来的异常  </p>
+<p>　　　—–运行时异常(RuntimeException):编译通过,运行时不通过,报出来的异常      </p>
+<p>　　　　| —–NullPointerException:空指针异常                </p>
+<p>　　　　|—–ArrayIndexOutOfBoundsException:数组角标越界异常  </p>
+<p>　　　　 |—–ClassCastException:类型转换异常 </p>
+<p>　　　　 |—–NumberFormatException:数值格式化异常 </p>
+<p>　　　　 |—–InputMismatchException:输入的类型不匹配 </p>
+<p>　　　　 |—–ArithmeticException:算术异常 </p>
+<p>　　　　 |———-。。。  </p>
+<p>  面试题:常见的异常?并举例说明</p>
+<p>如何处理异常(Exception)？ </p>
+<p>　java提供了异常处理的:抓抛模型 </p>
+<p>　1.过程一:“抛”:程序在正常的执行过程中,一旦出现异常，就会在相应的代码处生成相应的异常类的对象。</p>
+<p>　　　　　▶并将对象抛出,异常出现位置后面的代码就不再执行。    </p>
+<p>　　　　　▶异常出现位置的后面的代码不再执行  </p>
+<p>　　　　　异常对象产生的方式:①自动抛出 ②手动抛出(在方法内,使用throw + 异常类的对象)</p>
+<p>​    2.过程二:“抓”:看出是异常的处理的方法:try catch finally;throws   </p>
+<p>​        try{  </p>
+<p>​             //可能出现异常的代码   }catch(Exception el){ </p>
+<p>​             //处理异常的方式1   }catch(Exception e2){   </p>
+<p>​             //处理异常的方式2   }…   </p>
+<p>​       finally{     //一定要被执行的操作   }  </p>
+<p>​      、</p>
+<p>说明:    </p>
+<ul>
+<li><p>finally是可选的     </p>
+</li>
+<li><p>在执行try中的语句是时,一旦出现异常,就会抛出相应异常的对象</p>
+<p>此对象会在如下的catch中进行匹配,一旦匹配成功,就进入相应的</p>
+</li>
+</ul>
+<p>​        catch的代码块中进行相应的异常处理,一旦处理完成,就跳出整个   </p>
+<p>​        try-catch结构，不再执行其后的catch语句。  </p>
+<ul>
+<li><p>多个catch语句中的异常类型说明:子类异常必须声明在父类异常的上面, </p>
+<p>否则编译不通过。如果多个异常类型没有子父类关系,则没有顺序要求。     </p>
+</li>
+</ul>
+<ul>
+<li><p>执行完catch语句以后,如果其结构还有操作,则可以正常执行。    </p>
+</li>
+<li><p>在try中定义的变量,其作用于仅限于try声明的一对{},出了此{}，不可被调用 </p>
+</li>
+<li><p>catch中常见的异常处理方：</p>
+<p>　①getMessage()返回一个String变量       </p>
+<p>　②printStackTrace();打印异常产生的堆栈信息     总结:运行时异常</p>
+</li>
+<li><p>try-catch-finally  结构可以嵌套</p>
+</li>
+</ul>
+<p>关于try-catch-finally结构中finally的使用:  </p>
+<p>　1.可选的</p>
+<p>　2.即使在catch中出现异常,try中有return；catch中有return；三种情况,finally中的代码也一定会执行！   </p>
+<p>　 3.开发中的应用:IO流资源,网络Socket，数据库连接等,JVM不会自动进行资源的关闭和垃圾的回收,    </p>
+<p>　　需要我们手动去释放资源。所以此操作必须声明在finally中。</p>
+<p>异常的的处理方式二:throws + 异常类型</p>
+<p>　　 格式:在方法的声明后,使用 “throws + 异常类型 ”,表示:一旦方法执行过程中,出现异常将此异常的对象抛出。 </p>
+<p>　　1.上述出现的异常对象，会抛给方法的调用者。比如method1()在method()2   </p>
+<p>　　　调用,如果method()1出现异常,则此异常抛给了method()2。  </p>
+<p>　　2.体会try-catch-finally:真正处理异常,一旦处理完,就不会影响后续代码执行 </p>
+<p>　　　throws:并没有真正的处理异常。   </p>
+<p>　　3.总结:开发中如何选择使用哪种方式处理?    </p>
+<ul>
+<li>如果父类被重写的方法没有throws的方式处理异常,则子类重写的方法也不能用 throws的  方式去处理异常,只能用try-catch-finally。 </li>
+<li>在一个方法a中,调用了另外的3个方法,此3个方法通常是递进关系的。一般情况下, 此3个方法中如果出现异常,通常使用throws的方式处理异常。然后统一在方法a中 使用try-catch-finally进行处理。</li>
+</ul>
+<p>规定:子类重写的方法抛出的异常类型不能大于父类被重写的方法抛出的异常</p>
+<p>包装类Integer (parseInt) 将字符串转成整数</p>
+<p>注解：代码里的特殊标记</p>
+<p>　OVerride 重写</p>
+<p>　Deprecated 过时   </p>
+<p>　SuppressWarnings 抑制编译器警告</p>
+<p>元注解：解释说明当前注解的</p>
+<p>​    </p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/11/1/12/day18/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="顾思君">
+      <meta itemprop="description" content="直到这一刻微笑着说话为止，我至少留下了一公升眼泪">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="思君の博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/02/11/1/12/day18/" class="post-title-link" itemprop="url">day18</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-02-11 20:12:57" itemprop="dateCreated datePublished" datetime="2020-02-11T20:12:57+08:00">2020-02-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-12 13:33:44" itemprop="dateModified" datetime="2020-02-12T13:33:44+08:00">2020-02-12</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.7k</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>泛型的应用:</p>
+<p>　1.JDK 5.0 新增的特性</p>
+<p>　2.主要内容：</p>
+<p>　　2.1 在集合中使用泛型</p>
+<p>　　2.2 如何自定义泛型类,泛型接口,泛型方法(理解)</p>
+<p>　　2.3 泛型在继承上的体现(掌握)</p>
+<p>　　2.4 通配符的使用（掌握）</p>
+<p>在集合中使用泛型的情况</p>
+<p>在集合中使用泛型</p>
+<p>　1.在Java的集合中,声明的接口或者类已经声明泛型</p>
+<p>　2.我们在实例化接口时,可以指明泛型的类型</p>
+<p>　3.不能使用基本数据类型,需要使用对应的包装类替换</p>
+<p>　4.一旦创建对象时,使用了泛型,则通过对象调用方法,属性时,如果方法或属性使用了类的泛型,   则此时泛型类型就是对象实例化时候的类型</p>
+<p>　5.如果实例化时候,不指明泛型参数,则默认是Object类型</p>
+<p>自定义泛型类:</p>
+<p>　仿照List去创建</p>
+<p>　1.在类的声明后面,指明泛型参数,参数通常使用:T E K V</p>
+<p>　2.在类的属性,方法,构造器中,可以使用类的泛型参数</p>
+<ul>
+<li>使用了类的泛型参数的方法,不能声明为static的</li>
+<li>不能在try-catch中使用泛型参数表示异常类型</li>
+</ul>
+<p>关于自定义泛型类,泛型接口,泛型方法的使用</p>
+<p>　自定义泛型类的使用:</p>
+<p>　　1.在实例化泛型类时,可以指明泛型的参数类型</p>
+<p>　　2.提供泛型类的子类时,可以指明泛型的参数类型.比如:SubOrder1类</p>
+<p>泛型在继承上的体现</p>
+<p>　　1.如果A类是B类的父类,则List<A>与List<B>是没有子父类的关系的  </B></A></p>
+<p>　　　扩展：则G<A> 和 G<B>没有子父类关系！</B></A></p>
+<p>　　2.如果A类是B类的父类,则A<G> 是 B<G>的父类</G></G></p>
+<p>通配符: ? 的使用：</p>
+<p>　　A类是B的父类,则G<A> 和 G<B> 的公共父类为G&lt;?&gt;</B></A></p>
+<p>　关于数据的读写问题</p>
+<p>　写入数据:不允许向使用通匹配符的集合中写入数据，除非可以写入null</p>
+<p>　读取数据：可以从使用了通配符的集合中读取数据。读取的数据的类型默认是Object</p>
+<p>有限制条件的通配符的使用? </p>
+<p>？  extends A:举例:List&lt;? extends A&gt; 可以作为List<B>或者List<A>的父类,其中B类是A类的子类?</A></B></p>
+<p>？   super A: 举例:List&lt;? super A&gt; 可以作为List<B>或List<A>的父类,其中B类是A类的父类</A></B></p>
+<p>File类：</p>
+<p>　 1.java.io包下定义的</p>
+<p>　 2.一个File类的对象，既可以表示一个文件(.txt,.mp3,.avi,mp4,.doc)，也可以表示一个文件目录。</p>
+<p>　 3.File类中只涉及到文件或文件目录的新建、删除、长度、修改时间、重命名等操作。没有涉及到对文件内容的修改。如果需要对文件内容进行修改的话，需要使用流。</p>
+<p>　 4.File类的对象常常作为流的构造器的参数出现。</p>
+<p>　 5.File类的对象代表着流资源读取或写入到的文件。</p>
+<p>  File类的实例化 </p>
+<p>  　 绝对路径：包含盘符在内的文件或文件目录的完整路径 </p>
+<p>  　 相对路径：相较于某一层文件路径来讲。比如：在Eclipse中的相对路径是相较于当前工程的。 </p>
+<p>   两个构造器： </p>
+<p>　　File(String pathname) </p>
+<p>　　File(String parent,String pathname)</p>
+<p>获取文件名:</p>
+<p>getName()</p>
+<p>getPath()</p>
+<p>getAbsoluteFile()</p>
+<p>getAbsolutePath()</p>
+<p>getParent()</p>
+<p>toPath()</p>
+<p>renameTo(File newName)</p>
+<p>   file1.renameTo(File file2):file1重命名为file2是否成功</p>
+<p>   如果希望返回值为true.则必须：file1对应的物理磁盘上的文件需要存在，且file2对应的物理磁盘上的文件不存在。</p>
+<p>文件检测:</p>
+<p>   exists()</p>
+<p>   canWrite()</p>
+<p>   canRead()</p>
+<p>   isFile()</p>
+<p>   isDirectory()</p>
+<p>获取文件常规信息:</p>
+<p>   lastModified()</p>
+<p>   length()</p>
+<p>  操作文件相关的：</p>
+<p>​    createNewFile()：在物理磁盘上创建指定路径的文件</p>
+<p>​    delete():删除物理磁盘上指定路径的文件</p>
+<p>  操作文件目录相关的：</p>
+<p>​    mkdir()/mkdirs():如果要创建的文件目录的上层目录存在，则二者没有区别。</p>
+<p>​    如果要创建的文件目录的上层目录不存在，mkdir()创建不成功，mkdirs()创建成功。</p>
+<p>   delete()：删除物理磁盘上指定路径的文件目录list()listFiles()</p>
+<p>list() / listFiles()</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
         
   
   
@@ -189,7 +712,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-12 13:57:16" itemprop="dateModified" datetime="2020-02-12T13:57:16+08:00">2020-02-12</time>
+                <time title="修改时间：2020-02-20 11:20:56" itemprop="dateModified" datetime="2020-02-20T11:20:56+08:00">2020-02-20</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -414,403 +937,6 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/11/1/12/day20/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="顾思君">
-      <meta itemprop="description" content="直到这一刻微笑着说话为止，我至少留下了一公升眼泪">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="思君の博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/02/11/1/12/day20/" class="post-title-link" itemprop="url">day20</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-02-11 20:12:57" itemprop="dateCreated datePublished" datetime="2020-02-11T20:12:57+08:00">2020-02-11</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-12 14:19:01" itemprop="dateModified" datetime="2020-02-12T14:19:01+08:00">2020-02-12</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java/" itemprop="url" rel="index">
-                    <span itemprop="name">java</span>
-                  </a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>2.2k</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>jdk 7.0 时，引入了 Path、Paths、Files三个类。</p>
-<p>　1.此三个类声明在：java.nio.file包下。</p>
-<p>　2.Path可以看做是java.io.File类的升级版本。也可以表示文件或文件目录，与平台无关</p>
-<p>　3.如何实例化Path:使用Paths. </p>
-<p>　　static Path get(String first, String … more) : 用于将多个字符串串连成路径</p>
-<p>　　static Path get(URI uri): 返回指定uri对应的Path路径 </p>
-<h2 id="Path"><a href="#Path" class="headerlink" title="Path:"></a>Path:</h2><p>   String toString() ： 返回调用 Path 对象的字符串表示形式</p>
-<p>   boolean startsWith(String path) : 判断是否以 path 路径开始</p>
-<p>   boolean endsWith(String path) : 判断是否以 path 路径结束</p>
-<p>   boolean isAbsolute() : 判断是否是绝对路径</p>
-<p>   Path getParent() ：返回Path对象包含整个路径，不包含 Path 对象指定的文件路径</p>
-<p>   Path getRoot() ：返回调用 Path 对象的根路径</p>
-<p>​       Path getFileName() : 返回与调用 Path 对象关联的文件名</p>
-<p>​       int getNameCount() : 返回Path 根目录后面元素的数量(层数)</p>
-<p>​       Path getName(int idx) : 返回指定索引位置 idx 的路径名称</p>
-<p>​       Path toAbsolutePath() : 作为绝对路径返回调用 Path 对象</p>
-<p>​       File toFile(): 将Path转化为File类的对象</p>
-<h2 id="Files"><a href="#Files" class="headerlink" title="Files"></a>Files</h2><p>Path copy(Path src, Path dest, CopyOption … how) : 文件的复制      </p>
-<p>​    &gt;要想复制成功，要求path1对应的物理上的文件存在。path1对应的文件没有要求。</p>
-<p>​      Files.copy(path1, path2, StandardCopyOption.REPLACE_EXISTING); 当已存在时做覆盖</p>
-<p>Path createDirectory(Path path, FileAttribute&lt;?&gt; … attr) : 创建一个目录      </p>
-<p>​      要想执行成功，要求path对应的物理上的文件目录不存在。一旦存在，抛出异常。</p>
-<p>Path createFile(Path path, FileAttribute&lt;?&gt; … arr) : 创建一个文件      </p>
-<p>​      要想执行成功，要求path对应的物理上的文件不存在。一旦存在，抛出异常。</p>
-<p>void delete(Path path) : 删除一个文件/目录，如果不存在，执行报错</p>
-<p>void deleteIfExists(Path path) : Path对应的文件/目录如果存在，执行删除.如果不存在，正常执行结束</p>
-<p>Path move(Path src, Path dest, CopyOption…how) : 将 src 移动到 dest 位置      </p>
-<p>   要想执行成功，src对应的物理上的文件需要存在，dest对应的文件没有要求。</p>
-<p>   Files.move(path1, path2, StandardCopyOption.ATOMIC_MOVE);</p>
-<p>long size(Path path) : 返回 path 指定文件的大小</p>
-<p>boolean exists(Path path, LinkOption … opts) : 判断文件是否存在</p>
-<p>boolean isDirectory(Path path, LinkOption … opts) : 判断是否是目录</p>
-<p>boolean isRegularFile(Path path, LinkOption … opts) : 判断是否是文件</p>
-<p>boolean isHidden(Path path) : 判断是否是隐藏文件</p>
-<p>​    &gt;要求此path对应的物理上的文件需要存在。才可判断是否隐藏。否则，抛异常</p>
-<p>boolean isReadable(Path path) : 判断文件是否可读</p>
-<p>boolean isWritable(Path path) : 判断文件是否可写</p>
-<p>boolean notExists(Path path, LinkOption … opts) : 判断文件是否不存在</p>
-<p>StandardOpenOption.READ:表示对应的Channel是可读的。 </p>
-<p>StandardOpenOption.WRITE：表示对应的Channel是可写的。</p>
-<p>StandardOpenOption.CREATE：如果要写出的文件不存在，则创建。如果存在，忽略 StandardOpenOption.CREATE_NEW：如果要写出的文件不存在，则创建。如果存在，抛异常</p>
-<p>SeekableByteChannel newByteChannel(Path path, OpenOption…how) : 获取与指定文件的连接，how 指定打开方式。</p>
-<p>DirectoryStream<Path>  newDirectoryStream(Path path) : 打开 path 指定的目录</Path></p>
-<p>InputStream newInputStream(Path path, OpenOption…how):获取 InputStream 对象</p>
-<p>OutputStream newOutputStream(Path path, OpenOption…how) : 获取 OutputStream 对象</p>
-<p>jdk 7 提供基于try-catch的自动资源管理</p>
-<p>　能够实现资源的自动关闭，需要满足：</p>
-<p>　　1.可以在一条 try 语句中管理多个资源，每个资源以“;” 隔开即可。</p>
-<p>　　2.需要关闭的资源，必须实现了 AutoCloseable 接口或其子接口 Closeable目的：不需要再使用finally，显式的关闭资源了。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/11/1/12/day18/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="顾思君">
-      <meta itemprop="description" content="直到这一刻微笑着说话为止，我至少留下了一公升眼泪">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="思君の博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/02/11/1/12/day18/" class="post-title-link" itemprop="url">day18</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-02-11 20:12:57" itemprop="dateCreated datePublished" datetime="2020-02-11T20:12:57+08:00">2020-02-11</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-12 13:33:44" itemprop="dateModified" datetime="2020-02-12T13:33:44+08:00">2020-02-12</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java/" itemprop="url" rel="index">
-                    <span itemprop="name">java</span>
-                  </a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>1.7k</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>泛型的应用:</p>
-<p>　1.JDK 5.0 新增的特性</p>
-<p>　2.主要内容：</p>
-<p>　　2.1 在集合中使用泛型</p>
-<p>　　2.2 如何自定义泛型类,泛型接口,泛型方法(理解)</p>
-<p>　　2.3 泛型在继承上的体现(掌握)</p>
-<p>　　2.4 通配符的使用（掌握）</p>
-<p>在集合中使用泛型的情况</p>
-<p>在集合中使用泛型</p>
-<p>　1.在Java的集合中,声明的接口或者类已经声明泛型</p>
-<p>　2.我们在实例化接口时,可以指明泛型的类型</p>
-<p>　3.不能使用基本数据类型,需要使用对应的包装类替换</p>
-<p>　4.一旦创建对象时,使用了泛型,则通过对象调用方法,属性时,如果方法或属性使用了类的泛型,   则此时泛型类型就是对象实例化时候的类型</p>
-<p>　5.如果实例化时候,不指明泛型参数,则默认是Object类型</p>
-<p>自定义泛型类:</p>
-<p>　仿照List去创建</p>
-<p>　1.在类的声明后面,指明泛型参数,参数通常使用:T E K V</p>
-<p>　2.在类的属性,方法,构造器中,可以使用类的泛型参数</p>
-<ul>
-<li>使用了类的泛型参数的方法,不能声明为static的</li>
-<li>不能在try-catch中使用泛型参数表示异常类型</li>
-</ul>
-<p>关于自定义泛型类,泛型接口,泛型方法的使用</p>
-<p>　自定义泛型类的使用:</p>
-<p>　　1.在实例化泛型类时,可以指明泛型的参数类型</p>
-<p>　　2.提供泛型类的子类时,可以指明泛型的参数类型.比如:SubOrder1类</p>
-<p>泛型在继承上的体现</p>
-<p>　　1.如果A类是B类的父类,则List<A>与List<B>是没有子父类的关系的  </B></A></p>
-<p>　　　扩展：则G<A> 和 G<B>没有子父类关系！</B></A></p>
-<p>　　2.如果A类是B类的父类,则A<G> 是 B<G>的父类</G></G></p>
-<p>通配符: ? 的使用：</p>
-<p>　　A类是B的父类,则G<A> 和 G<B> 的公共父类为G&lt;?&gt;</B></A></p>
-<p>　关于数据的读写问题</p>
-<p>　写入数据:不允许向使用通匹配符的集合中写入数据，除非可以写入null</p>
-<p>　读取数据：可以从使用了通配符的集合中读取数据。读取的数据的类型默认是Object</p>
-<p>有限制条件的通配符的使用? </p>
-<p>？  extends A:举例:List&lt;? extends A&gt; 可以作为List<B>或者List<A>的父类,其中B类是A类的子类?</A></B></p>
-<p>？   super A: 举例:List&lt;? super A&gt; 可以作为List<B>或List<A>的父类,其中B类是A类的父类</A></B></p>
-<p>File类：</p>
-<p>　 1.java.io包下定义的</p>
-<p>　 2.一个File类的对象，既可以表示一个文件(.txt,.mp3,.avi,mp4,.doc)，也可以表示一个文件目录。</p>
-<p>　 3.File类中只涉及到文件或文件目录的新建、删除、长度、修改时间、重命名等操作。没有涉及到对文件内容的修改。如果需要对文件内容进行修改的话，需要使用流。</p>
-<p>　 4.File类的对象常常作为流的构造器的参数出现。</p>
-<p>　 5.File类的对象代表着流资源读取或写入到的文件。</p>
-<p>  File类的实例化 </p>
-<p>  　 绝对路径：包含盘符在内的文件或文件目录的完整路径 </p>
-<p>  　 相对路径：相较于某一层文件路径来讲。比如：在Eclipse中的相对路径是相较于当前工程的。 </p>
-<p>   两个构造器： </p>
-<p>　　File(String pathname) </p>
-<p>　　File(String parent,String pathname)</p>
-<p>获取文件名:</p>
-<p>getName()</p>
-<p>getPath()</p>
-<p>getAbsoluteFile()</p>
-<p>getAbsolutePath()</p>
-<p>getParent()</p>
-<p>toPath()</p>
-<p>renameTo(File newName)</p>
-<p>   file1.renameTo(File file2):file1重命名为file2是否成功</p>
-<p>   如果希望返回值为true.则必须：file1对应的物理磁盘上的文件需要存在，且file2对应的物理磁盘上的文件不存在。</p>
-<p>文件检测:</p>
-<p>   exists()</p>
-<p>   canWrite()</p>
-<p>   canRead()</p>
-<p>   isFile()</p>
-<p>   isDirectory()</p>
-<p>获取文件常规信息:</p>
-<p>   lastModified()</p>
-<p>   length()</p>
-<p>  操作文件相关的：</p>
-<p>​    createNewFile()：在物理磁盘上创建指定路径的文件</p>
-<p>​    delete():删除物理磁盘上指定路径的文件</p>
-<p>  操作文件目录相关的：</p>
-<p>​    mkdir()/mkdirs():如果要创建的文件目录的上层目录存在，则二者没有区别。</p>
-<p>​    如果要创建的文件目录的上层目录不存在，mkdir()创建不成功，mkdirs()创建成功。</p>
-<p>   delete()：删除物理磁盘上指定路径的文件目录list()listFiles()</p>
-<p>list() / listFiles()</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/11/1/12/day17/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="顾思君">
-      <meta itemprop="description" content="直到这一刻微笑着说话为止，我至少留下了一公升眼泪">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="思君の博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/02/11/1/12/day17/" class="post-title-link" itemprop="url">day17</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-02-11 20:12:57" itemprop="dateCreated datePublished" datetime="2020-02-11T20:12:57+08:00">2020-02-11</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-12 13:36:35" itemprop="dateModified" datetime="2020-02-12T13:36:35+08:00">2020-02-12</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java/" itemprop="url" rel="index">
-                    <span itemprop="name">java</span>
-                  </a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>731</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Collections:用来操作集合框架(Collection / Map)的工具类</p>
-<ul>
-<li>reverse(List)：反转 List 中元素的顺序</li>
-<li>shuffle(List)：对 List 集合元素进行随机排序</li>
-<li>sort(List)：根据元素的自然顺序对指定 List 集合元素按升序排序</li>
-<li>sort(List，Comparator)：根据指定的 Comparator 产生的顺序对 List 集合元素进行排序</li>
-<li>swap(List，int， int)：将指定 list 集合中的 i 处元素和 j 处元素进行交换</li>
-<li>Object max(Collection)：根据元素的自然顺序，返回给定集合中的最大元素\</li>
-<li>Object max(Collection，Comparator)：根据 Comparator 指定的顺序，返回给定集合中的最大元素 Object  </li>
-<li>object min(Collection)</li>
-<li>Object min(Collection，Comparator)</li>
-<li>int frequency(Collection，Object)：返回指定集合中指定元素的出现次数</li>
-</ul>
-<ul>
-<li>void copy(List dest,List src)：将src中的内容复制到dest中</li>
-</ul>
-<p>　　List dest = Arrays.asList(new Object[list.size()]);</p>
-<p>　　Collections.copy(dest, list);</p>
-<p>　　System.out.println(dest);</p>
-<ul>
-<li>boolean replaceAll(List list，Object oldVal，Object newVal)：使用新值替换 List 对象的所有旧值</li>
-</ul>
-<p>  list:线程不安全的。</p>
-<p>  List newList = Collections.synchronizedList(list);</p>
-<p>  newList:线程安全的。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/11/1/12/day19/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -842,7 +968,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-12 13:30:28" itemprop="dateModified" datetime="2020-02-12T13:30:28+08:00">2020-02-12</time>
+                <time title="修改时间：2020-02-20 11:33:56" itemprop="dateModified" datetime="2020-02-20T11:33:56+08:00">2020-02-20</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -952,6 +1078,113 @@
 <p>　3.如果输出到的文件不存在，则会在输出的过程中，自动创建此文件 。 如果输出到的文件存在，</p>
 <p>　　则不是对文件的覆盖，而是对文件内容的覆盖。（默认从头覆盖）</p>
 <p>　4.实现数据的“插入” </p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/11/1/12/day17/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="顾思君">
+      <meta itemprop="description" content="直到这一刻微笑着说话为止，我至少留下了一公升眼泪">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="思君の博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/02/11/1/12/day17/" class="post-title-link" itemprop="url">day17</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-02-11 20:12:57" itemprop="dateCreated datePublished" datetime="2020-02-11T20:12:57+08:00">2020-02-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-20 11:33:11" itemprop="dateModified" datetime="2020-02-20T11:33:11+08:00">2020-02-20</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>731</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>Collections:用来操作集合框架(Collection / Map)的工具类</p>
+<ul>
+<li>reverse(List)：反转 List 中元素的顺序</li>
+<li>shuffle(List)：对 List 集合元素进行随机排序</li>
+<li>sort(List)：根据元素的自然顺序对指定 List 集合元素按升序排序</li>
+<li>sort(List，Comparator)：根据指定的 Comparator 产生的顺序对 List 集合元素进行排序</li>
+<li>swap(List，int， int)：将指定 list 集合中的 i 处元素和 j 处元素进行交换</li>
+<li>Object max(Collection)：根据元素的自然顺序，返回给定集合中的最大元素\</li>
+<li>Object max(Collection，Comparator)：根据 Comparator 指定的顺序，返回给定集合中的最大元素 Object  </li>
+<li>object min(Collection)</li>
+<li>Object min(Collection，Comparator)</li>
+<li>int frequency(Collection，Object)：返回指定集合中指定元素的出现次数</li>
+</ul>
+<ul>
+<li>void copy(List dest,List src)：将src中的内容复制到dest中</li>
+</ul>
+<p>　　List dest = Arrays.asList(new Object[list.size()]);</p>
+<p>　　Collections.copy(dest, list);</p>
+<p>　　System.out.println(dest);</p>
+<ul>
+<li>boolean replaceAll(List list，Object oldVal，Object newVal)：使用新值替换 List 对象的所有旧值</li>
+</ul>
+<p>  list:线程不安全的。</p>
+<p>  List newList = Collections.synchronizedList(list);</p>
+<p>  newList:线程安全的。</p>
 
       
     </div>
@@ -1132,6 +1365,137 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/11/1/12/day20/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="顾思君">
+      <meta itemprop="description" content="直到这一刻微笑着说话为止，我至少留下了一公升眼泪">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="思君の博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/02/11/1/12/day20/" class="post-title-link" itemprop="url">day20</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-02-11 20:12:57" itemprop="dateCreated datePublished" datetime="2020-02-11T20:12:57+08:00">2020-02-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-12 14:19:01" itemprop="dateModified" datetime="2020-02-12T14:19:01+08:00">2020-02-12</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>2.2k</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>jdk 7.0 时，引入了 Path、Paths、Files三个类。</p>
+<p>　1.此三个类声明在：java.nio.file包下。</p>
+<p>　2.Path可以看做是java.io.File类的升级版本。也可以表示文件或文件目录，与平台无关</p>
+<p>　3.如何实例化Path:使用Paths. </p>
+<p>　　static Path get(String first, String … more) : 用于将多个字符串串连成路径</p>
+<p>　　static Path get(URI uri): 返回指定uri对应的Path路径 </p>
+<h2 id="Path"><a href="#Path" class="headerlink" title="Path:"></a>Path:</h2><p>   String toString() ： 返回调用 Path 对象的字符串表示形式</p>
+<p>   boolean startsWith(String path) : 判断是否以 path 路径开始</p>
+<p>   boolean endsWith(String path) : 判断是否以 path 路径结束</p>
+<p>   boolean isAbsolute() : 判断是否是绝对路径</p>
+<p>   Path getParent() ：返回Path对象包含整个路径，不包含 Path 对象指定的文件路径</p>
+<p>   Path getRoot() ：返回调用 Path 对象的根路径</p>
+<p>​       Path getFileName() : 返回与调用 Path 对象关联的文件名</p>
+<p>​       int getNameCount() : 返回Path 根目录后面元素的数量(层数)</p>
+<p>​       Path getName(int idx) : 返回指定索引位置 idx 的路径名称</p>
+<p>​       Path toAbsolutePath() : 作为绝对路径返回调用 Path 对象</p>
+<p>​       File toFile(): 将Path转化为File类的对象</p>
+<h2 id="Files"><a href="#Files" class="headerlink" title="Files"></a>Files</h2><p>Path copy(Path src, Path dest, CopyOption … how) : 文件的复制      </p>
+<p>​    &gt;要想复制成功，要求path1对应的物理上的文件存在。path1对应的文件没有要求。</p>
+<p>​      Files.copy(path1, path2, StandardCopyOption.REPLACE_EXISTING); 当已存在时做覆盖</p>
+<p>Path createDirectory(Path path, FileAttribute&lt;?&gt; … attr) : 创建一个目录      </p>
+<p>​      要想执行成功，要求path对应的物理上的文件目录不存在。一旦存在，抛出异常。</p>
+<p>Path createFile(Path path, FileAttribute&lt;?&gt; … arr) : 创建一个文件      </p>
+<p>​      要想执行成功，要求path对应的物理上的文件不存在。一旦存在，抛出异常。</p>
+<p>void delete(Path path) : 删除一个文件/目录，如果不存在，执行报错</p>
+<p>void deleteIfExists(Path path) : Path对应的文件/目录如果存在，执行删除.如果不存在，正常执行结束</p>
+<p>Path move(Path src, Path dest, CopyOption…how) : 将 src 移动到 dest 位置      </p>
+<p>   要想执行成功，src对应的物理上的文件需要存在，dest对应的文件没有要求。</p>
+<p>   Files.move(path1, path2, StandardCopyOption.ATOMIC_MOVE);</p>
+<p>long size(Path path) : 返回 path 指定文件的大小</p>
+<p>boolean exists(Path path, LinkOption … opts) : 判断文件是否存在</p>
+<p>boolean isDirectory(Path path, LinkOption … opts) : 判断是否是目录</p>
+<p>boolean isRegularFile(Path path, LinkOption … opts) : 判断是否是文件</p>
+<p>boolean isHidden(Path path) : 判断是否是隐藏文件</p>
+<p>​    &gt;要求此path对应的物理上的文件需要存在。才可判断是否隐藏。否则，抛异常</p>
+<p>boolean isReadable(Path path) : 判断文件是否可读</p>
+<p>boolean isWritable(Path path) : 判断文件是否可写</p>
+<p>boolean notExists(Path path, LinkOption … opts) : 判断文件是否不存在</p>
+<p>StandardOpenOption.READ:表示对应的Channel是可读的。 </p>
+<p>StandardOpenOption.WRITE：表示对应的Channel是可写的。</p>
+<p>StandardOpenOption.CREATE：如果要写出的文件不存在，则创建。如果存在，忽略 StandardOpenOption.CREATE_NEW：如果要写出的文件不存在，则创建。如果存在，抛异常</p>
+<p>SeekableByteChannel newByteChannel(Path path, OpenOption…how) : 获取与指定文件的连接，how 指定打开方式。</p>
+<p>DirectoryStream<Path>  newDirectoryStream(Path path) : 打开 path 指定的目录</Path></p>
+<p>InputStream newInputStream(Path path, OpenOption…how):获取 InputStream 对象</p>
+<p>OutputStream newOutputStream(Path path, OpenOption…how) : 获取 OutputStream 对象</p>
+<p>jdk 7 提供基于try-catch的自动资源管理</p>
+<p>　能够实现资源的自动关闭，需要满足：</p>
+<p>　　1.可以在一条 try 语句中管理多个资源，每个资源以“;” 隔开即可。</p>
+<p>　　2.需要关闭的资源，必须实现了 AutoCloseable 接口或其子接口 Closeable目的：不需要再使用finally，显式的关闭资源了。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/11/1/12/day21/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1260,107 +1624,6 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/11/1/12/day24/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="顾思君">
-      <meta itemprop="description" content="直到这一刻微笑着说话为止，我至少留下了一公升眼泪">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="思君の博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/02/11/1/12/day24/" class="post-title-link" itemprop="url">day24</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-02-11 20:12:57" itemprop="dateCreated datePublished" datetime="2020-02-11T20:12:57+08:00">2020-02-11</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-12 13:16:58" itemprop="dateModified" datetime="2020-02-12T13:16:58+08:00">2020-02-12</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java/" itemprop="url" rel="index">
-                    <span itemprop="name">java</span>
-                  </a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>497</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>一、要想实现网络通信，需要解决两个问题：</p>
-<p>　　1.如何准确的定位互联网上的一台或多台主机 </p>
-<p>　　2.如何实现可靠而高效的数据传输</p>
-<p> 二、网络通信的两个要素：</p>
-<p>　　1.使用IP地址，定位网络中的主机</p>
-<p>　　2.遵循相关的网络通信协议</p>
-<p> 三、针对要素一：</p>
-<p>　　1.IP：一个ip地址，对应着网络中的一台主机。 “192.168.20.16”   “127.0.0.1”–本地回路地址</p>
-<p>　　　　使用InetAddress类来代表IP，一个InetAddress类的对象，就代表着一个具体的ip地址。</p>
-<p>　　２.如何实例化InetAddress:</p>
-<p>　　　　①getByName(String hostName)</p>
-<p>　　　　②getLocalHost()</p>
-<p>　　3.域名： <a href="http://www.baidu.com" target="_blank" rel="noopener">www.baidu.com</a>   <a href="http://www.jd.com" target="_blank" rel="noopener">www.jd.com</a>   <a href="http://www.mi.com" target="_blank" rel="noopener">www.mi.com</a>  <a href="http://www.vip.com" target="_blank" rel="noopener">www.vip.com</a></p>
-<p>　　　　　　 <a href="http://www.facebook.com" target="_blank" rel="noopener">www.facebook.com</a></p>
-<p>​         localhost对应着127.0.0.1</p>
-<p>　　4.InetAddress类的常用方法：getHostName() / getHostAddress()</p>
-<p>　　5.端口号标识正在计算机上运行的进程（程序）</p>
-<p>　　　　注意：不同的进程有不同的端口号</p>
-<p>　　　　常见的端口号： http:80   tomcat : 8080   mysql：3306  oracle:1521等</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/11/1/12/day22/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1392,7 +1655,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-12 13:16:00" itemprop="dateModified" datetime="2020-02-12T13:16:00+08:00">2020-02-12</time>
+                <time title="修改时间：2020-02-20 11:35:08" itemprop="dateModified" datetime="2020-02-20T11:35:08+08:00">2020-02-20</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1656,120 +1919,6 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/11/1/12/day3/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="顾思君">
-      <meta itemprop="description" content="直到这一刻微笑着说话为止，我至少留下了一公升眼泪">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="思君の博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/02/11/1/12/day3/" class="post-title-link" itemprop="url">day3</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-02-11 20:12:57" itemprop="dateCreated datePublished" datetime="2020-02-11T20:12:57+08:00">2020-02-11</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-12 14:58:45" itemprop="dateModified" datetime="2020-02-12T14:58:45+08:00">2020-02-12</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java/" itemprop="url" rel="index">
-                    <span itemprop="name">java</span>
-                  </a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>579</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>equals   判断字符串内容</p>
-<p>Math.random  [0, 1)</p>
-<p>想获取【a,b】的数 ( int )(Math.random()*(b-a+1)+a)</p>
-<p>分支结构2：switch-case</p>
-<p>switch 语句的结束标志： } ，break</p>
-<p>default 可选，位置比较灵活</p>
-<p>switch中的表达式所代表的数据类型6种，只能是如下byte,short,char,int,枚举，String(jdk7.0新增)</p>
-<p>case 后只能是常量或者是常量表达式</p>
-<p>多个case可以共用一组语句，在最后一个case上写要执行的语句就好了，这里的最后一个case并不是}附近的一个，而是你要停止的一个</p>
-<p>凡是swith-case实现的结构，都可以转成if-else实现，反之不成立</p>
-<p>字符串方法：</p>
-<p>获取字符：charAt()</p>
-<p>循环结构4要素：</p>
-<p>初始化条件</p>
-<p>循环条件  —&gt;布尔类型</p>
-<p>循环体</p>
-<p>迭代条件</p>
-<p>当循环条件返回false,结束循环</p>
-<p>for和while 可以相互转换</p>
-<p>循环结构的结束方式：</p>
-<p> 1.循环条件返回false时</p>
-<p> 2.在循环体中，判断某个条件满足时，执行break (不确定循环次数时)</p>
-<p>​     while(true)   / for(;;)</p>
-<p>嵌套循环：</p>
-<p>一个循环结构a,作为另一个循环结构b的循环体实现</p>
-<p> 内层循环：循环结构a</p>
-<p> 外层循环：循环结构b</p>
-<p>技巧：</p>
-<p>1.外层循环控制行数</p>
-<p>   内层循环控制列数</p>
-<p>2.</p>
-<p>内层循环循环次数为m次，外层循环循环次数为n次，则一共循环m*n次</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
@@ -1842,20 +1991,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">38</span>
+          <span class="site-state-item-count">39</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">5</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -1900,7 +2049,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">72k</span>
+    <span title="站点总字数">73k</span>
 </div>
 
 
