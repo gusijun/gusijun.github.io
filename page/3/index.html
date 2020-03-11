@@ -129,7 +129,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">40</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">41</span></a>
 
   </li>
   </ul>
@@ -158,7 +158,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/11/1/12/day4/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/11/1/12/day22/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -172,7 +172,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2020/02/11/1/12/day4/" class="post-title-link" itemprop="url">day4</a>
+            <a href="/2020/02/11/1/12/day22/" class="post-title-link" itemprop="url">day22</a>
         </h1>
 
         <div class="post-meta">
@@ -189,7 +189,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-12 21:43:10" itemprop="dateModified" datetime="2020-02-12T21:43:10+08:00">2020-02-12</time>
+                <time title="修改时间：2020-02-20 11:35:08" itemprop="dateModified" datetime="2020-02-20T11:35:08+08:00">2020-02-20</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -209,7 +209,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.3k</span>
+              <span>5.8k</span>
             </span>
 
         </div>
@@ -221,29 +221,223 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>素数判断：</p>
-<p>1.</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">f1</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=<span class="number">100000</span>;i++)&#123;</span><br><span class="line">            <span class="keyword">boolean</span> isFlag = <span class="keyword">true</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">2</span>;j&lt;i;j++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(i%j==<span class="number">0</span>)&#123;</span><br><span class="line">                    isFlag=<span class="keyword">false</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(isFlag)&#123;</span><br><span class="line">                System.out.println(i);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">       </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>这种方式浪费内存，外循环 boolean = true 相当于每次重新定义一个变量</p>
-<p>2.</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">f1</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        <span class="keyword">boolean</span> isFlag = <span class="keyword">true</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=<span class="number">100000</span>;i++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">2</span>;j&lt;i;j++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(i%j==<span class="number">0</span>)&#123;</span><br><span class="line">                    isFlag=<span class="keyword">false</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(isFlag)&#123;</span><br><span class="line">                System.out.println(i);</span><br><span class="line">            &#125;</span><br><span class="line">            isFlag = <span class="keyword">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>这种方式多写一行代码</p>
-<p>3.</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">f1</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        <span class="keyword">long</span> start = System.currentTimeMillis();</span><br><span class="line">        <span class="keyword">int</span> PrimeNumberCount = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=<span class="number">100000</span>;i++)&#123;</span><br><span class="line">            <span class="keyword">boolean</span> isFlag = <span class="keyword">true</span>; <span class="comment">//标识</span></span><br><span class="line">            <span class="comment">//优化2:针对于质素数的优化</span></span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">2</span>;j&lt;=Math.sqrt(i);j++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(i%j==<span class="number">0</span>)&#123;</span><br><span class="line">                    isFlag=<span class="keyword">false</span>;</span><br><span class="line">                    <span class="comment">//优化1:主要针对于非质数</span></span><br><span class="line">                    <span class="keyword">break</span>;<span class="comment">//  结束包裹break关键字最近的一层</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(isFlag)&#123;</span><br><span class="line">                PrimeNumberCount++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(PrimeNumberCount);</span><br><span class="line">        <span class="keyword">long</span> end = System.currentTimeMillis();</span><br><span class="line">        System.out.println(<span class="string">"时间:"</span>+(end-start));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<p>currentTimeMillis()     获取系统当前时间对应的毫秒数</p>
-<p>break   结束包裹break关键字最近的一层</p>
-<p>break 和 continue</p>
-<p>适用范围：                                                           在循环中，表示：</p>
-<p>break: switch-case 或者 循环结构                     结束当前循环</p>
-<p>continue: 循环结构                                              结束当次循环</p>
-<p>相同点：</p>
-<p>关键字后面不能有输出语句，编译不通过</p>
-<p>附加：带标签的break和continue的使用</p>
+          <p>一、继承Thread的方式</p>
+<p>　　1.提供一个继承于Thread类的子类</p>
+<p>　　2.重写Thread类的run():将创建的线程要执行的操作，声明在run()中。</p>
+<p>　　3.实例化Thread子类</p>
+<p>　　4.调用子类对象的start() </p>
+<p>Thread类的常用方法的测试</p>
+<p> 　　1.run():Thread的子类一定要重写的方法。将此分线程要执行的操作，声明在run()中</p>
+<p>　 　2.start():要想启动一个分线程，就需要调用start():①启动线程②调用线程的run()</p>
+<p>　 　3.currentThread():静态方法，获取当前的线程</p>
+<p>　 　4.getName():获取当前线程的名字</p>
+<p>　 　5.setName(String name)：设置当前线程的名字</p>
+<p>　 　6.yield():当前线程调用此方法，释放CPU的执行权</p>
+<p>　 　7.join():在线程a中调用线程b的join()方法:只用当线程b执行结束以后，线程a结束阻塞状态，继续执行。</p>
+<p>　　 8.sleep(long millitimes):让当前的线程睡眠millitimes毫秒</p>
+<p>　 　9.isAlive():判断当前线程是否存活 </p>
+<p>　　10.线程的优先级：</p>
+<p>　　　　 MAX_PRIORITY：10 </p>
+<p>　　　　NORM_PRIORITY：5 —默认优先级</p>
+<p>　　　　MIN_PRIORITY：1</p>
+<p>​    　 设置优先级：setPriority(int priority); </p>
+<p>​    　 获取优先级：getPriority()；</p>
+<blockquote>
+<p>设置优先级以后，对高优先级，使用优先调度的抢占式策略，抢占低优先级的执行。但是并不意味着高优    先级的线程一定先于低优先级的线程执行，而是从概率上来讲，概率更大而已。</p>
+</blockquote>
+<p> 线程通信：wait() / notify() / notifyAll()  —-&gt;java.lang.Object类中定义的方法</p>
+<h4 id="一：继承Thread的方式"><a href="#一：继承Thread的方式" class="headerlink" title="一：继承Thread的方式"></a>一：继承Thread的方式</h4><p>　　　1.提供一个继承Thread类的子类 </p>
+<p>　　　2.重写Thread类run():将创建的线程要执行的操作,声明在run()中 </p>
+<p>　　　3.实例化Thread子类</p>
+<p>　　　4.调用子类对象的start()方法</p>
+<h4 id="创建多线程的方式二"><a href="#创建多线程的方式二" class="headerlink" title="创建多线程的方式二:"></a>创建多线程的方式二:</h4><p>　　　1.创建一个实现Runnable接口的类</p>
+<p>　　　2.实现Runnable的run()</p>
+<p>　　　3.创建当前实现类的对象</p>
+<p>　　　4.将此对象作为参数传递到Thread类的构造器中,创建Thread类的对象</p>
+<p>　　　5.通过Thread类的对象调用其start()</p>
+<p>对比继承Thread类和实现Runnable接口的方式</p>
+<p>　　　1.联系:public class Thread implements Runnable</p>
+<p>　　　2.相同点:启动线程,使用的是同一个start()方法</p>
+<p>　　　3.对比:实现Runnable接口要好一些. </p>
+<p>　原因：①不影响类的继承,因为类是单继承的   </p>
+<p>　　　　②针对于有共享数据的操作,更适合使用Runnable的方式 ,换句话说,实现Runnable接口的方式,实现了代                    码和数据的分离</p>
+<p>　　　4.面试题:创建多线程有几种方法?     继承Thread类,实现Runnable接口,实现Callable接口,使用线程池</p>
+<p>模仿车站买票程序。开启3个窗口卖票。总票数为100张。—–使用实现的方式</p>
+<p>　　1.问题：出现了重票和错票</p>
+<p>　　2.问题出现的原因：一个窗口在没有售完票的情况下，其他的窗口参与进来，操作ticket，导致ticket输出的错            误。</p>
+<p>　　3.解决的方案：当某一个窗口完全操作完ticket以后，其他窗口应该才被允许进来，继续操作ticket。</p>
+<p>　　4.java如何实现的？同步机制：①同步代码块    ②同步方法 </p>
+<p>　　　4.1 同步代码块：</p>
+<p>​                 synchronized(同步监视器){</p>
+<p>​                       //需要被同步的代码</p>
+<p>​               }</p>
+<p>　　　说明：需要被同步的代码：即为操作共享数据的代码</p>
+<p>　　　　　　共享数据：多个线程共同操作的数据。比如：ticket</p>
+<p>　　　　　　同步监视器：俗称：锁。 可以由任何一个类的对象充当。 要求：保证多个线程共用同一把锁！</p>
+<p>　　　4.2 同步方法：将操作共享数据的方法，声明为同步的。此方法即为同步方法。</p>
+<p>　　　　　使用同步方法解决实现方式的线程安全问题。</p>
+<p>　　　　　1.默认的同步方法（非静态的）的锁是：当前对象，也就是this.</p>
+<p>　　　　　2.默认的同步方法（静态的）的锁是：当前类本身.</p>
+<p>　　　　　　使用同步方法解决继承方式的线程安全问题：</p>
+<p>　　　　　注意：继承的方式中，要慎用同步方法。</p>
+<p>​        5.好处：线程的同步机制，解决了线程的安全问题。</p>
+<p>​        6.劣势：在操作共享数据过程中，是单线程的。</p>
+<p>模仿车站买票程序。开启3个窗口卖票。总票数为100张     —–使用实现的方式</p>
+<p>　　解决线程安全问题的方式三：ReentrantLock</p>
+<p>　　存在线程的安全问题，使用Lock的方式解决线程安全问题。</p>
+<p>面试题：同步的方式和Lock的方式，解决线程安全方面的异同？</p>
+<p>　　同：解决了线程安全问题</p>
+<p>　　异：同步的方式：同步监视器在线程执行完操作共享数据的代码以后，自动释放</p>
+<blockquote>
+<p> Lock的方式：需要显式的调用unlock()方法之后，才能保证其他线程操作共享数据。 </p>
+</blockquote>
+<p>死锁：不同的线程分别占用对方需要的同步资源不放弃，都在等待对方放弃自己需要的同步资源，就形成了线程的死锁，是我们开发中需要规避的！</p>
+<p>线程的通信：</p>
+<ul>
+<li><p>wait():一个线程在执行过程中，一旦调用此方法，则此线程进入阻塞状态，等待其他线程来唤醒自己。    </p>
+</li>
+<li><p>notify():一个线程在执行过程中，一旦调用此方法，则会唤醒被wait()的一个线程。高优先级的要优先被唤醒。</p>
+</li>
+<li><p>notifyAll():一个线程在执行过程中，一旦调用此方法，则会唤醒所有被wait()的线程。</p>
+</li>
+</ul>
+<p>　　　例题：使用两个线程打印 1-100. 线程1, 线程2 交替打印</p>
+<p>注意点：1.此三个方法必须使用在同步中。</p>
+<p>　　　　2.此三个方法的调用者是同步监视器！否则，如果三个方法的调用者不是同步监视器，报异常。</p>
+<p>　　　　3.此三个方法定义在Object类</p>
+<p>面试题：sleep() 和  wait() 的异同？</p>
+<p>　　1.方法声明在哪？ Thread:sleep()   Object:wait()</p>
+<p>　　2.共同点：使得当前线程进入阻塞状态</p>
+<p>　　3.使用的范围要求：sleep()使用没有情境的要求；wait()必须使用在同步代码块或同步方法中</p>
+<p>　　4.都使用在同步当中的话：wait()需要唤醒：notify()/notifyAll();  sleep():不会释放锁；wait()会释放锁 </p>
+<p> String:字符串</p>
+<p>　　　1.字符串声明的数据，会存储在字符串常量池中。第一次声明时，需要创建相应的字符串。之后，如果声明的变量，其值与之前存在的字符串内容相同，则直接引用现成的字符串。</p>
+<p>　　　2.面试题：String s3 = new String(“javaEE”);创建的对象，在内存中生成了几个对象？</p>
+<p><strong>String:代表着不可变的字符序列。</strong></p>
+<p>　　　1.String类的声明public final class String implements java.io.Serializable, Comparable<String>, 　　　　CharSequence</String></p>
+<p>　　　　　①String声明为final，不可被继承。</p>
+<p>　　　　　②实现Serializable：表明String可序列化。浏览器/客户端&lt;—&gt;服务器端     进程1&lt;—-&gt;进程2    　　　　　　“{name=Tom,age=12}”    JSON:本质就是String</p>
+<p>　　　　　③String重写了hashCode()/equals():常常将Map的key声明为String型。</p>
+<p>　　　　　④实现Comparable接口：String可以比较大小。</p>
+<p>　　　　　⑤实现CharSequence接口：String的底层声明了char[] value数组。</p>
+<p>　　　2.如何理解String的不可变性：</p>
+<p>　　　　　①向现有的字符串后添加新的字符串，必须声明新的字符串空间</p>
+<p>　　　　　②将现有的字符串替换为新的字符串，必须声明新的字符串空</p>
+<p>　　　　　③只替换现有字符串中的指定某个字符，也必须声明新的字符串空间</p>
+<p>String类与其它结构的转换：</p>
+<p>　　　1.String 与包装类、基本数据类型变量间的转换    </p>
+<p>　　　　String–&gt;包装类、基本数据类型:调用包装类Xxx的parseXxx(String s)方法</p>
+<p>　　　　包装类、基本数据类型 –&gt;String:调用String的valueOf(xxx xxx); </p>
+<p>　　　2.String 与 字节数组间的转换   </p>
+<p>　　　　String –&gt; 字节数组:调用String类的getBytes()</p>
+<p>　　　　字节数组–&gt;String:new String(byte[] buffer,startIndex,length)</p>
+<p>　　　3.String 与 字符数组间的转换</p>
+<p>　　　　String –&gt; 字符数组：调用String类的toCharArray()</p>
+<p>　　　　字符数组 –&gt;String:new String(char[] cbuf,startIndex,length)    </p>
+<p>​         </p>
+<ul>
+<li><p>public String substring(int startpoint):返回当前字符串中从startPoint位置开始，到末尾的子字符串。  </p>
+</li>
+<li><p>public String substring(int start,int end):返回当前字符串中从startPoint位置开始，到end结束的左闭右开区间的子字符串。</p>
+</li>
+<li><p>pubic String replace(char oldChar,char newChar):将字符串中指定的所有oldChar替换为newChar.</p>
+</li>
+<li><p>public String replaceAll(String old,String new):将字符串中指定的所有old替换为new.</p>
+</li>
+<li><p>public String trim():去除字符串首尾的空格</p>
+</li>
+<li><p>public String concat(String str):连接两个字符串</p>
+</li>
+<li><p>public boolean contains(CharSequence s)：判断当前字符串中是否包含s.</p>
+</li>
+<li><p>public String[] split(String regex)根据给定正则表达式的匹配拆分此字符串。</p>
+</li>
+</ul>
+<ul>
+<li><p>public int length():返回当前字符串的长度</p>
+</li>
+<li><p>public char charAt(int index)：获取指定索引位置的字符</p>
+</li>
+<li><p>public boolean equals(Object anObject)：比较两个字符串内容是否相等。</p>
+</li>
+<li><p>public int compareTo(String anotherString):比较两个字符串的大小</p>
+</li>
+<li><p>public int indexOf(String s):返回s在当前字符串中首次出现的位置。如果不存在，返回-1.</p>
+</li>
+<li><p>public int indexOf(String s ,int startpoint):</p>
+</li>
+<li><p>public int lastIndexOf(String s):返回s在当前字符串中末次出现的位置。如果不存在，返回-1.</p>
+</li>
+<li><p>public int lastIndexOf(String s ,int startpoint):</p>
+</li>
+<li><p>public boolean startsWith(String prefix)：判断当前的字符串是否以指定的prefix字符串开始的</p>
+</li>
+<li><p>public boolean endsWith(String suffix)：判断当前的字符串是否以指定的suffix字符串结束的</p>
+</li>
+<li><p>public boolean regionMatches(int firstStart,String other,int otherStart ,int length)   ？</p>
+</li>
+</ul>
+<p>面试题：</p>
+<p>　　String:不可变的字符序列；底层使用char[]存储</p>
+<p>　　StringBuffer:可变的字符序列；线程安全的，效率低；底层使用char[]存储  </p>
+<p>　　StringBuilder:可变的字符序列；线程不安全的，效率高，(jdk 5.0新增)；底层使用char[]存储</p>
+<p>类比：String —&gt;数组； StringBuffer —&gt;Vector   StringBuilder —&gt;ArrayList</p>
+<p>　　　ArrayList list = new ArrayList();</p>
+<p>　　　list.add(123);//new Object[10];</p>
+<p>　　　….</p>
+<p>　　　扩容:1.5倍的方式扩容。</p>
+<p>　　　这里：</p>
+<p>　　　　String str = new String();//new char[0];</p>
+<p>　　　　str.length();</p>
+<p>　　　　String str1 = new String(“abc”);//new char[]{‘a’,’b’,’c’};</p>
+<p>　　　对比：</p>
+<p>　　　　StringBuffer s1 = new StringBuffer();//char[] value = new char[16]</p>
+<p>　　　　StringBuffer s2 = new StringBuffer(10);//char[] value = new char[10]</p>
+<p>　　　　s1.append(“abc”);//value[0] = ‘a’,value[1] = ‘b’,value[2] = ‘c’;</p>
+<p>　　　　　… </p>
+<p>　　　　　　  每次添加时，都需要判断底层的char[]是否能够盛装下新要添加的字符串。</p>
+<p>　　　　　　 如果不能盛装下，需要扩容。默认扩容为原来的2倍 + 2.   </p>
+<p>　　　 启示：StringBuffer s1 = new StringBuffer(int capacity);开发中建议使用此构造器。</p>
+<p>StringBuffer中的方法：</p>
+<ul>
+<li><p>StringBuffer append(String s),</p>
+</li>
+<li><p>StringBuffer append(int n) ,</p>
+</li>
+<li><p>StringBuffer append(Object o) ,</p>
+</li>
+<li><p>StringBuffer append(char n)，</p>
+</li>
+<li><p>StringBuffer append(long n),</p>
+</li>
+<li><p>StringBuffer append(boolean n),</p>
+</li>
+<li><p>StringBuffer insert(int index, String str)</p>
+</li>
+<li><p>public StringBuffer reverse()</p>
+</li>
+<li><p>StringBuffer delete(int startIndex, int endIndex):删除当前可变字符串中从startIndex到endIndex结束的左闭右开区间的数据。</p>
+</li>
+<li><p>public char charAt(int n )</p>
+</li>
+<li><p>public void setCharAt(int n ,char ch)</p>
+</li>
+<li><p>StringBuffer replace( int startIndex ,int endIndex, String str)</p>
+</li>
+<li><p>public int indexOf(String str)</p>
+</li>
+<li><p>public String substring(int start,int end)</p>
+</li>
+<li><p>public int length()</p>
+</li>
+</ul>
+<h3 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h3><p>　　增：append(Xxx xxx)</p>
+<p>　　删：delete(int startIndex, int endIndex</p>
+<p>　　改：setCharAt(int n ,char ch) / replace( int startIndex ,int endIndex, String str)</p>
+<p>　　查：charAt(int n)</p>
+<p>　　插：insert(int index, String str)</p>
+<p>　　长度：length()</p>
+<p>　　遍历：使用for + charAt()</p>
 
       
     </div>
@@ -263,7 +457,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/11/1/12/day13/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/11/1/12/day24/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -277,7 +471,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2020/02/11/1/12/day13/" class="post-title-link" itemprop="url">day13</a>
+            <a href="/2020/02/11/1/12/day24/" class="post-title-link" itemprop="url">day24</a>
         </h1>
 
         <div class="post-meta">
@@ -294,7 +488,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-12 14:26:06" itemprop="dateModified" datetime="2020-02-12T14:26:06+08:00">2020-02-12</time>
+                <time title="修改时间：2020-02-12 13:16:58" itemprop="dateModified" datetime="2020-02-12T13:16:58+08:00">2020-02-12</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -314,7 +508,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>643</span>
+              <span>497</span>
             </span>
 
         </div>
@@ -326,47 +520,139 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>java.util.Vector  动态数组</p>
-<p>get（index）  </p>
-<p>addElement(OBject obj)</p>
-<p>size() </p>
-<p>栈：局部变量</p>
-<p>堆：new出来的结构，数组</p>
-<p>方法区：类的加载信息，静态变量，常量</p>
-<p>static关键字的使用:</p>
-<ul>
-<li><p>static:静态的</p>
-</li>
-<li><p>static可以用来修饰:属性,方法,代码块,内部类</p>
-</li>
-<li><p>使用static修饰属性:类变量（或静态变量</p>
-</li>
-<li><p>使用static修饰的变量被类的所有对象所共享，类的所有对象共用一个静态变量   </p>
-<p>对比:不用static修饰的属性，称为:实例变量,每个对象拥有一份实例变量</p>
-<p>　　　通过对象a修改某个实例变量，不会影响其他对象同名的实例变量的值。  </p>
-<p>我们可以通过对象a去调用或修改静态变量的值,那抹会影响其他对象对此静态变量的调用   </p>
-</li>
-</ul>
-<blockquote>
-<p>静态变量和实例变量在内存中分配的位置不同:     </p>
-</blockquote>
-<ul>
-<li>实例变量，随着对象的创建而产生，分配在堆空间中     </li>
-<li>静态变量，随着类的加载而产生的，分配在方法区里</li>
-</ul>
-<p>静态变量的加载要早于对象的创建  </p>
-<p>　　   静态变量         非静态变量（实例变量）</p>
-<p>类       　可以              　不可以</p>
-<p>对象     　可以             　 可以</p>
-<p>使用static修饰方法:静态方法（随着类的加载而加载） </p>
-<p>　　　静态方法         非静态方法（实例变量） </p>
-<p>类     　  可以　　　　不可以 </p>
-<p>对象  　   可以 　　　　可以 </p>
-<p>静态方法内:可以调用静态属性或者静态方法,不可以调用非静态属性和非静态方法</p>
-<p>非静态方法内:可以调用非静态属性或者非静态方法，可以调用静态属性和静态方法 </p>
-<blockquote>
-<p> 如何判断属性是否声明为:static? 是否需要类的多个对象类共享此属性；很多常量都声明为static 如何判断方法是否声明为:static?  操作静态变量的方法，工具类中的方法。（Math）</p>
-</blockquote>
+          <p>一、要想实现网络通信，需要解决两个问题：</p>
+<p>　　1.如何准确的定位互联网上的一台或多台主机 </p>
+<p>　　2.如何实现可靠而高效的数据传输</p>
+<p> 二、网络通信的两个要素：</p>
+<p>　　1.使用IP地址，定位网络中的主机</p>
+<p>　　2.遵循相关的网络通信协议</p>
+<p> 三、针对要素一：</p>
+<p>　　1.IP：一个ip地址，对应着网络中的一台主机。 “192.168.20.16”   “127.0.0.1”–本地回路地址</p>
+<p>　　　　使用InetAddress类来代表IP，一个InetAddress类的对象，就代表着一个具体的ip地址。</p>
+<p>　　２.如何实例化InetAddress:</p>
+<p>　　　　①getByName(String hostName)</p>
+<p>　　　　②getLocalHost()</p>
+<p>　　3.域名： <a href="http://www.baidu.com" target="_blank" rel="noopener">www.baidu.com</a>   <a href="http://www.jd.com" target="_blank" rel="noopener">www.jd.com</a>   <a href="http://www.mi.com" target="_blank" rel="noopener">www.mi.com</a>  <a href="http://www.vip.com" target="_blank" rel="noopener">www.vip.com</a></p>
+<p>　　　　　　 <a href="http://www.facebook.com" target="_blank" rel="noopener">www.facebook.com</a></p>
+<p>​         localhost对应着127.0.0.1</p>
+<p>　　4.InetAddress类的常用方法：getHostName() / getHostAddress()</p>
+<p>　　5.端口号标识正在计算机上运行的进程（程序）</p>
+<p>　　　　注意：不同的进程有不同的端口号</p>
+<p>　　　　常见的端口号： http:80   tomcat : 8080   mysql：3306  oracle:1521等</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/11/1/12/day3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="顾思君">
+      <meta itemprop="description" content="直到这一刻微笑着说话为止，我至少留下了一公升眼泪">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="思君の博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/02/11/1/12/day3/" class="post-title-link" itemprop="url">day3</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-02-11 20:12:57" itemprop="dateCreated datePublished" datetime="2020-02-11T20:12:57+08:00">2020-02-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-12 14:58:45" itemprop="dateModified" datetime="2020-02-12T14:58:45+08:00">2020-02-12</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>579</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>equals   判断字符串内容</p>
+<p>Math.random  [0, 1)</p>
+<p>想获取【a,b】的数 ( int )(Math.random()*(b-a+1)+a)</p>
+<p>分支结构2：switch-case</p>
+<p>switch 语句的结束标志： } ，break</p>
+<p>default 可选，位置比较灵活</p>
+<p>switch中的表达式所代表的数据类型6种，只能是如下byte,short,char,int,枚举，String(jdk7.0新增)</p>
+<p>case 后只能是常量或者是常量表达式</p>
+<p>多个case可以共用一组语句，在最后一个case上写要执行的语句就好了，这里的最后一个case并不是}附近的一个，而是你要停止的一个</p>
+<p>凡是swith-case实现的结构，都可以转成if-else实现，反之不成立</p>
+<p>字符串方法：</p>
+<p>获取字符：charAt()</p>
+<p>循环结构4要素：</p>
+<p>初始化条件</p>
+<p>循环条件  —&gt;布尔类型</p>
+<p>循环体</p>
+<p>迭代条件</p>
+<p>当循环条件返回false,结束循环</p>
+<p>for和while 可以相互转换</p>
+<p>循环结构的结束方式：</p>
+<p> 1.循环条件返回false时</p>
+<p> 2.在循环体中，判断某个条件满足时，执行break (不确定循环次数时)</p>
+<p>​     while(true)   / for(;;)</p>
+<p>嵌套循环：</p>
+<p>一个循环结构a,作为另一个循环结构b的循环体实现</p>
+<p> 内层循环：循环结构a</p>
+<p> 外层循环：循环结构b</p>
+<p>技巧：</p>
+<p>1.外层循环控制行数</p>
+<p>   内层循环控制列数</p>
+<p>2.</p>
+<p>内层循环循环次数为m次，外层循环循环次数为n次，则一共循环m*n次</p>
 
       
     </div>
@@ -537,7 +823,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/11/1/12/day8/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/11/1/12/day4/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -551,7 +837,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2020/02/11/1/12/day8/" class="post-title-link" itemprop="url">day8</a>
+            <a href="/2020/02/11/1/12/day4/" class="post-title-link" itemprop="url">day4</a>
         </h1>
 
         <div class="post-meta">
@@ -568,7 +854,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-12 14:51:29" itemprop="dateModified" datetime="2020-02-12T14:51:29+08:00">2020-02-12</time>
+                <time title="修改时间：2020-02-12 21:43:10" itemprop="dateModified" datetime="2020-02-12T21:43:10+08:00">2020-02-12</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -588,7 +874,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.5k</span>
+              <span>1.3k</span>
             </span>
 
         </div>
@@ -600,70 +886,29 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>万事万物皆对象</p>
-<p>类的属性默认值和数组元素默认值一样</p>
-<h5 id="面向对象思想的体现一：类和对象的创建"><a href="#面向对象思想的体现一：类和对象的创建" class="headerlink" title="面向对象思想的体现一：类和对象的创建"></a>面向对象思想的体现一：类和对象的创建</h5><p>　1.创建类，即为提供类的内部结构：属性和方法</p>
-<p>　2.创建类的对象（类的实例化，实例化类）</p>
-<p>　3.可以通过“对象.属性”或“对象.方法”调用相关功能</p>
-<p>　特例：Math.sqrt(..)  / Math.random()</p>
-<p>如果创建了一个类的多个对象，那抹多个对象之间是彼此独立的。即每个对象，都拥有一套自己的属性</p>
-<p>当通过其中一个对象修改其属性值时，不会影响其他对象相同属性值</p>
-<p>堆：new 出来的结构，数组，对象</p>
-<p>栈：局部变量</p>
-<p>变量的分类：按照数据类型的分类：基本数据类型（8个） vs  引用数据类型（3个：数组、类、接口）</p>
-<p>　　　　　　 按照变量在类中声明的位置不同：成员变量（或属性） vs  局部变量</p>
-<p>类中属性的使用</p>
-<p>　　成员变量（或属性） vs  局部变量</p>
-<p>1.相同点：①声明的格式是相同的：数据类型 变量名 = 初始化值</p>
-<p>　　　　　②先声明后使</p>
-<p>　　　　　③变量都有作用域</p>
-<p>2.不同点：①类中声明的位置不同</p>
-<p>　　　　　 成员变量：在类的一对{}内直接声明的变量</p>
-<p>　　　　　局部变量：方法内声明的，方法的形参位置声明的，构造器内声明的，代码块内声明的都是局部变量</p>
-<p>　　　　　②成员变量可以在数据类型前声明权限修饰符，而局部变量是不可以声明权限修饰符的</p>
-<p>　　　　　 补充：权限修饰符有哪些？public 、private、protected、缺省</p>
-<p>　　　　　③成员变量：声明时，有默认初始化值。也就是说，我们在定义成员变量时，可以不显示的赋值</p>
-<p>　　　　　整形：byte,short,int,long : 0</p>
-<p>　　　　　浮点型：float，double : 0.0</p>
-<p>　　　　　字符型：char :0 (或表示为‘\u0000’)</p>
-<p>　　　　　布尔类型： boolean : flase</p>
-<p>　　　　　引用数据类型：null</p>
-<p>　　　　　 局部变量：没有默认初始化值。必须要在调用前，显示的赋值</p>
-<p>　　　　特别的：方法的形参。此局部变量在方法内调用前，不需要赋值。他的赋值，是在方法调用时。</p>
-<p>　　　　　④二者在内存中存放的位置，是不同的</p>
-<p>　　　　　　成员变量：存放在堆空间中</p>
-<p>　　　　　　局部变量：存放在栈空间中</p>
-<p>属性是依托于对象存在的</p>
-<p>类中方法的使用：</p>
-<p>​    方法：类中声明的一个结构，能够实现具体功能。Arrays.sort(int[] arr)   / Arrays.binarySearch(int[] arr,int value)</p>
-<p>   1.public void eat(String food){}</p>
-<p>​       public void show(){}</p>
-<p>​       public int returnAge(){}</p>
-<p>​       public String info(String nation){}        </p>
-<p>   2.方法声明的格式：</p>
-<p>​        权限修饰符 返回值类型 方法名（形参列表）{</p>
-<p>​           方法体</p>
-<p>   }</p>
-<p>​     3.具体说明：</p>
-<p>　　　①权限修饰符:可以理解为所被修饰的结构能被调用的范围的大小                   </p>
-<p>　　　　有如下的权限修饰：public,protected,缺省，private</p>
-<p>　　　②关于返回值类型：没有返回值：void</p>
-<p>　　　　　　　　　　　　有返回值：指明具体的返回值类型</p>
-<p>如果方法声明时，有返回值，那抹我们就需要在方法执行中，返回具体的满足相应类型的变量或者常量。比如return 1  或者 return index </p>
-<p>　　　说明：如果方法有返回值，方法中一定有return !</p>
-<p>　　　③方法名：属于标识符。需要命名时，满足标识符的命名规则和规范，“见名知意”</p>
-<p>　　　④.形参列表：可以声明0个，1个或者多个变量，如果声明了多个变量，中间用“ ，”分开</p>
-<p>　　　⑤.方法体:我们调用方法时，要执行的逻辑。</p>
-<p>　　　　方法的功能主要体现在方法体上。</p>
-<ol start="4">
-<li><p>①方法中调用当前类的属性或方法。(如果方法A中调用方法A:递归方法)</p>
-<p>②在方法体中，可以使用关键字：return ,reutrn的意思：返回，跳出</p>
-<p>③ 在方法内，不能再定义方法  </p>
-</li>
-</ol>
-<p>同一个包下，不允许定义两个同名的类</p>
-<p>在static方法中，调用非static的方法，需要使用对象调用</p>
-<p>​                 </p>
+          <p>素数判断：</p>
+<p>1.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">f1</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=<span class="number">100000</span>;i++)&#123;</span><br><span class="line">            <span class="keyword">boolean</span> isFlag = <span class="keyword">true</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">2</span>;j&lt;i;j++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(i%j==<span class="number">0</span>)&#123;</span><br><span class="line">                    isFlag=<span class="keyword">false</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(isFlag)&#123;</span><br><span class="line">                System.out.println(i);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">       </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这种方式浪费内存，外循环 boolean = true 相当于每次重新定义一个变量</p>
+<p>2.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">f1</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        <span class="keyword">boolean</span> isFlag = <span class="keyword">true</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=<span class="number">100000</span>;i++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">2</span>;j&lt;i;j++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(i%j==<span class="number">0</span>)&#123;</span><br><span class="line">                    isFlag=<span class="keyword">false</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(isFlag)&#123;</span><br><span class="line">                System.out.println(i);</span><br><span class="line">            &#125;</span><br><span class="line">            isFlag = <span class="keyword">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这种方式多写一行代码</p>
+<p>3.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">f1</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        <span class="keyword">long</span> start = System.currentTimeMillis();</span><br><span class="line">        <span class="keyword">int</span> PrimeNumberCount = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=<span class="number">100000</span>;i++)&#123;</span><br><span class="line">            <span class="keyword">boolean</span> isFlag = <span class="keyword">true</span>; <span class="comment">//标识</span></span><br><span class="line">            <span class="comment">//优化2:针对于质素数的优化</span></span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">2</span>;j&lt;=Math.sqrt(i);j++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(i%j==<span class="number">0</span>)&#123;</span><br><span class="line">                    isFlag=<span class="keyword">false</span>;</span><br><span class="line">                    <span class="comment">//优化1:主要针对于非质数</span></span><br><span class="line">                    <span class="keyword">break</span>;<span class="comment">//  结束包裹break关键字最近的一层</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(isFlag)&#123;</span><br><span class="line">                PrimeNumberCount++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(PrimeNumberCount);</span><br><span class="line">        <span class="keyword">long</span> end = System.currentTimeMillis();</span><br><span class="line">        System.out.println(<span class="string">"时间:"</span>+(end-start));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>currentTimeMillis()     获取系统当前时间对应的毫秒数</p>
+<p>break   结束包裹break关键字最近的一层</p>
+<p>break 和 continue</p>
+<p>适用范围：                                                           在循环中，表示：</p>
+<p>break: switch-case 或者 循环结构                     结束当前循环</p>
+<p>continue: 循环结构                                              结束当次循环</p>
+<p>相同点：</p>
+<p>关键字后面不能有输出语句，编译不通过</p>
+<p>附加：带标签的break和continue的使用</p>
 
       
     </div>
@@ -791,6 +1036,152 @@
 <p>　　面向对象程序设计重点是类的设计</p>
 <h5 id="四：类的主要成员：属性，方法"><a href="#四：类的主要成员：属性，方法" class="headerlink" title="四：类的主要成员：属性，方法"></a>四：类的主要成员：属性，方法</h5><p>　　 属性 = 成员变量 = filed = 域　</p>
 <p>　　方法 = 成员方法  = 成员函数 = method</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/11/1/12/day8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="顾思君">
+      <meta itemprop="description" content="直到这一刻微笑着说话为止，我至少留下了一公升眼泪">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="思君の博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/02/11/1/12/day8/" class="post-title-link" itemprop="url">day8</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-02-11 20:12:57" itemprop="dateCreated datePublished" datetime="2020-02-11T20:12:57+08:00">2020-02-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-12 14:51:29" itemprop="dateModified" datetime="2020-02-12T14:51:29+08:00">2020-02-12</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.5k</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>万事万物皆对象</p>
+<p>类的属性默认值和数组元素默认值一样</p>
+<h5 id="面向对象思想的体现一：类和对象的创建"><a href="#面向对象思想的体现一：类和对象的创建" class="headerlink" title="面向对象思想的体现一：类和对象的创建"></a>面向对象思想的体现一：类和对象的创建</h5><p>　1.创建类，即为提供类的内部结构：属性和方法</p>
+<p>　2.创建类的对象（类的实例化，实例化类）</p>
+<p>　3.可以通过“对象.属性”或“对象.方法”调用相关功能</p>
+<p>　特例：Math.sqrt(..)  / Math.random()</p>
+<p>如果创建了一个类的多个对象，那抹多个对象之间是彼此独立的。即每个对象，都拥有一套自己的属性</p>
+<p>当通过其中一个对象修改其属性值时，不会影响其他对象相同属性值</p>
+<p>堆：new 出来的结构，数组，对象</p>
+<p>栈：局部变量</p>
+<p>变量的分类：按照数据类型的分类：基本数据类型（8个） vs  引用数据类型（3个：数组、类、接口）</p>
+<p>　　　　　　 按照变量在类中声明的位置不同：成员变量（或属性） vs  局部变量</p>
+<p>类中属性的使用</p>
+<p>　　成员变量（或属性） vs  局部变量</p>
+<p>1.相同点：①声明的格式是相同的：数据类型 变量名 = 初始化值</p>
+<p>　　　　　②先声明后使</p>
+<p>　　　　　③变量都有作用域</p>
+<p>2.不同点：①类中声明的位置不同</p>
+<p>　　　　　 成员变量：在类的一对{}内直接声明的变量</p>
+<p>　　　　　局部变量：方法内声明的，方法的形参位置声明的，构造器内声明的，代码块内声明的都是局部变量</p>
+<p>　　　　　②成员变量可以在数据类型前声明权限修饰符，而局部变量是不可以声明权限修饰符的</p>
+<p>　　　　　 补充：权限修饰符有哪些？public 、private、protected、缺省</p>
+<p>　　　　　③成员变量：声明时，有默认初始化值。也就是说，我们在定义成员变量时，可以不显示的赋值</p>
+<p>　　　　　整形：byte,short,int,long : 0</p>
+<p>　　　　　浮点型：float，double : 0.0</p>
+<p>　　　　　字符型：char :0 (或表示为‘\u0000’)</p>
+<p>　　　　　布尔类型： boolean : flase</p>
+<p>　　　　　引用数据类型：null</p>
+<p>　　　　　 局部变量：没有默认初始化值。必须要在调用前，显示的赋值</p>
+<p>　　　　特别的：方法的形参。此局部变量在方法内调用前，不需要赋值。他的赋值，是在方法调用时。</p>
+<p>　　　　　④二者在内存中存放的位置，是不同的</p>
+<p>　　　　　　成员变量：存放在堆空间中</p>
+<p>　　　　　　局部变量：存放在栈空间中</p>
+<p>属性是依托于对象存在的</p>
+<p>类中方法的使用：</p>
+<p>​    方法：类中声明的一个结构，能够实现具体功能。Arrays.sort(int[] arr)   / Arrays.binarySearch(int[] arr,int value)</p>
+<p>   1.public void eat(String food){}</p>
+<p>​       public void show(){}</p>
+<p>​       public int returnAge(){}</p>
+<p>​       public String info(String nation){}        </p>
+<p>   2.方法声明的格式：</p>
+<p>​        权限修饰符 返回值类型 方法名（形参列表）{</p>
+<p>​           方法体</p>
+<p>   }</p>
+<p>​     3.具体说明：</p>
+<p>　　　①权限修饰符:可以理解为所被修饰的结构能被调用的范围的大小                   </p>
+<p>　　　　有如下的权限修饰：public,protected,缺省，private</p>
+<p>　　　②关于返回值类型：没有返回值：void</p>
+<p>　　　　　　　　　　　　有返回值：指明具体的返回值类型</p>
+<p>如果方法声明时，有返回值，那抹我们就需要在方法执行中，返回具体的满足相应类型的变量或者常量。比如return 1  或者 return index </p>
+<p>　　　说明：如果方法有返回值，方法中一定有return !</p>
+<p>　　　③方法名：属于标识符。需要命名时，满足标识符的命名规则和规范，“见名知意”</p>
+<p>　　　④.形参列表：可以声明0个，1个或者多个变量，如果声明了多个变量，中间用“ ，”分开</p>
+<p>　　　⑤.方法体:我们调用方法时，要执行的逻辑。</p>
+<p>　　　　方法的功能主要体现在方法体上。</p>
+<ol start="4">
+<li><p>①方法中调用当前类的属性或方法。(如果方法A中调用方法A:递归方法)</p>
+<p>②在方法体中，可以使用关键字：return ,reutrn的意思：返回，跳出</p>
+<p>③ 在方法内，不能再定义方法  </p>
+</li>
+</ol>
+<p>同一个包下，不允许定义两个同名的类</p>
+<p>在static方法中，调用非static的方法，需要使用对象调用</p>
+<p>​                 </p>
 
       
     </div>
@@ -1012,133 +1403,6 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/11/1/12/java8%E6%96%B0%E7%89%B9%E6%80%A71/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="顾思君">
-      <meta itemprop="description" content="直到这一刻微笑着说话为止，我至少留下了一公升眼泪">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="思君の博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/02/11/1/12/java8%E6%96%B0%E7%89%B9%E6%80%A71/" class="post-title-link" itemprop="url">java8新特性1</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-02-11 20:12:57" itemprop="dateCreated datePublished" datetime="2020-02-11T20:12:57+08:00">2020-02-11</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-12 13:17:29" itemprop="dateModified" datetime="2020-02-12T13:17:29+08:00">2020-02-12</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java/" itemprop="url" rel="index">
-                    <span itemprop="name">java</span>
-                  </a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>1.2k</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>一、Stream API 的操作步骤：</p>
-<ol>
-<li><p>创建 Stream</p>
-</li>
-<li><p>中间操作</p>
-</li>
-<li><p>终止操作(终端操作)</p>
-</li>
-</ol>
-<p>中间操作:</p>
-<p> 筛选与切片</p>
-<p>​    filter——接收 Lambda ， 从流中排除某些元素。<br>​    limit——截断流，使其元素不超过给定数量。<br>​    skip(n) —— 跳过元素，返回一个扔掉了前 n 个元素的流。若流中元素不足 n 个，则    返回一个空流。与   limit(n) 互补<br>​    distinct——筛选，通过流所生成元素的 hashCode() 和 equals() 去除重复元素</p>
-<p>映射<br>  map——接收 Lambda ， 将元素转换成其他形式或提取信息。接收一个函数作为参数，该函数会被应用到每     个元素上，并将其映射成一个新的元素。<br> flatMap——接收一个函数作为参数，将流中的每个值都换成另一个流，然后把所有流连接成一个流</p>
-<p>sorted()——自然排序<br>sorted(Comparator com)——定制排序</p>
-<p>终止操作:<br>   allMatch——检查是否匹配所有元素<br>   anyMatch——检查是否至少匹配一个元素<br>   noneMatch——检查是否没有匹配的元素<br>   findFirst——返回第一个元素<br>   findAny——返回当前流中的任意元素<br>   count——返回流中元素的总个数<br>   max——返回流中最大值<br>   min——返回流中最小值</p>
-<p>归约<br>reduce(T identity, BinaryOperator) / reduce(BinaryOperator) ——可以将流中元素反复结合起来，得到一个值。</p>
-<p>收集</p>
-<p>collect——将流转换为其他形式。接收一个 Collector接口的实现，用于给Stream中元素做汇总的方法</p>
-<p>注意：流进行了终止操作后，不能再次使用</p>
-<p>二、Optional 容器类：用于尽量避免空指针异常</p>
-<ul>
-<li>Optional.of(T t) : 创建一个 Optional 实例</li>
-<li>Optional.empty() : 创建一个空的 Optional 实例</li>
-<li>Optional.ofNullable(T t):若 t 不为 null,创建 Optional 实例,否则创建空实例</li>
-<li>isPresent() : 判断是否包含值</li>
-<li>orElse(T t) :  如果调用对象包含值，返回该值，否则返回t</li>
-<li>orElseGet(Supplier s) :如果调用对象包含值，返回该值，否则返回 s 获取的值</li>
-<li>map(Function f): 如果有值对其处理，并返回处理后的Optional，否则返回 Optional.empty()</li>
-<li>flatMap(Function mapper):与 map 类似，要求返回值必须是Optional</li>
-</ul>
-<p>三、时间</p>
-<ol>
-<li><p>LocalDate、LocalTime、LocalDateTime</p>
-</li>
-<li><p>Instant : 时间戳。 （使用 Unix 元年  1970年1月1日 00:00:00 所经历的毫秒值）</p>
-</li>
-<li><p>Duration : 用于计算两个“时间”间隔<br>Period : 用于计算两个“日期”间隔</p>
-</li>
-<li><p>TemporalAdjuster : 时间校正器</p>
-</li>
-<li><p>DateTimeFormatter : 解析和格式化日期或时间</p>
-</li>
-<li><p>ZonedDate、ZonedTime、ZonedDateTime ： 带时区的时间或日期</p>
-</li>
-</ol>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/11/1/12/%E8%BF%9B%E9%98%B61/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1259,177 +1523,11 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/11/1/12/%E8%BF%9B%E9%98%B63/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="顾思君">
-      <meta itemprop="description" content="直到这一刻微笑着说话为止，我至少留下了一公升眼泪">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="思君の博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/02/11/1/12/%E8%BF%9B%E9%98%B63/" class="post-title-link" itemprop="url">进阶3</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-02-11 20:12:57" itemprop="dateCreated datePublished" datetime="2020-02-11T20:12:57+08:00">2020-02-11</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-12 15:15:43" itemprop="dateModified" datetime="2020-02-12T15:15:43+08:00">2020-02-12</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java/" itemprop="url" rel="index">
-                    <span itemprop="name">java</span>
-                  </a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>1.6k</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>关于方法的重载(overload)<br>优点：</p>
-<p>　1.程序员只需要记忆很少的方法名,方便调用</p>
-<p>　2.代码更加关注<br>什么时候发生方法的重载：</p>
-<p>　1.发生在同一个类中</p>
-<p>　2.方法名不同</p>
-<p>　3.参数列表不同(类型,个数,顺序)</p>
-<p>方法的重载和方法的返回值以及形参名无关</p>
-<p>方法的执行原理:</p>
-<p>　方法在调用的时候,才会给该方法在内存中分配空间</p>
-<p>　如果这个方法只是定义没有调用,则不会在内存中分配空间</p>
-<p>方法调用的时候在“栈”中分配空间,(JVM)内存中有一块内存是栈结构<br>方法调用其实就是“压栈”<br>方法结束其实就是“弹栈”</p>
-<p>关于方法的递归调用</p>
-<p>　1.方法的递归调用就是方法自身调用自身</p>
-<p>类：一类具有相同特征的事物构成的集合</p>
-<p>　把现实世界中的抽象化<br>实例：类的具体化</p>
-<p>OOA   面向对象的分析<br>OOD   面向对象的设计<br>OOP   面向对象的编程</p>
-<p>JVM中所有new出来的数据统一被储存在堆区中，程序员是无法对堆区数据直接操作，<br>只能通过内存地址间接访问</p>
-<p>访问成员变量或者成员方法必须使用“引用.”(成员变量属于对象级的)</p>
-<p>面向对象的封装性指的是：</p>
-<p>　1.属性私有化</p>
-<p>　2.对外部提供公开的setter,getter</p>
-<p>　 set和get方法的方法名应该遵循规范</p>
-<p>关于java类的构造函数</p>
-<p>　1.构造方法语法</p>
-<p>　[修饰符列表] 构造方法名[形式参数表]{</p>
-<p>　　方法体</p>
-<p>　}</p>
-<p>　2.构造方法的方法名必须要类名一致</p>
-<p>　3.构造方法的作用是什莫？</p>
-<p>　　第一:创建对象</p>
-<p>　　第二：初始化对象的属性</p>
-<p>　4.构造方法应该如何调用？</p>
-<p>　　new 构造方法名(实参)； 在堆中开辟空间储存对象</p>
-<p>　5.如果一个类没有提供任何构造方法，系统会默认提供无参构造方法</p>
-<p>　　如果一个类已经手动提供了构造方法，那抹系统不再提供任何构造方法</p>
-<p>　6.成员变量到底什么时候赋值？</p>
-<p>　　只有在调用构造方法的时候，才会给成员变量赋值</p>
-<p>GC垃圾回收机制主要针对堆中的数据，当没有更多的引用指向时，则会被垃圾回收机制<br>如果使用空的引用去访问，则会出现空指针异常</p>
-<p>参数传递的问题：</p>
-<p>　1.传递的数据是基本数据类型 （值）</p>
-<p>　2.传递的数据是引用数据类型 （地址）</p>
-<p>this关键字：</p>
-<p>　1.this是什么？</p>
-<p>　 this是一个引用类型</p>
-<p>　在堆中java的每个对象中都有一个this，保存地址指向当前对象</p>
-<p>　2.this能用在哪些地方？</p>
-<p>　　构造方法，实例方法</p>
-<p>this可以用来区分成员变量和局部变量</p>
-<p>　this不能出现在静态方法中：</p>
-<p>　 静态方法的执行根本不需要java对象的存在,直接使用 类名.方式的访问</p>
-<p>　 而this代表的是当前对象,所以静态方法中根本没有this</p>
-<p>static关键字：</p>
-<p>　1.static修饰的变量叫做”静态变量”</p>
-<p>　2.static修饰的方法叫做”静态方法”</p>
-<p>　3.static还可以定义静态语句块</p>
-<p>　static定义的静态语句块在类加载阶段执行,并且只执行一次，并且是自上而下的顺序执行</p>
-<p>　关于实例语句块：</p>
-<p>　每一次调用构造方法之前会执行一次</p>
-<p>　实例语句块执行顺序也是自上而下</p>
-<p>　static修饰的方法叫做静态方法</p>
-<p>　静态方法正规方式访问：”类名.”方式调用</p>
-<p>　一般情况下工具类中的大部分方法都是静态方法</p>
-<p>　静态方法不用创建对象也能直接访问该方法</p>
-<p>　静态方法中不能直接访问非静态数据　</p>
-<p>　静态方法中不能使用this</p>
-<p>　　！！静态方法也能使用“引用.”访问,在编译阶段检查出类型,运行的时候仍然使用”类.调用”</p>
-<p>　static修饰的变量叫做“静态变量”</p>
-<p>　方法区</p>
-<p>　什么时候变量声明为静态变量？</p>
-<p>　如果这个属性所有的对象都有,并且这个属性的值是相同的，则该属性声明成静态的属性</p>
-<p>　静态变量储存在方法区，所有的java对象共享这一份</p>
-<p>　所以静态变量是类级别的，使用“类名.”的方式访问</p>
-<p>单例设计模式：</p>
-<p>　1.构造方法私有化</p>
-<p>　2.对外提供一个公开的静态的获取当前类型对象的方法</p>
-<p>　3.提供一个当前类型的静态变量</p>
-<p>单例设计模式分为两种：</p>
-<p>　懒汉式</p>
-<p>　饿汉式</p>
-<p>继承：</p>
-<p>　引入类继承基本的作用：代码复用</p>
-<p>　语法：</p>
-<p>　　[修饰符列表] class 子类名 extends 父类名 {</p>
-<p>　　　类体<br>    　}<br>java语言单继承<br>java语言中子类继承父类,会将父类中所有的数据全部继承,包括私有的也能全部继承过来<br>但是在子类中无法直接方法父类中的私有数据，但是可以间接的访问。<br>注意：构造方法无法被子类继承</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -1497,7 +1595,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">40</span>
+          <span class="site-state-item-count">41</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1555,7 +1653,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">76k</span>
+    <span title="站点总字数">78k</span>
 </div>
 
 

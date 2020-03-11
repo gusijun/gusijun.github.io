@@ -129,7 +129,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">40</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">41</span></a>
 
   </li>
   </ul>
@@ -154,6 +154,458 @@
             
 
   <div class="posts-expand">
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/11/1/12/java8%E6%96%B0%E7%89%B9%E6%80%A71/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="顾思君">
+      <meta itemprop="description" content="直到这一刻微笑着说话为止，我至少留下了一公升眼泪">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="思君の博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/02/11/1/12/java8%E6%96%B0%E7%89%B9%E6%80%A71/" class="post-title-link" itemprop="url">java8新特性1</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-02-11 20:12:57" itemprop="dateCreated datePublished" datetime="2020-02-11T20:12:57+08:00">2020-02-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-12 13:17:29" itemprop="dateModified" datetime="2020-02-12T13:17:29+08:00">2020-02-12</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.2k</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>一、Stream API 的操作步骤：</p>
+<ol>
+<li><p>创建 Stream</p>
+</li>
+<li><p>中间操作</p>
+</li>
+<li><p>终止操作(终端操作)</p>
+</li>
+</ol>
+<p>中间操作:</p>
+<p> 筛选与切片</p>
+<p>​    filter——接收 Lambda ， 从流中排除某些元素。<br>​    limit——截断流，使其元素不超过给定数量。<br>​    skip(n) —— 跳过元素，返回一个扔掉了前 n 个元素的流。若流中元素不足 n 个，则    返回一个空流。与   limit(n) 互补<br>​    distinct——筛选，通过流所生成元素的 hashCode() 和 equals() 去除重复元素</p>
+<p>映射<br>  map——接收 Lambda ， 将元素转换成其他形式或提取信息。接收一个函数作为参数，该函数会被应用到每     个元素上，并将其映射成一个新的元素。<br> flatMap——接收一个函数作为参数，将流中的每个值都换成另一个流，然后把所有流连接成一个流</p>
+<p>sorted()——自然排序<br>sorted(Comparator com)——定制排序</p>
+<p>终止操作:<br>   allMatch——检查是否匹配所有元素<br>   anyMatch——检查是否至少匹配一个元素<br>   noneMatch——检查是否没有匹配的元素<br>   findFirst——返回第一个元素<br>   findAny——返回当前流中的任意元素<br>   count——返回流中元素的总个数<br>   max——返回流中最大值<br>   min——返回流中最小值</p>
+<p>归约<br>reduce(T identity, BinaryOperator) / reduce(BinaryOperator) ——可以将流中元素反复结合起来，得到一个值。</p>
+<p>收集</p>
+<p>collect——将流转换为其他形式。接收一个 Collector接口的实现，用于给Stream中元素做汇总的方法</p>
+<p>注意：流进行了终止操作后，不能再次使用</p>
+<p>二、Optional 容器类：用于尽量避免空指针异常</p>
+<ul>
+<li>Optional.of(T t) : 创建一个 Optional 实例</li>
+<li>Optional.empty() : 创建一个空的 Optional 实例</li>
+<li>Optional.ofNullable(T t):若 t 不为 null,创建 Optional 实例,否则创建空实例</li>
+<li>isPresent() : 判断是否包含值</li>
+<li>orElse(T t) :  如果调用对象包含值，返回该值，否则返回t</li>
+<li>orElseGet(Supplier s) :如果调用对象包含值，返回该值，否则返回 s 获取的值</li>
+<li>map(Function f): 如果有值对其处理，并返回处理后的Optional，否则返回 Optional.empty()</li>
+<li>flatMap(Function mapper):与 map 类似，要求返回值必须是Optional</li>
+</ul>
+<p>三、时间</p>
+<ol>
+<li><p>LocalDate、LocalTime、LocalDateTime</p>
+</li>
+<li><p>Instant : 时间戳。 （使用 Unix 元年  1970年1月1日 00:00:00 所经历的毫秒值）</p>
+</li>
+<li><p>Duration : 用于计算两个“时间”间隔<br>Period : 用于计算两个“日期”间隔</p>
+</li>
+<li><p>TemporalAdjuster : 时间校正器</p>
+</li>
+<li><p>DateTimeFormatter : 解析和格式化日期或时间</p>
+</li>
+<li><p>ZonedDate、ZonedTime、ZonedDateTime ： 带时区的时间或日期</p>
+</li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/11/1/12/%E8%BF%9B%E9%98%B62/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="顾思君">
+      <meta itemprop="description" content="直到这一刻微笑着说话为止，我至少留下了一公升眼泪">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="思君の博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/02/11/1/12/%E8%BF%9B%E9%98%B62/" class="post-title-link" itemprop="url">进阶2</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-02-11 20:12:57" itemprop="dateCreated datePublished" datetime="2020-02-11T20:12:57+08:00">2020-02-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-12 15:12:20" itemprop="dateModified" datetime="2020-02-12T15:12:20+08:00">2020-02-12</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>2.2k</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>关于java语言中的数据类型</p>
+<p>　byte   1byte(8bit)  -128-127</p>
+<p>　short  2byte</p>
+<p>　int    4byte</p>
+<p>　long   8byte<br>整数有3中表现形式:</p>
+<p>　十进制</p>
+<p>　八进制　 以0开始</p>
+<p>　十六进制 以0x开始</p>
+<p>在java中基本类型可以相互转换,boolean类型比较特殊不可以转换成其他类型</p>
+<p>转换分为自动类型提升和强制类型转换：</p>
+<p>　自动类型提升:容量小的类型会默认转换为容量大的类型</p>
+<p>　byte -&gt; short -&gt; int -&gt; long -&gt; float -&gt; double</p>
+<p>　char</p>
+<p>byte,short,char之间计算不会相互转换,首先先转成int</p>
+<p>　强制类型转换：</p>
+<p>　　将容量大的类型转换成容量小的类型,需要进行强制转换</p>
+<p>　　注意：只要不超出范围可以将整型值直接赋值给byte,short,char</p>
+<p>在多种类型混合运算过程中,首先将所有数据转换成容量大的那种,再运算</p>
+<p>关于java中的布尔类型</p>
+<p>　1.boolean类型的数据只有两个值:true/false，没有1和0</p>
+<p>　2.boolean类型的数据主要用在逻辑运算和条件控制语句中<br>java程序分为编译期和运行期</p>
+<p>关系运算符</p>
+<p>＞<br>＞=    大等于<br>&lt;     小于<br>&lt;=    小等于<br>==    判断是否相等(基本数据类型)<br>!=    不等于<br>关系运算符的运算结果一定是boolean类型</p>
+<p>布尔运算符(逻辑运算符)</p>
+<p>　&amp;     逻辑与</p>
+<p>　|     逻辑或</p>
+<p>　!     逻辑非</p>
+<p>　^     逻辑异或</p>
+<p>　&amp;&amp;    短路与</p>
+<p>　||    短路或<br>短路：后边那个表达式不执行</p>
+<p>　什么时候发生短路与? 第一个算子结果是false的时候</p>
+<p>　什么时候发生短路或？第一个算子结果是true的时候<br>布尔运算符两边的(算子)必须是布尔类型,整个表达式的运算结果也是一个布尔类型</p>
+<p>关于赋值运算符</p>
+<p>　基本的赋值运算符</p>
+<p>　=</p>
+<p>　扩展的赋值运算符</p>
+<p>　+=    追加</p>
+<p>　-=</p>
+<p>　*=</p>
+<p>　/=</p>
+<p>　%=<br>基本运算符和扩展运算符的区别？　</p>
+<p>　扩展运算符不会改变变量本身的数据类型</p>
+<p>关于字符串连接运算符</p>
+<p>　＋运算符可以：</p>
+<p>　　1.做加法运算(+两边只要都是数字类型,一定是加法运算)</p>
+<p>　　2.字符串连接(+两边任意一端只要是字符串类型,则一定是字符串连接)</p>
+<p>条件运算符(三目运算符)</p>
+<p>　？：</p>
+<p>　语法：</p>
+<p>　　boolean表达式?表达式1:表达式2</p>
+<p>　　boolean表示式的结果是true，则整个表达式的结果就是表达式1的结果,相反则是表达式2的结果</p>
+<p>关于条件控制语句:流程控制语句if…else<br>    1.语法<br>    第一种结构：<br>        if(boolean表达式){<br>        java语句;<br>    }<br>    第二种结构:<br>    if(boolean表达式){<br>        java语句;<br>    }else{<br>        java语句;<br>    }<br>    第三种结构:<br>    if（boolean表达式）{<br>        java语句;<br>    }else if(boolean表达式){<br>        java语句；<br>    }else if(boolean表达式){<br>        java语句；<br>    }<br>    第四种结构:<br>    if（boolean表达式）{<br>        java语句;<br>    }else if(boolean表达式){<br>        java语句；<br>    }else if(boolean表达式){<br>        java语句；<br>    }else{<br>    }<br>注意：在if语句中只要有一个分支执行,则整个if语句结束</p>
+<p>　　上面的结构2.4可以保证一定会有一个分支语句执行,因为他们都有else语句。<br>！！ else 有隐藏条件</p>
+<p>关于switch语句:<br>    1.语法:<br>        switch(int类型){<br>            case int类型:<br>            java语句；<br>            java语句；<br>            break;</p>
+<p>​           case int类型:<br>           java语句；<br>​           java语句；<br>​           break;</p>
+<p>​           case int类型:<br>​           java语句；<br>​           java语句；<br>​           break;</p>
+<p>​            default:<br>​            java语句；<br>​    }</p>
+<p>注意：break；语句可以没有，default也可以没有<br>      break语句如果没有，则发生case穿透现象<br>      switch后面的括号可以填写byte/short/char类型,因为可以自动转换<br>      jdk7.0可以是String类型<br>      case可以合并        </p>
+<p>for 循环:<br>    语法：<br>    for(表达式1;表达式2;表达式3){<br>        java语句<br>    }<br>    表达式1是初始化表达式,最先执行,只执行一次<br>    表达式2必须是boolean类型的表达式</p>
+<p>for循环开始执行,先执行表达式1,并只执行一次,进而判断表达式2的结果,如果是true<br>则执行java语句,再执行表达式3,然后再判断表达式2的结果，知道表达式2的结果是false<br>则for循环结束。</p>
+<p>关于while循环<br>    语法<br>        while(boolean表达式）{<br>            java语句；<br>        }<br>该循环的执行次数:0-N</p>
+<p>关于do…while…<br>    语法：<br>        do{<br>            java语句；<br>        }while(boolean表达式)；</p>
+<p>该循环的执行次数:1-N</p>
+<p>break语句：</p>
+<ul>
+<li><p>可以用在switch语句中,结束分支语句</p>
+</li>
+<li><p>break；语句可以出现在循环当中,默认情况下结束离它最近的一个循环<br>continue语句:可以用来结束当前一次循环,直接进入下一次循环继续执行</p>
+<p>通过break可以指定结束某个循环(标签)</p>
+</li>
+</ul>
+<p>定义方法的语法：    </p>
+<p>　[方法的修饰列表] 方法的返回值类型 方法名(方法的形参列表){</p>
+<p>　　java语句；</p>
+<p>　}</p>
+<p>1.[方法的修饰列表]是可选项 。暂时携程public static<br>2.方法的返回值类型,可以是java语言中的任何一种数据类型(基本数据类型和引用数据类型)<br>3.如果该方法执行结束之后,并没有任何返回值,那抹定义方法的时候,返回值类型写:void<br>4.方法名只要是合法的标识符即可<br>5.方法的形参参数列表,可以有参数,也可以没有参数,如果有多个参数的话使用”逗号”分开<br>6.如果一个方法的返回值的类型不是void，那抹在方法体中必须使用return语句来返回数据</p>
+<p>方法的形式参数列表中起决定性作用的是参数的类型<br>参数的名字（局部变量的名字）是随意的只要是合法的标识符即可</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/11/1/12/%E8%BF%9B%E9%98%B63/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="顾思君">
+      <meta itemprop="description" content="直到这一刻微笑着说话为止，我至少留下了一公升眼泪">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="思君の博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/02/11/1/12/%E8%BF%9B%E9%98%B63/" class="post-title-link" itemprop="url">进阶3</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-02-11 20:12:57" itemprop="dateCreated datePublished" datetime="2020-02-11T20:12:57+08:00">2020-02-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-12 15:15:43" itemprop="dateModified" datetime="2020-02-12T15:15:43+08:00">2020-02-12</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.6k</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>关于方法的重载(overload)<br>优点：</p>
+<p>　1.程序员只需要记忆很少的方法名,方便调用</p>
+<p>　2.代码更加关注<br>什么时候发生方法的重载：</p>
+<p>　1.发生在同一个类中</p>
+<p>　2.方法名不同</p>
+<p>　3.参数列表不同(类型,个数,顺序)</p>
+<p>方法的重载和方法的返回值以及形参名无关</p>
+<p>方法的执行原理:</p>
+<p>　方法在调用的时候,才会给该方法在内存中分配空间</p>
+<p>　如果这个方法只是定义没有调用,则不会在内存中分配空间</p>
+<p>方法调用的时候在“栈”中分配空间,(JVM)内存中有一块内存是栈结构<br>方法调用其实就是“压栈”<br>方法结束其实就是“弹栈”</p>
+<p>关于方法的递归调用</p>
+<p>　1.方法的递归调用就是方法自身调用自身</p>
+<p>类：一类具有相同特征的事物构成的集合</p>
+<p>　把现实世界中的抽象化<br>实例：类的具体化</p>
+<p>OOA   面向对象的分析<br>OOD   面向对象的设计<br>OOP   面向对象的编程</p>
+<p>JVM中所有new出来的数据统一被储存在堆区中，程序员是无法对堆区数据直接操作，<br>只能通过内存地址间接访问</p>
+<p>访问成员变量或者成员方法必须使用“引用.”(成员变量属于对象级的)</p>
+<p>面向对象的封装性指的是：</p>
+<p>　1.属性私有化</p>
+<p>　2.对外部提供公开的setter,getter</p>
+<p>　 set和get方法的方法名应该遵循规范</p>
+<p>关于java类的构造函数</p>
+<p>　1.构造方法语法</p>
+<p>　[修饰符列表] 构造方法名[形式参数表]{</p>
+<p>　　方法体</p>
+<p>　}</p>
+<p>　2.构造方法的方法名必须要类名一致</p>
+<p>　3.构造方法的作用是什莫？</p>
+<p>　　第一:创建对象</p>
+<p>　　第二：初始化对象的属性</p>
+<p>　4.构造方法应该如何调用？</p>
+<p>　　new 构造方法名(实参)； 在堆中开辟空间储存对象</p>
+<p>　5.如果一个类没有提供任何构造方法，系统会默认提供无参构造方法</p>
+<p>　　如果一个类已经手动提供了构造方法，那抹系统不再提供任何构造方法</p>
+<p>　6.成员变量到底什么时候赋值？</p>
+<p>　　只有在调用构造方法的时候，才会给成员变量赋值</p>
+<p>GC垃圾回收机制主要针对堆中的数据，当没有更多的引用指向时，则会被垃圾回收机制<br>如果使用空的引用去访问，则会出现空指针异常</p>
+<p>参数传递的问题：</p>
+<p>　1.传递的数据是基本数据类型 （值）</p>
+<p>　2.传递的数据是引用数据类型 （地址）</p>
+<p>this关键字：</p>
+<p>　1.this是什么？</p>
+<p>　 this是一个引用类型</p>
+<p>　在堆中java的每个对象中都有一个this，保存地址指向当前对象</p>
+<p>　2.this能用在哪些地方？</p>
+<p>　　构造方法，实例方法</p>
+<p>this可以用来区分成员变量和局部变量</p>
+<p>　this不能出现在静态方法中：</p>
+<p>　 静态方法的执行根本不需要java对象的存在,直接使用 类名.方式的访问</p>
+<p>　 而this代表的是当前对象,所以静态方法中根本没有this</p>
+<p>static关键字：</p>
+<p>　1.static修饰的变量叫做”静态变量”</p>
+<p>　2.static修饰的方法叫做”静态方法”</p>
+<p>　3.static还可以定义静态语句块</p>
+<p>　static定义的静态语句块在类加载阶段执行,并且只执行一次，并且是自上而下的顺序执行</p>
+<p>　关于实例语句块：</p>
+<p>　每一次调用构造方法之前会执行一次</p>
+<p>　实例语句块执行顺序也是自上而下</p>
+<p>　static修饰的方法叫做静态方法</p>
+<p>　静态方法正规方式访问：”类名.”方式调用</p>
+<p>　一般情况下工具类中的大部分方法都是静态方法</p>
+<p>　静态方法不用创建对象也能直接访问该方法</p>
+<p>　静态方法中不能直接访问非静态数据　</p>
+<p>　静态方法中不能使用this</p>
+<p>　　！！静态方法也能使用“引用.”访问,在编译阶段检查出类型,运行的时候仍然使用”类.调用”</p>
+<p>　static修饰的变量叫做“静态变量”</p>
+<p>　方法区</p>
+<p>　什么时候变量声明为静态变量？</p>
+<p>　如果这个属性所有的对象都有,并且这个属性的值是相同的，则该属性声明成静态的属性</p>
+<p>　静态变量储存在方法区，所有的java对象共享这一份</p>
+<p>　所以静态变量是类级别的，使用“类名.”的方式访问</p>
+<p>单例设计模式：</p>
+<p>　1.构造方法私有化</p>
+<p>　2.对外提供一个公开的静态的获取当前类型对象的方法</p>
+<p>　3.提供一个当前类型的静态变量</p>
+<p>单例设计模式分为两种：</p>
+<p>　懒汉式</p>
+<p>　饿汉式</p>
+<p>继承：</p>
+<p>　引入类继承基本的作用：代码复用</p>
+<p>　语法：</p>
+<p>　　[修饰符列表] class 子类名 extends 父类名 {</p>
+<p>　　　类体<br>    　}<br>java语言单继承<br>java语言中子类继承父类,会将父类中所有的数据全部继承,包括私有的也能全部继承过来<br>但是在子类中无法直接方法父类中的私有数据，但是可以间接的访问。<br>注意：构造方法无法被子类继承</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
         
   
   
@@ -825,6 +1277,261 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/11/1/12/%E8%BF%9B%E9%98%B68/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="顾思君">
+      <meta itemprop="description" content="直到这一刻微笑着说话为止，我至少留下了一公升眼泪">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="思君の博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/02/11/1/12/%E8%BF%9B%E9%98%B68/" class="post-title-link" itemprop="url">进阶８</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-02-11 20:12:57" itemprop="dateCreated datePublished" datetime="2020-02-11T20:12:57+08:00">2020-02-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-12 15:43:04" itemprop="dateModified" datetime="2020-02-12T15:43:04+08:00">2020-02-12</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.3k</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>java.io.*;</p>
+<p>FileInputStream<br>FileOutputStream<br>FileReader<br>FileWriter</p>
+<p>BufferedReader    带有缓冲区的字符输入流<br>BufferedWriter     带有缓冲区的字符输出流</p>
+<p>字节<br>BufferedInputStream<br>BufferedOutputStream</p>
+<p>DateInputStream<br>DateOutputStream</p>
+<p>ObjectInputStream<br>ObjectOutputStream</p>
+<p>转换流（字节流转换成字符流）<br>InputStreamReader<br>OutputStreamWriter</p>
+<p>PrintWriter<br>PrintStream  标椎输出流，默认输出到控制台</p>
+<p>java语言中的流分为:4大家族(InputStream,OutputStream,Reader,Writer)</p>
+<p>java.io.InputStream</p>
+<p>　java.io.FileInputStream  文件字节输入流</p>
+<p>　按照字节方式读取文件</p>
+<p>int read()<br>int read(byte[] bytes)<br>available    流中估计的字节数<br>skip(int n)  跳过多少个字节</p>
+<p>java.io.OutputStream</p>
+<p>　java.io.FileOutputStream  文件字节输出流</p>
+<p>　将计算机内存中的数据写入硬盘文件中</p>
+<p>java.io.Reader;</p>
+<p>　java.io.InputStremReader; 转换流</p>
+<p>　　java.io.FileReader; 文件字符输出流<br>skip</p>
+<p>java.io.Writer;</p>
+<p> java.io.ObjectOutputStream 序列化JAVA对象到硬盘(Serial)</p>
+<p>　　java.io.ObjectInputStream 将硬盘中的数据“反序列化”到JVM内存中（DeSerial）</p>
+<p>Compile 编译(java–&gt;class)<br>Decompile 反编译(class–&gt;java)</p>
+<p>标识接口的作用:起到标识的作用</p>
+<p>　 JVM如果看到该对象实现某个标识接口,会对它特殊待遇</p>
+<p>java.io.OutputStreamWriter; 转换流</p>
+<p>　java.io.FileWriter;  文件字符输出流</p>
+<p>java.io.DateOutputStream 数据字节输出流</p>
+<p>　可以将内存中的“int i = 10”写入到硬盘文件中</p>
+<p>　写进去的不是字符串,写进去的是二进制数据,带类型</p>
+<p>注意:要使用该流数据读取数据,必须提前知道该文件中数据存储格式,顺序</p>
+<p>　　读的顺序必须和写入的顺序一致</p>
+<p>根据流出现的位置,流又可以分为:包装流或者处理流和节点流</p>
+<p>java.io.ObjectOutputStream 序列化JAVA对象到硬盘(Serial)<br>java.io.ObjectInputStream 将硬盘中的数据“反序列化”到JVM内存中（DeSerial）</p>
+<p>Compile 编译(java–&gt;class)<br>Decompile 反编译(class–&gt;java</p>
+<p>标识接口的作用:起到标识的作用<br>   JVM如果看到该对象实现某个标识接口,会对它特殊待遇</p>
+<p>Serializable 可序列化<br>transient 不参加序列化</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/11/1/12/%E8%BF%9B%E9%98%B69/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="顾思君">
+      <meta itemprop="description" content="直到这一刻微笑着说话为止，我至少留下了一公升眼泪">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="思君の博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/02/11/1/12/%E8%BF%9B%E9%98%B69/" class="post-title-link" itemprop="url">进阶9</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-02-11 20:12:57" itemprop="dateCreated datePublished" datetime="2020-02-11T20:12:57+08:00">2020-02-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-12 15:42:04" itemprop="dateModified" datetime="2020-02-12T15:42:04+08:00">2020-02-12</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>3.6k</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>File<br>   boolean canExecute()<br>          测试应用程序是否可以执行此抽象路径名表示的文件。<br> boolean canRead()<br>          测试应用程序是否可以读取此抽象路径名表示的文件。<br> boolean canWrite()<br>          测试应用程序是否可以修改此抽象路径名表示的文件。<br> int compareTo(File pathname)<br>          按字母顺序比较两个抽象路径名。<br> boolean createNewFile()<br>          当且仅当不存在具有此抽象路径名指定名称的文件时，不可分地创建一个新的空文件。<br>static File createTempFile(String prefix, String suffix)<br>          在默认临时文件目录中创建一个空文件，使用给定前缀和后缀生成其名称。<br>static File createTempFile(String prefix, String suffix, File directory)<br>           在指定目录中创建一个新的空文件，使用给定的前缀和后缀字符串生成其名称。<br> boolean delete()<br>          删除此抽象路径名表示的文件或目录。<br> void deleteOnExit()<br>          在虚拟机终止时，请求删除此抽象路径名表示的文件或目录。<br> boolean equals(Object obj)<br>          测试此抽象路径名与给定对象是否相等。<br> boolean exists()<br>          测试此抽象路径名表示的文件或目录是否存在。<br> File getAbsoluteFile()<br>          返回此抽象路径名的绝对路径名形式。<br> String getAbsolutePath()<br>          返回此抽象路径名的绝对路径名字符串。<br> File getCanonicalFile()<br>          返回此抽象路径名的规范形式。<br> String getCanonicalPath()<br>          返回此抽象路径名的规范路径名字符串。<br> long getFreeSpace()<br>          返回此抽象路径名指定的分区中未分配的字节数。<br> String getName()<br>          返回由此抽象路径名表示的文件或目录的名称。<br> String getParent()<br>          返回此抽象路径名父目录的路径名字符串；如果此路径名没有指定父目录，则返回 null。<br> File getParentFile()<br>          返回此抽象路径名父目录的抽象路径名；如果此路径名没有指定父目录，则返回 null。<br> String getPath()<br>          将此抽象路径名转换为一个路径名字符串。<br> long getTotalSpace()<br>          返回此抽象路径名指定的分区大小。<br> long getUsableSpace()<br>          返回此抽象路径名指定的分区上可用于此虚拟机的字节数。<br> int hashCode()<br>          计算此抽象路径名的哈希码。<br> boolean isAbsolute()<br>          测试此抽象路径名是否为绝对路径名。<br> boolean isDirectory()<br>          测试此抽象路径名表示的文件是否是一个目录。<br> boolean isFile()<br>          测试此抽象路径名表示的文件是否是一个标准文件。<br> boolean isHidden()<br>          测试此抽象路径名指定的文件是否是一个隐藏文件。<br> long lastModified()<br>          返回此抽象路径名表示的文件最后一次被修改的时间。<br> long length()<br>          返回由此抽象路径名表示的文件的长度。<br> String[] list()<br>          返回一个字符串数组，这些字符串指定此抽象路径名表示的目录中的文件和目录。<br> String[] list(FilenameFilter filter)<br>          返回一个字符串数组，这些字符串指定此抽象路径名表示的目录中满足指定过滤器的文件和目录。<br> File[] listFiles()<br>          返回一个抽象路径名数组，这些路径名表示此抽象路径名表示的目录中的文件。<br> File[] listFiles(FileFilter filter)<br>          返回抽象路径名数组，这些路径名表示此抽象路径名表示的目录中满足指定过滤器的文件和目录。<br> File[] listFiles(FilenameFilter filter)<br>          返回抽象路径名数组，这些路径名表示此抽象路径名表示的目录中满足指定过滤器的文件和目录。<br>static File[] listRoots()<br>          列出可用的文件系统根。<br> boolean mkdir()<br>          创建此抽象路径名指定的目录。<br> boolean mkdirs()<br>          创建此抽象路径名指定的目录，包括所有必需但不存在的父目录。<br> boolean renameTo(File dest)<br>          重新命名此抽象路径名表示的文件。<br> boolean setExecutable(boolean executable)<br>          设置此抽象路径名所有者执行权限的一个便捷方法。<br> boolean setExecutable(boolean executable, boolean ownerOnly)<br>          设置此抽象路径名的所有者或所有用户的执行权限。<br> boolean setLastModified(long time)<br>          设置此抽象路径名指定的文件或目录的最后一次修改时间。<br> boolean setReadable(boolean readable)<br>          设置此抽象路径名所有者读权限的一个便捷方法。<br> boolean setReadable(boolean readable, boolean ownerOnly)<br>          设置此抽象路径名的所有者或所有用户的读权限。<br> boolean setReadOnly()<br>          标记此抽象路径名指定的文件或目录，从而只能对其进行读操作。<br> boolean setWritable(boolean writable)<br>          设置此抽象路径名所有者写权限的一个便捷方法。<br> boolean setWritable(boolean writable, boolean ownerOnly)<br>          设置此抽象路径名的所有者或所有用户的写权限。<br> String toString()<br>          返回此抽象路径名的路径名字符串。<br> URI toURI()<br>          构造一个表示此抽象路径名的 file: URI。<br> URL toURL()<br>          已过时。 此方法不会自动转义 URL 中的非法字符。建议新的代码使用以下方式将抽象路径名转换为 URL：首先通过 toURI 方法将其转换为 URI，然后通过 URI.toURL 方法将 URI 装换为 URL。 </p>
+<p>多进程：提高CPU的使用率</p>
+<p>　进程和进程之间的内存是独立的<br>多线程：线程是进程中的一个执行场景</p>
+<p>　提高应用程序的使用率</p>
+<p>　线程和线程共享“堆内存和方法区内存”，栈内存是独立的，一个线程一个栈</p>
+<p>创建线程的2种方式<br>继承Thread<br>实现Runnable接口</p>
+<p>线程优先级高的获取的cpu的时间片相对多一些</p>
+<p>　优先级1-10</p>
+<p>　最低1</p>
+<p>　最高10</p>
+<p>　默认5</p>
+<p>setPriority()</p>
+<p>getPriority();</p>
+<p>MAX_PRIORITY  10<br>NORM_PRIORITY 5<br>MIN_PRIORITY  1</p>
+<p>Thread.sleep(毫秒);</p>
+<p>　2.sleep()方法是一个静态方法</p>
+<p>　3.该方法的作用:阻塞当前线程,腾出cpu,让给其他线程</p>
+<p>interrupt()  中断休眠,利用的是异常处理机制<br>join 线程合并</p>
+<p>异步线程模型</p>
+<p>　线程之间不必等待<br>同步线程模型</p>
+<p>　线程之间排队</p>
+<p>什么时候使用同步呢？为什么要引入线程同步呢？</p>
+<p>　1.为了数据的安全.尽管应用程序的使用率低,但是为了保证书是安全的,必须加入线程同步机制</p>
+<p>　  线程同步机制是程序变成了（等同）单线程</p>
+<p>　2.什么条件下使用线程同步？</p>
+<p>　   第一: 必须是多线程环境</p>
+<p>　   第二：多线程环境共享同一个数据</p>
+<p>　   第三：共享的数据涉及到修改操作</p>
+<p>synchronized(){} 同步代码块</p>
+<p> 守护线程</p>
+<p>　其他所有的用户线程结束,则守护线程退出</p>
+<p>　守护线程一般都是无限执行的</p>
+<p>　setDaemon</p>
+<p>关于定时器的应用</p>
+<p>　　作用:每隔一段固定的时间执行一段代码</p>
+<p>以下是sun提供的反射机制中的类<br>    java.lang.Class;<br>    java.lang.reflect.Constructor;<br>    java.lang.reflect.Field;<br>    java.lang.Method;<br>    java.lang.Modifier;</p>
+<p>​    private User{</p>
+<p>​    }</p>
+<p>反射机制的作用:</p>
+<p>　　1.反编译: .class -&gt; .java</p>
+<p>　　2.通过反射机制访问java类的属性,方法,构造方法等. </p>
+<p>第一种方式:</p>
+<p>　　将类加载到JVM中</p>
+<p>　　Class c1 = Class.forName(“User”);    // c1引用保存地址指向堆中的对象,该对象代表的是User整个类<br>第二种方式:</p>
+<p>　　Class c2 = User.class;<br>第三种方式：</p>
+<p>　　User u = new User();</p>
+<p>　　Class sc3 = u.getClass();</p>
+<p>newInstance相当于调用了无参构造器</p>
+<p>关于java中的可变长参数</p>
+<p>　如果有精确匹配的方法，则调用该方法，不会再去执行可变长形参的那个方法</p>
+<p>　可变长形参等同看做数组</p>
+<p>　可变长参数只能出现一次,并且只能出现在参数列表的最后一个位置上</p>
+<p>IO+Properties</p>
+<p>配置文件（属性文件）<br>java规范要求属性文件以“.properties”<br>配置文件的作用使程序更灵活<br>注意：一般程序中可变的东西不要写死，推荐写到配置文件中 运行同样的程序得到不同的结果</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/11/1/12/%E8%BF%9B%E9%98%B67/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -985,831 +1692,11 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/11/1/12/%E8%BF%9B%E9%98%B68/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="顾思君">
-      <meta itemprop="description" content="直到这一刻微笑着说话为止，我至少留下了一公升眼泪">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="思君の博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/02/11/1/12/%E8%BF%9B%E9%98%B68/" class="post-title-link" itemprop="url">进阶８</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-02-11 20:12:57" itemprop="dateCreated datePublished" datetime="2020-02-11T20:12:57+08:00">2020-02-11</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-12 15:43:04" itemprop="dateModified" datetime="2020-02-12T15:43:04+08:00">2020-02-12</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java/" itemprop="url" rel="index">
-                    <span itemprop="name">java</span>
-                  </a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>1.3k</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>java.io.*;</p>
-<p>FileInputStream<br>FileOutputStream<br>FileReader<br>FileWriter</p>
-<p>BufferedReader    带有缓冲区的字符输入流<br>BufferedWriter     带有缓冲区的字符输出流</p>
-<p>字节<br>BufferedInputStream<br>BufferedOutputStream</p>
-<p>DateInputStream<br>DateOutputStream</p>
-<p>ObjectInputStream<br>ObjectOutputStream</p>
-<p>转换流（字节流转换成字符流）<br>InputStreamReader<br>OutputStreamWriter</p>
-<p>PrintWriter<br>PrintStream  标椎输出流，默认输出到控制台</p>
-<p>java语言中的流分为:4大家族(InputStream,OutputStream,Reader,Writer)</p>
-<p>java.io.InputStream</p>
-<p>　java.io.FileInputStream  文件字节输入流</p>
-<p>　按照字节方式读取文件</p>
-<p>int read()<br>int read(byte[] bytes)<br>available    流中估计的字节数<br>skip(int n)  跳过多少个字节</p>
-<p>java.io.OutputStream</p>
-<p>　java.io.FileOutputStream  文件字节输出流</p>
-<p>　将计算机内存中的数据写入硬盘文件中</p>
-<p>java.io.Reader;</p>
-<p>　java.io.InputStremReader; 转换流</p>
-<p>　　java.io.FileReader; 文件字符输出流<br>skip</p>
-<p>java.io.Writer;</p>
-<p> java.io.ObjectOutputStream 序列化JAVA对象到硬盘(Serial)</p>
-<p>　　java.io.ObjectInputStream 将硬盘中的数据“反序列化”到JVM内存中（DeSerial）</p>
-<p>Compile 编译(java–&gt;class)<br>Decompile 反编译(class–&gt;java)</p>
-<p>标识接口的作用:起到标识的作用</p>
-<p>　 JVM如果看到该对象实现某个标识接口,会对它特殊待遇</p>
-<p>java.io.OutputStreamWriter; 转换流</p>
-<p>　java.io.FileWriter;  文件字符输出流</p>
-<p>java.io.DateOutputStream 数据字节输出流</p>
-<p>　可以将内存中的“int i = 10”写入到硬盘文件中</p>
-<p>　写进去的不是字符串,写进去的是二进制数据,带类型</p>
-<p>注意:要使用该流数据读取数据,必须提前知道该文件中数据存储格式,顺序</p>
-<p>　　读的顺序必须和写入的顺序一致</p>
-<p>根据流出现的位置,流又可以分为:包装流或者处理流和节点流</p>
-<p>java.io.ObjectOutputStream 序列化JAVA对象到硬盘(Serial)<br>java.io.ObjectInputStream 将硬盘中的数据“反序列化”到JVM内存中（DeSerial）</p>
-<p>Compile 编译(java–&gt;class)<br>Decompile 反编译(class–&gt;java</p>
-<p>标识接口的作用:起到标识的作用<br>   JVM如果看到该对象实现某个标识接口,会对它特殊待遇</p>
-<p>Serializable 可序列化<br>transient 不参加序列化</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/11/1/12/%E8%BF%9B%E9%98%B62/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="顾思君">
-      <meta itemprop="description" content="直到这一刻微笑着说话为止，我至少留下了一公升眼泪">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="思君の博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/02/11/1/12/%E8%BF%9B%E9%98%B62/" class="post-title-link" itemprop="url">进阶2</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-02-11 20:12:57" itemprop="dateCreated datePublished" datetime="2020-02-11T20:12:57+08:00">2020-02-11</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-12 15:12:20" itemprop="dateModified" datetime="2020-02-12T15:12:20+08:00">2020-02-12</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java/" itemprop="url" rel="index">
-                    <span itemprop="name">java</span>
-                  </a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>2.2k</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>关于java语言中的数据类型</p>
-<p>　byte   1byte(8bit)  -128-127</p>
-<p>　short  2byte</p>
-<p>　int    4byte</p>
-<p>　long   8byte<br>整数有3中表现形式:</p>
-<p>　十进制</p>
-<p>　八进制　 以0开始</p>
-<p>　十六进制 以0x开始</p>
-<p>在java中基本类型可以相互转换,boolean类型比较特殊不可以转换成其他类型</p>
-<p>转换分为自动类型提升和强制类型转换：</p>
-<p>　自动类型提升:容量小的类型会默认转换为容量大的类型</p>
-<p>　byte -&gt; short -&gt; int -&gt; long -&gt; float -&gt; double</p>
-<p>　char</p>
-<p>byte,short,char之间计算不会相互转换,首先先转成int</p>
-<p>　强制类型转换：</p>
-<p>　　将容量大的类型转换成容量小的类型,需要进行强制转换</p>
-<p>　　注意：只要不超出范围可以将整型值直接赋值给byte,short,char</p>
-<p>在多种类型混合运算过程中,首先将所有数据转换成容量大的那种,再运算</p>
-<p>关于java中的布尔类型</p>
-<p>　1.boolean类型的数据只有两个值:true/false，没有1和0</p>
-<p>　2.boolean类型的数据主要用在逻辑运算和条件控制语句中<br>java程序分为编译期和运行期</p>
-<p>关系运算符</p>
-<p>＞<br>＞=    大等于<br>&lt;     小于<br>&lt;=    小等于<br>==    判断是否相等(基本数据类型)<br>!=    不等于<br>关系运算符的运算结果一定是boolean类型</p>
-<p>布尔运算符(逻辑运算符)</p>
-<p>　&amp;     逻辑与</p>
-<p>　|     逻辑或</p>
-<p>　!     逻辑非</p>
-<p>　^     逻辑异或</p>
-<p>　&amp;&amp;    短路与</p>
-<p>　||    短路或<br>短路：后边那个表达式不执行</p>
-<p>　什么时候发生短路与? 第一个算子结果是false的时候</p>
-<p>　什么时候发生短路或？第一个算子结果是true的时候<br>布尔运算符两边的(算子)必须是布尔类型,整个表达式的运算结果也是一个布尔类型</p>
-<p>关于赋值运算符</p>
-<p>　基本的赋值运算符</p>
-<p>　=</p>
-<p>　扩展的赋值运算符</p>
-<p>　+=    追加</p>
-<p>　-=</p>
-<p>　*=</p>
-<p>　/=</p>
-<p>　%=<br>基本运算符和扩展运算符的区别？　</p>
-<p>　扩展运算符不会改变变量本身的数据类型</p>
-<p>关于字符串连接运算符</p>
-<p>　＋运算符可以：</p>
-<p>　　1.做加法运算(+两边只要都是数字类型,一定是加法运算)</p>
-<p>　　2.字符串连接(+两边任意一端只要是字符串类型,则一定是字符串连接)</p>
-<p>条件运算符(三目运算符)</p>
-<p>　？：</p>
-<p>　语法：</p>
-<p>　　boolean表达式?表达式1:表达式2</p>
-<p>　　boolean表示式的结果是true，则整个表达式的结果就是表达式1的结果,相反则是表达式2的结果</p>
-<p>关于条件控制语句:流程控制语句if…else<br>    1.语法<br>    第一种结构：<br>        if(boolean表达式){<br>        java语句;<br>    }<br>    第二种结构:<br>    if(boolean表达式){<br>        java语句;<br>    }else{<br>        java语句;<br>    }<br>    第三种结构:<br>    if（boolean表达式）{<br>        java语句;<br>    }else if(boolean表达式){<br>        java语句；<br>    }else if(boolean表达式){<br>        java语句；<br>    }<br>    第四种结构:<br>    if（boolean表达式）{<br>        java语句;<br>    }else if(boolean表达式){<br>        java语句；<br>    }else if(boolean表达式){<br>        java语句；<br>    }else{<br>    }<br>注意：在if语句中只要有一个分支执行,则整个if语句结束</p>
-<p>　　上面的结构2.4可以保证一定会有一个分支语句执行,因为他们都有else语句。<br>！！ else 有隐藏条件</p>
-<p>关于switch语句:<br>    1.语法:<br>        switch(int类型){<br>            case int类型:<br>            java语句；<br>            java语句；<br>            break;</p>
-<p>​           case int类型:<br>           java语句；<br>​           java语句；<br>​           break;</p>
-<p>​           case int类型:<br>​           java语句；<br>​           java语句；<br>​           break;</p>
-<p>​            default:<br>​            java语句；<br>​    }</p>
-<p>注意：break；语句可以没有，default也可以没有<br>      break语句如果没有，则发生case穿透现象<br>      switch后面的括号可以填写byte/short/char类型,因为可以自动转换<br>      jdk7.0可以是String类型<br>      case可以合并        </p>
-<p>for 循环:<br>    语法：<br>    for(表达式1;表达式2;表达式3){<br>        java语句<br>    }<br>    表达式1是初始化表达式,最先执行,只执行一次<br>    表达式2必须是boolean类型的表达式</p>
-<p>for循环开始执行,先执行表达式1,并只执行一次,进而判断表达式2的结果,如果是true<br>则执行java语句,再执行表达式3,然后再判断表达式2的结果，知道表达式2的结果是false<br>则for循环结束。</p>
-<p>关于while循环<br>    语法<br>        while(boolean表达式）{<br>            java语句；<br>        }<br>该循环的执行次数:0-N</p>
-<p>关于do…while…<br>    语法：<br>        do{<br>            java语句；<br>        }while(boolean表达式)；</p>
-<p>该循环的执行次数:1-N</p>
-<p>break语句：</p>
-<ul>
-<li><p>可以用在switch语句中,结束分支语句</p>
-</li>
-<li><p>break；语句可以出现在循环当中,默认情况下结束离它最近的一个循环<br>continue语句:可以用来结束当前一次循环,直接进入下一次循环继续执行</p>
-<p>通过break可以指定结束某个循环(标签)</p>
-</li>
-</ul>
-<p>定义方法的语法：    </p>
-<p>　[方法的修饰列表] 方法的返回值类型 方法名(方法的形参列表){</p>
-<p>　　java语句；</p>
-<p>　}</p>
-<p>1.[方法的修饰列表]是可选项 。暂时携程public static<br>2.方法的返回值类型,可以是java语言中的任何一种数据类型(基本数据类型和引用数据类型)<br>3.如果该方法执行结束之后,并没有任何返回值,那抹定义方法的时候,返回值类型写:void<br>4.方法名只要是合法的标识符即可<br>5.方法的形参参数列表,可以有参数,也可以没有参数,如果有多个参数的话使用”逗号”分开<br>6.如果一个方法的返回值的类型不是void，那抹在方法体中必须使用return语句来返回数据</p>
-<p>方法的形式参数列表中起决定性作用的是参数的类型<br>参数的名字（局部变量的名字）是随意的只要是合法的标识符即可</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/11/1/12/%E8%BF%9B%E9%98%B69/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="顾思君">
-      <meta itemprop="description" content="直到这一刻微笑着说话为止，我至少留下了一公升眼泪">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="思君の博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/02/11/1/12/%E8%BF%9B%E9%98%B69/" class="post-title-link" itemprop="url">进阶9</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-02-11 20:12:57" itemprop="dateCreated datePublished" datetime="2020-02-11T20:12:57+08:00">2020-02-11</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-12 15:42:04" itemprop="dateModified" datetime="2020-02-12T15:42:04+08:00">2020-02-12</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java/" itemprop="url" rel="index">
-                    <span itemprop="name">java</span>
-                  </a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>3.6k</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>File<br>   boolean canExecute()<br>          测试应用程序是否可以执行此抽象路径名表示的文件。<br> boolean canRead()<br>          测试应用程序是否可以读取此抽象路径名表示的文件。<br> boolean canWrite()<br>          测试应用程序是否可以修改此抽象路径名表示的文件。<br> int compareTo(File pathname)<br>          按字母顺序比较两个抽象路径名。<br> boolean createNewFile()<br>          当且仅当不存在具有此抽象路径名指定名称的文件时，不可分地创建一个新的空文件。<br>static File createTempFile(String prefix, String suffix)<br>          在默认临时文件目录中创建一个空文件，使用给定前缀和后缀生成其名称。<br>static File createTempFile(String prefix, String suffix, File directory)<br>           在指定目录中创建一个新的空文件，使用给定的前缀和后缀字符串生成其名称。<br> boolean delete()<br>          删除此抽象路径名表示的文件或目录。<br> void deleteOnExit()<br>          在虚拟机终止时，请求删除此抽象路径名表示的文件或目录。<br> boolean equals(Object obj)<br>          测试此抽象路径名与给定对象是否相等。<br> boolean exists()<br>          测试此抽象路径名表示的文件或目录是否存在。<br> File getAbsoluteFile()<br>          返回此抽象路径名的绝对路径名形式。<br> String getAbsolutePath()<br>          返回此抽象路径名的绝对路径名字符串。<br> File getCanonicalFile()<br>          返回此抽象路径名的规范形式。<br> String getCanonicalPath()<br>          返回此抽象路径名的规范路径名字符串。<br> long getFreeSpace()<br>          返回此抽象路径名指定的分区中未分配的字节数。<br> String getName()<br>          返回由此抽象路径名表示的文件或目录的名称。<br> String getParent()<br>          返回此抽象路径名父目录的路径名字符串；如果此路径名没有指定父目录，则返回 null。<br> File getParentFile()<br>          返回此抽象路径名父目录的抽象路径名；如果此路径名没有指定父目录，则返回 null。<br> String getPath()<br>          将此抽象路径名转换为一个路径名字符串。<br> long getTotalSpace()<br>          返回此抽象路径名指定的分区大小。<br> long getUsableSpace()<br>          返回此抽象路径名指定的分区上可用于此虚拟机的字节数。<br> int hashCode()<br>          计算此抽象路径名的哈希码。<br> boolean isAbsolute()<br>          测试此抽象路径名是否为绝对路径名。<br> boolean isDirectory()<br>          测试此抽象路径名表示的文件是否是一个目录。<br> boolean isFile()<br>          测试此抽象路径名表示的文件是否是一个标准文件。<br> boolean isHidden()<br>          测试此抽象路径名指定的文件是否是一个隐藏文件。<br> long lastModified()<br>          返回此抽象路径名表示的文件最后一次被修改的时间。<br> long length()<br>          返回由此抽象路径名表示的文件的长度。<br> String[] list()<br>          返回一个字符串数组，这些字符串指定此抽象路径名表示的目录中的文件和目录。<br> String[] list(FilenameFilter filter)<br>          返回一个字符串数组，这些字符串指定此抽象路径名表示的目录中满足指定过滤器的文件和目录。<br> File[] listFiles()<br>          返回一个抽象路径名数组，这些路径名表示此抽象路径名表示的目录中的文件。<br> File[] listFiles(FileFilter filter)<br>          返回抽象路径名数组，这些路径名表示此抽象路径名表示的目录中满足指定过滤器的文件和目录。<br> File[] listFiles(FilenameFilter filter)<br>          返回抽象路径名数组，这些路径名表示此抽象路径名表示的目录中满足指定过滤器的文件和目录。<br>static File[] listRoots()<br>          列出可用的文件系统根。<br> boolean mkdir()<br>          创建此抽象路径名指定的目录。<br> boolean mkdirs()<br>          创建此抽象路径名指定的目录，包括所有必需但不存在的父目录。<br> boolean renameTo(File dest)<br>          重新命名此抽象路径名表示的文件。<br> boolean setExecutable(boolean executable)<br>          设置此抽象路径名所有者执行权限的一个便捷方法。<br> boolean setExecutable(boolean executable, boolean ownerOnly)<br>          设置此抽象路径名的所有者或所有用户的执行权限。<br> boolean setLastModified(long time)<br>          设置此抽象路径名指定的文件或目录的最后一次修改时间。<br> boolean setReadable(boolean readable)<br>          设置此抽象路径名所有者读权限的一个便捷方法。<br> boolean setReadable(boolean readable, boolean ownerOnly)<br>          设置此抽象路径名的所有者或所有用户的读权限。<br> boolean setReadOnly()<br>          标记此抽象路径名指定的文件或目录，从而只能对其进行读操作。<br> boolean setWritable(boolean writable)<br>          设置此抽象路径名所有者写权限的一个便捷方法。<br> boolean setWritable(boolean writable, boolean ownerOnly)<br>          设置此抽象路径名的所有者或所有用户的写权限。<br> String toString()<br>          返回此抽象路径名的路径名字符串。<br> URI toURI()<br>          构造一个表示此抽象路径名的 file: URI。<br> URL toURL()<br>          已过时。 此方法不会自动转义 URL 中的非法字符。建议新的代码使用以下方式将抽象路径名转换为 URL：首先通过 toURI 方法将其转换为 URI，然后通过 URI.toURL 方法将 URI 装换为 URL。 </p>
-<p>多进程：提高CPU的使用率</p>
-<p>　进程和进程之间的内存是独立的<br>多线程：线程是进程中的一个执行场景</p>
-<p>　提高应用程序的使用率</p>
-<p>　线程和线程共享“堆内存和方法区内存”，栈内存是独立的，一个线程一个栈</p>
-<p>创建线程的2种方式<br>继承Thread<br>实现Runnable接口</p>
-<p>线程优先级高的获取的cpu的时间片相对多一些</p>
-<p>　优先级1-10</p>
-<p>　最低1</p>
-<p>　最高10</p>
-<p>　默认5</p>
-<p>setPriority()</p>
-<p>getPriority();</p>
-<p>MAX_PRIORITY  10<br>NORM_PRIORITY 5<br>MIN_PRIORITY  1</p>
-<p>Thread.sleep(毫秒);</p>
-<p>　2.sleep()方法是一个静态方法</p>
-<p>　3.该方法的作用:阻塞当前线程,腾出cpu,让给其他线程</p>
-<p>interrupt()  中断休眠,利用的是异常处理机制<br>join 线程合并</p>
-<p>异步线程模型</p>
-<p>　线程之间不必等待<br>同步线程模型</p>
-<p>　线程之间排队</p>
-<p>什么时候使用同步呢？为什么要引入线程同步呢？</p>
-<p>　1.为了数据的安全.尽管应用程序的使用率低,但是为了保证书是安全的,必须加入线程同步机制</p>
-<p>　  线程同步机制是程序变成了（等同）单线程</p>
-<p>　2.什么条件下使用线程同步？</p>
-<p>　   第一: 必须是多线程环境</p>
-<p>　   第二：多线程环境共享同一个数据</p>
-<p>　   第三：共享的数据涉及到修改操作</p>
-<p>synchronized(){} 同步代码块</p>
-<p> 守护线程</p>
-<p>　其他所有的用户线程结束,则守护线程退出</p>
-<p>　守护线程一般都是无限执行的</p>
-<p>　setDaemon</p>
-<p>关于定时器的应用</p>
-<p>　　作用:每隔一段固定的时间执行一段代码</p>
-<p>以下是sun提供的反射机制中的类<br>    java.lang.Class;<br>    java.lang.reflect.Constructor;<br>    java.lang.reflect.Field;<br>    java.lang.Method;<br>    java.lang.Modifier;</p>
-<p>​    private User{</p>
-<p>​    }</p>
-<p>反射机制的作用:</p>
-<p>　　1.反编译: .class -&gt; .java</p>
-<p>　　2.通过反射机制访问java类的属性,方法,构造方法等. </p>
-<p>第一种方式:</p>
-<p>　　将类加载到JVM中</p>
-<p>　　Class c1 = Class.forName(“User”);    // c1引用保存地址指向堆中的对象,该对象代表的是User整个类<br>第二种方式:</p>
-<p>　　Class c2 = User.class;<br>第三种方式：</p>
-<p>　　User u = new User();</p>
-<p>　　Class sc3 = u.getClass();</p>
-<p>newInstance相当于调用了无参构造器</p>
-<p>关于java中的可变长参数</p>
-<p>　如果有精确匹配的方法，则调用该方法，不会再去执行可变长形参的那个方法</p>
-<p>　可变长形参等同看做数组</p>
-<p>　可变长参数只能出现一次,并且只能出现在参数列表的最后一个位置上</p>
-<p>IO+Properties</p>
-<p>配置文件（属性文件）<br>java规范要求属性文件以“.properties”<br>配置文件的作用使程序更灵活<br>注意：一般程序中可变的东西不要写死，推荐写到配置文件中 运行同样的程序得到不同的结果</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/11/1/12/day22/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="顾思君">
-      <meta itemprop="description" content="直到这一刻微笑着说话为止，我至少留下了一公升眼泪">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="思君の博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/02/11/1/12/day22/" class="post-title-link" itemprop="url">day22</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-02-11 20:12:57" itemprop="dateCreated datePublished" datetime="2020-02-11T20:12:57+08:00">2020-02-11</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-20 11:35:08" itemprop="dateModified" datetime="2020-02-20T11:35:08+08:00">2020-02-20</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java/" itemprop="url" rel="index">
-                    <span itemprop="name">java</span>
-                  </a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>5.8k</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>一、继承Thread的方式</p>
-<p>　　1.提供一个继承于Thread类的子类</p>
-<p>　　2.重写Thread类的run():将创建的线程要执行的操作，声明在run()中。</p>
-<p>　　3.实例化Thread子类</p>
-<p>　　4.调用子类对象的start() </p>
-<p>Thread类的常用方法的测试</p>
-<p> 　　1.run():Thread的子类一定要重写的方法。将此分线程要执行的操作，声明在run()中</p>
-<p>　 　2.start():要想启动一个分线程，就需要调用start():①启动线程②调用线程的run()</p>
-<p>　 　3.currentThread():静态方法，获取当前的线程</p>
-<p>　 　4.getName():获取当前线程的名字</p>
-<p>　 　5.setName(String name)：设置当前线程的名字</p>
-<p>　 　6.yield():当前线程调用此方法，释放CPU的执行权</p>
-<p>　 　7.join():在线程a中调用线程b的join()方法:只用当线程b执行结束以后，线程a结束阻塞状态，继续执行。</p>
-<p>　　 8.sleep(long millitimes):让当前的线程睡眠millitimes毫秒</p>
-<p>　 　9.isAlive():判断当前线程是否存活 </p>
-<p>　　10.线程的优先级：</p>
-<p>　　　　 MAX_PRIORITY：10 </p>
-<p>　　　　NORM_PRIORITY：5 —默认优先级</p>
-<p>　　　　MIN_PRIORITY：1</p>
-<p>​    　 设置优先级：setPriority(int priority); </p>
-<p>​    　 获取优先级：getPriority()；</p>
-<blockquote>
-<p>设置优先级以后，对高优先级，使用优先调度的抢占式策略，抢占低优先级的执行。但是并不意味着高优    先级的线程一定先于低优先级的线程执行，而是从概率上来讲，概率更大而已。</p>
-</blockquote>
-<p> 线程通信：wait() / notify() / notifyAll()  —-&gt;java.lang.Object类中定义的方法</p>
-<h4 id="一：继承Thread的方式"><a href="#一：继承Thread的方式" class="headerlink" title="一：继承Thread的方式"></a>一：继承Thread的方式</h4><p>　　　1.提供一个继承Thread类的子类 </p>
-<p>　　　2.重写Thread类run():将创建的线程要执行的操作,声明在run()中 </p>
-<p>　　　3.实例化Thread子类</p>
-<p>　　　4.调用子类对象的start()方法</p>
-<h4 id="创建多线程的方式二"><a href="#创建多线程的方式二" class="headerlink" title="创建多线程的方式二:"></a>创建多线程的方式二:</h4><p>　　　1.创建一个实现Runnable接口的类</p>
-<p>　　　2.实现Runnable的run()</p>
-<p>　　　3.创建当前实现类的对象</p>
-<p>　　　4.将此对象作为参数传递到Thread类的构造器中,创建Thread类的对象</p>
-<p>　　　5.通过Thread类的对象调用其start()</p>
-<p>对比继承Thread类和实现Runnable接口的方式</p>
-<p>　　　1.联系:public class Thread implements Runnable</p>
-<p>　　　2.相同点:启动线程,使用的是同一个start()方法</p>
-<p>　　　3.对比:实现Runnable接口要好一些. </p>
-<p>　原因：①不影响类的继承,因为类是单继承的   </p>
-<p>　　　　②针对于有共享数据的操作,更适合使用Runnable的方式 ,换句话说,实现Runnable接口的方式,实现了代                    码和数据的分离</p>
-<p>　　　4.面试题:创建多线程有几种方法?     继承Thread类,实现Runnable接口,实现Callable接口,使用线程池</p>
-<p>模仿车站买票程序。开启3个窗口卖票。总票数为100张。—–使用实现的方式</p>
-<p>　　1.问题：出现了重票和错票</p>
-<p>　　2.问题出现的原因：一个窗口在没有售完票的情况下，其他的窗口参与进来，操作ticket，导致ticket输出的错            误。</p>
-<p>　　3.解决的方案：当某一个窗口完全操作完ticket以后，其他窗口应该才被允许进来，继续操作ticket。</p>
-<p>　　4.java如何实现的？同步机制：①同步代码块    ②同步方法 </p>
-<p>　　　4.1 同步代码块：</p>
-<p>​                 synchronized(同步监视器){</p>
-<p>​                       //需要被同步的代码</p>
-<p>​               }</p>
-<p>　　　说明：需要被同步的代码：即为操作共享数据的代码</p>
-<p>　　　　　　共享数据：多个线程共同操作的数据。比如：ticket</p>
-<p>　　　　　　同步监视器：俗称：锁。 可以由任何一个类的对象充当。 要求：保证多个线程共用同一把锁！</p>
-<p>　　　4.2 同步方法：将操作共享数据的方法，声明为同步的。此方法即为同步方法。</p>
-<p>　　　　　使用同步方法解决实现方式的线程安全问题。</p>
-<p>　　　　　1.默认的同步方法（非静态的）的锁是：当前对象，也就是this.</p>
-<p>　　　　　2.默认的同步方法（静态的）的锁是：当前类本身.</p>
-<p>　　　　　　使用同步方法解决继承方式的线程安全问题：</p>
-<p>　　　　　注意：继承的方式中，要慎用同步方法。</p>
-<p>​        5.好处：线程的同步机制，解决了线程的安全问题。</p>
-<p>​        6.劣势：在操作共享数据过程中，是单线程的。</p>
-<p>模仿车站买票程序。开启3个窗口卖票。总票数为100张     —–使用实现的方式</p>
-<p>　　解决线程安全问题的方式三：ReentrantLock</p>
-<p>　　存在线程的安全问题，使用Lock的方式解决线程安全问题。</p>
-<p>面试题：同步的方式和Lock的方式，解决线程安全方面的异同？</p>
-<p>　　同：解决了线程安全问题</p>
-<p>　　异：同步的方式：同步监视器在线程执行完操作共享数据的代码以后，自动释放</p>
-<blockquote>
-<p> Lock的方式：需要显式的调用unlock()方法之后，才能保证其他线程操作共享数据。 </p>
-</blockquote>
-<p>死锁：不同的线程分别占用对方需要的同步资源不放弃，都在等待对方放弃自己需要的同步资源，就形成了线程的死锁，是我们开发中需要规避的！</p>
-<p>线程的通信：</p>
-<ul>
-<li><p>wait():一个线程在执行过程中，一旦调用此方法，则此线程进入阻塞状态，等待其他线程来唤醒自己。    </p>
-</li>
-<li><p>notify():一个线程在执行过程中，一旦调用此方法，则会唤醒被wait()的一个线程。高优先级的要优先被唤醒。</p>
-</li>
-<li><p>notifyAll():一个线程在执行过程中，一旦调用此方法，则会唤醒所有被wait()的线程。</p>
-</li>
-</ul>
-<p>　　　例题：使用两个线程打印 1-100. 线程1, 线程2 交替打印</p>
-<p>注意点：1.此三个方法必须使用在同步中。</p>
-<p>　　　　2.此三个方法的调用者是同步监视器！否则，如果三个方法的调用者不是同步监视器，报异常。</p>
-<p>　　　　3.此三个方法定义在Object类</p>
-<p>面试题：sleep() 和  wait() 的异同？</p>
-<p>　　1.方法声明在哪？ Thread:sleep()   Object:wait()</p>
-<p>　　2.共同点：使得当前线程进入阻塞状态</p>
-<p>　　3.使用的范围要求：sleep()使用没有情境的要求；wait()必须使用在同步代码块或同步方法中</p>
-<p>　　4.都使用在同步当中的话：wait()需要唤醒：notify()/notifyAll();  sleep():不会释放锁；wait()会释放锁 </p>
-<p> String:字符串</p>
-<p>　　　1.字符串声明的数据，会存储在字符串常量池中。第一次声明时，需要创建相应的字符串。之后，如果声明的变量，其值与之前存在的字符串内容相同，则直接引用现成的字符串。</p>
-<p>　　　2.面试题：String s3 = new String(“javaEE”);创建的对象，在内存中生成了几个对象？</p>
-<p><strong>String:代表着不可变的字符序列。</strong></p>
-<p>　　　1.String类的声明public final class String implements java.io.Serializable, Comparable<String>, 　　　　CharSequence</String></p>
-<p>　　　　　①String声明为final，不可被继承。</p>
-<p>　　　　　②实现Serializable：表明String可序列化。浏览器/客户端&lt;—&gt;服务器端     进程1&lt;—-&gt;进程2    　　　　　　“{name=Tom,age=12}”    JSON:本质就是String</p>
-<p>　　　　　③String重写了hashCode()/equals():常常将Map的key声明为String型。</p>
-<p>　　　　　④实现Comparable接口：String可以比较大小。</p>
-<p>　　　　　⑤实现CharSequence接口：String的底层声明了char[] value数组。</p>
-<p>　　　2.如何理解String的不可变性：</p>
-<p>　　　　　①向现有的字符串后添加新的字符串，必须声明新的字符串空间</p>
-<p>　　　　　②将现有的字符串替换为新的字符串，必须声明新的字符串空</p>
-<p>　　　　　③只替换现有字符串中的指定某个字符，也必须声明新的字符串空间</p>
-<p>String类与其它结构的转换：</p>
-<p>　　　1.String 与包装类、基本数据类型变量间的转换    </p>
-<p>　　　　String–&gt;包装类、基本数据类型:调用包装类Xxx的parseXxx(String s)方法</p>
-<p>　　　　包装类、基本数据类型 –&gt;String:调用String的valueOf(xxx xxx); </p>
-<p>　　　2.String 与 字节数组间的转换   </p>
-<p>　　　　String –&gt; 字节数组:调用String类的getBytes()</p>
-<p>　　　　字节数组–&gt;String:new String(byte[] buffer,startIndex,length)</p>
-<p>　　　3.String 与 字符数组间的转换</p>
-<p>　　　　String –&gt; 字符数组：调用String类的toCharArray()</p>
-<p>　　　　字符数组 –&gt;String:new String(char[] cbuf,startIndex,length)    </p>
-<p>​         </p>
-<ul>
-<li><p>public String substring(int startpoint):返回当前字符串中从startPoint位置开始，到末尾的子字符串。  </p>
-</li>
-<li><p>public String substring(int start,int end):返回当前字符串中从startPoint位置开始，到end结束的左闭右开区间的子字符串。</p>
-</li>
-<li><p>pubic String replace(char oldChar,char newChar):将字符串中指定的所有oldChar替换为newChar.</p>
-</li>
-<li><p>public String replaceAll(String old,String new):将字符串中指定的所有old替换为new.</p>
-</li>
-<li><p>public String trim():去除字符串首尾的空格</p>
-</li>
-<li><p>public String concat(String str):连接两个字符串</p>
-</li>
-<li><p>public boolean contains(CharSequence s)：判断当前字符串中是否包含s.</p>
-</li>
-<li><p>public String[] split(String regex)根据给定正则表达式的匹配拆分此字符串。</p>
-</li>
-</ul>
-<ul>
-<li><p>public int length():返回当前字符串的长度</p>
-</li>
-<li><p>public char charAt(int index)：获取指定索引位置的字符</p>
-</li>
-<li><p>public boolean equals(Object anObject)：比较两个字符串内容是否相等。</p>
-</li>
-<li><p>public int compareTo(String anotherString):比较两个字符串的大小</p>
-</li>
-<li><p>public int indexOf(String s):返回s在当前字符串中首次出现的位置。如果不存在，返回-1.</p>
-</li>
-<li><p>public int indexOf(String s ,int startpoint):</p>
-</li>
-<li><p>public int lastIndexOf(String s):返回s在当前字符串中末次出现的位置。如果不存在，返回-1.</p>
-</li>
-<li><p>public int lastIndexOf(String s ,int startpoint):</p>
-</li>
-<li><p>public boolean startsWith(String prefix)：判断当前的字符串是否以指定的prefix字符串开始的</p>
-</li>
-<li><p>public boolean endsWith(String suffix)：判断当前的字符串是否以指定的suffix字符串结束的</p>
-</li>
-<li><p>public boolean regionMatches(int firstStart,String other,int otherStart ,int length)   ？</p>
-</li>
-</ul>
-<p>面试题：</p>
-<p>　　String:不可变的字符序列；底层使用char[]存储</p>
-<p>　　StringBuffer:可变的字符序列；线程安全的，效率低；底层使用char[]存储  </p>
-<p>　　StringBuilder:可变的字符序列；线程不安全的，效率高，(jdk 5.0新增)；底层使用char[]存储</p>
-<p>类比：String —&gt;数组； StringBuffer —&gt;Vector   StringBuilder —&gt;ArrayList</p>
-<p>　　　ArrayList list = new ArrayList();</p>
-<p>　　　list.add(123);//new Object[10];</p>
-<p>　　　….</p>
-<p>　　　扩容:1.5倍的方式扩容。</p>
-<p>　　　这里：</p>
-<p>　　　　String str = new String();//new char[0];</p>
-<p>　　　　str.length();</p>
-<p>　　　　String str1 = new String(“abc”);//new char[]{‘a’,’b’,’c’};</p>
-<p>　　　对比：</p>
-<p>　　　　StringBuffer s1 = new StringBuffer();//char[] value = new char[16]</p>
-<p>　　　　StringBuffer s2 = new StringBuffer(10);//char[] value = new char[10]</p>
-<p>　　　　s1.append(“abc”);//value[0] = ‘a’,value[1] = ‘b’,value[2] = ‘c’;</p>
-<p>　　　　　… </p>
-<p>　　　　　　  每次添加时，都需要判断底层的char[]是否能够盛装下新要添加的字符串。</p>
-<p>　　　　　　 如果不能盛装下，需要扩容。默认扩容为原来的2倍 + 2.   </p>
-<p>　　　 启示：StringBuffer s1 = new StringBuffer(int capacity);开发中建议使用此构造器。</p>
-<p>StringBuffer中的方法：</p>
-<ul>
-<li><p>StringBuffer append(String s),</p>
-</li>
-<li><p>StringBuffer append(int n) ,</p>
-</li>
-<li><p>StringBuffer append(Object o) ,</p>
-</li>
-<li><p>StringBuffer append(char n)，</p>
-</li>
-<li><p>StringBuffer append(long n),</p>
-</li>
-<li><p>StringBuffer append(boolean n),</p>
-</li>
-<li><p>StringBuffer insert(int index, String str)</p>
-</li>
-<li><p>public StringBuffer reverse()</p>
-</li>
-<li><p>StringBuffer delete(int startIndex, int endIndex):删除当前可变字符串中从startIndex到endIndex结束的左闭右开区间的数据。</p>
-</li>
-<li><p>public char charAt(int n )</p>
-</li>
-<li><p>public void setCharAt(int n ,char ch)</p>
-</li>
-<li><p>StringBuffer replace( int startIndex ,int endIndex, String str)</p>
-</li>
-<li><p>public int indexOf(String str)</p>
-</li>
-<li><p>public String substring(int start,int end)</p>
-</li>
-<li><p>public int length()</p>
-</li>
-</ul>
-<h3 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h3><p>　　增：append(Xxx xxx)</p>
-<p>　　删：delete(int startIndex, int endIndex</p>
-<p>　　改：setCharAt(int n ,char ch) / replace( int startIndex ,int endIndex, String str)</p>
-<p>　　查：charAt(int n)</p>
-<p>　　插：insert(int index, String str)</p>
-<p>　　长度：length()</p>
-<p>　　遍历：使用for + charAt()</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/11/1/12/day12/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="顾思君">
-      <meta itemprop="description" content="直到这一刻微笑着说话为止，我至少留下了一公升眼泪">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="思君の博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/02/11/1/12/day12/" class="post-title-link" itemprop="url">day12</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-02-11 20:12:57" itemprop="dateCreated datePublished" datetime="2020-02-11T20:12:57+08:00">2020-02-11</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-12 14:27:11" itemprop="dateModified" datetime="2020-02-12T14:27:11+08:00">2020-02-12</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java/" itemprop="url" rel="index">
-                    <span itemprop="name">java</span>
-                  </a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>786</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>equals 方法的使用</p>
-<p>​     1.java.lang.Object 类中的equals()方法的定义:</p>
-<p>​               public boolean equals(Object obj){  </p>
-<p>​                           return(this == obj);</p>
-<p>​             }  </p>
-<p>​       说明:Object 类中equals()比较两个对象的引用地址是否相同，（或:比较两个引用是否指向同一个对象实体）</p>
-<p>  2.像String,Date,File,包装类重写了Object类的方法，比较两个对象中的实体内容是否相等</p>
-<p>  3.对于自定义类来讲,如果没有重写Object类中equals（）方法，仍然比较两个对象的引用地址是否相同</p>
-<p>  4.一般情况下，在开发中一旦调用了自定义了的equals()，通常是重写以后的equals()方法</p>
-<p>  5.重写equals()方法的规则:比较两个对象的属性是否都相等</p>
-<p> 面试题: == 和 equals() 区别 ?</p>
-<p>　　　　== :使用范围:可以操作基本数据类型 和 引用数据类型</p>
-<p>　　　　　　如果操作的是基本数据类型:比较两个基本数据类型变量的值是否相等</p>
-<p>　　　　　　如果操作的是引用数据类型:比较两个引用的地址是否相同</p>
-<p>　　　　equals:使用范围:只适用于引用数据类型</p>
-<p>　　　　具体的使用:见上面的1-5</p>
-<p>toString()的使用:</p>
-<p>​        1.java.lang.Object 类中toString()定义如下: </p>
-<p>​             public String toString(){  </p>
-<p>​                     return getClass().getName()+”@”+Integer.toHexString(hashCode());  </p>
-<p>​             }</p>
-<p>​       2.当我们打印一个对象的引用时，实际上就是调用了toString方法 </p>
-<p>​       3.像String,Date,File,包装类等重写了Object类中的toString方法，返回其代表的具体内容</p>
-<p>​       4.对于自定义类而言，如果我们没有重写object类中toString方法，则返回的仍然是地址值</p>
-<p>​           如果重写了的话，重写规则:返回当前对象的属性信息</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span>
+    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -1877,7 +1764,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">40</span>
+          <span class="site-state-item-count">41</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1935,7 +1822,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">76k</span>
+    <span title="站点总字数">78k</span>
 </div>
 
 
