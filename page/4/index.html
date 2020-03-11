@@ -119,17 +119,17 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">7</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">8</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类<span class="badge">5</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类<span class="badge">6</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">39</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">40</span></a>
 
   </li>
   </ul>
@@ -158,7 +158,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/11/1/12/%E8%BF%9B%E9%98%B61/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/11/1/12/%E8%BF%9B%E9%98%B64/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -172,7 +172,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2020/02/11/1/12/%E8%BF%9B%E9%98%B61/" class="post-title-link" itemprop="url">进阶1</a>
+            <a href="/2020/02/11/1/12/%E8%BF%9B%E9%98%B64/" class="post-title-link" itemprop="url">进阶4</a>
         </h1>
 
         <div class="post-meta">
@@ -189,7 +189,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-12 15:07:28" itemprop="dateModified" datetime="2020-02-12T15:07:28+08:00">2020-02-12</time>
+                <time title="修改时间：2020-02-12 15:21:00" itemprop="dateModified" datetime="2020-02-12T15:21:00+08:00">2020-02-12</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -209,7 +209,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1k</span>
+              <span>1.3k</span>
             </span>
 
         </div>
@@ -221,373 +221,63 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>.java文件(源文件) –&gt; 编译成.class字节码文件(检查语法) –&gt; 类装载器 –&gt; Java虚拟机(JVM)(解释成二进制数据) –&gt; 操作系统 –&gt; 硬件平台</p>
-<p>jdk –&gt; bin 可执行文件(命令)</p>
-<p>　　 jre 运行时环境 – lib  – rt.jar(sun提供好的库)</p>
-<p>src是源码</p>
-<p>||<br>一个.java源文件中可以定义多个class，并且一个class会生成一个.class文件<br>public的class的名字必须要与文件名保持一致，如果要定义public的class，那<br>抹这个public的class也只能有一个<br>关于java语言中的字面值<br>1.什么是字面值?</p>
-<p>　一眼看上去就知道是多少的数据,就是字面值<br>2.字面值本质：</p>
-<p>　字面值是有数据类型的:</p>
-<p>　　整型 100</p>
-<p>　　浮点型 3.14</p>
-<p>　　布尔型 true/false</p>
-<p>　　字符型 ‘中’</p>
-<p>　　字符串型 “ABC”</p>
-<p>　在内存中占用空间:<br>    字面值就是内存中的一块空间。这块空间有类型,有值。</p>
-<p>　只有字面值内存无法得到重复利用</p>
-<p>　java语言中所有的字符都采用“单引号”括起来</p>
-<p>　java语言中所有的字符串都采用“双引号”括起来</p>
-<p>关于java语言中的变量<br>1.java中如何定义变量,语法:</p>
-<p>　数据类型 变量名;<br>2.如何给变量赋值,语法:</p>
-<p>　变量名 = 值；<br>3.变量的本质是什么?</p>
-<p>　变量就是内存中的一块空间，这块空间有”类型”,”名字”,”值”<br>java中的变量必须先声明,再赋值,才能使用</p>
-<p>关于变量的作用域：有效范围,作用范围。出了大括号就不认识了</p>
-<p>变量根据出现的位置可以分为两种：</p>
-<p>　1.局部变量,在方法中声明的叫做局部变量，包括形式参数列表</p>
-<p>　2.成员变量,在类体中,方法之外声明的变量统称成员变量</p>
-<p>关于char类型</p>
-<p>　char是字符类型,java中采用unicode编码,底层占用两个字节</p>
-<p>char类型涉及到字符编码方式:</p>
-<p>　1.字符编码方式是现实世界中的文字和计算机的表示方式的转换规则。</p>
-<p>　　　ascll</p>
-<p>　　　iso-8859-1</p>
-<p>　　　gb2312&lt;gbk&lt;gb18030</p>
-<p>　　　unicode utf-8 utf-16 utf-32</p>
-<p>　2.字符如果采用的编码和解码不一致的话,会出现乱码。</p>
-<p>关于转义字符</p>
-<p>　\斜线在java语言中有转义功能</p>
-<p>　\n 换行符    \t 水平制表符  &#39; 单引号  \ “ 双引号   \ 普通斜线  </p>
-<p>　\u xxxx 后跟4位16进制unicode编码，表示一个字符</p>
-<p>默认值：</p>
-<p>　byte short int long     0 </p>
-<p>　float double            0.0</p>
-<p>　boolean                 false</p>
-<p>　char                    ‘\u0000’(表现形式上是一个空格)</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/11/1/12/%E8%BF%9B%E9%98%B62/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="顾思君">
-      <meta itemprop="description" content="直到这一刻微笑着说话为止，我至少留下了一公升眼泪">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="思君の博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/02/11/1/12/%E8%BF%9B%E9%98%B62/" class="post-title-link" itemprop="url">进阶2</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-02-11 20:12:57" itemprop="dateCreated datePublished" datetime="2020-02-11T20:12:57+08:00">2020-02-11</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-12 15:12:20" itemprop="dateModified" datetime="2020-02-12T15:12:20+08:00">2020-02-12</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java/" itemprop="url" rel="index">
-                    <span itemprop="name">java</span>
-                  </a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>2.2k</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>关于java语言中的数据类型</p>
-<p>　byte   1byte(8bit)  -128-127</p>
-<p>　short  2byte</p>
-<p>　int    4byte</p>
-<p>　long   8byte<br>整数有3中表现形式:</p>
-<p>　十进制</p>
-<p>　八进制　 以0开始</p>
-<p>　十六进制 以0x开始</p>
-<p>在java中基本类型可以相互转换,boolean类型比较特殊不可以转换成其他类型</p>
-<p>转换分为自动类型提升和强制类型转换：</p>
-<p>　自动类型提升:容量小的类型会默认转换为容量大的类型</p>
-<p>　byte -&gt; short -&gt; int -&gt; long -&gt; float -&gt; double</p>
-<p>　char</p>
-<p>byte,short,char之间计算不会相互转换,首先先转成int</p>
-<p>　强制类型转换：</p>
-<p>　　将容量大的类型转换成容量小的类型,需要进行强制转换</p>
-<p>　　注意：只要不超出范围可以将整型值直接赋值给byte,short,char</p>
-<p>在多种类型混合运算过程中,首先将所有数据转换成容量大的那种,再运算</p>
-<p>关于java中的布尔类型</p>
-<p>　1.boolean类型的数据只有两个值:true/false，没有1和0</p>
-<p>　2.boolean类型的数据主要用在逻辑运算和条件控制语句中<br>java程序分为编译期和运行期</p>
-<p>关系运算符</p>
-<p>＞<br>＞=    大等于<br>&lt;     小于<br>&lt;=    小等于<br>==    判断是否相等(基本数据类型)<br>!=    不等于<br>关系运算符的运算结果一定是boolean类型</p>
-<p>布尔运算符(逻辑运算符)</p>
-<p>　&amp;     逻辑与</p>
-<p>　|     逻辑或</p>
-<p>　!     逻辑非</p>
-<p>　^     逻辑异或</p>
-<p>　&amp;&amp;    短路与</p>
-<p>　||    短路或<br>短路：后边那个表达式不执行</p>
-<p>　什么时候发生短路与? 第一个算子结果是false的时候</p>
-<p>　什么时候发生短路或？第一个算子结果是true的时候<br>布尔运算符两边的(算子)必须是布尔类型,整个表达式的运算结果也是一个布尔类型</p>
-<p>关于赋值运算符</p>
-<p>　基本的赋值运算符</p>
-<p>　=</p>
-<p>　扩展的赋值运算符</p>
-<p>　+=    追加</p>
-<p>　-=</p>
-<p>　*=</p>
-<p>　/=</p>
-<p>　%=<br>基本运算符和扩展运算符的区别？　</p>
-<p>　扩展运算符不会改变变量本身的数据类型</p>
-<p>关于字符串连接运算符</p>
-<p>　＋运算符可以：</p>
-<p>　　1.做加法运算(+两边只要都是数字类型,一定是加法运算)</p>
-<p>　　2.字符串连接(+两边任意一端只要是字符串类型,则一定是字符串连接)</p>
-<p>条件运算符(三目运算符)</p>
-<p>　？：</p>
-<p>　语法：</p>
-<p>　　boolean表达式?表达式1:表达式2</p>
-<p>　　boolean表示式的结果是true，则整个表达式的结果就是表达式1的结果,相反则是表达式2的结果</p>
-<p>关于条件控制语句:流程控制语句if…else<br>    1.语法<br>    第一种结构：<br>        if(boolean表达式){<br>        java语句;<br>    }<br>    第二种结构:<br>    if(boolean表达式){<br>        java语句;<br>    }else{<br>        java语句;<br>    }<br>    第三种结构:<br>    if（boolean表达式）{<br>        java语句;<br>    }else if(boolean表达式){<br>        java语句；<br>    }else if(boolean表达式){<br>        java语句；<br>    }<br>    第四种结构:<br>    if（boolean表达式）{<br>        java语句;<br>    }else if(boolean表达式){<br>        java语句；<br>    }else if(boolean表达式){<br>        java语句；<br>    }else{<br>    }<br>注意：在if语句中只要有一个分支执行,则整个if语句结束</p>
-<p>　　上面的结构2.4可以保证一定会有一个分支语句执行,因为他们都有else语句。<br>！！ else 有隐藏条件</p>
-<p>关于switch语句:<br>    1.语法:<br>        switch(int类型){<br>            case int类型:<br>            java语句；<br>            java语句；<br>            break;</p>
-<p>​           case int类型:<br>           java语句；<br>​           java语句；<br>​           break;</p>
-<p>​           case int类型:<br>​           java语句；<br>​           java语句；<br>​           break;</p>
-<p>​            default:<br>​            java语句；<br>​    }</p>
-<p>注意：break；语句可以没有，default也可以没有<br>      break语句如果没有，则发生case穿透现象<br>      switch后面的括号可以填写byte/short/char类型,因为可以自动转换<br>      jdk7.0可以是String类型<br>      case可以合并        </p>
-<p>for 循环:<br>    语法：<br>    for(表达式1;表达式2;表达式3){<br>        java语句<br>    }<br>    表达式1是初始化表达式,最先执行,只执行一次<br>    表达式2必须是boolean类型的表达式</p>
-<p>for循环开始执行,先执行表达式1,并只执行一次,进而判断表达式2的结果,如果是true<br>则执行java语句,再执行表达式3,然后再判断表达式2的结果，知道表达式2的结果是false<br>则for循环结束。</p>
-<p>关于while循环<br>    语法<br>        while(boolean表达式）{<br>            java语句；<br>        }<br>该循环的执行次数:0-N</p>
-<p>关于do…while…<br>    语法：<br>        do{<br>            java语句；<br>        }while(boolean表达式)；</p>
-<p>该循环的执行次数:1-N</p>
-<p>break语句：</p>
+          <p>方法覆盖：overrride ,overwriter</p>
+<p>　1.什么时候方法需要重写？</p>
+<p>　　如果父类中的方法已经无法满足当前子类的业务要求，需要将父类的方法进行重写</p>
+<p>　2.子类如果重写父类中的方法之后,子类对象一定调用的是重写之后的方法。</p>
+<p>　3.发生方法覆盖的条件：</p>
+<p>　　第一：发生在具有继承关系的两个类之间</p>
+<p>　　第二：必须具有相同的方法名,相同的返回值类型,相同的参数列表</p>
+<p>　　第三：重写的方法不能比被重写的方法拥有更低的访问权限</p>
+<p>　　第四：重写的方法不能比被重写的方法抛出更宽泛的异常</p>
+<p>　　第五：私有的方法不能被覆盖</p>
+<p>　　第六：构造方法无法被覆盖，因为构造方法无法被继承</p>
+<p>　　第七：静态的方法不存在覆盖</p>
+<p>　　　　（静态方法执行和对象无关）</p>
+<p>　　第八：覆盖指的是成员方法，和成员变量无关</p>
+<p>　4.继承的基本作用：代码复用。继承最重要的作用：方法重写</p>
+<p>　关于java语言中向上转型和向下转型</p>
+<p>　　1.向上转型(upcasting):  子 –&gt; 父</p>
+<p>　　2.向下转型(downcasting):父 –&gt; 子</p>
+<p>注意：无论是向上转型还是向下转型,两个类之间必须有继承关系</p>
+<p>多态作用：使用多态可以使代码之间的耦合度降低</p>
+<p>　　　　　项目扩展能力增强<br>耦合度：代码和代码之间的关联程度</p>
+<p>super</p>
+<p>　1.super不是引用类型，super中存储的不是内存地址,super指向的不是父类对象</p>
+<p>　2.super代表的是当前子类对象中的父类型特征</p>
+<p>　3.什么时候使用super？</p>
+<p>　　子类和父类中都有某个数据,例如,子类和父类中都有name这个属性</p>
+<p>　　如果要在访问子类中父类中的属性，需要使用super</p>
+<p>　4.super可以用在什么地方？</p>
+<p>　　成员方法</p>
+<p>　　构造方法</p>
+<p>super关键字用在构造方法中：<br>语法:super(实参)；<br>作用：通过子类的构造方法去调用父类的构造方法</p>
+<p>语法规则：一个构造方法第一行如果没有this(…)，也没有显示的去调用super(…);</p>
+<p>　　　　　系统会默认调用super();<br>注意：super（…）的调用只能方在构造方法的第一行<br>super(…)和this(…)不能共存</p>
+<p>通过子类的构造方法去调用父类的构造方法：作用是：给当前子类对象中的父类型特征赋值。</p>
+<p>如何定义抽象类？</p>
 <ul>
-<li><p>可以用在switch语句中,结束分支语句</p>
+<li><p>class关键字前abstract</p>
 </li>
-<li><p>break；语句可以出现在循环当中,默认情况下结束离它最近的一个循环<br>continue语句:可以用来结束当前一次循环,直接进入下一次循环继续执行</p>
-<p>通过break可以指定结束某个循环(标签)</p>
+<li><p>抽象类无法实例化</p>
+</li>
+<li><p>虽然抽象类没有办法实例化,但是抽象类也有构造方法，该构造方法是给子类创建对象的用的</p>
+</li>
+<li><p>抽象类中可以定义抽象方法：</p>
+</li>
+<li><p>抽象方法的语法：在方法的修饰列表中添加abstract关键字,并且抽象方法应该以“；”结束,不能带有“{}”</p>
+</li>
+<li><p>例如：public abstract void m();</p>
+</li>
+<li><p>5.抽象类中不一定有抽象方法，但抽像方法所在的类必须是抽象类</p>
+</li>
+<li><p>一个非抽象的类继承抽象类，必须将抽象类中的抽象方法覆盖，实现，重写。</p>
+<p>抽像类不能被final修饰<br>抽象方法不能被final修饰</p>
 </li>
 </ul>
-<p>定义方法的语法：    </p>
-<p>　[方法的修饰列表] 方法的返回值类型 方法名(方法的形参列表){</p>
-<p>　　java语句；</p>
-<p>　}</p>
-<p>1.[方法的修饰列表]是可选项 。暂时携程public static<br>2.方法的返回值类型,可以是java语言中的任何一种数据类型(基本数据类型和引用数据类型)<br>3.如果该方法执行结束之后,并没有任何返回值,那抹定义方法的时候,返回值类型写:void<br>4.方法名只要是合法的标识符即可<br>5.方法的形参参数列表,可以有参数,也可以没有参数,如果有多个参数的话使用”逗号”分开<br>6.如果一个方法的返回值的类型不是void，那抹在方法体中必须使用return语句来返回数据</p>
-<p>方法的形式参数列表中起决定性作用的是参数的类型<br>参数的名字（局部变量的名字）是随意的只要是合法的标识符即可</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/11/1/12/%E8%BF%9B%E9%98%B63/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="顾思君">
-      <meta itemprop="description" content="直到这一刻微笑着说话为止，我至少留下了一公升眼泪">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="思君の博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/02/11/1/12/%E8%BF%9B%E9%98%B63/" class="post-title-link" itemprop="url">进阶3</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-02-11 20:12:57" itemprop="dateCreated datePublished" datetime="2020-02-11T20:12:57+08:00">2020-02-11</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-12 15:15:43" itemprop="dateModified" datetime="2020-02-12T15:15:43+08:00">2020-02-12</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java/" itemprop="url" rel="index">
-                    <span itemprop="name">java</span>
-                  </a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>1.6k</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>关于方法的重载(overload)<br>优点：</p>
-<p>　1.程序员只需要记忆很少的方法名,方便调用</p>
-<p>　2.代码更加关注<br>什么时候发生方法的重载：</p>
-<p>　1.发生在同一个类中</p>
-<p>　2.方法名不同</p>
-<p>　3.参数列表不同(类型,个数,顺序)</p>
-<p>方法的重载和方法的返回值以及形参名无关</p>
-<p>方法的执行原理:</p>
-<p>　方法在调用的时候,才会给该方法在内存中分配空间</p>
-<p>　如果这个方法只是定义没有调用,则不会在内存中分配空间</p>
-<p>方法调用的时候在“栈”中分配空间,(JVM)内存中有一块内存是栈结构<br>方法调用其实就是“压栈”<br>方法结束其实就是“弹栈”</p>
-<p>关于方法的递归调用</p>
-<p>　1.方法的递归调用就是方法自身调用自身</p>
-<p>类：一类具有相同特征的事物构成的集合</p>
-<p>　把现实世界中的抽象化<br>实例：类的具体化</p>
-<p>OOA   面向对象的分析<br>OOD   面向对象的设计<br>OOP   面向对象的编程</p>
-<p>JVM中所有new出来的数据统一被储存在堆区中，程序员是无法对堆区数据直接操作，<br>只能通过内存地址间接访问</p>
-<p>访问成员变量或者成员方法必须使用“引用.”(成员变量属于对象级的)</p>
-<p>面向对象的封装性指的是：</p>
-<p>　1.属性私有化</p>
-<p>　2.对外部提供公开的setter,getter</p>
-<p>　 set和get方法的方法名应该遵循规范</p>
-<p>关于java类的构造函数</p>
-<p>　1.构造方法语法</p>
-<p>　[修饰符列表] 构造方法名[形式参数表]{</p>
-<p>　　方法体</p>
-<p>　}</p>
-<p>　2.构造方法的方法名必须要类名一致</p>
-<p>　3.构造方法的作用是什莫？</p>
-<p>　　第一:创建对象</p>
-<p>　　第二：初始化对象的属性</p>
-<p>　4.构造方法应该如何调用？</p>
-<p>　　new 构造方法名(实参)； 在堆中开辟空间储存对象</p>
-<p>　5.如果一个类没有提供任何构造方法，系统会默认提供无参构造方法</p>
-<p>　　如果一个类已经手动提供了构造方法，那抹系统不再提供任何构造方法</p>
-<p>　6.成员变量到底什么时候赋值？</p>
-<p>　　只有在调用构造方法的时候，才会给成员变量赋值</p>
-<p>GC垃圾回收机制主要针对堆中的数据，当没有更多的引用指向时，则会被垃圾回收机制<br>如果使用空的引用去访问，则会出现空指针异常</p>
-<p>参数传递的问题：</p>
-<p>　1.传递的数据是基本数据类型 （值）</p>
-<p>　2.传递的数据是引用数据类型 （地址）</p>
-<p>this关键字：</p>
-<p>　1.this是什么？</p>
-<p>　 this是一个引用类型</p>
-<p>　在堆中java的每个对象中都有一个this，保存地址指向当前对象</p>
-<p>　2.this能用在哪些地方？</p>
-<p>　　构造方法，实例方法</p>
-<p>this可以用来区分成员变量和局部变量</p>
-<p>　this不能出现在静态方法中：</p>
-<p>　 静态方法的执行根本不需要java对象的存在,直接使用 类名.方式的访问</p>
-<p>　 而this代表的是当前对象,所以静态方法中根本没有this</p>
-<p>static关键字：</p>
-<p>　1.static修饰的变量叫做”静态变量”</p>
-<p>　2.static修饰的方法叫做”静态方法”</p>
-<p>　3.static还可以定义静态语句块</p>
-<p>　static定义的静态语句块在类加载阶段执行,并且只执行一次，并且是自上而下的顺序执行</p>
-<p>　关于实例语句块：</p>
-<p>　每一次调用构造方法之前会执行一次</p>
-<p>　实例语句块执行顺序也是自上而下</p>
-<p>　static修饰的方法叫做静态方法</p>
-<p>　静态方法正规方式访问：”类名.”方式调用</p>
-<p>　一般情况下工具类中的大部分方法都是静态方法</p>
-<p>　静态方法不用创建对象也能直接访问该方法</p>
-<p>　静态方法中不能直接访问非静态数据　</p>
-<p>　静态方法中不能使用this</p>
-<p>　　！！静态方法也能使用“引用.”访问,在编译阶段检查出类型,运行的时候仍然使用”类.调用”</p>
-<p>　static修饰的变量叫做“静态变量”</p>
-<p>　方法区</p>
-<p>　什么时候变量声明为静态变量？</p>
-<p>　如果这个属性所有的对象都有,并且这个属性的值是相同的，则该属性声明成静态的属性</p>
-<p>　静态变量储存在方法区，所有的java对象共享这一份</p>
-<p>　所以静态变量是类级别的，使用“类名.”的方式访问</p>
-<p>单例设计模式：</p>
-<p>　1.构造方法私有化</p>
-<p>　2.对外提供一个公开的静态的获取当前类型对象的方法</p>
-<p>　3.提供一个当前类型的静态变量</p>
-<p>单例设计模式分为两种：</p>
-<p>　懒汉式</p>
-<p>　饿汉式</p>
-<p>继承：</p>
-<p>　引入类继承基本的作用：代码复用</p>
-<p>　语法：</p>
-<p>　　[修饰符列表] class 子类名 extends 父类名 {</p>
-<p>　　　类体<br>    　}<br>java语言单继承<br>java语言中子类继承父类,会将父类中所有的数据全部继承,包括私有的也能全部继承过来<br>但是在子类中无法直接方法父类中的私有数据，但是可以间接的访问。<br>注意：构造方法无法被子类继承</p>
+<p>final修饰的类无法被继承<br>final修饰的方法无法被重写<br>final修饰的局部变量一旦赋值不可再改变<br>final修饰的成员变量需要手动赋值<br>final修饰的成员变量和static联用称为常量<br>深入final</p>
+<p>　　final修饰的引用类型,该引用不可重新指向其他的java对象</p>
+<p>　　但是final修饰的引用,该引用指向的对象的属性是可以修改的</p>
 
       
     </div>
@@ -738,309 +428,6 @@
 <p>泛化 实现 关联</p>
 <p>聚合关系：整体不依赖部分，部分也不会依赖整体<br>整体不决定部分的生命周期</p>
 <p>合成关系<br>合成关系与聚合关系是相似的，区别的地方在：整体和部分是紧密关联的</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/11/1/12/%E8%BF%9B%E9%98%B64/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="顾思君">
-      <meta itemprop="description" content="直到这一刻微笑着说话为止，我至少留下了一公升眼泪">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="思君の博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/02/11/1/12/%E8%BF%9B%E9%98%B64/" class="post-title-link" itemprop="url">进阶4</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-02-11 20:12:57" itemprop="dateCreated datePublished" datetime="2020-02-11T20:12:57+08:00">2020-02-11</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-12 15:21:00" itemprop="dateModified" datetime="2020-02-12T15:21:00+08:00">2020-02-12</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java/" itemprop="url" rel="index">
-                    <span itemprop="name">java</span>
-                  </a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>1.3k</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>方法覆盖：overrride ,overwriter</p>
-<p>　1.什么时候方法需要重写？</p>
-<p>　　如果父类中的方法已经无法满足当前子类的业务要求，需要将父类的方法进行重写</p>
-<p>　2.子类如果重写父类中的方法之后,子类对象一定调用的是重写之后的方法。</p>
-<p>　3.发生方法覆盖的条件：</p>
-<p>　　第一：发生在具有继承关系的两个类之间</p>
-<p>　　第二：必须具有相同的方法名,相同的返回值类型,相同的参数列表</p>
-<p>　　第三：重写的方法不能比被重写的方法拥有更低的访问权限</p>
-<p>　　第四：重写的方法不能比被重写的方法抛出更宽泛的异常</p>
-<p>　　第五：私有的方法不能被覆盖</p>
-<p>　　第六：构造方法无法被覆盖，因为构造方法无法被继承</p>
-<p>　　第七：静态的方法不存在覆盖</p>
-<p>　　　　（静态方法执行和对象无关）</p>
-<p>　　第八：覆盖指的是成员方法，和成员变量无关</p>
-<p>　4.继承的基本作用：代码复用。继承最重要的作用：方法重写</p>
-<p>　关于java语言中向上转型和向下转型</p>
-<p>　　1.向上转型(upcasting):  子 –&gt; 父</p>
-<p>　　2.向下转型(downcasting):父 –&gt; 子</p>
-<p>注意：无论是向上转型还是向下转型,两个类之间必须有继承关系</p>
-<p>多态作用：使用多态可以使代码之间的耦合度降低</p>
-<p>　　　　　项目扩展能力增强<br>耦合度：代码和代码之间的关联程度</p>
-<p>super</p>
-<p>　1.super不是引用类型，super中存储的不是内存地址,super指向的不是父类对象</p>
-<p>　2.super代表的是当前子类对象中的父类型特征</p>
-<p>　3.什么时候使用super？</p>
-<p>　　子类和父类中都有某个数据,例如,子类和父类中都有name这个属性</p>
-<p>　　如果要在访问子类中父类中的属性，需要使用super</p>
-<p>　4.super可以用在什么地方？</p>
-<p>　　成员方法</p>
-<p>　　构造方法</p>
-<p>super关键字用在构造方法中：<br>语法:super(实参)；<br>作用：通过子类的构造方法去调用父类的构造方法</p>
-<p>语法规则：一个构造方法第一行如果没有this(…)，也没有显示的去调用super(…);</p>
-<p>　　　　　系统会默认调用super();<br>注意：super（…）的调用只能方在构造方法的第一行<br>super(…)和this(…)不能共存</p>
-<p>通过子类的构造方法去调用父类的构造方法：作用是：给当前子类对象中的父类型特征赋值。</p>
-<p>如何定义抽象类？</p>
-<ul>
-<li><p>class关键字前abstract</p>
-</li>
-<li><p>抽象类无法实例化</p>
-</li>
-<li><p>虽然抽象类没有办法实例化,但是抽象类也有构造方法，该构造方法是给子类创建对象的用的</p>
-</li>
-<li><p>抽象类中可以定义抽象方法：</p>
-</li>
-<li><p>抽象方法的语法：在方法的修饰列表中添加abstract关键字,并且抽象方法应该以“；”结束,不能带有“{}”</p>
-</li>
-<li><p>例如：public abstract void m();</p>
-</li>
-<li><p>5.抽象类中不一定有抽象方法，但抽像方法所在的类必须是抽象类</p>
-</li>
-<li><p>一个非抽象的类继承抽象类，必须将抽象类中的抽象方法覆盖，实现，重写。</p>
-<p>抽像类不能被final修饰<br>抽象方法不能被final修饰</p>
-</li>
-</ul>
-<p>final修饰的类无法被继承<br>final修饰的方法无法被重写<br>final修饰的局部变量一旦赋值不可再改变<br>final修饰的成员变量需要手动赋值<br>final修饰的成员变量和static联用称为常量<br>深入final</p>
-<p>　　final修饰的引用类型,该引用不可重新指向其他的java对象</p>
-<p>　　但是final修饰的引用,该引用指向的对象的属性是可以修改的</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/11/1/12/%E8%BF%9B%E9%98%B67/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="顾思君">
-      <meta itemprop="description" content="直到这一刻微笑着说话为止，我至少留下了一公升眼泪">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="思君の博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/02/11/1/12/%E8%BF%9B%E9%98%B67/" class="post-title-link" itemprop="url">进阶7</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-02-11 20:12:57" itemprop="dateCreated datePublished" datetime="2020-02-11T20:12:57+08:00">2020-02-11</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-20 11:18:12" itemprop="dateModified" datetime="2020-02-20T11:18:12+08:00">2020-02-20</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java/" itemprop="url" rel="index">
-                    <span itemprop="name">java</span>
-                  </a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>3k</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>迭代器，集合获取到迭代器之后，可以使用迭代器去遍历集合<br>List</p>
-<p>　　存储元素的特点:有序可重复.有序，存进去是什么顺序，取出来时候还是这个顺序</p>
-<p>　　ArrayList底层使用的是数组存储元素的，所以ArrayList适合查询，不适合频繁的增删元素</p>
-<p>　　LinekList底层使用双向链表这种数据结构存储数据的,链表适合频繁的增删元素，不适合查询操作</p>
-<p>　　Vector集合底层和ArrayList相同，但是Vector是线程安全的，效率较低<br>Set</p>
-<p>　　存储元素的特点：无序不重复.存进去的时候是这样一个顺序，取出来的时候就不一定是这个顺序取出了</p>
-<p>哈希表/散列表</p>
-<p>Sorted 继承 Set</p>
-<p>　存储元素的特点：无序不重复的。但是存储进去的元素可以按照元素的大小自动排序</p>
-<p>Collection 常用方法</p>
-<p>boolean add(Object element)   向集合中请添加元素<br>void clear()   清空集合<br>boolean isEmpty()  判断集合是否为空<br>int size() 获取集合中元素个数</p>
-<p>Interator iterator() 获取集合所依赖的迭代器对象</p>
-<p>　通过迭代器中方法完成集合的迭代（遍历）</p>
-<p>　注意：这种方式是所有集合通用的遍历方式</p>
-<p>迭代器面向接口编程<br>不需要关心底层集合的具体类型，所有集合依赖的迭代器都实现了java.util.Iterator接口<br>hasNext 判断是否还有更多的元素<br>next    将迭代器向下移动一位，并取出指向的元素</p>
-<p>boolean contains(Object o) 集合中是否包含某个元素</p>
-<p>　底层调用的是equals方法，如果equals返回true,就是包含<br>boolean remove(Object o)   删除集合中某个元素</p>
-<p>存储在集合中的元素应该去重写equals方法</p>
-<p>boolean remove(Object o)<br>remove和contains都需要集合中的元素重写equals方法，因为Object中的equals方法<br>比较内存地址，在现实的业务逻辑当中不能比较内存地址，该比较内容</p>
-<p>深入remove方法</p>
-<p>　1.迭代器的remove方法</p>
-<p>　2.集合自身带的remove方法<br>推荐使用迭代器本身自带的方法删除元素</p>
-<p>List集合存储元素特点：</p>
-<p>　1.有序（List元素存储有下标）：存进去是这样的顺序，取出来还是按照这个顺序取出</p>
-<p>　2.可重复</p>
-<p>深入List集合<br> ArrayList集合底层是数组，数组下标是有序的<br> 所以在ArrayList集合有很多自己的特性<br> ArrayList集合底层默认初始化容量是10，扩大之后的容量是原容量的1.5倍<br> Vector集合底层默认初始化容量是10，扩大之后的容量是原容量的2倍</p>
-<p> 如何优化ArrayList和Vector</p>
-<p>　尽量减少扩容操作，因为扩容需要数组拷贝，数组拷贝很耗内存</p>
-<p>　一般推荐在创建集合的时候指定初始化容量</p>
-<p>Set集合：HashSet</p>
-<ul>
-<li><p>HashSet底层实际上是一个HashMap,HashMap底层采用了哈希表数据结构</p>
-</li>
-<li><p>哈希表又叫散列表，哈希表底层是一个数组，这个数组中每一个元素是一个单向链表<br>每个单向链表都有独一无二的hash值,代表数组的下标.在某个单向链表的每一个节点<br>上的hash值是相等的.hash值实际上是key调用hashCode方法，再通过“hash function”</p>
-<p>转换成的值</p>
-</li>
-<li><p>如何向哈希表中添加元素：</p>
-<p>　　 先调用被存储的key的hashCode方法，经过某个算法得出hash值，如果在这个哈希表中</p>
-<pre><code>  　　不存在这个hash值，则直接添加元素.如果该hash值已经存在，继续调用key之间的equals</code></pre></li>
-</ul>
-<p>　　　　方法，如果equals返回false,则将该元素添加。如果equals方法返回true,则放弃添加该元素</p>
-<ul>
-<li>HashSet其实是HashMap中的key部分。HashSet有什么特点，HashMap中的key应该具有相同的特点<br>   5.HashMap和HashSet初始化容量都是16，默认加载因子是0.75</li>
-</ul>
-<p>关于往Set集合中存储的元素，该元素的hashCode方法和equals方法<br>HashMap中有一个put方法，put(key,value) key是无序的不可重复的<br>结论:存储在HashSet集合或者HashMap集合key部分的元素，需要同时重写hashCode1+equals</p>
-<p>java.util.Set</p>
-<p>　java.util.SortedSet  无序不重复，但是存进去的元素可以按照元素大小自动排序</p>
-<p>　　java.util.TreeSet</p>
-<p>SortedSet存储元素为什么可以自动排序？   (equals返回false,才会比较）</p>
-<p>　 因为被存储的元素实现了Comparable接口，</p>
-<p>　SUN编写TreeSet集合在添加元素的时候，会</p>
-<p>　调用compareTo方法完成比较</p>
-<p>让SortedSet集合做到排序还有另一种方式java..util.Comparator<br>单独编写一个比较器</p>
-<p>map集合中的常用方法<br>  void clear() 清空map<br>  boolean containsKey(Object key)    判断集合中是否包含这样的key<br>  boolean containsValue(Object value)  判断集合中是否包含这样的value</p>
-<p>  Set&lt;Map.Entry&lt;K,V&gt;&gt; entrySet() </p>
-<p>　　返回此映射中包含的映射关系的 Set 视图。 </p>
-<p> V get(Object key)   通过key获取value<br> boolean isEmpty()   判断该集合是否为空<br> Set<K> keySet()     获取map中所有key<br> V put(K key, V value)  向集合中添加键值对<br> V remove(Object key)   通过key删除元素<br> int size()             获取map中键值对的个数<br> Collection<V> values   获取map集合中所有value<br> Set keySet() 获取所有的key<br> set entrySet()  Map转换成Set</V></K></p>
-<p>注意：存储在Map集合key部分的元素需要同时重写hashCode+equals</p>
-<p>　　HashMap和HashSet初始化容量都是16，默认加载因子是0.75</p>
-<p>Map中如果key重复了,value采用的是“覆盖”</p>
-<p>HashMap和HashSet初始化容量都是16，默认加载因子是0.75<br>Hashtable默认初始化容量是11，默认加载因子是0.75<br>java.util.Properties 也是由key和value组成，但是key和value都是字符串类型</p>
-<p>SortedMap中的key特点：无需不可重复，但是存进去的元素可以按照大小自动排序<br>如果想自动排序：key部分的元素需要，1.实现comparable接口 2.单独写一个比较器</p>
-<p>关于集合工具类 java.util.Collections<br>java.util.Collecition 集合接口</p>
-<p>　　Collections工具类可以对List集合中的元素排序，但是集合中的元素必须是“可比较的”，实现comparable接口</p>
-<p>关于JDK5.0新特性的新特性：泛型（编译期概念）</p>
-<p>　1.为什么引入泛型？</p>
-<p>　　1.可以统一集合中的数据类型</p>
-<p>　　2.可以减少强制类型转换</p>
-<p>　2.泛型语法如何实现？</p>
-<p>　　泛型是一个编译阶段的语法</p>
-<p>　　在编译阶段统一集合中的类型</p>
-<p>　3.泛型的有点和缺点？</p>
-<p>　　优点：同一类型，减少强制转换</p>
-<p>　　缺点：类型太统一了</p>
-<p>自定义泛型</p>
-<p>JDK5.0新特性：</p>
-<p>　关于增强for循环</p>
-<p>　语法：</p>
-<p>　　for(类型 变量：数组名/集合名){}</p>
-<p>　集合要想使用增强for循环这种语法，集合需要使用泛型</p>
-<p>　如果集合不使用泛型，该集合在使用增强for循环的时候应该使用Object类型定义</p>
-<p>关于增强for的缺点:没有下标</p>
 
       
     </div>
@@ -1277,6 +664,331 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/11/1/12/day23/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="顾思君">
+      <meta itemprop="description" content="直到这一刻微笑着说话为止，我至少留下了一公升眼泪">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="思君の博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/02/11/1/12/day23/" class="post-title-link" itemprop="url">day23</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-02-11 20:12:57" itemprop="dateCreated datePublished" datetime="2020-02-11T20:12:57+08:00">2020-02-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-20 11:31:09" itemprop="dateModified" datetime="2020-02-20T11:31:09+08:00">2020-02-20</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>3.6k</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>jdk 8 之前 日期+时间 API的使用</p>
+<p>java.util.Date类</p>
+<p>　　|—-java.sql.Date类</p>
+<p>1.java.util.Date类：</p>
+<p>　　如何实例化：两个构造器</p>
+<p>　　常用方法：toString() / getTime();</p>
+<p> 2.java.sql.Date类：与数据表中的Date类型的变量对应。    </p>
+<p>构造器一：获取系统当前时间对应的Date对象</p>
+<p>Date date = new Date();</p>
+<p>getTime()：返回当前日期对应的毫秒数：当前时间与1970-1-1 00：00：00直接的毫秒数</p>
+<p>构造器二：获取毫秒数所对应的Date对象</p>
+<p>Date date1 = new Date(1502768492941L);</p>
+<p>SQl:</p>
+<p>java.sql.Date date2 = new java.sql.Date(1502768492941L);</p>
+<p>SimpleDateFormat</p>
+<p>使用默认构造器:SimpleDateFormat sdf = new SimpleDateFormat();</p>
+<p>格式化：String format(Date date):</p>
+<p>　Date date = new Date();</p>
+<p>　String dateStr = sdf.format(date);</p>
+<p>解析： Date parse(String dateStr)</p>
+<p>　Date date1 = sdf.parse(“17-8-15 下午2:18”);</p>
+<p>　System.out.println(date1);</p>
+<p>java.text.SimpleDateFormat类</p>
+<p>　1.SimpleDateFormat的作用：</p>
+<p>　　　格式化：日期—&gt;文本</p>
+<p>　　　解析：格式化的逆过程，文本 —&gt;日期</p>
+<p>　2.SimpleDateFormat实例化</p>
+<p>　　使用带参数的构造器</p>
+<p>　　　SimpleDateFormat sdf1 = new SimpleDateFormat(“EEE, d MMM yyyy HH:mm:ss Z”); 　　　</p>
+<p>　　　SimpleDateFormat sdf1 = new SimpleDateFormat(“yyyy-MM-dd hh:mm:ss”);</p>
+<p>　　格式化：</p>
+<p>　　　String dateStr1 = sdf1.format(date);</p>
+<p>　　　System.out.println(dateStr1);//2017-08-15 02:24:40</p>
+<p>　　解析：</p>
+<p>　　　Date date2 = sdf1.parse(“2017-08-15 02:24:40”);</p>
+<p>　　　System.out.println(date2);</p>
+<p>java.util.Calendar(日历)类的使用</p>
+<p>　　1.实例化Calendar calendar = Calendar.getInstance();</p>
+<p>　　2.get()</p>
+<p>​        　int day = calendar.get(Calendar.DAY_OF_MONTH);</p>
+<p>​        　System.out.println(day);</p>
+<p>　　3.set()</p>
+<p>　　　calendar.set(Calendar.DAY_OF_MONTH, 20);　</p>
+<p>　　　day =   calendar.get(Calendar.DAY_OF_MONTH);</p>
+<p>　　　System.out.println(day);</p>
+<p>　　4.add()</p>
+<p>　　　calendar.add(Calendar.DAY_OF_MONTH, -2);</p>
+<p>　　　day = calendar.get(Calendar.DAY_OF_MONTH);</p>
+<p>　　　System.out.println(day);</p>
+<p>日历 —&gt;日期</p>
+<p>　　Date date = calendar.getTime();</p>
+<p>　　System.out.println(date);</p>
+<p>使用指定的Date对象，来设置calendar</p>
+<p>　　Date date1 = new Date();</p>
+<p>　　calendar.setTime(date1);</p>
+<p>　　day = calendar.get(Calendar.DAY_OF_MONTH);</p>
+<p>　　System.out.println(day);</p>
+<p>LocalDate / LocalTime / LocalDateTime     —–重要//理解为对Calendar</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//实例化</span></span><br><span class="line"><span class="comment">//now()</span></span><br><span class="line">LocalDate localDate = LocalDate.now();</span><br><span class="line">LocalTime localTime = LocalTime.now();</span><br><span class="line">LocalDateTime localDateTime =   LocalDateTime.now();</span><br><span class="line"></span><br><span class="line">System.out.println(localDate);</span><br><span class="line">System.out.println(localTime);</span><br><span class="line">System.out.println(localDateTime);</span><br><span class="line"></span><br><span class="line"><span class="comment">//of()</span></span><br><span class="line">LocalDate localDate2 = LocalDate.of(<span class="number">2017</span>,<span class="number">8</span>,<span class="number">15</span>); </span><br><span class="line">System.out.println(localDate2);</span><br><span class="line">LocalDateTime localDateTime2 = LocalDateTime.of(<span class="number">2017</span>, <span class="number">8</span>, <span class="number">15</span>, <span class="number">11</span>, <span class="number">11</span>,<span class="number">23</span>); System.out.println(localDateTime2);</span><br><span class="line">System.out.println();</span><br><span class="line"><span class="comment">//getXxx():</span></span><br><span class="line">System.out.println(localDateTime.getDayOfYear());</span><br><span class="line">System.out.println(localDateTime.getDayOfMonth());</span><br><span class="line">System.out.println(localDateTime.getDayOfWeek());</span><br><span class="line">System.out.println(localDateTime.getMonth());</span><br><span class="line">System.out.println(localDateTime.getMonthValue());</span><br><span class="line">System.out.println(localDateTime.getHour());</span><br><span class="line">System.out.println(localDateTime.getMinute());</span><br><span class="line"><span class="comment">//withXxx():体现了不可变性</span></span><br><span class="line">LocalDateTime localDateTime3=localDateTime.withDayOfMonth(<span class="number">20</span>); System.out.println(localDateTime);</span><br><span class="line">System.out.println(localDateTime3);</span><br><span class="line">LocalDateTime localDateTime4=localDateTime.withHour(<span class="number">12</span>); System.out.println(localDateTime4);</span><br><span class="line"><span class="comment">//plus()//minus()</span></span><br><span class="line">LocalDateTime localDateTime5 =localDateTime.plusDays(<span class="number">3</span>); System.out.println(localDateTime5);</span><br><span class="line">LocalDateTime localDateTime6 =localDateTime.minusMinutes(<span class="number">20</span>); </span><br><span class="line">System.out.println(localDateTime6);</span><br><span class="line"><span class="keyword">boolean</span> isBefore =localDateTime.isBefore(localDateTime6); </span><br><span class="line"> System.out.println(isBefore);<span class="comment">//false</span></span><br><span class="line"><span class="keyword">boolean</span> isAfter =localDateTime.isAfter(localDateTime6); System.out.println(isAfter);<span class="comment">//true</span></span><br><span class="line"><span class="comment">//isLeapYear():</span></span><br><span class="line">System.out.println(localDate.isLeapYear());</span><br><span class="line">LocalDate localDate3 =localDate.minusYears(<span class="number">1</span>); </span><br><span class="line">System.out.println(localDate3.isLeapYear());</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p>Optional类使用的测试</p>
+<p>　Optional:是一个封装了具体类型数据的容器。</p>
+<p>　其中，具体的类型：通过Optional的泛型体现。</p>
+<p>　具体类型的数据：通过Optional内部的T value体现</p>
+<p>返回一个没有封装任何数据的Optional对象</p>
+<p>　　Optional<Object> op = Optional.empty();０</Object></p>
+<p>　　Optional<String> op1 = Optional.ofNullable(“beijing”);</String></p>
+<p>isPresent():判断内部的数据是否存在</p>
+<p>get():返回Optional对象内部封装的数据</p>
+<p>of(T t):当t为null时，报异常。建议不用此方法</p>
+<p>orElse(T t):如果调用对象包含值，返回该值，否则返回t</p>
+<p>Integer类作为int的包装类，能存储的最大整型值为2^31−1， </p>
+<p>BigInteger类的数值范围较Integer类、Long类的数值范围要大得多，可以支持任意精度的整数。</p>
+<p>在商业计算中，要求数字精度比较高，故用到java.math.BigDecimal类。</p>
+<p>BigDecimal类支持任何精度的定点数。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/11/1/12/%E8%BF%9B%E9%98%B67/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="顾思君">
+      <meta itemprop="description" content="直到这一刻微笑着说话为止，我至少留下了一公升眼泪">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="思君の博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/02/11/1/12/%E8%BF%9B%E9%98%B67/" class="post-title-link" itemprop="url">进阶7</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-02-11 20:12:57" itemprop="dateCreated datePublished" datetime="2020-02-11T20:12:57+08:00">2020-02-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-20 11:18:12" itemprop="dateModified" datetime="2020-02-20T11:18:12+08:00">2020-02-20</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>3k</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>迭代器，集合获取到迭代器之后，可以使用迭代器去遍历集合<br>List</p>
+<p>　　存储元素的特点:有序可重复.有序，存进去是什么顺序，取出来时候还是这个顺序</p>
+<p>　　ArrayList底层使用的是数组存储元素的，所以ArrayList适合查询，不适合频繁的增删元素</p>
+<p>　　LinekList底层使用双向链表这种数据结构存储数据的,链表适合频繁的增删元素，不适合查询操作</p>
+<p>　　Vector集合底层和ArrayList相同，但是Vector是线程安全的，效率较低<br>Set</p>
+<p>　　存储元素的特点：无序不重复.存进去的时候是这样一个顺序，取出来的时候就不一定是这个顺序取出了</p>
+<p>哈希表/散列表</p>
+<p>Sorted 继承 Set</p>
+<p>　存储元素的特点：无序不重复的。但是存储进去的元素可以按照元素的大小自动排序</p>
+<p>Collection 常用方法</p>
+<p>boolean add(Object element)   向集合中请添加元素<br>void clear()   清空集合<br>boolean isEmpty()  判断集合是否为空<br>int size() 获取集合中元素个数</p>
+<p>Interator iterator() 获取集合所依赖的迭代器对象</p>
+<p>　通过迭代器中方法完成集合的迭代（遍历）</p>
+<p>　注意：这种方式是所有集合通用的遍历方式</p>
+<p>迭代器面向接口编程<br>不需要关心底层集合的具体类型，所有集合依赖的迭代器都实现了java.util.Iterator接口<br>hasNext 判断是否还有更多的元素<br>next    将迭代器向下移动一位，并取出指向的元素</p>
+<p>boolean contains(Object o) 集合中是否包含某个元素</p>
+<p>　底层调用的是equals方法，如果equals返回true,就是包含<br>boolean remove(Object o)   删除集合中某个元素</p>
+<p>存储在集合中的元素应该去重写equals方法</p>
+<p>boolean remove(Object o)<br>remove和contains都需要集合中的元素重写equals方法，因为Object中的equals方法<br>比较内存地址，在现实的业务逻辑当中不能比较内存地址，该比较内容</p>
+<p>深入remove方法</p>
+<p>　1.迭代器的remove方法</p>
+<p>　2.集合自身带的remove方法<br>推荐使用迭代器本身自带的方法删除元素</p>
+<p>List集合存储元素特点：</p>
+<p>　1.有序（List元素存储有下标）：存进去是这样的顺序，取出来还是按照这个顺序取出</p>
+<p>　2.可重复</p>
+<p>深入List集合<br> ArrayList集合底层是数组，数组下标是有序的<br> 所以在ArrayList集合有很多自己的特性<br> ArrayList集合底层默认初始化容量是10，扩大之后的容量是原容量的1.5倍<br> Vector集合底层默认初始化容量是10，扩大之后的容量是原容量的2倍</p>
+<p> 如何优化ArrayList和Vector</p>
+<p>　尽量减少扩容操作，因为扩容需要数组拷贝，数组拷贝很耗内存</p>
+<p>　一般推荐在创建集合的时候指定初始化容量</p>
+<p>Set集合：HashSet</p>
+<ul>
+<li><p>HashSet底层实际上是一个HashMap,HashMap底层采用了哈希表数据结构</p>
+</li>
+<li><p>哈希表又叫散列表，哈希表底层是一个数组，这个数组中每一个元素是一个单向链表<br>每个单向链表都有独一无二的hash值,代表数组的下标.在某个单向链表的每一个节点<br>上的hash值是相等的.hash值实际上是key调用hashCode方法，再通过“hash function”</p>
+<p>转换成的值</p>
+</li>
+<li><p>如何向哈希表中添加元素：</p>
+<p>　　 先调用被存储的key的hashCode方法，经过某个算法得出hash值，如果在这个哈希表中</p>
+<pre><code>  　　不存在这个hash值，则直接添加元素.如果该hash值已经存在，继续调用key之间的equals</code></pre></li>
+</ul>
+<p>　　　　方法，如果equals返回false,则将该元素添加。如果equals方法返回true,则放弃添加该元素</p>
+<ul>
+<li>HashSet其实是HashMap中的key部分。HashSet有什么特点，HashMap中的key应该具有相同的特点<br>   5.HashMap和HashSet初始化容量都是16，默认加载因子是0.75</li>
+</ul>
+<p>关于往Set集合中存储的元素，该元素的hashCode方法和equals方法<br>HashMap中有一个put方法，put(key,value) key是无序的不可重复的<br>结论:存储在HashSet集合或者HashMap集合key部分的元素，需要同时重写hashCode1+equals</p>
+<p>java.util.Set</p>
+<p>　java.util.SortedSet  无序不重复，但是存进去的元素可以按照元素大小自动排序</p>
+<p>　　java.util.TreeSet</p>
+<p>SortedSet存储元素为什么可以自动排序？   (equals返回false,才会比较）</p>
+<p>　 因为被存储的元素实现了Comparable接口，</p>
+<p>　SUN编写TreeSet集合在添加元素的时候，会</p>
+<p>　调用compareTo方法完成比较</p>
+<p>让SortedSet集合做到排序还有另一种方式java..util.Comparator<br>单独编写一个比较器</p>
+<p>map集合中的常用方法<br>  void clear() 清空map<br>  boolean containsKey(Object key)    判断集合中是否包含这样的key<br>  boolean containsValue(Object value)  判断集合中是否包含这样的value</p>
+<p>  Set&lt;Map.Entry&lt;K,V&gt;&gt; entrySet() </p>
+<p>　　返回此映射中包含的映射关系的 Set 视图。 </p>
+<p> V get(Object key)   通过key获取value<br> boolean isEmpty()   判断该集合是否为空<br> Set<K> keySet()     获取map中所有key<br> V put(K key, V value)  向集合中添加键值对<br> V remove(Object key)   通过key删除元素<br> int size()             获取map中键值对的个数<br> Collection<V> values   获取map集合中所有value<br> Set keySet() 获取所有的key<br> set entrySet()  Map转换成Set</V></K></p>
+<p>注意：存储在Map集合key部分的元素需要同时重写hashCode+equals</p>
+<p>　　HashMap和HashSet初始化容量都是16，默认加载因子是0.75</p>
+<p>Map中如果key重复了,value采用的是“覆盖”</p>
+<p>HashMap和HashSet初始化容量都是16，默认加载因子是0.75<br>Hashtable默认初始化容量是11，默认加载因子是0.75<br>java.util.Properties 也是由key和value组成，但是key和value都是字符串类型</p>
+<p>SortedMap中的key特点：无需不可重复，但是存进去的元素可以按照大小自动排序<br>如果想自动排序：key部分的元素需要，1.实现comparable接口 2.单独写一个比较器</p>
+<p>关于集合工具类 java.util.Collections<br>java.util.Collecition 集合接口</p>
+<p>　　Collections工具类可以对List集合中的元素排序，但是集合中的元素必须是“可比较的”，实现comparable接口</p>
+<p>关于JDK5.0新特性的新特性：泛型（编译期概念）</p>
+<p>　1.为什么引入泛型？</p>
+<p>　　1.可以统一集合中的数据类型</p>
+<p>　　2.可以减少强制类型转换</p>
+<p>　2.泛型语法如何实现？</p>
+<p>　　泛型是一个编译阶段的语法</p>
+<p>　　在编译阶段统一集合中的类型</p>
+<p>　3.泛型的有点和缺点？</p>
+<p>　　优点：同一类型，减少强制转换</p>
+<p>　　缺点：类型太统一了</p>
+<p>自定义泛型</p>
+<p>JDK5.0新特性：</p>
+<p>　关于增强for循环</p>
+<p>　语法：</p>
+<p>　　for(类型 变量：数组名/集合名){}</p>
+<p>　集合要想使用增强for循环这种语法，集合需要使用泛型</p>
+<p>　如果集合不使用泛型，该集合在使用增强for循环的时候应该使用Object类型定义</p>
+<p>关于增强for的缺点:没有下标</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/11/1/12/%E8%BF%9B%E9%98%B68/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1377,6 +1089,165 @@
 <p>Compile 编译(java–&gt;class)<br>Decompile 反编译(class–&gt;java</p>
 <p>标识接口的作用:起到标识的作用<br>   JVM如果看到该对象实现某个标识接口,会对它特殊待遇</p>
 <p>Serializable 可序列化<br>transient 不参加序列化</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/11/1/12/%E8%BF%9B%E9%98%B62/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="顾思君">
+      <meta itemprop="description" content="直到这一刻微笑着说话为止，我至少留下了一公升眼泪">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="思君の博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/02/11/1/12/%E8%BF%9B%E9%98%B62/" class="post-title-link" itemprop="url">进阶2</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-02-11 20:12:57" itemprop="dateCreated datePublished" datetime="2020-02-11T20:12:57+08:00">2020-02-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-12 15:12:20" itemprop="dateModified" datetime="2020-02-12T15:12:20+08:00">2020-02-12</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>2.2k</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>关于java语言中的数据类型</p>
+<p>　byte   1byte(8bit)  -128-127</p>
+<p>　short  2byte</p>
+<p>　int    4byte</p>
+<p>　long   8byte<br>整数有3中表现形式:</p>
+<p>　十进制</p>
+<p>　八进制　 以0开始</p>
+<p>　十六进制 以0x开始</p>
+<p>在java中基本类型可以相互转换,boolean类型比较特殊不可以转换成其他类型</p>
+<p>转换分为自动类型提升和强制类型转换：</p>
+<p>　自动类型提升:容量小的类型会默认转换为容量大的类型</p>
+<p>　byte -&gt; short -&gt; int -&gt; long -&gt; float -&gt; double</p>
+<p>　char</p>
+<p>byte,short,char之间计算不会相互转换,首先先转成int</p>
+<p>　强制类型转换：</p>
+<p>　　将容量大的类型转换成容量小的类型,需要进行强制转换</p>
+<p>　　注意：只要不超出范围可以将整型值直接赋值给byte,short,char</p>
+<p>在多种类型混合运算过程中,首先将所有数据转换成容量大的那种,再运算</p>
+<p>关于java中的布尔类型</p>
+<p>　1.boolean类型的数据只有两个值:true/false，没有1和0</p>
+<p>　2.boolean类型的数据主要用在逻辑运算和条件控制语句中<br>java程序分为编译期和运行期</p>
+<p>关系运算符</p>
+<p>＞<br>＞=    大等于<br>&lt;     小于<br>&lt;=    小等于<br>==    判断是否相等(基本数据类型)<br>!=    不等于<br>关系运算符的运算结果一定是boolean类型</p>
+<p>布尔运算符(逻辑运算符)</p>
+<p>　&amp;     逻辑与</p>
+<p>　|     逻辑或</p>
+<p>　!     逻辑非</p>
+<p>　^     逻辑异或</p>
+<p>　&amp;&amp;    短路与</p>
+<p>　||    短路或<br>短路：后边那个表达式不执行</p>
+<p>　什么时候发生短路与? 第一个算子结果是false的时候</p>
+<p>　什么时候发生短路或？第一个算子结果是true的时候<br>布尔运算符两边的(算子)必须是布尔类型,整个表达式的运算结果也是一个布尔类型</p>
+<p>关于赋值运算符</p>
+<p>　基本的赋值运算符</p>
+<p>　=</p>
+<p>　扩展的赋值运算符</p>
+<p>　+=    追加</p>
+<p>　-=</p>
+<p>　*=</p>
+<p>　/=</p>
+<p>　%=<br>基本运算符和扩展运算符的区别？　</p>
+<p>　扩展运算符不会改变变量本身的数据类型</p>
+<p>关于字符串连接运算符</p>
+<p>　＋运算符可以：</p>
+<p>　　1.做加法运算(+两边只要都是数字类型,一定是加法运算)</p>
+<p>　　2.字符串连接(+两边任意一端只要是字符串类型,则一定是字符串连接)</p>
+<p>条件运算符(三目运算符)</p>
+<p>　？：</p>
+<p>　语法：</p>
+<p>　　boolean表达式?表达式1:表达式2</p>
+<p>　　boolean表示式的结果是true，则整个表达式的结果就是表达式1的结果,相反则是表达式2的结果</p>
+<p>关于条件控制语句:流程控制语句if…else<br>    1.语法<br>    第一种结构：<br>        if(boolean表达式){<br>        java语句;<br>    }<br>    第二种结构:<br>    if(boolean表达式){<br>        java语句;<br>    }else{<br>        java语句;<br>    }<br>    第三种结构:<br>    if（boolean表达式）{<br>        java语句;<br>    }else if(boolean表达式){<br>        java语句；<br>    }else if(boolean表达式){<br>        java语句；<br>    }<br>    第四种结构:<br>    if（boolean表达式）{<br>        java语句;<br>    }else if(boolean表达式){<br>        java语句；<br>    }else if(boolean表达式){<br>        java语句；<br>    }else{<br>    }<br>注意：在if语句中只要有一个分支执行,则整个if语句结束</p>
+<p>　　上面的结构2.4可以保证一定会有一个分支语句执行,因为他们都有else语句。<br>！！ else 有隐藏条件</p>
+<p>关于switch语句:<br>    1.语法:<br>        switch(int类型){<br>            case int类型:<br>            java语句；<br>            java语句；<br>            break;</p>
+<p>​           case int类型:<br>           java语句；<br>​           java语句；<br>​           break;</p>
+<p>​           case int类型:<br>​           java语句；<br>​           java语句；<br>​           break;</p>
+<p>​            default:<br>​            java语句；<br>​    }</p>
+<p>注意：break；语句可以没有，default也可以没有<br>      break语句如果没有，则发生case穿透现象<br>      switch后面的括号可以填写byte/short/char类型,因为可以自动转换<br>      jdk7.0可以是String类型<br>      case可以合并        </p>
+<p>for 循环:<br>    语法：<br>    for(表达式1;表达式2;表达式3){<br>        java语句<br>    }<br>    表达式1是初始化表达式,最先执行,只执行一次<br>    表达式2必须是boolean类型的表达式</p>
+<p>for循环开始执行,先执行表达式1,并只执行一次,进而判断表达式2的结果,如果是true<br>则执行java语句,再执行表达式3,然后再判断表达式2的结果，知道表达式2的结果是false<br>则for循环结束。</p>
+<p>关于while循环<br>    语法<br>        while(boolean表达式）{<br>            java语句；<br>        }<br>该循环的执行次数:0-N</p>
+<p>关于do…while…<br>    语法：<br>        do{<br>            java语句；<br>        }while(boolean表达式)；</p>
+<p>该循环的执行次数:1-N</p>
+<p>break语句：</p>
+<ul>
+<li><p>可以用在switch语句中,结束分支语句</p>
+</li>
+<li><p>break；语句可以出现在循环当中,默认情况下结束离它最近的一个循环<br>continue语句:可以用来结束当前一次循环,直接进入下一次循环继续执行</p>
+<p>通过break可以指定结束某个循环(标签)</p>
+</li>
+</ul>
+<p>定义方法的语法：    </p>
+<p>　[方法的修饰列表] 方法的返回值类型 方法名(方法的形参列表){</p>
+<p>　　java语句；</p>
+<p>　}</p>
+<p>1.[方法的修饰列表]是可选项 。暂时携程public static<br>2.方法的返回值类型,可以是java语言中的任何一种数据类型(基本数据类型和引用数据类型)<br>3.如果该方法执行结束之后,并没有任何返回值,那抹定义方法的时候,返回值类型写:void<br>4.方法名只要是合法的标识符即可<br>5.方法的形参参数列表,可以有参数,也可以没有参数,如果有多个参数的话使用”逗号”分开<br>6.如果一个方法的返回值的类型不是void，那抹在方法体中必须使用return语句来返回数据</p>
+<p>方法的形式参数列表中起决定性作用的是参数的类型<br>参数的名字（局部变量的名字）是随意的只要是合法的标识符即可</p>
 
       
     </div>
@@ -1528,6 +1399,412 @@
   
   
 
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/11/1/12/day22/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="顾思君">
+      <meta itemprop="description" content="直到这一刻微笑着说话为止，我至少留下了一公升眼泪">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="思君の博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/02/11/1/12/day22/" class="post-title-link" itemprop="url">day22</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-02-11 20:12:57" itemprop="dateCreated datePublished" datetime="2020-02-11T20:12:57+08:00">2020-02-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-20 11:35:08" itemprop="dateModified" datetime="2020-02-20T11:35:08+08:00">2020-02-20</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>5.8k</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>一、继承Thread的方式</p>
+<p>　　1.提供一个继承于Thread类的子类</p>
+<p>　　2.重写Thread类的run():将创建的线程要执行的操作，声明在run()中。</p>
+<p>　　3.实例化Thread子类</p>
+<p>　　4.调用子类对象的start() </p>
+<p>Thread类的常用方法的测试</p>
+<p> 　　1.run():Thread的子类一定要重写的方法。将此分线程要执行的操作，声明在run()中</p>
+<p>　 　2.start():要想启动一个分线程，就需要调用start():①启动线程②调用线程的run()</p>
+<p>　 　3.currentThread():静态方法，获取当前的线程</p>
+<p>　 　4.getName():获取当前线程的名字</p>
+<p>　 　5.setName(String name)：设置当前线程的名字</p>
+<p>　 　6.yield():当前线程调用此方法，释放CPU的执行权</p>
+<p>　 　7.join():在线程a中调用线程b的join()方法:只用当线程b执行结束以后，线程a结束阻塞状态，继续执行。</p>
+<p>　　 8.sleep(long millitimes):让当前的线程睡眠millitimes毫秒</p>
+<p>　 　9.isAlive():判断当前线程是否存活 </p>
+<p>　　10.线程的优先级：</p>
+<p>　　　　 MAX_PRIORITY：10 </p>
+<p>　　　　NORM_PRIORITY：5 —默认优先级</p>
+<p>　　　　MIN_PRIORITY：1</p>
+<p>​    　 设置优先级：setPriority(int priority); </p>
+<p>​    　 获取优先级：getPriority()；</p>
+<blockquote>
+<p>设置优先级以后，对高优先级，使用优先调度的抢占式策略，抢占低优先级的执行。但是并不意味着高优    先级的线程一定先于低优先级的线程执行，而是从概率上来讲，概率更大而已。</p>
+</blockquote>
+<p> 线程通信：wait() / notify() / notifyAll()  —-&gt;java.lang.Object类中定义的方法</p>
+<h4 id="一：继承Thread的方式"><a href="#一：继承Thread的方式" class="headerlink" title="一：继承Thread的方式"></a>一：继承Thread的方式</h4><p>　　　1.提供一个继承Thread类的子类 </p>
+<p>　　　2.重写Thread类run():将创建的线程要执行的操作,声明在run()中 </p>
+<p>　　　3.实例化Thread子类</p>
+<p>　　　4.调用子类对象的start()方法</p>
+<h4 id="创建多线程的方式二"><a href="#创建多线程的方式二" class="headerlink" title="创建多线程的方式二:"></a>创建多线程的方式二:</h4><p>　　　1.创建一个实现Runnable接口的类</p>
+<p>　　　2.实现Runnable的run()</p>
+<p>　　　3.创建当前实现类的对象</p>
+<p>　　　4.将此对象作为参数传递到Thread类的构造器中,创建Thread类的对象</p>
+<p>　　　5.通过Thread类的对象调用其start()</p>
+<p>对比继承Thread类和实现Runnable接口的方式</p>
+<p>　　　1.联系:public class Thread implements Runnable</p>
+<p>　　　2.相同点:启动线程,使用的是同一个start()方法</p>
+<p>　　　3.对比:实现Runnable接口要好一些. </p>
+<p>　原因：①不影响类的继承,因为类是单继承的   </p>
+<p>　　　　②针对于有共享数据的操作,更适合使用Runnable的方式 ,换句话说,实现Runnable接口的方式,实现了代                    码和数据的分离</p>
+<p>　　　4.面试题:创建多线程有几种方法?     继承Thread类,实现Runnable接口,实现Callable接口,使用线程池</p>
+<p>模仿车站买票程序。开启3个窗口卖票。总票数为100张。—–使用实现的方式</p>
+<p>　　1.问题：出现了重票和错票</p>
+<p>　　2.问题出现的原因：一个窗口在没有售完票的情况下，其他的窗口参与进来，操作ticket，导致ticket输出的错            误。</p>
+<p>　　3.解决的方案：当某一个窗口完全操作完ticket以后，其他窗口应该才被允许进来，继续操作ticket。</p>
+<p>　　4.java如何实现的？同步机制：①同步代码块    ②同步方法 </p>
+<p>　　　4.1 同步代码块：</p>
+<p>​                 synchronized(同步监视器){</p>
+<p>​                       //需要被同步的代码</p>
+<p>​               }</p>
+<p>　　　说明：需要被同步的代码：即为操作共享数据的代码</p>
+<p>　　　　　　共享数据：多个线程共同操作的数据。比如：ticket</p>
+<p>　　　　　　同步监视器：俗称：锁。 可以由任何一个类的对象充当。 要求：保证多个线程共用同一把锁！</p>
+<p>　　　4.2 同步方法：将操作共享数据的方法，声明为同步的。此方法即为同步方法。</p>
+<p>　　　　　使用同步方法解决实现方式的线程安全问题。</p>
+<p>　　　　　1.默认的同步方法（非静态的）的锁是：当前对象，也就是this.</p>
+<p>　　　　　2.默认的同步方法（静态的）的锁是：当前类本身.</p>
+<p>　　　　　　使用同步方法解决继承方式的线程安全问题：</p>
+<p>　　　　　注意：继承的方式中，要慎用同步方法。</p>
+<p>​        5.好处：线程的同步机制，解决了线程的安全问题。</p>
+<p>​        6.劣势：在操作共享数据过程中，是单线程的。</p>
+<p>模仿车站买票程序。开启3个窗口卖票。总票数为100张     —–使用实现的方式</p>
+<p>　　解决线程安全问题的方式三：ReentrantLock</p>
+<p>　　存在线程的安全问题，使用Lock的方式解决线程安全问题。</p>
+<p>面试题：同步的方式和Lock的方式，解决线程安全方面的异同？</p>
+<p>　　同：解决了线程安全问题</p>
+<p>　　异：同步的方式：同步监视器在线程执行完操作共享数据的代码以后，自动释放</p>
+<blockquote>
+<p> Lock的方式：需要显式的调用unlock()方法之后，才能保证其他线程操作共享数据。 </p>
+</blockquote>
+<p>死锁：不同的线程分别占用对方需要的同步资源不放弃，都在等待对方放弃自己需要的同步资源，就形成了线程的死锁，是我们开发中需要规避的！</p>
+<p>线程的通信：</p>
+<ul>
+<li><p>wait():一个线程在执行过程中，一旦调用此方法，则此线程进入阻塞状态，等待其他线程来唤醒自己。    </p>
+</li>
+<li><p>notify():一个线程在执行过程中，一旦调用此方法，则会唤醒被wait()的一个线程。高优先级的要优先被唤醒。</p>
+</li>
+<li><p>notifyAll():一个线程在执行过程中，一旦调用此方法，则会唤醒所有被wait()的线程。</p>
+</li>
+</ul>
+<p>　　　例题：使用两个线程打印 1-100. 线程1, 线程2 交替打印</p>
+<p>注意点：1.此三个方法必须使用在同步中。</p>
+<p>　　　　2.此三个方法的调用者是同步监视器！否则，如果三个方法的调用者不是同步监视器，报异常。</p>
+<p>　　　　3.此三个方法定义在Object类</p>
+<p>面试题：sleep() 和  wait() 的异同？</p>
+<p>　　1.方法声明在哪？ Thread:sleep()   Object:wait()</p>
+<p>　　2.共同点：使得当前线程进入阻塞状态</p>
+<p>　　3.使用的范围要求：sleep()使用没有情境的要求；wait()必须使用在同步代码块或同步方法中</p>
+<p>　　4.都使用在同步当中的话：wait()需要唤醒：notify()/notifyAll();  sleep():不会释放锁；wait()会释放锁 </p>
+<p> String:字符串</p>
+<p>　　　1.字符串声明的数据，会存储在字符串常量池中。第一次声明时，需要创建相应的字符串。之后，如果声明的变量，其值与之前存在的字符串内容相同，则直接引用现成的字符串。</p>
+<p>　　　2.面试题：String s3 = new String(“javaEE”);创建的对象，在内存中生成了几个对象？</p>
+<p><strong>String:代表着不可变的字符序列。</strong></p>
+<p>　　　1.String类的声明public final class String implements java.io.Serializable, Comparable<String>, 　　　　CharSequence</String></p>
+<p>　　　　　①String声明为final，不可被继承。</p>
+<p>　　　　　②实现Serializable：表明String可序列化。浏览器/客户端&lt;—&gt;服务器端     进程1&lt;—-&gt;进程2    　　　　　　“{name=Tom,age=12}”    JSON:本质就是String</p>
+<p>　　　　　③String重写了hashCode()/equals():常常将Map的key声明为String型。</p>
+<p>　　　　　④实现Comparable接口：String可以比较大小。</p>
+<p>　　　　　⑤实现CharSequence接口：String的底层声明了char[] value数组。</p>
+<p>　　　2.如何理解String的不可变性：</p>
+<p>　　　　　①向现有的字符串后添加新的字符串，必须声明新的字符串空间</p>
+<p>　　　　　②将现有的字符串替换为新的字符串，必须声明新的字符串空</p>
+<p>　　　　　③只替换现有字符串中的指定某个字符，也必须声明新的字符串空间</p>
+<p>String类与其它结构的转换：</p>
+<p>　　　1.String 与包装类、基本数据类型变量间的转换    </p>
+<p>　　　　String–&gt;包装类、基本数据类型:调用包装类Xxx的parseXxx(String s)方法</p>
+<p>　　　　包装类、基本数据类型 –&gt;String:调用String的valueOf(xxx xxx); </p>
+<p>　　　2.String 与 字节数组间的转换   </p>
+<p>　　　　String –&gt; 字节数组:调用String类的getBytes()</p>
+<p>　　　　字节数组–&gt;String:new String(byte[] buffer,startIndex,length)</p>
+<p>　　　3.String 与 字符数组间的转换</p>
+<p>　　　　String –&gt; 字符数组：调用String类的toCharArray()</p>
+<p>　　　　字符数组 –&gt;String:new String(char[] cbuf,startIndex,length)    </p>
+<p>​         </p>
+<ul>
+<li><p>public String substring(int startpoint):返回当前字符串中从startPoint位置开始，到末尾的子字符串。  </p>
+</li>
+<li><p>public String substring(int start,int end):返回当前字符串中从startPoint位置开始，到end结束的左闭右开区间的子字符串。</p>
+</li>
+<li><p>pubic String replace(char oldChar,char newChar):将字符串中指定的所有oldChar替换为newChar.</p>
+</li>
+<li><p>public String replaceAll(String old,String new):将字符串中指定的所有old替换为new.</p>
+</li>
+<li><p>public String trim():去除字符串首尾的空格</p>
+</li>
+<li><p>public String concat(String str):连接两个字符串</p>
+</li>
+<li><p>public boolean contains(CharSequence s)：判断当前字符串中是否包含s.</p>
+</li>
+<li><p>public String[] split(String regex)根据给定正则表达式的匹配拆分此字符串。</p>
+</li>
+</ul>
+<ul>
+<li><p>public int length():返回当前字符串的长度</p>
+</li>
+<li><p>public char charAt(int index)：获取指定索引位置的字符</p>
+</li>
+<li><p>public boolean equals(Object anObject)：比较两个字符串内容是否相等。</p>
+</li>
+<li><p>public int compareTo(String anotherString):比较两个字符串的大小</p>
+</li>
+<li><p>public int indexOf(String s):返回s在当前字符串中首次出现的位置。如果不存在，返回-1.</p>
+</li>
+<li><p>public int indexOf(String s ,int startpoint):</p>
+</li>
+<li><p>public int lastIndexOf(String s):返回s在当前字符串中末次出现的位置。如果不存在，返回-1.</p>
+</li>
+<li><p>public int lastIndexOf(String s ,int startpoint):</p>
+</li>
+<li><p>public boolean startsWith(String prefix)：判断当前的字符串是否以指定的prefix字符串开始的</p>
+</li>
+<li><p>public boolean endsWith(String suffix)：判断当前的字符串是否以指定的suffix字符串结束的</p>
+</li>
+<li><p>public boolean regionMatches(int firstStart,String other,int otherStart ,int length)   ？</p>
+</li>
+</ul>
+<p>面试题：</p>
+<p>　　String:不可变的字符序列；底层使用char[]存储</p>
+<p>　　StringBuffer:可变的字符序列；线程安全的，效率低；底层使用char[]存储  </p>
+<p>　　StringBuilder:可变的字符序列；线程不安全的，效率高，(jdk 5.0新增)；底层使用char[]存储</p>
+<p>类比：String —&gt;数组； StringBuffer —&gt;Vector   StringBuilder —&gt;ArrayList</p>
+<p>　　　ArrayList list = new ArrayList();</p>
+<p>　　　list.add(123);//new Object[10];</p>
+<p>　　　….</p>
+<p>　　　扩容:1.5倍的方式扩容。</p>
+<p>　　　这里：</p>
+<p>　　　　String str = new String();//new char[0];</p>
+<p>　　　　str.length();</p>
+<p>　　　　String str1 = new String(“abc”);//new char[]{‘a’,’b’,’c’};</p>
+<p>　　　对比：</p>
+<p>　　　　StringBuffer s1 = new StringBuffer();//char[] value = new char[16]</p>
+<p>　　　　StringBuffer s2 = new StringBuffer(10);//char[] value = new char[10]</p>
+<p>　　　　s1.append(“abc”);//value[0] = ‘a’,value[1] = ‘b’,value[2] = ‘c’;</p>
+<p>　　　　　… </p>
+<p>　　　　　　  每次添加时，都需要判断底层的char[]是否能够盛装下新要添加的字符串。</p>
+<p>　　　　　　 如果不能盛装下，需要扩容。默认扩容为原来的2倍 + 2.   </p>
+<p>　　　 启示：StringBuffer s1 = new StringBuffer(int capacity);开发中建议使用此构造器。</p>
+<p>StringBuffer中的方法：</p>
+<ul>
+<li><p>StringBuffer append(String s),</p>
+</li>
+<li><p>StringBuffer append(int n) ,</p>
+</li>
+<li><p>StringBuffer append(Object o) ,</p>
+</li>
+<li><p>StringBuffer append(char n)，</p>
+</li>
+<li><p>StringBuffer append(long n),</p>
+</li>
+<li><p>StringBuffer append(boolean n),</p>
+</li>
+<li><p>StringBuffer insert(int index, String str)</p>
+</li>
+<li><p>public StringBuffer reverse()</p>
+</li>
+<li><p>StringBuffer delete(int startIndex, int endIndex):删除当前可变字符串中从startIndex到endIndex结束的左闭右开区间的数据。</p>
+</li>
+<li><p>public char charAt(int n )</p>
+</li>
+<li><p>public void setCharAt(int n ,char ch)</p>
+</li>
+<li><p>StringBuffer replace( int startIndex ,int endIndex, String str)</p>
+</li>
+<li><p>public int indexOf(String str)</p>
+</li>
+<li><p>public String substring(int start,int end)</p>
+</li>
+<li><p>public int length()</p>
+</li>
+</ul>
+<h3 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h3><p>　　增：append(Xxx xxx)</p>
+<p>　　删：delete(int startIndex, int endIndex</p>
+<p>　　改：setCharAt(int n ,char ch) / replace( int startIndex ,int endIndex, String str)</p>
+<p>　　查：charAt(int n)</p>
+<p>　　插：insert(int index, String str)</p>
+<p>　　长度：length()</p>
+<p>　　遍历：使用for + charAt()</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/11/1/12/day12/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="顾思君">
+      <meta itemprop="description" content="直到这一刻微笑着说话为止，我至少留下了一公升眼泪">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="思君の博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/02/11/1/12/day12/" class="post-title-link" itemprop="url">day12</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-02-11 20:12:57" itemprop="dateCreated datePublished" datetime="2020-02-11T20:12:57+08:00">2020-02-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-12 14:27:11" itemprop="dateModified" datetime="2020-02-12T14:27:11+08:00">2020-02-12</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>786</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>equals 方法的使用</p>
+<p>​     1.java.lang.Object 类中的equals()方法的定义:</p>
+<p>​               public boolean equals(Object obj){  </p>
+<p>​                           return(this == obj);</p>
+<p>​             }  </p>
+<p>​       说明:Object 类中equals()比较两个对象的引用地址是否相同，（或:比较两个引用是否指向同一个对象实体）</p>
+<p>  2.像String,Date,File,包装类重写了Object类的方法，比较两个对象中的实体内容是否相等</p>
+<p>  3.对于自定义类来讲,如果没有重写Object类中equals（）方法，仍然比较两个对象的引用地址是否相同</p>
+<p>  4.一般情况下，在开发中一旦调用了自定义了的equals()，通常是重写以后的equals()方法</p>
+<p>  5.重写equals()方法的规则:比较两个对象的属性是否都相等</p>
+<p> 面试题: == 和 equals() 区别 ?</p>
+<p>　　　　== :使用范围:可以操作基本数据类型 和 引用数据类型</p>
+<p>　　　　　　如果操作的是基本数据类型:比较两个基本数据类型变量的值是否相等</p>
+<p>　　　　　　如果操作的是引用数据类型:比较两个引用的地址是否相同</p>
+<p>　　　　equals:使用范围:只适用于引用数据类型</p>
+<p>　　　　具体的使用:见上面的1-5</p>
+<p>toString()的使用:</p>
+<p>​        1.java.lang.Object 类中toString()定义如下: </p>
+<p>​             public String toString(){  </p>
+<p>​                     return getClass().getName()+”@”+Integer.toHexString(hashCode());  </p>
+<p>​             }</p>
+<p>​       2.当我们打印一个对象的引用时，实际上就是调用了toString方法 </p>
+<p>​       3.像String,Date,File,包装类等重写了Object类中的toString方法，返回其代表的具体内容</p>
+<p>​       4.对于自定义类而言，如果我们没有重写object类中toString方法，则返回的仍然是地址值</p>
+<p>​           如果重写了的话，重写规则:返回当前对象的属性信息</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
   </div>
 
   
@@ -1600,20 +1877,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">39</span>
+          <span class="site-state-item-count">40</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-count">8</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -1658,7 +1935,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">73k</span>
+    <span title="站点总字数">76k</span>
 </div>
 
 
