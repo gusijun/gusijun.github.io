@@ -129,7 +129,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">41</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">40</span></a>
 
   </li>
   </ul>
@@ -158,7 +158,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/11/1/12/day22/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/11/1/12/day21/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -172,7 +172,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2020/02/11/1/12/day22/" class="post-title-link" itemprop="url">day22</a>
+            <a href="/2020/02/11/1/12/day21/" class="post-title-link" itemprop="url">day21</a>
         </h1>
 
         <div class="post-meta">
@@ -189,7 +189,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-20 11:35:08" itemprop="dateModified" datetime="2020-02-20T11:35:08+08:00">2020-02-20</time>
+                <time title="修改时间：2020-02-12 13:21:40" itemprop="dateModified" datetime="2020-02-12T13:21:40+08:00">2020-02-12</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -209,7 +209,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>5.8k</span>
+              <span>1.5k</span>
             </span>
 
         </div>
@@ -221,223 +221,213 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>一、继承Thread的方式</p>
-<p>　　1.提供一个继承于Thread类的子类</p>
-<p>　　2.重写Thread类的run():将创建的线程要执行的操作，声明在run()中。</p>
-<p>　　3.实例化Thread子类</p>
-<p>　　4.调用子类对象的start() </p>
-<p>Thread类的常用方法的测试</p>
-<p> 　　1.run():Thread的子类一定要重写的方法。将此分线程要执行的操作，声明在run()中</p>
-<p>　 　2.start():要想启动一个分线程，就需要调用start():①启动线程②调用线程的run()</p>
-<p>　 　3.currentThread():静态方法，获取当前的线程</p>
-<p>　 　4.getName():获取当前线程的名字</p>
-<p>　 　5.setName(String name)：设置当前线程的名字</p>
-<p>　 　6.yield():当前线程调用此方法，释放CPU的执行权</p>
-<p>　 　7.join():在线程a中调用线程b的join()方法:只用当线程b执行结束以后，线程a结束阻塞状态，继续执行。</p>
-<p>　　 8.sleep(long millitimes):让当前的线程睡眠millitimes毫秒</p>
-<p>　 　9.isAlive():判断当前线程是否存活 </p>
-<p>　　10.线程的优先级：</p>
-<p>　　　　 MAX_PRIORITY：10 </p>
-<p>　　　　NORM_PRIORITY：5 —默认优先级</p>
-<p>　　　　MIN_PRIORITY：1</p>
-<p>​    　 设置优先级：setPriority(int priority); </p>
-<p>​    　 获取优先级：getPriority()；</p>
+          <p>一、NIO的使用中两个重要的要素：</p>
+<p>　缓冲区(Buffer)、通道(Channel)</p>
+<p>　缓冲区(Buffer):存储数据的。   —-&gt;byte[] buffer = new byte[1024]</p>
+<p>　通道(Channel)：代表着数据源与目标节点之间的连接，负责缓冲区的传输。 —&gt;IO流</p>
+<p>　二者的交互：Java NIO 中的 Buffer 主要用于与 NIO 通道(Channel)进行交互， 数据是从通道读入缓冲  区，　从缓冲区写入通道中的。</p>
+<p>二、缓冲区（Buffer）的结构 (除boolean之外) </p>
+<p>　java.nio.Buffer抽象类</p>
+<p>　　|—-ByteBuffer</p>
+<p>　　|—-CharBuffer</p>
+<p>　　|—-ShortBuffer</p>
+<p>　　|—-IntBuffer</p>
+<p>　　|—-LongBuffer</p>
+<p>　　|—-FloatBuffer</p>
+<p>　　|—-DoubleBuffer</p>
+<p> XxxBuffer底层使用xxx[]进行存储。</p>
+<p> 三、如何实例化缓冲区？调用缓冲区类XxxBuffer的静态方法：allocate(int capacity)   </p>
+<p>　　举例：ByteBuffer byteBuffer = ByteBuffer.allocate(10);byte[] hb = new byte[10];</p>
+<p>　　类似：ArrayList list = new ArrayList(10);//Object[] eleData = new Object[10];</p>
+<p>　说明：方法的形参，决定了底层创建的数组的长度</p>
+<p>四、Buffer中的常用属性：</p>
+<p>　　capacity:容量，决定了底层数组的长度，表明了最大存储数据的容量</p>
+<p>　　limit:限制，默认情况下，limit等于capacity.在读数据模式下，limit&lt;=capacity.表明最大可以读取数据的量position:位置，表明了当前读取或写入数据的位置</p>
+<p>　　mark:标记。默认值为-1.</p>
+<p>　　关系式：mark &lt;= position &lt;= limit &lt;= capacity</p>
+<p>　　类比：项目三中TeamService类中的属性：</p>
+<p>　　　private final int MAX_MEMBER = 5;//相当于capacity  </p>
+<p>　　　private Programmer[] team = new Programmer[MAX_MEMBER];//Buffer底层封装的数组  </p>
+<p>　　　private int total;//相当于limit</p>
+<p>　　　index:读取、写入数组指定为的索引：position</p>
+<p>五、Buffer中的常用方法：</p>
+<p>　　1）最基本的两个方法：put(Xxx xxx) / get()</p>
+<p>　　2）其他方法：见ppt中的表格即可。</p>
+<p> 六、针对于ByteBuffer来讲，可以创建非直接缓冲区：allocate(int capacity)</p>
+<p>​         直接缓冲区：allocateDirect(int capacity) / FileChannel 的 map()</p>
 <blockquote>
-<p>设置优先级以后，对高优先级，使用优先调度的抢占式策略，抢占低优先级的执行。但是并不意味着高优    先级的线程一定先于低优先级的线程执行，而是从概率上来讲，概率更大而已。</p>
+<p>了解非直接缓冲区 与 直接缓冲区的区别</p>
 </blockquote>
-<p> 线程通信：wait() / notify() / notifyAll()  —-&gt;java.lang.Object类中定义的方法</p>
-<h4 id="一：继承Thread的方式"><a href="#一：继承Thread的方式" class="headerlink" title="一：继承Thread的方式"></a>一：继承Thread的方式</h4><p>　　　1.提供一个继承Thread类的子类 </p>
-<p>　　　2.重写Thread类run():将创建的线程要执行的操作,声明在run()中 </p>
-<p>　　　3.实例化Thread子类</p>
-<p>　　　4.调用子类对象的start()方法</p>
-<h4 id="创建多线程的方式二"><a href="#创建多线程的方式二" class="headerlink" title="创建多线程的方式二:"></a>创建多线程的方式二:</h4><p>　　　1.创建一个实现Runnable接口的类</p>
-<p>　　　2.实现Runnable的run()</p>
-<p>　　　3.创建当前实现类的对象</p>
-<p>　　　4.将此对象作为参数传递到Thread类的构造器中,创建Thread类的对象</p>
-<p>　　　5.通过Thread类的对象调用其start()</p>
-<p>对比继承Thread类和实现Runnable接口的方式</p>
-<p>　　　1.联系:public class Thread implements Runnable</p>
-<p>　　　2.相同点:启动线程,使用的是同一个start()方法</p>
-<p>　　　3.对比:实现Runnable接口要好一些. </p>
-<p>　原因：①不影响类的继承,因为类是单继承的   </p>
-<p>　　　　②针对于有共享数据的操作,更适合使用Runnable的方式 ,换句话说,实现Runnable接口的方式,实现了代                    码和数据的分离</p>
-<p>　　　4.面试题:创建多线程有几种方法?     继承Thread类,实现Runnable接口,实现Callable接口,使用线程池</p>
-<p>模仿车站买票程序。开启3个窗口卖票。总票数为100张。—–使用实现的方式</p>
-<p>　　1.问题：出现了重票和错票</p>
-<p>　　2.问题出现的原因：一个窗口在没有售完票的情况下，其他的窗口参与进来，操作ticket，导致ticket输出的错            误。</p>
-<p>　　3.解决的方案：当某一个窗口完全操作完ticket以后，其他窗口应该才被允许进来，继续操作ticket。</p>
-<p>　　4.java如何实现的？同步机制：①同步代码块    ②同步方法 </p>
-<p>　　　4.1 同步代码块：</p>
-<p>​                 synchronized(同步监视器){</p>
-<p>​                       //需要被同步的代码</p>
-<p>​               }</p>
-<p>　　　说明：需要被同步的代码：即为操作共享数据的代码</p>
-<p>　　　　　　共享数据：多个线程共同操作的数据。比如：ticket</p>
-<p>　　　　　　同步监视器：俗称：锁。 可以由任何一个类的对象充当。 要求：保证多个线程共用同一把锁！</p>
-<p>　　　4.2 同步方法：将操作共享数据的方法，声明为同步的。此方法即为同步方法。</p>
-<p>　　　　　使用同步方法解决实现方式的线程安全问题。</p>
-<p>　　　　　1.默认的同步方法（非静态的）的锁是：当前对象，也就是this.</p>
-<p>　　　　　2.默认的同步方法（静态的）的锁是：当前类本身.</p>
-<p>　　　　　　使用同步方法解决继承方式的线程安全问题：</p>
-<p>　　　　　注意：继承的方式中，要慎用同步方法。</p>
-<p>​        5.好处：线程的同步机制，解决了线程的安全问题。</p>
-<p>​        6.劣势：在操作共享数据过程中，是单线程的。</p>
-<p>模仿车站买票程序。开启3个窗口卖票。总票数为100张     —–使用实现的方式</p>
-<p>　　解决线程安全问题的方式三：ReentrantLock</p>
-<p>　　存在线程的安全问题，使用Lock的方式解决线程安全问题。</p>
-<p>面试题：同步的方式和Lock的方式，解决线程安全方面的异同？</p>
-<p>　　同：解决了线程安全问题</p>
-<p>　　异：同步的方式：同步监视器在线程执行完操作共享数据的代码以后，自动释放</p>
-<blockquote>
-<p> Lock的方式：需要显式的调用unlock()方法之后，才能保证其他线程操作共享数据。 </p>
-</blockquote>
-<p>死锁：不同的线程分别占用对方需要的同步资源不放弃，都在等待对方放弃自己需要的同步资源，就形成了线程的死锁，是我们开发中需要规避的！</p>
-<p>线程的通信：</p>
-<ul>
-<li><p>wait():一个线程在执行过程中，一旦调用此方法，则此线程进入阻塞状态，等待其他线程来唤醒自己。    </p>
-</li>
-<li><p>notify():一个线程在执行过程中，一旦调用此方法，则会唤醒被wait()的一个线程。高优先级的要优先被唤醒。</p>
-</li>
-<li><p>notifyAll():一个线程在执行过程中，一旦调用此方法，则会唤醒所有被wait()的线程。</p>
-</li>
-</ul>
-<p>　　　例题：使用两个线程打印 1-100. 线程1, 线程2 交替打印</p>
-<p>注意点：1.此三个方法必须使用在同步中。</p>
-<p>　　　　2.此三个方法的调用者是同步监视器！否则，如果三个方法的调用者不是同步监视器，报异常。</p>
-<p>　　　　3.此三个方法定义在Object类</p>
-<p>面试题：sleep() 和  wait() 的异同？</p>
-<p>　　1.方法声明在哪？ Thread:sleep()   Object:wait()</p>
-<p>　　2.共同点：使得当前线程进入阻塞状态</p>
-<p>　　3.使用的范围要求：sleep()使用没有情境的要求；wait()必须使用在同步代码块或同步方法中</p>
-<p>　　4.都使用在同步当中的话：wait()需要唤醒：notify()/notifyAll();  sleep():不会释放锁；wait()会释放锁 </p>
-<p> String:字符串</p>
-<p>　　　1.字符串声明的数据，会存储在字符串常量池中。第一次声明时，需要创建相应的字符串。之后，如果声明的变量，其值与之前存在的字符串内容相同，则直接引用现成的字符串。</p>
-<p>　　　2.面试题：String s3 = new String(“javaEE”);创建的对象，在内存中生成了几个对象？</p>
-<p><strong>String:代表着不可变的字符序列。</strong></p>
-<p>　　　1.String类的声明public final class String implements java.io.Serializable, Comparable<String>, 　　　　CharSequence</String></p>
-<p>　　　　　①String声明为final，不可被继承。</p>
-<p>　　　　　②实现Serializable：表明String可序列化。浏览器/客户端&lt;—&gt;服务器端     进程1&lt;—-&gt;进程2    　　　　　　“{name=Tom,age=12}”    JSON:本质就是String</p>
-<p>　　　　　③String重写了hashCode()/equals():常常将Map的key声明为String型。</p>
-<p>　　　　　④实现Comparable接口：String可以比较大小。</p>
-<p>　　　　　⑤实现CharSequence接口：String的底层声明了char[] value数组。</p>
-<p>　　　2.如何理解String的不可变性：</p>
-<p>　　　　　①向现有的字符串后添加新的字符串，必须声明新的字符串空间</p>
-<p>　　　　　②将现有的字符串替换为新的字符串，必须声明新的字符串空</p>
-<p>　　　　　③只替换现有字符串中的指定某个字符，也必须声明新的字符串空间</p>
-<p>String类与其它结构的转换：</p>
-<p>　　　1.String 与包装类、基本数据类型变量间的转换    </p>
-<p>　　　　String–&gt;包装类、基本数据类型:调用包装类Xxx的parseXxx(String s)方法</p>
-<p>　　　　包装类、基本数据类型 –&gt;String:调用String的valueOf(xxx xxx); </p>
-<p>　　　2.String 与 字节数组间的转换   </p>
-<p>　　　　String –&gt; 字节数组:调用String类的getBytes()</p>
-<p>　　　　字节数组–&gt;String:new String(byte[] buffer,startIndex,length)</p>
-<p>　　　3.String 与 字符数组间的转换</p>
-<p>　　　　String –&gt; 字符数组：调用String类的toCharArray()</p>
-<p>　　　　字符数组 –&gt;String:new String(char[] cbuf,startIndex,length)    </p>
-<p>​         </p>
-<ul>
-<li><p>public String substring(int startpoint):返回当前字符串中从startPoint位置开始，到末尾的子字符串。  </p>
-</li>
-<li><p>public String substring(int start,int end):返回当前字符串中从startPoint位置开始，到end结束的左闭右开区间的子字符串。</p>
-</li>
-<li><p>pubic String replace(char oldChar,char newChar):将字符串中指定的所有oldChar替换为newChar.</p>
-</li>
-<li><p>public String replaceAll(String old,String new):将字符串中指定的所有old替换为new.</p>
-</li>
-<li><p>public String trim():去除字符串首尾的空格</p>
-</li>
-<li><p>public String concat(String str):连接两个字符串</p>
-</li>
-<li><p>public boolean contains(CharSequence s)：判断当前字符串中是否包含s.</p>
-</li>
-<li><p>public String[] split(String regex)根据给定正则表达式的匹配拆分此字符串。</p>
-</li>
-</ul>
-<ul>
-<li><p>public int length():返回当前字符串的长度</p>
-</li>
-<li><p>public char charAt(int index)：获取指定索引位置的字符</p>
-</li>
-<li><p>public boolean equals(Object anObject)：比较两个字符串内容是否相等。</p>
-</li>
-<li><p>public int compareTo(String anotherString):比较两个字符串的大小</p>
-</li>
-<li><p>public int indexOf(String s):返回s在当前字符串中首次出现的位置。如果不存在，返回-1.</p>
-</li>
-<li><p>public int indexOf(String s ,int startpoint):</p>
-</li>
-<li><p>public int lastIndexOf(String s):返回s在当前字符串中末次出现的位置。如果不存在，返回-1.</p>
-</li>
-<li><p>public int lastIndexOf(String s ,int startpoint):</p>
-</li>
-<li><p>public boolean startsWith(String prefix)：判断当前的字符串是否以指定的prefix字符串开始的</p>
-</li>
-<li><p>public boolean endsWith(String suffix)：判断当前的字符串是否以指定的suffix字符串结束的</p>
-</li>
-<li><p>public boolean regionMatches(int firstStart,String other,int otherStart ,int length)   ？</p>
-</li>
-</ul>
-<p>面试题：</p>
-<p>　　String:不可变的字符序列；底层使用char[]存储</p>
-<p>　　StringBuffer:可变的字符序列；线程安全的，效率低；底层使用char[]存储  </p>
-<p>　　StringBuilder:可变的字符序列；线程不安全的，效率高，(jdk 5.0新增)；底层使用char[]存储</p>
-<p>类比：String —&gt;数组； StringBuffer —&gt;Vector   StringBuilder —&gt;ArrayList</p>
-<p>　　　ArrayList list = new ArrayList();</p>
-<p>　　　list.add(123);//new Object[10];</p>
-<p>　　　….</p>
-<p>　　　扩容:1.5倍的方式扩容。</p>
-<p>　　　这里：</p>
-<p>　　　　String str = new String();//new char[0];</p>
-<p>　　　　str.length();</p>
-<p>　　　　String str1 = new String(“abc”);//new char[]{‘a’,’b’,’c’};</p>
-<p>　　　对比：</p>
-<p>　　　　StringBuffer s1 = new StringBuffer();//char[] value = new char[16]</p>
-<p>　　　　StringBuffer s2 = new StringBuffer(10);//char[] value = new char[10]</p>
-<p>　　　　s1.append(“abc”);//value[0] = ‘a’,value[1] = ‘b’,value[2] = ‘c’;</p>
-<p>　　　　　… </p>
-<p>　　　　　　  每次添加时，都需要判断底层的char[]是否能够盛装下新要添加的字符串。</p>
-<p>　　　　　　 如果不能盛装下，需要扩容。默认扩容为原来的2倍 + 2.   </p>
-<p>　　　 启示：StringBuffer s1 = new StringBuffer(int capacity);开发中建议使用此构造器。</p>
-<p>StringBuffer中的方法：</p>
-<ul>
-<li><p>StringBuffer append(String s),</p>
-</li>
-<li><p>StringBuffer append(int n) ,</p>
-</li>
-<li><p>StringBuffer append(Object o) ,</p>
-</li>
-<li><p>StringBuffer append(char n)，</p>
-</li>
-<li><p>StringBuffer append(long n),</p>
-</li>
-<li><p>StringBuffer append(boolean n),</p>
-</li>
-<li><p>StringBuffer insert(int index, String str)</p>
-</li>
-<li><p>public StringBuffer reverse()</p>
-</li>
-<li><p>StringBuffer delete(int startIndex, int endIndex):删除当前可变字符串中从startIndex到endIndex结束的左闭右开区间的数据。</p>
-</li>
-<li><p>public char charAt(int n )</p>
-</li>
-<li><p>public void setCharAt(int n ,char ch)</p>
-</li>
-<li><p>StringBuffer replace( int startIndex ,int endIndex, String str)</p>
-</li>
-<li><p>public int indexOf(String str)</p>
-</li>
-<li><p>public String substring(int start,int end)</p>
-</li>
-<li><p>public int length()</p>
-</li>
-</ul>
-<h3 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h3><p>　　增：append(Xxx xxx)</p>
-<p>　　删：delete(int startIndex, int endIndex</p>
-<p>　　改：setCharAt(int n ,char ch) / replace( int startIndex ,int endIndex, String str)</p>
-<p>　　查：charAt(int n)</p>
-<p>　　插：insert(int index, String str)</p>
-<p>　　长度：length()</p>
-<p>　　遍历：使用for + charAt()</p>
+<p>byteBuffer.put(“hello”.getBytes());//写入长度为5的字节数.每put一个字节，position就+1</p>
+<p>byteBuffer.flip();//切换为读数据模式。将limit设置为position，position归零</p>
+<p>byteBuffer.rewind();//重置position</p>
+<p>byteBuffer.clear();//清空.将position归零，limit设置为capacity.数据并未删除。</p>
+<p>byteBuffer.get(dst,0,2);//从数组角标0开始，写入两个字节的数组</p>
+<p>if(byteBuffer.hasRemaining()){</p>
+<p>//判断是否还有元素没有读取到。   </p>
+<p>​        System.out.println(byteBuffer.remaining());//还有几个没有读取到。</p>
+<p>   }System.out.println();</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/11/1/12/day23/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="顾思君">
+      <meta itemprop="description" content="直到这一刻微笑着说话为止，我至少留下了一公升眼泪">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="思君の博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/02/11/1/12/day23/" class="post-title-link" itemprop="url">day23</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-02-11 20:12:57" itemprop="dateCreated datePublished" datetime="2020-02-11T20:12:57+08:00">2020-02-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-20 11:31:09" itemprop="dateModified" datetime="2020-02-20T11:31:09+08:00">2020-02-20</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>3.6k</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>jdk 8 之前 日期+时间 API的使用</p>
+<p>java.util.Date类</p>
+<p>　　|—-java.sql.Date类</p>
+<p>1.java.util.Date类：</p>
+<p>　　如何实例化：两个构造器</p>
+<p>　　常用方法：toString() / getTime();</p>
+<p> 2.java.sql.Date类：与数据表中的Date类型的变量对应。    </p>
+<p>构造器一：获取系统当前时间对应的Date对象</p>
+<p>Date date = new Date();</p>
+<p>getTime()：返回当前日期对应的毫秒数：当前时间与1970-1-1 00：00：00直接的毫秒数</p>
+<p>构造器二：获取毫秒数所对应的Date对象</p>
+<p>Date date1 = new Date(1502768492941L);</p>
+<p>SQl:</p>
+<p>java.sql.Date date2 = new java.sql.Date(1502768492941L);</p>
+<p>SimpleDateFormat</p>
+<p>使用默认构造器:SimpleDateFormat sdf = new SimpleDateFormat();</p>
+<p>格式化：String format(Date date):</p>
+<p>　Date date = new Date();</p>
+<p>　String dateStr = sdf.format(date);</p>
+<p>解析： Date parse(String dateStr)</p>
+<p>　Date date1 = sdf.parse(“17-8-15 下午2:18”);</p>
+<p>　System.out.println(date1);</p>
+<p>java.text.SimpleDateFormat类</p>
+<p>　1.SimpleDateFormat的作用：</p>
+<p>　　　格式化：日期—&gt;文本</p>
+<p>　　　解析：格式化的逆过程，文本 —&gt;日期</p>
+<p>　2.SimpleDateFormat实例化</p>
+<p>　　使用带参数的构造器</p>
+<p>　　　SimpleDateFormat sdf1 = new SimpleDateFormat(“EEE, d MMM yyyy HH:mm:ss Z”); 　　　</p>
+<p>　　　SimpleDateFormat sdf1 = new SimpleDateFormat(“yyyy-MM-dd hh:mm:ss”);</p>
+<p>　　格式化：</p>
+<p>　　　String dateStr1 = sdf1.format(date);</p>
+<p>　　　System.out.println(dateStr1);//2017-08-15 02:24:40</p>
+<p>　　解析：</p>
+<p>　　　Date date2 = sdf1.parse(“2017-08-15 02:24:40”);</p>
+<p>　　　System.out.println(date2);</p>
+<p>java.util.Calendar(日历)类的使用</p>
+<p>　　1.实例化Calendar calendar = Calendar.getInstance();</p>
+<p>　　2.get()</p>
+<p>​        　int day = calendar.get(Calendar.DAY_OF_MONTH);</p>
+<p>​        　System.out.println(day);</p>
+<p>　　3.set()</p>
+<p>　　　calendar.set(Calendar.DAY_OF_MONTH, 20);　</p>
+<p>　　　day =   calendar.get(Calendar.DAY_OF_MONTH);</p>
+<p>　　　System.out.println(day);</p>
+<p>　　4.add()</p>
+<p>　　　calendar.add(Calendar.DAY_OF_MONTH, -2);</p>
+<p>　　　day = calendar.get(Calendar.DAY_OF_MONTH);</p>
+<p>　　　System.out.println(day);</p>
+<p>日历 —&gt;日期</p>
+<p>　　Date date = calendar.getTime();</p>
+<p>　　System.out.println(date);</p>
+<p>使用指定的Date对象，来设置calendar</p>
+<p>　　Date date1 = new Date();</p>
+<p>　　calendar.setTime(date1);</p>
+<p>　　day = calendar.get(Calendar.DAY_OF_MONTH);</p>
+<p>　　System.out.println(day);</p>
+<p>LocalDate / LocalTime / LocalDateTime     —–重要//理解为对Calendar</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//实例化</span></span><br><span class="line"><span class="comment">//now()</span></span><br><span class="line">LocalDate localDate = LocalDate.now();</span><br><span class="line">LocalTime localTime = LocalTime.now();</span><br><span class="line">LocalDateTime localDateTime =   LocalDateTime.now();</span><br><span class="line"></span><br><span class="line">System.out.println(localDate);</span><br><span class="line">System.out.println(localTime);</span><br><span class="line">System.out.println(localDateTime);</span><br><span class="line"></span><br><span class="line"><span class="comment">//of()</span></span><br><span class="line">LocalDate localDate2 = LocalDate.of(<span class="number">2017</span>,<span class="number">8</span>,<span class="number">15</span>); </span><br><span class="line">System.out.println(localDate2);</span><br><span class="line">LocalDateTime localDateTime2 = LocalDateTime.of(<span class="number">2017</span>, <span class="number">8</span>, <span class="number">15</span>, <span class="number">11</span>, <span class="number">11</span>,<span class="number">23</span>); System.out.println(localDateTime2);</span><br><span class="line">System.out.println();</span><br><span class="line"><span class="comment">//getXxx():</span></span><br><span class="line">System.out.println(localDateTime.getDayOfYear());</span><br><span class="line">System.out.println(localDateTime.getDayOfMonth());</span><br><span class="line">System.out.println(localDateTime.getDayOfWeek());</span><br><span class="line">System.out.println(localDateTime.getMonth());</span><br><span class="line">System.out.println(localDateTime.getMonthValue());</span><br><span class="line">System.out.println(localDateTime.getHour());</span><br><span class="line">System.out.println(localDateTime.getMinute());</span><br><span class="line"><span class="comment">//withXxx():体现了不可变性</span></span><br><span class="line">LocalDateTime localDateTime3=localDateTime.withDayOfMonth(<span class="number">20</span>); System.out.println(localDateTime);</span><br><span class="line">System.out.println(localDateTime3);</span><br><span class="line">LocalDateTime localDateTime4=localDateTime.withHour(<span class="number">12</span>); System.out.println(localDateTime4);</span><br><span class="line"><span class="comment">//plus()//minus()</span></span><br><span class="line">LocalDateTime localDateTime5 =localDateTime.plusDays(<span class="number">3</span>); System.out.println(localDateTime5);</span><br><span class="line">LocalDateTime localDateTime6 =localDateTime.minusMinutes(<span class="number">20</span>); </span><br><span class="line">System.out.println(localDateTime6);</span><br><span class="line"><span class="keyword">boolean</span> isBefore =localDateTime.isBefore(localDateTime6); </span><br><span class="line"> System.out.println(isBefore);<span class="comment">//false</span></span><br><span class="line"><span class="keyword">boolean</span> isAfter =localDateTime.isAfter(localDateTime6); System.out.println(isAfter);<span class="comment">//true</span></span><br><span class="line"><span class="comment">//isLeapYear():</span></span><br><span class="line">System.out.println(localDate.isLeapYear());</span><br><span class="line">LocalDate localDate3 =localDate.minusYears(<span class="number">1</span>); </span><br><span class="line">System.out.println(localDate3.isLeapYear());</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p>Optional类使用的测试</p>
+<p>　Optional:是一个封装了具体类型数据的容器。</p>
+<p>　其中，具体的类型：通过Optional的泛型体现。</p>
+<p>　具体类型的数据：通过Optional内部的T value体现</p>
+<p>返回一个没有封装任何数据的Optional对象</p>
+<p>　　Optional<Object> op = Optional.empty();０</Object></p>
+<p>　　Optional<String> op1 = Optional.ofNullable(“beijing”);</String></p>
+<p>isPresent():判断内部的数据是否存在</p>
+<p>get():返回Optional对象内部封装的数据</p>
+<p>of(T t):当t为null时，报异常。建议不用此方法</p>
+<p>orElse(T t):如果调用对象包含值，返回该值，否则返回t</p>
+<p>Integer类作为int的包装类，能存储的最大整型值为2^31−1， </p>
+<p>BigInteger类的数值范围较Integer类、Long类的数值范围要大得多，可以支持任意精度的整数。</p>
+<p>在商业计算中，要求数字精度比较高，故用到java.math.BigDecimal类。</p>
+<p>BigDecimal类支持任何精度的定点数。</p>
 
       
     </div>
@@ -672,6 +662,111 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/11/1/12/day4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="顾思君">
+      <meta itemprop="description" content="直到这一刻微笑着说话为止，我至少留下了一公升眼泪">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="思君の博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/02/11/1/12/day4/" class="post-title-link" itemprop="url">day4</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-02-11 20:12:57" itemprop="dateCreated datePublished" datetime="2020-02-11T20:12:57+08:00">2020-02-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-12 21:43:10" itemprop="dateModified" datetime="2020-02-12T21:43:10+08:00">2020-02-12</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.3k</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>素数判断：</p>
+<p>1.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">f1</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=<span class="number">100000</span>;i++)&#123;</span><br><span class="line">            <span class="keyword">boolean</span> isFlag = <span class="keyword">true</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">2</span>;j&lt;i;j++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(i%j==<span class="number">0</span>)&#123;</span><br><span class="line">                    isFlag=<span class="keyword">false</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(isFlag)&#123;</span><br><span class="line">                System.out.println(i);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">       </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这种方式浪费内存，外循环 boolean = true 相当于每次重新定义一个变量</p>
+<p>2.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">f1</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        <span class="keyword">boolean</span> isFlag = <span class="keyword">true</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=<span class="number">100000</span>;i++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">2</span>;j&lt;i;j++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(i%j==<span class="number">0</span>)&#123;</span><br><span class="line">                    isFlag=<span class="keyword">false</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(isFlag)&#123;</span><br><span class="line">                System.out.println(i);</span><br><span class="line">            &#125;</span><br><span class="line">            isFlag = <span class="keyword">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这种方式多写一行代码</p>
+<p>3.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">f1</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        <span class="keyword">long</span> start = System.currentTimeMillis();</span><br><span class="line">        <span class="keyword">int</span> PrimeNumberCount = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=<span class="number">100000</span>;i++)&#123;</span><br><span class="line">            <span class="keyword">boolean</span> isFlag = <span class="keyword">true</span>; <span class="comment">//标识</span></span><br><span class="line">            <span class="comment">//优化2:针对于质素数的优化</span></span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">2</span>;j&lt;=Math.sqrt(i);j++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(i%j==<span class="number">0</span>)&#123;</span><br><span class="line">                    isFlag=<span class="keyword">false</span>;</span><br><span class="line">                    <span class="comment">//优化1:主要针对于非质数</span></span><br><span class="line">                    <span class="keyword">break</span>;<span class="comment">//  结束包裹break关键字最近的一层</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(isFlag)&#123;</span><br><span class="line">                PrimeNumberCount++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(PrimeNumberCount);</span><br><span class="line">        <span class="keyword">long</span> end = System.currentTimeMillis();</span><br><span class="line">        System.out.println(<span class="string">"时间:"</span>+(end-start));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>currentTimeMillis()     获取系统当前时间对应的毫秒数</p>
+<p>break   结束包裹break关键字最近的一层</p>
+<p>break 和 continue</p>
+<p>适用范围：                                                           在循环中，表示：</p>
+<p>break: switch-case 或者 循环结构                     结束当前循环</p>
+<p>continue: 循环结构                                              结束当次循环</p>
+<p>相同点：</p>
+<p>关键字后面不能有输出语句，编译不通过</p>
+<p>附加：带标签的break和continue的使用</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/11/1/12/day5/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -804,111 +899,6 @@
 <p>　　如果输出元素a，其值决定于是否初始化过，如果初始化过，则输出地址值，如果</p>
 <p>　　没初始化过，则为null</p>
 <p>数组一旦初始化，其长度就是确定的，而其长度不可改变</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/11/1/12/day4/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="顾思君">
-      <meta itemprop="description" content="直到这一刻微笑着说话为止，我至少留下了一公升眼泪">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="思君の博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/02/11/1/12/day4/" class="post-title-link" itemprop="url">day4</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-02-11 20:12:57" itemprop="dateCreated datePublished" datetime="2020-02-11T20:12:57+08:00">2020-02-11</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-12 21:43:10" itemprop="dateModified" datetime="2020-02-12T21:43:10+08:00">2020-02-12</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java/" itemprop="url" rel="index">
-                    <span itemprop="name">java</span>
-                  </a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>1.3k</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>素数判断：</p>
-<p>1.</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">f1</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=<span class="number">100000</span>;i++)&#123;</span><br><span class="line">            <span class="keyword">boolean</span> isFlag = <span class="keyword">true</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">2</span>;j&lt;i;j++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(i%j==<span class="number">0</span>)&#123;</span><br><span class="line">                    isFlag=<span class="keyword">false</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(isFlag)&#123;</span><br><span class="line">                System.out.println(i);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">       </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>这种方式浪费内存，外循环 boolean = true 相当于每次重新定义一个变量</p>
-<p>2.</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">f1</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        <span class="keyword">boolean</span> isFlag = <span class="keyword">true</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=<span class="number">100000</span>;i++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">2</span>;j&lt;i;j++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(i%j==<span class="number">0</span>)&#123;</span><br><span class="line">                    isFlag=<span class="keyword">false</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(isFlag)&#123;</span><br><span class="line">                System.out.println(i);</span><br><span class="line">            &#125;</span><br><span class="line">            isFlag = <span class="keyword">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>这种方式多写一行代码</p>
-<p>3.</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">f1</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        <span class="keyword">long</span> start = System.currentTimeMillis();</span><br><span class="line">        <span class="keyword">int</span> PrimeNumberCount = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=<span class="number">100000</span>;i++)&#123;</span><br><span class="line">            <span class="keyword">boolean</span> isFlag = <span class="keyword">true</span>; <span class="comment">//标识</span></span><br><span class="line">            <span class="comment">//优化2:针对于质素数的优化</span></span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">2</span>;j&lt;=Math.sqrt(i);j++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(i%j==<span class="number">0</span>)&#123;</span><br><span class="line">                    isFlag=<span class="keyword">false</span>;</span><br><span class="line">                    <span class="comment">//优化1:主要针对于非质数</span></span><br><span class="line">                    <span class="keyword">break</span>;<span class="comment">//  结束包裹break关键字最近的一层</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(isFlag)&#123;</span><br><span class="line">                PrimeNumberCount++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(PrimeNumberCount);</span><br><span class="line">        <span class="keyword">long</span> end = System.currentTimeMillis();</span><br><span class="line">        System.out.println(<span class="string">"时间:"</span>+(end-start));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<p>currentTimeMillis()     获取系统当前时间对应的毫秒数</p>
-<p>break   结束包裹break关键字最近的一层</p>
-<p>break 和 continue</p>
-<p>适用范围：                                                           在循环中，表示：</p>
-<p>break: switch-case 或者 循环结构                     结束当前循环</p>
-<p>continue: 循环结构                                              结束当次循环</p>
-<p>相同点：</p>
-<p>关键字后面不能有输出语句，编译不通过</p>
-<p>附加：带标签的break和continue的使用</p>
 
       
     </div>
@@ -1319,7 +1309,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/11/1/12/druid/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/11/1/12/java8%E6%96%B0%E7%89%B9%E6%80%A71/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -1333,91 +1323,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2020/02/11/1/12/druid/" class="post-title-link" itemprop="url">druid</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2020-02-11 20:12:57 / 修改时间：21:10:18" itemprop="dateCreated datePublished" datetime="2020-02-11T20:12:57+08:00">2020-02-11</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/datasource/" itemprop="url" rel="index">
-                    <span itemprop="name">datasource</span>
-                  </a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>5.3k</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="DRUID介绍"><a href="#DRUID介绍" class="headerlink" title="DRUID介绍"></a>DRUID介绍</h3><p>　　　DRUID是阿里巴巴开源平台上一个数据库连接池实现，它结合了C3P0、DBCP、PROXOOL等DB池的优点，同时加入了日志监控，可以很好的监控DB池连接和SQL的执行情况，可以说是针对监控而生的DB连接池(据说是目前最好的连接池,不知道速度有没有BoneCP快)。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/02/11/1/12/druid/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/11/1/12/%E8%BF%9B%E9%98%B61/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="顾思君">
-      <meta itemprop="description" content="直到这一刻微笑着说话为止，我至少留下了一公升眼泪">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="思君の博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/02/11/1/12/%E8%BF%9B%E9%98%B61/" class="post-title-link" itemprop="url">进阶1</a>
+            <a href="/2020/02/11/1/12/java8%E6%96%B0%E7%89%B9%E6%80%A71/" class="post-title-link" itemprop="url">java8新特性1</a>
         </h1>
 
         <div class="post-meta">
@@ -1434,7 +1340,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-12 15:07:28" itemprop="dateModified" datetime="2020-02-12T15:07:28+08:00">2020-02-12</time>
+                <time title="修改时间：2020-02-12 13:17:29" itemprop="dateModified" datetime="2020-02-12T13:17:29+08:00">2020-02-12</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1454,7 +1360,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1k</span>
+              <span>1.2k</span>
             </span>
 
         </div>
@@ -1466,48 +1372,51 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>.java文件(源文件) –&gt; 编译成.class字节码文件(检查语法) –&gt; 类装载器 –&gt; Java虚拟机(JVM)(解释成二进制数据) –&gt; 操作系统 –&gt; 硬件平台</p>
-<p>jdk –&gt; bin 可执行文件(命令)</p>
-<p>　　 jre 运行时环境 – lib  – rt.jar(sun提供好的库)</p>
-<p>src是源码</p>
-<p>||<br>一个.java源文件中可以定义多个class，并且一个class会生成一个.class文件<br>public的class的名字必须要与文件名保持一致，如果要定义public的class，那<br>抹这个public的class也只能有一个<br>关于java语言中的字面值<br>1.什么是字面值?</p>
-<p>　一眼看上去就知道是多少的数据,就是字面值<br>2.字面值本质：</p>
-<p>　字面值是有数据类型的:</p>
-<p>　　整型 100</p>
-<p>　　浮点型 3.14</p>
-<p>　　布尔型 true/false</p>
-<p>　　字符型 ‘中’</p>
-<p>　　字符串型 “ABC”</p>
-<p>　在内存中占用空间:<br>    字面值就是内存中的一块空间。这块空间有类型,有值。</p>
-<p>　只有字面值内存无法得到重复利用</p>
-<p>　java语言中所有的字符都采用“单引号”括起来</p>
-<p>　java语言中所有的字符串都采用“双引号”括起来</p>
-<p>关于java语言中的变量<br>1.java中如何定义变量,语法:</p>
-<p>　数据类型 变量名;<br>2.如何给变量赋值,语法:</p>
-<p>　变量名 = 值；<br>3.变量的本质是什么?</p>
-<p>　变量就是内存中的一块空间，这块空间有”类型”,”名字”,”值”<br>java中的变量必须先声明,再赋值,才能使用</p>
-<p>关于变量的作用域：有效范围,作用范围。出了大括号就不认识了</p>
-<p>变量根据出现的位置可以分为两种：</p>
-<p>　1.局部变量,在方法中声明的叫做局部变量，包括形式参数列表</p>
-<p>　2.成员变量,在类体中,方法之外声明的变量统称成员变量</p>
-<p>关于char类型</p>
-<p>　char是字符类型,java中采用unicode编码,底层占用两个字节</p>
-<p>char类型涉及到字符编码方式:</p>
-<p>　1.字符编码方式是现实世界中的文字和计算机的表示方式的转换规则。</p>
-<p>　　　ascll</p>
-<p>　　　iso-8859-1</p>
-<p>　　　gb2312&lt;gbk&lt;gb18030</p>
-<p>　　　unicode utf-8 utf-16 utf-32</p>
-<p>　2.字符如果采用的编码和解码不一致的话,会出现乱码。</p>
-<p>关于转义字符</p>
-<p>　\斜线在java语言中有转义功能</p>
-<p>　\n 换行符    \t 水平制表符  &#39; 单引号  \ “ 双引号   \ 普通斜线  </p>
-<p>　\u xxxx 后跟4位16进制unicode编码，表示一个字符</p>
-<p>默认值：</p>
-<p>　byte short int long     0 </p>
-<p>　float double            0.0</p>
-<p>　boolean                 false</p>
-<p>　char                    ‘\u0000’(表现形式上是一个空格)</p>
+          <p>一、Stream API 的操作步骤：</p>
+<ol>
+<li><p>创建 Stream</p>
+</li>
+<li><p>中间操作</p>
+</li>
+<li><p>终止操作(终端操作)</p>
+</li>
+</ol>
+<p>中间操作:</p>
+<p> 筛选与切片</p>
+<p>​    filter——接收 Lambda ， 从流中排除某些元素。<br>​    limit——截断流，使其元素不超过给定数量。<br>​    skip(n) —— 跳过元素，返回一个扔掉了前 n 个元素的流。若流中元素不足 n 个，则    返回一个空流。与   limit(n) 互补<br>​    distinct——筛选，通过流所生成元素的 hashCode() 和 equals() 去除重复元素</p>
+<p>映射<br>  map——接收 Lambda ， 将元素转换成其他形式或提取信息。接收一个函数作为参数，该函数会被应用到每     个元素上，并将其映射成一个新的元素。<br> flatMap——接收一个函数作为参数，将流中的每个值都换成另一个流，然后把所有流连接成一个流</p>
+<p>sorted()——自然排序<br>sorted(Comparator com)——定制排序</p>
+<p>终止操作:<br>   allMatch——检查是否匹配所有元素<br>   anyMatch——检查是否至少匹配一个元素<br>   noneMatch——检查是否没有匹配的元素<br>   findFirst——返回第一个元素<br>   findAny——返回当前流中的任意元素<br>   count——返回流中元素的总个数<br>   max——返回流中最大值<br>   min——返回流中最小值</p>
+<p>归约<br>reduce(T identity, BinaryOperator) / reduce(BinaryOperator) ——可以将流中元素反复结合起来，得到一个值。</p>
+<p>收集</p>
+<p>collect——将流转换为其他形式。接收一个 Collector接口的实现，用于给Stream中元素做汇总的方法</p>
+<p>注意：流进行了终止操作后，不能再次使用</p>
+<p>二、Optional 容器类：用于尽量避免空指针异常</p>
+<ul>
+<li>Optional.of(T t) : 创建一个 Optional 实例</li>
+<li>Optional.empty() : 创建一个空的 Optional 实例</li>
+<li>Optional.ofNullable(T t):若 t 不为 null,创建 Optional 实例,否则创建空实例</li>
+<li>isPresent() : 判断是否包含值</li>
+<li>orElse(T t) :  如果调用对象包含值，返回该值，否则返回t</li>
+<li>orElseGet(Supplier s) :如果调用对象包含值，返回该值，否则返回 s 获取的值</li>
+<li>map(Function f): 如果有值对其处理，并返回处理后的Optional，否则返回 Optional.empty()</li>
+<li>flatMap(Function mapper):与 map 类似，要求返回值必须是Optional</li>
+</ul>
+<p>三、时间</p>
+<ol>
+<li><p>LocalDate、LocalTime、LocalDateTime</p>
+</li>
+<li><p>Instant : 时间戳。 （使用 Unix 元年  1970年1月1日 00:00:00 所经历的毫秒值）</p>
+</li>
+<li><p>Duration : 用于计算两个“时间”间隔<br>Period : 用于计算两个“日期”间隔</p>
+</li>
+<li><p>TemporalAdjuster : 时间校正器</p>
+</li>
+<li><p>DateTimeFormatter : 解析和格式化日期或时间</p>
+</li>
+<li><p>ZonedDate、ZonedTime、ZonedDateTime ： 带时区的时间或日期</p>
+</li>
+</ol>
 
       
     </div>
@@ -1527,7 +1436,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -1595,7 +1504,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">41</span>
+          <span class="site-state-item-count">40</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1653,7 +1562,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">78k</span>
+    <span title="站点总字数">76k</span>
 </div>
 
 
