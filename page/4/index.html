@@ -158,7 +158,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/11/1/12/druid/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/11/1/12/java8%E6%96%B0%E7%89%B9%E6%80%A71/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -172,7 +172,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2020/02/11/1/12/druid/" class="post-title-link" itemprop="url">druid</a>
+            <a href="/2020/02/11/1/12/java8%E6%96%B0%E7%89%B9%E6%80%A71/" class="post-title-link" itemprop="url">java8新特性1</a>
         </h1>
 
         <div class="post-meta">
@@ -181,18 +181,24 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-02-11 20:12:57 / 修改时间：21:10:18" itemprop="dateCreated datePublished" datetime="2020-02-11T20:12:57+08:00">2020-02-11</time>
+              <time title="创建时间：2020-02-11 20:12:57" itemprop="dateCreated datePublished" datetime="2020-02-11T20:12:57+08:00">2020-02-11</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-12 13:17:29" itemprop="dateModified" datetime="2020-02-12T13:17:29+08:00">2020-02-12</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/datasource/" itemprop="url" rel="index">
-                    <span itemprop="name">datasource</span>
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
                   </a>
                 </span>
             </span>
@@ -203,7 +209,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>5.3k</span>
+              <span>1.2k</span>
             </span>
 
         </div>
@@ -215,15 +221,52 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="DRUID介绍"><a href="#DRUID介绍" class="headerlink" title="DRUID介绍"></a>DRUID介绍</h3><p>　　　DRUID是阿里巴巴开源平台上一个数据库连接池实现，它结合了C3P0、DBCP、PROXOOL等DB池的优点，同时加入了日志监控，可以很好的监控DB池连接和SQL的执行情况，可以说是针对监控而生的DB连接池(据说是目前最好的连接池,不知道速度有没有BoneCP快)。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/02/11/1/12/druid/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
+          <p>一、Stream API 的操作步骤：</p>
+<ol>
+<li><p>创建 Stream</p>
+</li>
+<li><p>中间操作</p>
+</li>
+<li><p>终止操作(终端操作)</p>
+</li>
+</ol>
+<p>中间操作:</p>
+<p> 筛选与切片</p>
+<p>​    filter——接收 Lambda ， 从流中排除某些元素。<br>​    limit——截断流，使其元素不超过给定数量。<br>​    skip(n) —— 跳过元素，返回一个扔掉了前 n 个元素的流。若流中元素不足 n 个，则    返回一个空流。与   limit(n) 互补<br>​    distinct——筛选，通过流所生成元素的 hashCode() 和 equals() 去除重复元素</p>
+<p>映射<br>  map——接收 Lambda ， 将元素转换成其他形式或提取信息。接收一个函数作为参数，该函数会被应用到每     个元素上，并将其映射成一个新的元素。<br> flatMap——接收一个函数作为参数，将流中的每个值都换成另一个流，然后把所有流连接成一个流</p>
+<p>sorted()——自然排序<br>sorted(Comparator com)——定制排序</p>
+<p>终止操作:<br>   allMatch——检查是否匹配所有元素<br>   anyMatch——检查是否至少匹配一个元素<br>   noneMatch——检查是否没有匹配的元素<br>   findFirst——返回第一个元素<br>   findAny——返回当前流中的任意元素<br>   count——返回流中元素的总个数<br>   max——返回流中最大值<br>   min——返回流中最小值</p>
+<p>归约<br>reduce(T identity, BinaryOperator) / reduce(BinaryOperator) ——可以将流中元素反复结合起来，得到一个值。</p>
+<p>收集</p>
+<p>collect——将流转换为其他形式。接收一个 Collector接口的实现，用于给Stream中元素做汇总的方法</p>
+<p>注意：流进行了终止操作后，不能再次使用</p>
+<p>二、Optional 容器类：用于尽量避免空指针异常</p>
+<ul>
+<li>Optional.of(T t) : 创建一个 Optional 实例</li>
+<li>Optional.empty() : 创建一个空的 Optional 实例</li>
+<li>Optional.ofNullable(T t):若 t 不为 null,创建 Optional 实例,否则创建空实例</li>
+<li>isPresent() : 判断是否包含值</li>
+<li>orElse(T t) :  如果调用对象包含值，返回该值，否则返回t</li>
+<li>orElseGet(Supplier s) :如果调用对象包含值，返回该值，否则返回 s 获取的值</li>
+<li>map(Function f): 如果有值对其处理，并返回处理后的Optional，否则返回 Optional.empty()</li>
+<li>flatMap(Function mapper):与 map 类似，要求返回值必须是Optional</li>
+</ul>
+<p>三、时间</p>
+<ol>
+<li><p>LocalDate、LocalTime、LocalDateTime</p>
+</li>
+<li><p>Instant : 时间戳。 （使用 Unix 元年  1970年1月1日 00:00:00 所经历的毫秒值）</p>
+</li>
+<li><p>Duration : 用于计算两个“时间”间隔<br>Period : 用于计算两个“日期”间隔</p>
+</li>
+<li><p>TemporalAdjuster : 时间校正器</p>
+</li>
+<li><p>DateTimeFormatter : 解析和格式化日期或时间</p>
+</li>
+<li><p>ZonedDate、ZonedTime、ZonedDateTime ： 带时区的时间或日期</p>
+</li>
+</ol>
+
       
     </div>
 
@@ -525,6 +568,145 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/11/1/12/%E8%BF%9B%E9%98%B64/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="顾思君">
+      <meta itemprop="description" content="直到这一刻微笑着说话为止，我至少留下了一公升眼泪">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="思君の博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/02/11/1/12/%E8%BF%9B%E9%98%B64/" class="post-title-link" itemprop="url">进阶4</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-02-11 20:12:57" itemprop="dateCreated datePublished" datetime="2020-02-11T20:12:57+08:00">2020-02-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-12 15:21:00" itemprop="dateModified" datetime="2020-02-12T15:21:00+08:00">2020-02-12</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.3k</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>方法覆盖：overrride ,overwriter</p>
+<p>　1.什么时候方法需要重写？</p>
+<p>　　如果父类中的方法已经无法满足当前子类的业务要求，需要将父类的方法进行重写</p>
+<p>　2.子类如果重写父类中的方法之后,子类对象一定调用的是重写之后的方法。</p>
+<p>　3.发生方法覆盖的条件：</p>
+<p>　　第一：发生在具有继承关系的两个类之间</p>
+<p>　　第二：必须具有相同的方法名,相同的返回值类型,相同的参数列表</p>
+<p>　　第三：重写的方法不能比被重写的方法拥有更低的访问权限</p>
+<p>　　第四：重写的方法不能比被重写的方法抛出更宽泛的异常</p>
+<p>　　第五：私有的方法不能被覆盖</p>
+<p>　　第六：构造方法无法被覆盖，因为构造方法无法被继承</p>
+<p>　　第七：静态的方法不存在覆盖</p>
+<p>　　　　（静态方法执行和对象无关）</p>
+<p>　　第八：覆盖指的是成员方法，和成员变量无关</p>
+<p>　4.继承的基本作用：代码复用。继承最重要的作用：方法重写</p>
+<p>　关于java语言中向上转型和向下转型</p>
+<p>　　1.向上转型(upcasting):  子 –&gt; 父</p>
+<p>　　2.向下转型(downcasting):父 –&gt; 子</p>
+<p>注意：无论是向上转型还是向下转型,两个类之间必须有继承关系</p>
+<p>多态作用：使用多态可以使代码之间的耦合度降低</p>
+<p>　　　　　项目扩展能力增强<br>耦合度：代码和代码之间的关联程度</p>
+<p>super</p>
+<p>　1.super不是引用类型，super中存储的不是内存地址,super指向的不是父类对象</p>
+<p>　2.super代表的是当前子类对象中的父类型特征</p>
+<p>　3.什么时候使用super？</p>
+<p>　　子类和父类中都有某个数据,例如,子类和父类中都有name这个属性</p>
+<p>　　如果要在访问子类中父类中的属性，需要使用super</p>
+<p>　4.super可以用在什么地方？</p>
+<p>　　成员方法</p>
+<p>　　构造方法</p>
+<p>super关键字用在构造方法中：<br>语法:super(实参)；<br>作用：通过子类的构造方法去调用父类的构造方法</p>
+<p>语法规则：一个构造方法第一行如果没有this(…)，也没有显示的去调用super(…);</p>
+<p>　　　　　系统会默认调用super();<br>注意：super（…）的调用只能方在构造方法的第一行<br>super(…)和this(…)不能共存</p>
+<p>通过子类的构造方法去调用父类的构造方法：作用是：给当前子类对象中的父类型特征赋值。</p>
+<p>如何定义抽象类？</p>
+<ul>
+<li><p>class关键字前abstract</p>
+</li>
+<li><p>抽象类无法实例化</p>
+</li>
+<li><p>虽然抽象类没有办法实例化,但是抽象类也有构造方法，该构造方法是给子类创建对象的用的</p>
+</li>
+<li><p>抽象类中可以定义抽象方法：</p>
+</li>
+<li><p>抽象方法的语法：在方法的修饰列表中添加abstract关键字,并且抽象方法应该以“；”结束,不能带有“{}”</p>
+</li>
+<li><p>例如：public abstract void m();</p>
+</li>
+<li><p>5.抽象类中不一定有抽象方法，但抽像方法所在的类必须是抽象类</p>
+</li>
+<li><p>一个非抽象的类继承抽象类，必须将抽象类中的抽象方法覆盖，实现，重写。</p>
+<p>抽像类不能被final修饰<br>抽象方法不能被final修饰</p>
+</li>
+</ul>
+<p>final修饰的类无法被继承<br>final修饰的方法无法被重写<br>final修饰的局部变量一旦赋值不可再改变<br>final修饰的成员变量需要手动赋值<br>final修饰的成员变量和static联用称为常量<br>深入final</p>
+<p>　　final修饰的引用类型,该引用不可重新指向其他的java对象</p>
+<p>　　但是final修饰的引用,该引用指向的对象的属性是可以修改的</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/11/1/12/%E8%BF%9B%E9%98%B63/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -691,7 +873,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/11/1/12/%E8%BF%9B%E9%98%B64/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/11/1/12/%E8%BF%9B%E9%98%B66/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -705,7 +887,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2020/02/11/1/12/%E8%BF%9B%E9%98%B64/" class="post-title-link" itemprop="url">进阶4</a>
+            <a href="/2020/02/11/1/12/%E8%BF%9B%E9%98%B66/" class="post-title-link" itemprop="url">进阶6</a>
         </h1>
 
         <div class="post-meta">
@@ -722,7 +904,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-12 15:21:00" itemprop="dateModified" datetime="2020-02-12T15:21:00+08:00">2020-02-12</time>
+                <time title="修改时间：2020-02-12 15:34:05" itemprop="dateModified" datetime="2020-02-12T15:34:05+08:00">2020-02-12</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -742,7 +924,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.3k</span>
+              <span>4k</span>
             </span>
 
         </div>
@@ -754,63 +936,141 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>方法覆盖：overrride ,overwriter</p>
-<p>　1.什么时候方法需要重写？</p>
-<p>　　如果父类中的方法已经无法满足当前子类的业务要求，需要将父类的方法进行重写</p>
-<p>　2.子类如果重写父类中的方法之后,子类对象一定调用的是重写之后的方法。</p>
-<p>　3.发生方法覆盖的条件：</p>
-<p>　　第一：发生在具有继承关系的两个类之间</p>
-<p>　　第二：必须具有相同的方法名,相同的返回值类型,相同的参数列表</p>
-<p>　　第三：重写的方法不能比被重写的方法拥有更低的访问权限</p>
-<p>　　第四：重写的方法不能比被重写的方法抛出更宽泛的异常</p>
-<p>　　第五：私有的方法不能被覆盖</p>
-<p>　　第六：构造方法无法被覆盖，因为构造方法无法被继承</p>
-<p>　　第七：静态的方法不存在覆盖</p>
-<p>　　　　（静态方法执行和对象无关）</p>
-<p>　　第八：覆盖指的是成员方法，和成员变量无关</p>
-<p>　4.继承的基本作用：代码复用。继承最重要的作用：方法重写</p>
-<p>　关于java语言中向上转型和向下转型</p>
-<p>　　1.向上转型(upcasting):  子 –&gt; 父</p>
-<p>　　2.向下转型(downcasting):父 –&gt; 子</p>
-<p>注意：无论是向上转型还是向下转型,两个类之间必须有继承关系</p>
-<p>多态作用：使用多态可以使代码之间的耦合度降低</p>
-<p>　　　　　项目扩展能力增强<br>耦合度：代码和代码之间的关联程度</p>
-<p>super</p>
-<p>　1.super不是引用类型，super中存储的不是内存地址,super指向的不是父类对象</p>
-<p>　2.super代表的是当前子类对象中的父类型特征</p>
-<p>　3.什么时候使用super？</p>
-<p>　　子类和父类中都有某个数据,例如,子类和父类中都有name这个属性</p>
-<p>　　如果要在访问子类中父类中的属性，需要使用super</p>
-<p>　4.super可以用在什么地方？</p>
-<p>　　成员方法</p>
-<p>　　构造方法</p>
-<p>super关键字用在构造方法中：<br>语法:super(实参)；<br>作用：通过子类的构造方法去调用父类的构造方法</p>
-<p>语法规则：一个构造方法第一行如果没有this(…)，也没有显示的去调用super(…);</p>
-<p>　　　　　系统会默认调用super();<br>注意：super（…）的调用只能方在构造方法的第一行<br>super(…)和this(…)不能共存</p>
-<p>通过子类的构造方法去调用父类的构造方法：作用是：给当前子类对象中的父类型特征赋值。</p>
-<p>如何定义抽象类？</p>
+          <p>1.异常是什么？</p>
+<p>　第一，异常模拟的是现实世界中的不正常“事件”</p>
+<p>　第二，java中采用“类”去模拟异常</p>
+<p>　第三，类是可以创建对象的</p>
+<p>　　NullPointerExeption e = 0x1234;</p>
+<p>　　e是引用类型,e中保存的内存地址指向堆中的“对象”</p>
+<p>　　这个对象一定是NullPointerException类型</p>
+<p>　　这个对象就表示真实存在的异常事件</p>
+<p>　　NullPointerException是一类异常</p>
+<p>​    “抢劫”就是一类异常<br>​    “张三被抢劫”就是一个异常事件</p>
+<p>2.异常机制的作用？</p>
+<p>　java语言为我们提供一种完善的异常处理机制，</p>
+<p>　作用是：程序发生异常事件之后，为我们输出详细的信息</p>
+<p>　程序员通过这个信息，可以对程序进行一些处理，使程序</p>
+<p>　更加健壮。</p>
+<p>本质：程序执行过程中发生了算术异常这个事件，JVM为我们创建了ArithmeticException类型的对象</p>
+<p>　　　并且这个对象中包含了异常的详细信息，并且JVM将这个对象中的信息输出到控制台。</p>
+<p>所有Exception的直接子类都是编译型异常（发生的概率比较高）</p>
+<p>​     所有编译时异常，要求程序员在编写程序阶段，必须对它进行处理，如果不处理的话</p>
+<p>　 编译不通过。处理异常有两种方式，捕捉和声明抛出。捕捉：try…catch…,声明抛出</p>
+<p>　 就是在方法声明的位置上使用throws关键字抛出异常。</p>
+<p>所有RuntimeException的子类都是运行时异常，运行时异常程序员在编写阶段（发生的概率比较低）</p>
+<p>不需要对它进行处理</p>
+<p>处理异常有两种方式：</p>
+<p>　1.声明抛出 throws</p>
+<p>　2.捕捉  try ..catch..</p>
+<p>数组： </p>
 <ul>
-<li><p>class关键字前abstract</p>
-</li>
-<li><p>抽象类无法实例化</p>
-</li>
-<li><p>虽然抽象类没有办法实例化,但是抽象类也有构造方法，该构造方法是给子类创建对象的用的</p>
-</li>
-<li><p>抽象类中可以定义抽象方法：</p>
-</li>
-<li><p>抽象方法的语法：在方法的修饰列表中添加abstract关键字,并且抽象方法应该以“；”结束,不能带有“{}”</p>
-</li>
-<li><p>例如：public abstract void m();</p>
-</li>
-<li><p>5.抽象类中不一定有抽象方法，但抽像方法所在的类必须是抽象类</p>
-</li>
-<li><p>一个非抽象的类继承抽象类，必须将抽象类中的抽象方法覆盖，实现，重写。</p>
-<p>抽像类不能被final修饰<br>抽象方法不能被final修饰</p>
-</li>
+<li>数组是一种引用类型</li>
+<li>数组是一种简单的数据结构，线性结构</li>
+<li>数组是一个容器，可以用来存储其他元素</li>
+<li>数组可以存储任意类型数据结构的元素</li>
+<li>数组分为:一维数组，二维数组,三维数组，多维数组</li>
+<li>数组中存储的元素类型是统一的</li>
+<li>数组长度不可变，数组一旦创建长度不可变的，固定的</li>
 </ul>
-<p>final修饰的类无法被继承<br>final修饰的方法无法被重写<br>final修饰的局部变量一旦赋值不可再改变<br>final修饰的成员变量需要手动赋值<br>final修饰的成员变量和static联用称为常量<br>深入final</p>
-<p>　　final修饰的引用类型,该引用不可重新指向其他的java对象</p>
-<p>　　但是final修饰的引用,该引用指向的对象的属性是可以修改的</p>
+<p>数组拿首元素的内存地址作为数组对象的内存地址<br>数组中存储元素的类型是统一的，每一个元素在内存中所占的空间大小是相同的，<br>知道数组的首元素内存地址，要查找的元素只要知道下标就可以快速的计算出偏移量<br>通过首元素内存地址+偏移量，快速计算出要查找元素的内存地址，通过内存地址快速<br>定位该元素，所以数组查找元素的效率较高<br>随机的对数组进行增删元素，当增加元素的时候，为了保证数组中元素在空间存储上是有序的，<br>所以被添加元素位置后面的所有元素都要向后移动。删除元素也是，后面所有的元素要向前移动<br>所以数组的增删元素的效率很低</p>
+<p>初始化一维数组</p>
+<p>　1.静态初始化</p>
+<p>　2.动态初始化</p>
+<p>　　动态初始化一维数组，会先在堆内存中分配这个数组，并且数组中每一个元素都采用默认值</p>
+<p>关于main方法中的参数俩表String[] args</p>
+<p>　1.String[] args是专门用来接收命令行参数的</p>
+<p>　2.列如：java ArrayTest abc def aaa</p>
+<p>　 JVM在调用ArrayTest 的main方法之前先将”abc def aaa”这个字符串以空格的方式分割，然后存储在</p>
+<p>　String数组中</p>
+<p>关于数组的拷贝</p>
+<p>　System.arraycopy</p>
+<p>二维数组的特点：</p>
+<p>　1.二维数组是一个特殊的一维数组</p>
+<p>　2.特殊的一维数组，特殊在一维数组的每一个元素都是“一维数组”</p>
+<p>二分法查找：</p>
+<p>　1.建立在已经排序的基础上的</p>
+<p>　　数组中没有重复元素</p>
+<p>java.lang.String</p>
+<p>　1.字符串一旦创建不可再改变。“abc”字符串一旦创建,不可变成“abcd”</p>
+<p>　2.提升字符串的访问效率，在程序中使用了“缓存”技术，所以在java中所有使用双引号括起来的字符串都会在”字符串常量池”中创建一份</p>
+<p>　　字符串常量池在方法区中</p>
+<p>　3.在程序执行过程中，如果程序用到某个字符串，例如“abc”，那抹程序会在字符串常量池中搜索字符串，如果没有找到则在字符串常量池中新建一个“abc”字符串，如果找到就直接拿过来用 [字符串常量池是个缓冲区，为了提高字符串的访问效率]</p>
+<p>使用String需要注意的问题：尽量不要做字符串频繁拼接的操作<br>因为字符串一旦创建不可改变，只要频繁拼接，就会在字符串常<br>量池中创建大量的字符串对象，给垃圾回收带来问题.</p>
+<p>关于字符串常用方法</p>
+<ul>
+<li>char charAt(int index)</li>
+<li>boolean endsWith(String endStr)</li>
+<li>boolean equalsIgnoreCase(String anotherString)  判断字符串是否相等，忽略大小写</li>
+<li>getBytes</li>
+<li>indexOf / indexOf(String str,int fromIndex)</li>
+<li>lastIndexOf(String str) / lastIndexOf(Sting fromIndex)  反向搜索</li>
+<li>length</li>
+<li>String replaceAll(String s1,String s2) </li>
+<li>split</li>
+<li>boolean startsWith(String s)</li>
+<li>String substring(int begin) / String substring(int beginIndex,int endIndex)</li>
+<li>char[] toCharArray</li>
+<li>toUpperCase</li>
+<li>toLowerCase</li>
+<li>trim</li>
+<li>String valueOf(Object obj)</li>
+</ul>
+<p>正则表达式</p>
+<p>　1.正则表达式是一门独立的学科</p>
+<p>　2.正则表达式是一种字符模型，专门做字符串格式匹配的</p>
+<p>　3.正则表达式是通用的</p>
+<p>java.lang.StringBuffer<br>java.lang.StringBuilder</p>
+<p>　1.StringBuffer和StringBuilder是什么？</p>
+<p>　　是一个字符串缓冲区</p>
+<p>　2.工作原理<br>　　预先在内存中申请一块空间，以容乃字符序列</p>
+<p>　　如果预留的空间不够用，则进行自动扩容，以容纳更</p>
+<p>　　多字符序列。<br>   3.StringBuffer，StringBuilder和String的最大区别？</p>
+<p>　　String是不可变字符序列，存储字符串常量池中</p>
+<p>　　StringBuffer底层是一个char数组,但是该char数组是可变的</p>
+<p>　　并且可以自动扩容<br>   4.StringBuffer和StringBuilder的默认初始化容量是16<br>   5.如何优化StringBuffer和StringBuilder</p>
+<p>　　最好在创建StringBuffer之前，预测StringBuffer的存储字符数量</p>
+<p>　　然后再创建StringBuffer的时候采用指定容量的方式创建StringBuffer</p>
+<p>　　为了减少底层数组的拷贝，提交效率<br>   6.StringBuffer线程安全</p>
+<p>　　StringBuilder线程不安全</p>
+<p>Java中八种数据类型对应的包装类型：<br>    基本数据类型                  包装类<br>    byte                          java.lang.Byte<br>    short                         java.lang.Short<br>    int                           Java.lang.Integer<br>    long                          java.lang.Long</p>
+<p>​    float                         java.lang.Float<br>​    double                        java.lang.Double</p>
+<p>​    boolean                       java.lang.Boolean<br>​    char                          java.lang.Charactor</p>
+<p>Integer中的常用方法：<br>    int –&gt; Integer  基本数据类型–&gt;引用数据类型</p>
+<p>　　Integer i1 = new Integer(10);<br>    Integer – &gt; int  引用数据类型 –&gt; 基本数据类型</p>
+<p>　　 int i2 = i1.intValue();<br>    String –&gt; int 字符串转数字</p>
+<p>　　 int i3 = Integer.parseInt(“25”);</p>
+<p>toBinaryString     十进制转成2进制<br>toHexString        十进制转成16进制<br>toOctalString      十进制转成8进制<br><strong>int –&gt; Integer</strong><br>Integer i4 = Integer.valueOf(10);<br><strong>String –&gt; Integer</strong><br>Integer i5 = Integer.valueOf(“10”);</p>
+<p>Integet<br>int<br>String<br>三种类型互相转换<br>1.int–&gt;Integer</p>
+<p>　Integer i1 =  Integer.valueOf(10);<br>2.Integer–&gt;int</p>
+<p>　int i2 = i1.intValue();<br>3.String–&gt;Integr</p>
+<p>　Integer i3 = Integer.valueOf(“10”);<br>4.Integer –&gt; String</p>
+<p>　String s1 = i3.toString();<br>5.string –&gt; int</p>
+<p>　int i4 = Integer.parseInt(“123”);<br>6.int –&gt; String</p>
+<p>　String s5 = 10 + “”;</p>
+<p>JDK5.0新特性：</p>
+<p>　以下的特性适合JDK1.5版本之后的。包括1.5</p>
+<p>　JDK1.4，包括1.4在内之前的所有版本不能使用以下特性</p>
+<p>　自动装箱（auto_boxing）和自动拆箱（auto_unboxing）</p>
+<p>深入自动装箱和自动拆箱</p>
+<p>　1.自动装箱和自动拆箱是程序编译阶段的一个概念</p>
+<p>　　和程序运行无关</p>
+<p>　2.自动装箱和自动拆箱主要目的是为方便程序员编码</p>
+<blockquote>
+<p>Integer重写了equals方法</p>
+<p>如果数据是在-128 <del>127之间，java中引入了一个“整型常量池”，在方法区中<br>该整型常量池只容乃-127</del>128的数据</p>
+</blockquote>
+<p>获取自1970/1/1 00/00/00/000到当前的毫秒数(时间戳)<br>System.currentTimeMillis();<br>获取系统当前时间对应的毫秒数<br>Date类<br>格式化日期<br>java.util.Date –&gt; String</p>
+<p>　sdf.format()<br>解析日期<br>String –&gt; java.util.Date</p>
+<p>　sdf.parse()<br>解析格式应该和字符串相同</p>
+<p>日期格式<br>  y   年<br>  M   月<br>  d   日<br>  H   小时<br>  m   分<br>  s   秒<br>  S   毫秒</p>
+<p>Date t1 = new Date(1000);</p>
+<p>　1000是自1970-1-1 00:00:00 000的毫秒数</p>
+<p>java.math.BigDecimal</p>
+<p>　该类型精确度极高，适合做财务软件</p>
+<p>　财务软件double类型精确度太低</p>
+<p>生成随机数</p>
+<p>　创建随机数生成器</p>
+<p>　Random random = new Random();</p>
 
       
     </div>
@@ -1125,223 +1385,6 @@
 <p>　集合要想使用增强for循环这种语法，集合需要使用泛型</p>
 <p>　如果集合不使用泛型，该集合在使用增强for循环的时候应该使用Object类型定义</p>
 <p>关于增强for的缺点:没有下标</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/11/1/12/%E8%BF%9B%E9%98%B66/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="顾思君">
-      <meta itemprop="description" content="直到这一刻微笑着说话为止，我至少留下了一公升眼泪">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="思君の博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/02/11/1/12/%E8%BF%9B%E9%98%B66/" class="post-title-link" itemprop="url">进阶6</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-02-11 20:12:57" itemprop="dateCreated datePublished" datetime="2020-02-11T20:12:57+08:00">2020-02-11</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-12 15:34:05" itemprop="dateModified" datetime="2020-02-12T15:34:05+08:00">2020-02-12</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java/" itemprop="url" rel="index">
-                    <span itemprop="name">java</span>
-                  </a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>4k</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>1.异常是什么？</p>
-<p>　第一，异常模拟的是现实世界中的不正常“事件”</p>
-<p>　第二，java中采用“类”去模拟异常</p>
-<p>　第三，类是可以创建对象的</p>
-<p>　　NullPointerExeption e = 0x1234;</p>
-<p>　　e是引用类型,e中保存的内存地址指向堆中的“对象”</p>
-<p>　　这个对象一定是NullPointerException类型</p>
-<p>　　这个对象就表示真实存在的异常事件</p>
-<p>　　NullPointerException是一类异常</p>
-<p>​    “抢劫”就是一类异常<br>​    “张三被抢劫”就是一个异常事件</p>
-<p>2.异常机制的作用？</p>
-<p>　java语言为我们提供一种完善的异常处理机制，</p>
-<p>　作用是：程序发生异常事件之后，为我们输出详细的信息</p>
-<p>　程序员通过这个信息，可以对程序进行一些处理，使程序</p>
-<p>　更加健壮。</p>
-<p>本质：程序执行过程中发生了算术异常这个事件，JVM为我们创建了ArithmeticException类型的对象</p>
-<p>　　　并且这个对象中包含了异常的详细信息，并且JVM将这个对象中的信息输出到控制台。</p>
-<p>所有Exception的直接子类都是编译型异常（发生的概率比较高）</p>
-<p>​     所有编译时异常，要求程序员在编写程序阶段，必须对它进行处理，如果不处理的话</p>
-<p>　 编译不通过。处理异常有两种方式，捕捉和声明抛出。捕捉：try…catch…,声明抛出</p>
-<p>　 就是在方法声明的位置上使用throws关键字抛出异常。</p>
-<p>所有RuntimeException的子类都是运行时异常，运行时异常程序员在编写阶段（发生的概率比较低）</p>
-<p>不需要对它进行处理</p>
-<p>处理异常有两种方式：</p>
-<p>　1.声明抛出 throws</p>
-<p>　2.捕捉  try ..catch..</p>
-<p>数组： </p>
-<ul>
-<li>数组是一种引用类型</li>
-<li>数组是一种简单的数据结构，线性结构</li>
-<li>数组是一个容器，可以用来存储其他元素</li>
-<li>数组可以存储任意类型数据结构的元素</li>
-<li>数组分为:一维数组，二维数组,三维数组，多维数组</li>
-<li>数组中存储的元素类型是统一的</li>
-<li>数组长度不可变，数组一旦创建长度不可变的，固定的</li>
-</ul>
-<p>数组拿首元素的内存地址作为数组对象的内存地址<br>数组中存储元素的类型是统一的，每一个元素在内存中所占的空间大小是相同的，<br>知道数组的首元素内存地址，要查找的元素只要知道下标就可以快速的计算出偏移量<br>通过首元素内存地址+偏移量，快速计算出要查找元素的内存地址，通过内存地址快速<br>定位该元素，所以数组查找元素的效率较高<br>随机的对数组进行增删元素，当增加元素的时候，为了保证数组中元素在空间存储上是有序的，<br>所以被添加元素位置后面的所有元素都要向后移动。删除元素也是，后面所有的元素要向前移动<br>所以数组的增删元素的效率很低</p>
-<p>初始化一维数组</p>
-<p>　1.静态初始化</p>
-<p>　2.动态初始化</p>
-<p>　　动态初始化一维数组，会先在堆内存中分配这个数组，并且数组中每一个元素都采用默认值</p>
-<p>关于main方法中的参数俩表String[] args</p>
-<p>　1.String[] args是专门用来接收命令行参数的</p>
-<p>　2.列如：java ArrayTest abc def aaa</p>
-<p>　 JVM在调用ArrayTest 的main方法之前先将”abc def aaa”这个字符串以空格的方式分割，然后存储在</p>
-<p>　String数组中</p>
-<p>关于数组的拷贝</p>
-<p>　System.arraycopy</p>
-<p>二维数组的特点：</p>
-<p>　1.二维数组是一个特殊的一维数组</p>
-<p>　2.特殊的一维数组，特殊在一维数组的每一个元素都是“一维数组”</p>
-<p>二分法查找：</p>
-<p>　1.建立在已经排序的基础上的</p>
-<p>　　数组中没有重复元素</p>
-<p>java.lang.String</p>
-<p>　1.字符串一旦创建不可再改变。“abc”字符串一旦创建,不可变成“abcd”</p>
-<p>　2.提升字符串的访问效率，在程序中使用了“缓存”技术，所以在java中所有使用双引号括起来的字符串都会在”字符串常量池”中创建一份</p>
-<p>　　字符串常量池在方法区中</p>
-<p>　3.在程序执行过程中，如果程序用到某个字符串，例如“abc”，那抹程序会在字符串常量池中搜索字符串，如果没有找到则在字符串常量池中新建一个“abc”字符串，如果找到就直接拿过来用 [字符串常量池是个缓冲区，为了提高字符串的访问效率]</p>
-<p>使用String需要注意的问题：尽量不要做字符串频繁拼接的操作<br>因为字符串一旦创建不可改变，只要频繁拼接，就会在字符串常<br>量池中创建大量的字符串对象，给垃圾回收带来问题.</p>
-<p>关于字符串常用方法</p>
-<ul>
-<li>char charAt(int index)</li>
-<li>boolean endsWith(String endStr)</li>
-<li>boolean equalsIgnoreCase(String anotherString)  判断字符串是否相等，忽略大小写</li>
-<li>getBytes</li>
-<li>indexOf / indexOf(String str,int fromIndex)</li>
-<li>lastIndexOf(String str) / lastIndexOf(Sting fromIndex)  反向搜索</li>
-<li>length</li>
-<li>String replaceAll(String s1,String s2) </li>
-<li>split</li>
-<li>boolean startsWith(String s)</li>
-<li>String substring(int begin) / String substring(int beginIndex,int endIndex)</li>
-<li>char[] toCharArray</li>
-<li>toUpperCase</li>
-<li>toLowerCase</li>
-<li>trim</li>
-<li>String valueOf(Object obj)</li>
-</ul>
-<p>正则表达式</p>
-<p>　1.正则表达式是一门独立的学科</p>
-<p>　2.正则表达式是一种字符模型，专门做字符串格式匹配的</p>
-<p>　3.正则表达式是通用的</p>
-<p>java.lang.StringBuffer<br>java.lang.StringBuilder</p>
-<p>　1.StringBuffer和StringBuilder是什么？</p>
-<p>　　是一个字符串缓冲区</p>
-<p>　2.工作原理<br>　　预先在内存中申请一块空间，以容乃字符序列</p>
-<p>　　如果预留的空间不够用，则进行自动扩容，以容纳更</p>
-<p>　　多字符序列。<br>   3.StringBuffer，StringBuilder和String的最大区别？</p>
-<p>　　String是不可变字符序列，存储字符串常量池中</p>
-<p>　　StringBuffer底层是一个char数组,但是该char数组是可变的</p>
-<p>　　并且可以自动扩容<br>   4.StringBuffer和StringBuilder的默认初始化容量是16<br>   5.如何优化StringBuffer和StringBuilder</p>
-<p>　　最好在创建StringBuffer之前，预测StringBuffer的存储字符数量</p>
-<p>　　然后再创建StringBuffer的时候采用指定容量的方式创建StringBuffer</p>
-<p>　　为了减少底层数组的拷贝，提交效率<br>   6.StringBuffer线程安全</p>
-<p>　　StringBuilder线程不安全</p>
-<p>Java中八种数据类型对应的包装类型：<br>    基本数据类型                  包装类<br>    byte                          java.lang.Byte<br>    short                         java.lang.Short<br>    int                           Java.lang.Integer<br>    long                          java.lang.Long</p>
-<p>​    float                         java.lang.Float<br>​    double                        java.lang.Double</p>
-<p>​    boolean                       java.lang.Boolean<br>​    char                          java.lang.Charactor</p>
-<p>Integer中的常用方法：<br>    int –&gt; Integer  基本数据类型–&gt;引用数据类型</p>
-<p>　　Integer i1 = new Integer(10);<br>    Integer – &gt; int  引用数据类型 –&gt; 基本数据类型</p>
-<p>　　 int i2 = i1.intValue();<br>    String –&gt; int 字符串转数字</p>
-<p>　　 int i3 = Integer.parseInt(“25”);</p>
-<p>toBinaryString     十进制转成2进制<br>toHexString        十进制转成16进制<br>toOctalString      十进制转成8进制<br><strong>int –&gt; Integer</strong><br>Integer i4 = Integer.valueOf(10);<br><strong>String –&gt; Integer</strong><br>Integer i5 = Integer.valueOf(“10”);</p>
-<p>Integet<br>int<br>String<br>三种类型互相转换<br>1.int–&gt;Integer</p>
-<p>　Integer i1 =  Integer.valueOf(10);<br>2.Integer–&gt;int</p>
-<p>　int i2 = i1.intValue();<br>3.String–&gt;Integr</p>
-<p>　Integer i3 = Integer.valueOf(“10”);<br>4.Integer –&gt; String</p>
-<p>　String s1 = i3.toString();<br>5.string –&gt; int</p>
-<p>　int i4 = Integer.parseInt(“123”);<br>6.int –&gt; String</p>
-<p>　String s5 = 10 + “”;</p>
-<p>JDK5.0新特性：</p>
-<p>　以下的特性适合JDK1.5版本之后的。包括1.5</p>
-<p>　JDK1.4，包括1.4在内之前的所有版本不能使用以下特性</p>
-<p>　自动装箱（auto_boxing）和自动拆箱（auto_unboxing）</p>
-<p>深入自动装箱和自动拆箱</p>
-<p>　1.自动装箱和自动拆箱是程序编译阶段的一个概念</p>
-<p>　　和程序运行无关</p>
-<p>　2.自动装箱和自动拆箱主要目的是为方便程序员编码</p>
-<blockquote>
-<p>Integer重写了equals方法</p>
-<p>如果数据是在-128 <del>127之间，java中引入了一个“整型常量池”，在方法区中<br>该整型常量池只容乃-127</del>128的数据</p>
-</blockquote>
-<p>获取自1970/1/1 00/00/00/000到当前的毫秒数(时间戳)<br>System.currentTimeMillis();<br>获取系统当前时间对应的毫秒数<br>Date类<br>格式化日期<br>java.util.Date –&gt; String</p>
-<p>　sdf.format()<br>解析日期<br>String –&gt; java.util.Date</p>
-<p>　sdf.parse()<br>解析格式应该和字符串相同</p>
-<p>日期格式<br>  y   年<br>  M   月<br>  d   日<br>  H   小时<br>  m   分<br>  s   秒<br>  S   毫秒</p>
-<p>Date t1 = new Date(1000);</p>
-<p>　1000是自1970-1-1 00:00:00 000的毫秒数</p>
-<p>java.math.BigDecimal</p>
-<p>　该类型精确度极高，适合做财务软件</p>
-<p>　财务软件double类型精确度太低</p>
-<p>生成随机数</p>
-<p>　创建随机数生成器</p>
-<p>　Random random = new Random();</p>
 
       
     </div>
